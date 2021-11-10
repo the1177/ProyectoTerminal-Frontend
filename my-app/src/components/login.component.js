@@ -21,12 +21,20 @@ export default class Login extends Component {
                             <label>Contraseña</label>
                             <input type="password" className="form-control userInput" placeholder="Intresa tu contraseña" />
                         </div>
+                        <p className="forgot-password text-right">
+                            ¿Has olvidado tu<a href="https://www.youtube.com/watch?v=MlW7T0SUH0E"> contraseña?</a>
+                        </p>
 
                         <br></br>
 
                         <button type="submit" className="signInButton btn btn-primary btn-block">Iniciar sesión</button>
-                        <p className="forgot-password text-right">
-                            ¿Olvidaste tu <a href="https://www.youtube.com/watch?v=MlW7T0SUH0E"> contraseña?</a>
+
+                        <br></br>
+
+                        <p className="text-middle"><span>O</span></p>
+                        
+                        <p className="sign-up text-center">
+                        ¿No tienes una cuenta? <a href="https://www.youtube.com/watch?v=MlW7T0SUH0E"> Regístrate</a>
                         </p>
                     </form>
                 </div>
