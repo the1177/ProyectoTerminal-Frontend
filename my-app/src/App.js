@@ -6,11 +6,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
-<<<<<<< HEAD
 import Dash from "./components/dash.component";
-=======
 import Quiz from "./components/encuesta.component"
->>>>>>> development
+import Quiz from "./components/encuesta.component"
+
 
 function App() {
   return (<Router>
@@ -40,11 +39,9 @@ function App() {
             <Route exact path='/' component={Login} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
-<<<<<<< HEAD
             <Route path="/dash" component={Dash}  />
-=======
             <Route path="/quiz" component={Quiz} />
->>>>>>> development
+            <Route path="/quiz" component={Quiz} />
           </Switch>
         </div>
       </div>
