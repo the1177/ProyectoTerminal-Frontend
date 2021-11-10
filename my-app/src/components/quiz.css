@@ -1,0 +1,94 @@
+/*Encuesta ***************************************************************/
+.main-quiz {
+  position: absolute;
+  width: 1920px;/*ancho */
+  height: 879px;/*Altura*/
+  top: 6%;
+  right: 0%;
+  background-color: rgb(212, 212, 212);
+}
+.quiz {
+  padding-top: 60px;
+  padding-left: 20px;
+  transform: translate(64%, 10%);
+  border-radius: 20px;
+  right: 0;
+  width: 1100px; 
+  height: 700px;
+  display:flexbox;
+  background-color: rgb(255, 255, 255);
+}
+.text-quiz{
+  font-family: serif;
+  font-style: italic;
+  /*Centran a la mitad*/ 
+  margin:auto;
+  /*Tamaño y color del div*/
+  width: 500px;
+  height: 40px;
+  background-color: rgba(167, 111, 111, 0);
+}
+.image{
+  padding-top: 110px;
+  padding-left:5%;
+  padding-right:5%;
+  width: 1060px; 
+  height: 580px;
+  display:flexbox;
+  justify-content:space-between;
+  background-color: rgba(90, 177, 82, 0);
+}
+.image1{
+  width: 380px; 
+  max-width: 380;
+  height: 260px;
+  max-height: 260px;
+  background-color: rgba(136, 118, 240, 0.425);
+}
+.image2{
+  width: 380px; 
+  height: 260px;
+  background-color: rgba(23, 110, 42, 0);
+}
+img{
+  width: 380px;;
+  height:260px;
+ }
+.ima-change{
+  display:flex;
+  justify-content:space-between;
+  background-color: rgba(177, 54, 140, 0);
+}
+.containerIma{
+  width: auto; 
+  height: auto;
+  display:flex;
+  justify-content:space-between;
+  background-color: rgba(195, 204, 73, 0);
+}
+.change-one{
+  padding: 10px;
+  width: 380px; 
+  height: 40px;
+  background-color: rgba(73, 189, 204, 0);
+}
+.change-two{
+  margin-left: 15px;
+  padding: 10px;
+  width: 380px; 
+  height: 40px;
+  background-color: rgba(204, 73, 73, 0);
+}
+.text-change{
+  font-style: normal;
+  font-size: 16px;
+  color: rgb(153, 153, 153);
+}
+.text-change-two{
+  margin-left: 120px;
+  font-style: normal;
+  font-size: 16px;
+  color: rgb(153, 153, 153);
+}
+
+/*************************************************************************************/
