@@ -10,7 +10,7 @@ export default class Login extends Component {
                     <form>
                         <h2 className="loginBox">BIENVENIDOS A</h2>
                         
-                        <h2 className="titulo2">Gamificacion</h2> <br></br>
+                        <h2 className="titulo2">Gamificación</h2> <br></br>
 
                         <div className="form-group">
                             <label>Email</label>
