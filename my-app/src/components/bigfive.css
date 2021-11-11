@@ -1,0 +1,276 @@
+/*Navbar*/
+.menu{
+    background-color: white;
+    width: 5%;/*ancho*/
+    height: 100%;/*Altura*/
+  }
+  /*Perfil*/
+  .perfil-container{
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: rgba(255, 52, 52, 0);
+    width: 20%;/*ancho*/
+    height: 100%;/*Altura*/
+    display: flexbox;
+    align-items: center;
+    text-align:center;
+  }
+  .quiz-logo{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .div-container{
+    flex-direction: column;
+    background-color: rgba(34, 25, 66, 0);
+    padding-top: 5%;
+    padding-right: 3%;
+  }
+  .div1{
+    margin-bottom: 10%;
+    width: 38px; 
+    height: 15%;
+    border-radius: 10rem !important;
+    background-color: #87AD8F;
+  }
+  .div2{
+    margin-bottom:10%;
+    width: 22px; 
+    height: 15%;
+    border-radius: 10rem !important;
+    background-color: #87AD8F;
+  }
+  .text-logo{
+    margin-top: 3%;
+  }
+  /*Imagen perfil*/
+  .perfil-ima{
+    flex-direction: column;
+    background-color: #fcfbff;
+    border-radius: .5rem;
+    padding: 5%;
+    align-items: center;
+    width: 100%; 
+    height: 13%;
+  }
+  .container-p{
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    padding:5%;
+    align-items: center
+  
+  }
+  .photo-image{
+    width: 100%;
+    height:100%;
+    border-radius: 10rem !important;
+  }
+  .perfil-photo{
+    width: 120px; 
+    height: 70px;
+    border-radius: 10rem !important;
+    margin-right: 10%;
+    background-color: rgb(255, 255, 255);
+  }
+  .perfil-name{
+    width: 100%; 
+    height: 100%;
+    display: flexbox;
+    padding: 2%;
+    
+  }
+  .text-photo{
+    font-size: 17px;
+    margin-top: 2%;
+  }
+  .text-range{
+    font-style: normal;
+    font-size: 10px;
+    color: rgb(153, 153, 153);
+    margin-right: 60%;
+  }
+  /*Encuesta **********************/
+  .main-quiz {
+    position: absolute;
+    width: 100%;/*ancho */
+    height: 100%;/*Altura*/
+    padding-right: 100px;
+    top: 6%;
+    right: 0%;
+    display: flex;
+    justify-content:space-between;
+    background-color: rgb(212, 212, 212);
+    align-items: center;
+  }
+  .quiz {
+    padding-top: 60px;
+    padding-left: 60px;
+    /*transform: translate(64%, 10%);*/
+    border-radius: 20px;
+    right: 0;
+    width: 1200px; 
+    height: 700px;
+    display:flexbox;
+    background-color: rgb(255, 255, 255);
+  }
+  /*Titulo*/
+  .text-quiz{
+    font-family: serif;
+    font-style: italic;
+    /*Centran a la mitad*/ 
+    margin:auto;
+    /*Tamaño y color del div*/
+    width: 500px;
+    height: 40px;
+    background-color: rgba(167, 111, 111, 0);
+  }
+  /*Contenedor de las imagenes*/
+  .image{
+    padding-top: 110px;
+    padding-left:5%;
+    padding-right:5%;
+    width: 1060px; 
+    height: 460px;
+    display:flexbox;
+    justify-content:space-between;
+  }
+  .containerIma{
+    width: auto; 
+    height: auto;
+    display:flex;
+    justify-content:space-between;
+    background-color: rgba(140, 148, 36, 0);
+  }
+  .image1{
+    width: 380px; 
+    max-width: 380;
+    height: 260px;
+    max-height: 260px;
+    background-color: rgba(136, 118, 240, 0);
+  }
+  .image2{
+    width: 380px; 
+    height: 260px;
+    background-color: rgba(23, 110, 42, 0);
+  }
+  .photo{
+    width: 380px;
+    height:260px;
+   }
+   /*Cambiar imagenes, texto y boton*/
+  .ima-change{
+    display:flex;
+    justify-content:space-between;
+    background-color: rgba(177, 54, 140, 0);
+  }
+  .change-one{
+    padding-top: 10px;
+    width: 380px; 
+    height: 40px;
+    display:flex;
+    background-color: rgba(73, 189, 204, 0);
+    align-items: center;
+  }
+  .change-two{
+    padding-top: 10px;
+    margin-left: 0px;
+    width: 380px; 
+    height: 40px;
+    display:flex;
+    align-items: center;
+    background-color: rgba(204, 64, 64, 0);
+  }
+  .text-change{
+    font-style: normal;
+    font-size: 16px;
+    color: rgb(153, 153, 153);
+    text-align:center;
+    margin-right:4%;
+    margin-left: 0%;
+  }
+  .text-change-two{
+    font-style: normal;
+    font-size: 16px;
+    color: rgb(153, 153, 153);
+    text-align:center;
+    margin-right:4%;
+    margin-left: 42%;
+  }
+  .changeButton {
+    background-color: #87AD8F !important;
+    border-radius: 3.25rem !important;
+    border-color: #ffffff00 !important;
+    font-weight: 500 !important;
+    padding: 1px 10px 1px 10px !important;
+    margin-bottom:2%; 
+  }
+  /*Seccion de votar */
+  .vote{
+    background-color: #aaad8700;
+    display:flex;
+    justify-content:space-between;
+    width: 1060px;
+    height: 60px;
+    align-items: center;
+  }
+  .first-opinion{
+    margin-left:5%;
+  }
+  .second-opinion{
+    margin-right:5%;
+  
+  }
+  /*Contenedor de los botones de votacion*/
+  .container-botton{
+    margin-top: 4%;
+    margin-bottom: 3%;;
+    display:flex;
+    width: 300px;
+    height: 60px;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #1aa03b00;
+  }
+  .vote1-botton{
+    border-radius: 5rem !important;
+    border-color: #c1ffae !important;
+    padding:18px 18px 18px 18px !important;
+    margin-bottom:2%;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .vote2-botton{
+    border-radius: 5rem !important;
+    border-color: #d1ffc3 !important;
+    padding:15px 15px 15px 15px !important;
+    margin-bottom:2%;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .vote3-botton{
+    border-radius: 1rem !important;
+    border-color: #bbbbbb91 !important;
+    padding:11px 11px 11px 11px !important;
+    margin-bottom:2%;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .vote4-botton{
+    border-radius: 5rem !important;
+    border-color: #ff9393 !important;
+    padding:15px 15px 15px 15px !important;
+    margin-bottom:2%;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .vote5-botton{
+    border-radius: 5rem !important;
+    border-color: #ff6e6e !important;
+    padding:18px 18px 18px 18px !important;
+    margin-bottom:2%;
+    border-width: 2px;
+    border-style: solid;
+  }
+  
+  /*****************************/
