@@ -8,7 +8,7 @@ import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import Dash from "./components/dash.component";
 import Quiz from "./components/encuesta.component"
-import Quiz from "./components/encuesta.component"
+
 
 
 function App() {
@@ -40,7 +40,6 @@ function App() {
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
             <Route path="/dash" component={Dash}  />
-            <Route path="/quiz" component={Quiz} />
             <Route path="/quiz" component={Quiz} />
           </Switch>
         </div>
