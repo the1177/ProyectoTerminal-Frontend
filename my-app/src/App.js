@@ -8,7 +8,7 @@ import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import Dash from "./components/dash.component";
 import Quiz from "./components/encuesta.component"
-import Bigfive from "./components/bigfive.component"
+
 
 
 
@@ -42,7 +42,7 @@ function App() {
             <Route path="/sign-up" component={SignUp} />
             <Route path="/dash" component={Dash}  />
             <Route path="/quiz" component={Quiz} />
-            <Route path="/bigfive" component={Bigfive} />
+            
           </Switch>
         </div>
       </div>

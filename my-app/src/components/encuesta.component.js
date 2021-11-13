@@ -44,33 +44,18 @@ export default class Quiz extends Component {
                         </div>
                     </div>
                     <div class ="quiz">
-                            <h2 className="text-quiz">
-                                ¿Con qué juego te identificas más?
-                            </h2>
+                            <div class ="question">
+                                <h2 className="text-quiz">
+                                    ¿Con qué juego te identificas más?
+                                </h2>
+                            </div>
                             <div class ="image">
-                                <div class ="containerIma">
-                                    <div class ="image1">
-                                        <img class="photo" src="FG.jpg" alt="imagen"/>
-                                    </div>
-                                    <div class ="image2">
-                                        <img class="photo" src="wz.jpg" alt="imagen"/>
-                                    </div>    
+                                <div class="image-change1">
+                                    1
                                 </div>
-                                <div class ="ima-change">
-                                    <div class ="change-one">
-                                        <h5 className="text-change">
-                                            ¿No lo conozces?
-                                        </h5>
-                                        <button type="submit" className="changeButton btn btn-primary btn-block">Cambiar</button>
-                                    </div>
-                                    <div class ="change-two">
-                                        <h5 className="text-change-two">
-                                            ¿No lo conozces?
-                                        </h5>
-                                        <button type="submit" className="changeButton btn btn-primary btn-block">Cambiar</button>
-                                        
-                                    </div>
-                                </div>                                  
+                                <div class="image-change2">
+                                    2
+                                </div>                      
                             </div>
                             <div class ="vote">
                                 <div class ="first-opinion">

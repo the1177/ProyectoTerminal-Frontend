@@ -1,6 +1,6 @@
 /*Navbar*/
 .menu{
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   width: 5%;/*ancho*/
   height: 100%;/*Altura*/
 }
@@ -30,7 +30,7 @@
   margin-bottom: 10%;
   width: 38px; 
   height: 15%;
-  border-radius: 10rem !important;
+  border-radius: rem !important;
   background-color: #87AD8F;
 }
 .div2{
@@ -95,7 +95,9 @@
   position: absolute;
   width: 100%;/*ancho */
   height: 100%;/*Altura*/
-  padding-right: 100px;
+  padding-right: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
   top: 6%;
   right: 0%;
   display: flex;
@@ -104,15 +106,17 @@
   align-items: center;
 }
 .quiz {
-  padding-top: 60px;
-  padding-left: 60px;
+  padding:4%;
+  padding-bottom: 10%;
   /*transform: translate(64%, 10%);*/
   border-radius: 20px;
-  right: 0;
-  width: 1200px; 
-  height: 700px;
+  width: 60%; 
+  height: 100%;
   display:flexbox;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 11, 11);
+}
+.question{
+  background-color: rgb(233, 209, 157);
 }
 /*Titulo*/
 .text-quiz{
@@ -127,27 +131,29 @@
 }
 /*Contenedor de las imagenes*/
 .image{
-  padding-top: 110px;
-  padding-left:5%;
-  padding-right:5%;
-  width: 1060px; 
-  height: 460px;
-  display:flexbox;
-  justify-content:space-between;
+  padding: 3%;
+  width: 100%; 
+  height: 100%;
+  display:flex;
+  background-color: rgb(0, 255, 200);
+  justify-content: space-around;
+
 }
 .containerIma{
   width: auto; 
   height: auto;
   display:flex;
   justify-content:space-between;
-  background-color: rgba(140, 148, 36, 0);
+  background-color: rgb(172, 177, 95);
 }
 .image1{
+  
   width: 380px; 
   max-width: 380;
   height: 260px;
   max-height: 260px;
   background-color: rgba(136, 118, 240, 0);
+  
 }
 .image2{
   width: 380px; 
@@ -155,6 +161,7 @@
   background-color: rgba(23, 110, 42, 0);
 }
 .photo{
+  border-radius: 0.9rem !important;
   width: 380px;
   height:260px;
  }
@@ -162,7 +169,7 @@
 .ima-change{
   display:flex;
   justify-content:space-between;
-  background-color: rgba(177, 54, 140, 0);
+  background-color: rgb(177, 54, 140);
 }
 .change-one{
   padding-top: 10px;
@@ -207,11 +214,11 @@
 }
 /*Seccion de votar */
 .vote{
-  background-color: #aaad8700;
+  background-color: #edff28;
   display:flex;
   justify-content:space-between;
-  width: 1060px;
-  height: 60px;
+  width: 100%;
+  height: auto;
   align-items: center;
 }
 .first-opinion{
@@ -237,7 +244,7 @@
   border-color: #c1ffae !important;
   padding:18px 18px 18px 18px !important;
   margin-bottom:2%;
-  border-width: 2px;
+  border-width: 5px;
   border-style: solid;
 }
 .vote2-botton{
@@ -245,7 +252,7 @@
   border-color: #d1ffc3 !important;
   padding:15px 15px 15px 15px !important;
   margin-bottom:2%;
-  border-width: 2px;
+  border-width: 5px;
   border-style: solid;
 }
 .vote3-botton{
@@ -253,24 +260,34 @@
   border-color: #bbbbbb91 !important;
   padding:11px 11px 11px 11px !important;
   margin-bottom:2%;
-  border-width: 2px;
+  border-width: 5px;
   border-style: solid;
 }
 .vote4-botton{
   border-radius: 5rem !important;
-  border-color: #ff9393 !important;
+  border-color: #267017 !important;
   padding:15px 15px 15px 15px !important;
   margin-bottom:2%;
-  border-width: 2px;
+  border-width: 5px;
   border-style: solid;
 }
 .vote5-botton{
   border-radius: 5rem !important;
-  border-color: #ff6e6e !important;
+  border-color: #267017 !important;
   padding:18px 18px 18px 18px !important;
   margin-bottom:2%;
-  border-width: 2px;
+  border-width: 5px;
   border-style: solid;
 }
 
+.image-change1{
+  background-color: rgba(0, 0, 0, 0.562);
+  width: 100%;/*ancho*/
+  height: 100%;/*Altura*/
+}
+.image-change2{
+  background-color: rgb(0, 4, 255);
+  width: 100%;/*ancho*/
+  height: 100%;/*Altura*/
+}
 /*****************************/
