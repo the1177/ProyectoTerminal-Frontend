@@ -1,24 +1,22 @@
 import React from 'react';
-import './App.css';
+import './components/quiz.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import Quiz from "./components/encuesta.component"
 
-function App() {
+function Quizz() {
   return (<Router>
-    <div className="App">
-
-      <div className="auth-wrapper">
-        <div className="auth-inner">
+    <div className="Quiz">      
+        <div className="Main-quiz">
           <Switch>
             <Route path="/quiz" component={Quiz} />
           </Switch>
         </div>
-      </div>
+     
     </div></Router>
   );
 }
 
-export default App;
+export default Quizz;
