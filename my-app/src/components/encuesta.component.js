@@ -52,25 +52,54 @@ export default class Quiz extends Component {
                                 <div class="image-container">
                                     <div class="image-change">
                                         <div class ="change-one">
-                                            <img class="photo"src="wz.jpg" alt="imagen"/>
-                                            <button type="submit" className="changeButton btn btn-primary btn-block">Cambiar juego</button>
+                                            <div class ="img-chg">
+                                                <img class="photo"src="wz.jpg" alt="imagen"/>
+                                                <button type="submit" className="changeButton btn btn-primary btn-block">Cambiar juego</button>
+                                            </div>
                                         </div>                                    
                                     </div>
                                 </div>
                                 <div class="image-container">
                                     <div class="image-change">
                                         <div class ="change-one">
-                                            <img class="photo"src="fg.jpg" alt="imagen"/>
-                                            <button type="submit" className="changeButton btn btn-primary btn-block">Cambiar juego</button>
+                                            <div class ="img-chg">
+                                                <img class="photo"src="fg.jpg" alt="imagen"/>
+                                                <button type="submit" className="changeButton btn btn-primary btn-block">Cambiar juego</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="opinion">
-                            </div>                     
+                                <div class ="container-vote">
+                                        <div class ="first-opinion">
+                                            Me identifico más con: "Fallguys"
+                                        </div>
+                                        <div class ="container-botton">
+                                            <div>
+                                                <button type="submit" className="vote1-botton btn btn-block"></button>
+                                            </div>
+                                            <div>
+                                                <button type="submit" className="vote2-botton btn btn-block"></button>
+                                            </div>
+                                            <div>
+                                                <button type="submit" className="vote3-botton btn btn-block"></button>
+                                            </div>
+                                            <div>
+                                                <button type="submit" className="vote4-botton btn btn-block"></button>
+                                            </div>
+                                            <div>
+                                                <button type="submit" className="vote5-botton btn btn-block"></button>
+                                            </div>
+                                        </div>
+                                        <div class ="second-opinion">
+                                            Me identifico más con: "Warzone"
+                                        </div>
+                                </div> 
+                            </div>                    
                     </div>               
                 </div>
           
-        );
+        );  
     }
-}
+} 

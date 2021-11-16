@@ -45,7 +45,7 @@ export default class Bigfive extends Component {
                     </div>
                     <div class ="quiz">
                             <h2 className="text-quiz">
-                                ¿Con qué juego te identificas más?
+                              
                             </h2>
                             
                             <div class ="vote">
