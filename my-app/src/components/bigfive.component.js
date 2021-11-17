@@ -44,35 +44,141 @@ export default class Bigfive extends Component {
                         </div>
                     </div>
                     <div class ="quiz">
-                            <h2 className="text-quiz">
-                              
-                            </h2>
-                            
-                            <div class ="vote">
-                                <div class ="first-opinion">
-                                    Me identifico más con: "Fallguys"
+                        <div class="bg-container">
+                            <div>
+                                <h2 className="text-quiz">
+                                    La prueba de la personalidad de los cinco grandes
+                                </h2>   
+                            </div>
+                            <div class ="questions-container">
+                                <div class="bigfive-question">
+                                    <div class ="bg-question">
+                                        Tengo una palabra amable para todos
+                                        <div class ="vote-bf">
+                                            <div class ="opinion-positive">
+                                                Me identifico
+                                            </div>
+                                            <div class ="container-botton">
+                                                <div>
+                                                    <button type="submit" className="vote1 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote2 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote3 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote4 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote5 btn btn-block"></button>
+                                                </div>
+                                            </div>
+                                            <div class ="opinion-negative">
+                                                No me identifico
+                                            </div>
+                                        </div> 
+                                    </div>
                                 </div>
-                                <div class ="container-botton">
-                                    <div>
-                                        <button type="submit" className="vote1-botton btn btn-block"></button>
-                                    </div>
-                                    <div>
-                                        <button type="submit" className="vote2-botton btn btn-block"></button>
-                                    </div>
-                                    <div>
-                                        <button type="submit" className="vote3-botton btn btn-block"></button>
-                                    </div>
-                                    <div>
-                                        <button type="submit" className="vote4-botton btn btn-block"></button>
-                                    </div>
-                                    <div>
-                                        <button type="submit" className="vote5-botton btn btn-block"></button>
+                                <div class ="separator-question">
+                                </div>
+                                <div class="bigfive-question">
+                                    <div class ="bg-question">
+                                    Siempre estoy preparado
+                                        <div class ="vote-bf">
+                                            <div class ="opinion-positive">
+                                                Me identifico
+                                            </div>
+                                            <div class ="container-botton">
+                                                <div>
+                                                    <button type="submit" className="vote1 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote2 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote3 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote4 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote5 btn btn-block"></button>
+                                                </div>
+                                            </div>
+                                            <div class ="opinion-negative">
+                                                No me identifico
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class ="second-opinion">
-                                    Me identifico más con: "Warzone"
+                                <div class ="separator-question">
                                 </div>
-                            </div>                         
+                                <div class="bigfive-question">
+                                    <div class ="bg-question">
+                                    Me siento cómodo con la gente
+                                        <div class ="vote-bf">
+                                            <div class ="opinion-positive">
+                                                Me identifico
+                                            </div>
+                                            <div class ="container-botton">
+                                                <div>
+                                                    <button type="submit" className="vote1 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote2 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote3 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote4 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote5 btn btn-block"></button>
+                                                </div>
+                                            </div>
+                                            <div class ="opinion-negative">
+                                                No me identifico
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class ="separator-question">
+                                </div>
+                                <div class="bigfive-question">
+                                    <div class ="bg-question">
+                                    A menudo me siento triste
+                                        <div class ="vote-bf">
+                                            <div class ="opinion-positive">
+                                                Me identifico
+                                            </div>
+                                            <div class ="container-botton">
+                                                <div>
+                                                    <button type="submit" className="vote1 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote2 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote3 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote4 btn btn-block"></button>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" className="vote5 btn btn-block"></button>
+                                                </div>
+                                            </div>
+                                            <div class ="opinion-negative">
+                                                No me identifico
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                    
                     </div>               
                 </div>            
         );

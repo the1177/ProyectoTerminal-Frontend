@@ -1,24 +1,22 @@
 import React from 'react';
-import './App.css';
+import './components/bigfive.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
-import Bigfive from "./components/encuesta.component"
+import Bigfive from "./components/bigfive.component"
 
-function App() {
+function Big_five() {
   return (<Router>
-    <div className="App">
+    <div className="bigfive">
 
-      <div className="auth-wrapper">
-        <div className="auth-inner">
+      <div className="Main-quiz">
           <Switch>
             <Route path="/bigfive" component={Bigfive} />
           </Switch>
         </div>
-      </div>
     </div></Router>
   );
 }
 
-export default App;
+export default Big_five;
