@@ -7,9 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import Dash from "./components/dash.component";
-import Quiz from "./components/encuesta.component"
-
-
+import Quiz from "./components/encuesta.component";
 
 function App() {
   return (<Router>

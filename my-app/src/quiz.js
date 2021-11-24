@@ -6,9 +6,9 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import Quiz from "./components/encuesta.component"
 
-function App() {
+function Quiz() {
   return (<Router>
-    <div className="App">
+    <div className="Quiz">
 
       <div className="auth-wrapper">
         <div className="auth-inner">
@@ -21,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default Quiz;
