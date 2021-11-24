@@ -8,7 +8,7 @@ import Big_five from "./bigfive";
 //Para probar solo el quiz se cambia app por quiz
 ReactDOM.render(
     <BrowserRouter>
-        <App />
+        <Quizz />
     </BrowserRouter>,
     document.getElementById("root")
 );

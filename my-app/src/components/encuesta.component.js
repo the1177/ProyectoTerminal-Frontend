@@ -1,5 +1,13 @@
 import React, { Component } from "react";
 import "./quiz.css"
+import {
+    Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+    CarouselCaption
+} from 'reactstrap'
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 export default class Quiz extends Component {
     render() {
@@ -96,7 +104,7 @@ export default class Quiz extends Component {
                                             Me identifico más con: "Warzone"
                                         </div>
                                 </div> 
-                            </div>                    
+                            </div>                                            
                     </div>               
                 </div>
           
