@@ -1,0 +1,60 @@
+.container-father{
+    height: 100vh;
+    display: flex;
+    background-color: #ffffff;
+}
+.login-container{
+    display: flexbox;
+    width: 100vh;
+    background-color: #ffffff;
+    padding-top: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.Container-Image{
+    background-color: #87AD8F;
+    background-color: #386332;
+}
+.signInButton {
+    background-color: #87AD8F;
+    border-radius: 3.25rem;
+    border-color: #ffffff;
+    padding: 10px 100px 10px 100px; 
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+}
+.forgot-password ,
+.forgot-password a {
+    text-align: left;
+    font-size: 14px;
+    color: rgb(155, 155, 155);
+    background-color: rgba(220, 20, 60, 0);
+}
+.label-error{
+    margin-left: 4%;
+    color: rgb(167, 92, 92);
+    font-size: 12px;
+}
+.label-alert{
+    margin-left: 4%;
+    color: rgb(167, 92, 92);
+    font-size: 14px;
+}
+.image-login{
+    padding: auto;
+    width: 100%;
+    height: 100%;
+}
+.input-container{
+    background-color: #fcaa1100;
+    padding: 5px 5px 5px 5px;
+}
+.forgot-container{
+    background-color: #99e5a300;
+}
+.sesion-container{
+    background-color: rgba(165, 42, 42, 0);
+}
+.title-container{
+    background-color: rgba(255, 127, 80, 0);
+}
