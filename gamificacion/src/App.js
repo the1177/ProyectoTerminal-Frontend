@@ -8,7 +8,7 @@ import CreateUser from './assets/pages/CreateUser/CreateUsr';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/sign-in" element={<Login />} />
