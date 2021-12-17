@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "https://the1177.github.io/ProyectoTerminal-Frontend/static/css/main.c492719f.chunk.css",
-    "main.js": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/main.206052dc.chunk.js",
-    "main.js.map": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/main.206052dc.chunk.js.map",
-    "runtime-main.js": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/runtime-main.8b6f8b29.js",
-    "runtime-main.js.map": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/runtime-main.8b6f8b29.js.map",
-    "static/js/2.eae457b5.chunk.js": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/2.eae457b5.chunk.js",
-    "static/js/2.eae457b5.chunk.js.map": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/2.eae457b5.chunk.js.map",
-    "static/js/3.c0e623a0.chunk.js": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/3.c0e623a0.chunk.js",
-    "static/js/3.c0e623a0.chunk.js.map": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/3.c0e623a0.chunk.js.map",
+    "main.css": "https://the1177.github.io/ProyectoTerminal-Frontend/static/css/main.eb129302.chunk.css",
+    "main.js": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/main.d35f2870.chunk.js",
+    "main.js.map": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/main.d35f2870.chunk.js.map",
+    "runtime-main.js": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/runtime-main.b1db9737.js",
+    "runtime-main.js.map": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/runtime-main.b1db9737.js.map",
+    "static/js/2.1b6d9daf.chunk.js": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/2.1b6d9daf.chunk.js",
+    "static/js/2.1b6d9daf.chunk.js.map": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/2.1b6d9daf.chunk.js.map",
+    "static/js/3.3a5ca006.chunk.js": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/3.3a5ca006.chunk.js",
+    "static/js/3.3a5ca006.chunk.js.map": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/3.3a5ca006.chunk.js.map",
     "index.html": "https://the1177.github.io/ProyectoTerminal-Frontend/index.html",
-    "static/css/main.c492719f.chunk.css.map": "https://the1177.github.io/ProyectoTerminal-Frontend/static/css/main.c492719f.chunk.css.map",
-    "static/js/2.eae457b5.chunk.js.LICENSE.txt": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/2.eae457b5.chunk.js.LICENSE.txt",
+    "static/css/main.eb129302.chunk.css.map": "https://the1177.github.io/ProyectoTerminal-Frontend/static/css/main.eb129302.chunk.css.map",
+    "static/js/2.1b6d9daf.chunk.js.LICENSE.txt": "https://the1177.github.io/ProyectoTerminal-Frontend/static/js/2.1b6d9daf.chunk.js.LICENSE.txt",
     "static/media/loginImage.02f879d3.jpg": "https://the1177.github.io/ProyectoTerminal-Frontend/static/media/loginImage.02f879d3.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8b6f8b29.js",
-    "static/js/2.eae457b5.chunk.js",
-    "static/css/main.c492719f.chunk.css",
-    "static/js/main.206052dc.chunk.js"
+    "static/js/runtime-main.b1db9737.js",
+    "static/js/2.1b6d9daf.chunk.js",
+    "static/css/main.eb129302.chunk.css",
+    "static/js/main.d35f2870.chunk.js"
   ]
 }
