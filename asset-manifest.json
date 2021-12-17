@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.c492719f.chunk.css",
-    "main.js": "/static/js/main.784dc305.chunk.js",
-    "main.js.map": "/static/js/main.784dc305.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.205a397d.js",
-    "runtime-main.js.map": "/static/js/runtime-main.205a397d.js.map",
-    "static/js/2.eae457b5.chunk.js": "/static/js/2.eae457b5.chunk.js",
-    "static/js/2.eae457b5.chunk.js.map": "/static/js/2.eae457b5.chunk.js.map",
-    "static/js/3.c0e623a0.chunk.js": "/static/js/3.c0e623a0.chunk.js",
-    "static/js/3.c0e623a0.chunk.js.map": "/static/js/3.c0e623a0.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.c492719f.chunk.css.map": "/static/css/main.c492719f.chunk.css.map",
-    "static/js/2.eae457b5.chunk.js.LICENSE.txt": "/static/js/2.eae457b5.chunk.js.LICENSE.txt",
-    "static/media/loginImage.02f879d3.jpg": "/static/media/loginImage.02f879d3.jpg"
+    "main.css": "/ProyectoTerminal-Frontend/static/css/main.c492719f.chunk.css",
+    "main.js": "/ProyectoTerminal-Frontend/static/js/main.784dc305.chunk.js",
+    "main.js.map": "/ProyectoTerminal-Frontend/static/js/main.784dc305.chunk.js.map",
+    "runtime-main.js": "/ProyectoTerminal-Frontend/static/js/runtime-main.7108d7f8.js",
+    "runtime-main.js.map": "/ProyectoTerminal-Frontend/static/js/runtime-main.7108d7f8.js.map",
+    "static/js/2.eae457b5.chunk.js": "/ProyectoTerminal-Frontend/static/js/2.eae457b5.chunk.js",
+    "static/js/2.eae457b5.chunk.js.map": "/ProyectoTerminal-Frontend/static/js/2.eae457b5.chunk.js.map",
+    "static/js/3.c0e623a0.chunk.js": "/ProyectoTerminal-Frontend/static/js/3.c0e623a0.chunk.js",
+    "static/js/3.c0e623a0.chunk.js.map": "/ProyectoTerminal-Frontend/static/js/3.c0e623a0.chunk.js.map",
+    "index.html": "/ProyectoTerminal-Frontend/index.html",
+    "static/css/main.c492719f.chunk.css.map": "/ProyectoTerminal-Frontend/static/css/main.c492719f.chunk.css.map",
+    "static/js/2.eae457b5.chunk.js.LICENSE.txt": "/ProyectoTerminal-Frontend/static/js/2.eae457b5.chunk.js.LICENSE.txt",
+    "static/media/loginImage.02f879d3.jpg": "/ProyectoTerminal-Frontend/static/media/loginImage.02f879d3.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.205a397d.js",
+    "static/js/runtime-main.7108d7f8.js",
     "static/js/2.eae457b5.chunk.js",
     "static/css/main.c492719f.chunk.css",
     "static/js/main.784dc305.chunk.js"
