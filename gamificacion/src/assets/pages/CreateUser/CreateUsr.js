@@ -1,7 +1,6 @@
 import React from "react";
 import "./CreateUsr.css"
 import Title from "./components/Title/Title";
-import imageRegister from './components/images/registerImage.jpg'
 import Media from 'react-media'
 
 const CreateUser = () =>{
@@ -13,7 +12,7 @@ const CreateUser = () =>{
                 }}    
             </Media>            
             <div className='Container-Image'>
-                <img className='image-register' src={imageRegister}/>
+                
             </div>
             <div className='register-container'>    
                 <div className="sign-up-register">
