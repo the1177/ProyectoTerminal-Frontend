@@ -52,6 +52,7 @@ body, html, .App, #root, .auth-wrapper {
   text-align: left;
 }
 
+/*cuadro gris*/
 .auth-inner {
   width: auto;
   height: 800px;
