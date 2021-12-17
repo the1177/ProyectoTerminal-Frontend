@@ -2,7 +2,7 @@
   "name": "gamificacion",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://the1177.github.io/ProyectoTerminal-Frontend",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
