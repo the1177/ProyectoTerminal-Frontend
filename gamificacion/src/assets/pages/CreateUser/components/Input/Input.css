@@ -1,0 +1,20 @@
+.style{
+    border-radius: 0.5rem !important;
+    border-color: #afafaf;
+    text-align: left;
+    width: 95%;
+    padding: 10px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+}
+@media all and (min-width: 940px) {
+    .style{
+        border-radius: 0.5rem !important;
+        border-color: #afafaf;
+        text-align: left;
+        width: 85%;
+        padding: 10px;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
