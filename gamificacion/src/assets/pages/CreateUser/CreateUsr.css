@@ -1,7 +1,7 @@
 .Container-father-register{
     height: 100vh;
     display: flex;
-    background-color: rgba(146, 192, 132, 0);
+    background-color: rgba(233, 233, 233, 0.383);
     align-items: center;
     
 }
@@ -15,41 +15,65 @@
     height: 100%;
 }
 .register-container{
-    padding-top: 10%;
-    height: 79.3%;
-    width: 50%;
+    margin-left: 5%;
+    margin-top: 10px;
+    width: 40%;
     display: flexbox;
-    background-color: #ca616100;
+    background-color: #9dda0f00;
+    padding-top: 10px;
 }
 .sign-up-register{
-    background-color: #69474700;
+    background-color: #ff191900;
     border-radius: 0.5rem;
-    width: 60%;
-    align-items: center;
-    margin-left: 20%
+    width: 20%;
+    margin-left: 37%;
+
 }
 .container-form{
-    width: 80%;
-    height: 80%;
-    background-color: #23fa6300;
+    width: 50%;
+    height: 50%;
+    background-color: #06ff4d00;
     margin-top: 10px;
-    margin-left: 15%;
+    margin-left: 25%;
+}
+.input-box{
+    width: 100%;
+    background-color: #f2ff4000;
+    margin-top: 5px;
 }
 .input-container{
-    background-color: #db363600;
+    background-color: #994a4a00;
     display: flexbox;
-    width: 98%;
-    height: 13%;
-    padding-bottom: 15px;
-    margin-top: 1px;
+    width: 95%;
+    margin-top: 10px;
+
+}
+.button-container{
+    background-color: #e2191900;
+    width: 100%;
+    margin-top: 10px;
+}
+.register-botton{
+    border-radius: 3.25rem;
+    width: 70%;
+    padding: 10px;
+    background-color: #87AD8F;
+    font-weight: 500 !important;
+    color: rgb(255, 255, 255);
+    border-color: #ffffff;
+    margin-left: 15%;
+}
+.already-register{
+    margin-top: 15px;
+    background-color: #ffffffc7;
 }
 @media all and (max-width: 940px) {
     .Container-father-register{
             height: 100vh;
             display: flex;
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(206, 225, 231);
             align-items: center;
-            padding-left: 15%;
+            padding-left: 1%;
     }
     .sign-up-register{
         background-color: #ffffff;
@@ -64,22 +88,52 @@
         height: 80%;
         display: flexbox;
         justify-content: center;
-        background-color: #e9e3e3;
+        background-color: #ffffff;
         padding: 4%;
     }
     .input-container{
-        background-color: #ffffff00;
+        background-color: #7469d600;
         display: flexbox;
-        width: 96%;
-        height: 15%;
-        margin-top: 10px;
-        padding-bottom: 1px;
+        width: 98%;
+        height: 13%;
+        padding-bottom: 15px;
+        padding-left: 0%;
+        margin-top: 1px;
+        
     }
     .container-form{
-        width: 100%;
+        width: 85%;
         height: 90%;
-        background-color: #e3ffa300;
+        background-color: #a6e21900;
+        margin-top: 10px;
+        margin-left: 7%;
+        margin-top: 0;
+        padding-left: 0%;
+    }
+    .button-container{
+        background-color: #19e2a600;
+        width: 95%;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    .register-botton{
+        border-radius: 3.25rem;
+        width: 100%;
+        padding: 5px;
+        background-color: #87AD8F;
+        font-weight: 500 !important;
+        color: rgb(255, 255, 255);
+        border-color: #ffffff;
         margin-left: 0;
+    }
+    .input-box{
+        width: 100%;
+        background-color: #f1fa7900;
+        padding-bottom: 5px;
+    }
+    .already-register{
+        margin-top: 15px;
+        background-color: #f1fa7900;
     }
     
 }

@@ -17,10 +17,10 @@ const CreateUser = () =>{
                 <div className="container-form">
                     <div className="input-container">
                         <form>
-                            <div>
+                            <div className="input-box">
                                 <label htmlFor="nombre">Nombre:</label>
                             </div>
-                            <div>
+                            <div className="input-box">
                                 <Input 
                                 attribute={{
                                     id:'nombre',
@@ -34,10 +34,10 @@ const CreateUser = () =>{
                     </div>
                     <div className="input-container">
                         <form>
-                            <div>
+                            <div className="input-box">
                                 <label htmlFor="apellido">Apellido:</label>
                             </div>
-                            <div>
+                            <div className="input-box">
                             <Input 
                                 attribute={{
                                     id:'apellido',
@@ -51,10 +51,10 @@ const CreateUser = () =>{
                     </div>
                     <div className="input-container">
                         <form>
-                            <div>
+                            <div className="input-box">
                                 <label htmlFor="email">Email:</label>
                             </div>
-                            <div>
+                            <div className="input-box">
                             <Input 
                                 attribute={{
                                     id:'email',
@@ -68,10 +68,10 @@ const CreateUser = () =>{
                     </div>
                     <div className="input-container">
                         <form>
-                            <div>
+                            <div className="input-box">
                                 <label htmlFor="password">Contraseña:</label>
                             </div>
-                            <div>
+                            <div className="input-box">
                             <Input 
                                 attribute={{
                                     id:'password',
@@ -82,6 +82,12 @@ const CreateUser = () =>{
                                 />
                             </div>
                         </form>
+                    </div>
+                    <div className="button-container">
+                        <button type="submit" className="register-botton">Registrarse</button>
+                    </div>
+                    <div className="already-register">
+                    ¿Ya estás registrado? <a href="./sign-in"> Inicia sesión</a>
                     </div>
                 </div> 
             </div>
