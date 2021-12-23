@@ -3,16 +3,41 @@
     border-color: #bdbdbd;
     text-align: left;
     margin-right: 1%;
-    padding: 10px 40% 10px 10px;
+    width:95%;
+    padding: 13px;
     box-shadow: none;
 }
 .input-error{
     border-radius: 1.25rem !important;
     border-color: #c2c2c2;
     text-align: left;
-    padding: 10px 40% 10px 10px;
+    width:95%;
+    padding: 13px;
     background-color: rgba(224, 204, 204);
 }
 .input-error::placeholder{
     color:rgba(253, 109, 109, 0);
+}
+
+@media all and (min-width: 940px) {
+    .regular-Style{
+        border-radius: 1rem !important;
+        border-color: #bdbdbd;
+        text-align: left;
+        margin-right: 1%;
+        width:85%;
+        padding: 12px;
+        box-shadow: none;
+    }
+    .input-error{
+        border-radius: 1.25rem !important;
+        border-color: #c2c2c2;
+        text-align: left;
+        width:85%;
+        padding: 13px;
+        background-color: rgba(224, 204, 204);
+    }
+    .input-error::placeholder{
+        color:rgb(255, 83, 83);
+    }
 }

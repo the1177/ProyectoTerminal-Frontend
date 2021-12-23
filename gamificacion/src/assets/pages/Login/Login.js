@@ -60,62 +60,68 @@ const Login = () => {
     
     return (
         <div className='container-father'>
-            { isLogin ? 'estas logueado' :            
-            <div className='login-container'>
-                <div className='title-container'>                
-                    <Title text='Bienvenidos a Gamificación'/>
-                </div>  
-                { hasError &&
-                    <label className="label-alert">Su contraseña o usuario son incorrectos
-                    </label>
-                }              
-                <Label text='Email'/>
-                <div className='input-container'>
-                    <Input 
-                    attribute={{
-                        id: 'email',
-                        name: 'email',
-                        type: 'email',
-                        placeholder: 'Ingresa tu email'
-                    }}
-                        handleChange={handleChange}
-                    />
-                </div>
-                <Label text='Contraseña'/>
-                <div className='input-container'>
-                    <Input 
-                        attribute={{
-                            id: 'contraseña',
-                            name: 'contraseña',
-                            type: 'password',
-                            placeholder: 'Ingresa tu contraseña'
-                        }}
-                        handleChange={handleChange}
-                        param={passwordError}
-                    />
-                </div>                
-                {passwordError &&
-                        <laber className='label-error'>
-                        Contraseña mayor a 6 digitos
-                        </laber>
-                }
-                <div className='forgot-container'>
-                    <p className="forgot-password text-right">
-                        ¿Has olvidado tu <a href="https://www.youtube.com/watch?v=MlW7T0SUH0E">contraseña?</a>
-                    </p>
-                </div>
-                <div className='sesion-container'>                  
-                    <button onClick={handleSubmit} className="signInButton btn btn-primary btn-block">
-                        Iniciar Sesion
-                    </button>
-                </div>
-                               
-            </div>
             
-            }
-            <div className='Container-Image'>
-                <img className='image-login' src={loginImage}/>
-            </div>             
+                {isLogin ? 'estas logueado' :            
+                <div className='login-container'>
+                    <div className='ti-container'>                
+                        <Title text='Bienvenidos a Gamificación'/>
+                    </div>
+                        <div className="container-form-login">
+                            { hasError &&
+                                <label className="label-alert">Su contraseña o usuario son incorrectos
+                                </label>
+                            }
+                            <div className='input-container-login'>
+                                <Label text='Email'/>
+                                <Input 
+                                attribute={{
+                                    id: 'email',
+                                    name: 'email',
+                                    type: 'email',
+                                    placeholder: 'Ingresa tu email'
+                                }}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                        <div className='input-container-login'>
+                            <Label text='Contraseña'/>
+                            <Input 
+                                attribute={{
+                                    id: 'contraseña',
+                                    name: 'contraseña',
+                                    type: 'password',
+                                    placeholder: 'Ingresa tu contraseña'
+                                }}
+                                handleChange={handleChange}
+                                param={passwordError}
+                            />
+                        </div>                
+                        {passwordError &&
+                                <laber className='label-error'>
+                                Contraseña mayor a 6 digitos
+                                </laber>
+                        }
+                        <div className='forgot-container'>
+                            <p className="forgot-password text-right">
+                                ¿Has olvidado tu <a href="https://www.youtube.com/watch?v=MlW7T0SUH0E">contraseña?</a>
+                            </p>
+                        </div>
+                        <div className='sesion-container'>                  
+                            <button onClick={handleSubmit} className="signInButton btn btn-primary btn-block">
+                                Iniciar Sesion
+                            </button>
+                        </div>
+                            <div className='register-account-container'>
+                            <p className="register-account">
+                                ¿No tienes una cuenta?<a href="https://www.youtube.com/watch?v=MlW7T0SUH0E"> Registrate</a>
+                            </p>
+                            </div>
+                        </div>                                     
+                </div>
+                }
+                <div className='Container-Image'>
+                    <img className='image-login' src={loginImage}/>
+                </div>
             
             
         </div>

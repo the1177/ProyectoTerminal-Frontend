@@ -3,7 +3,6 @@
     display: flex;
     background-color: rgba(233, 233, 233, 0.383);
     align-items: center;
-    
 }
 .Container-Image{
     width: 50%;
@@ -61,11 +60,11 @@
     font-weight: 500 !important;
     color: rgb(255, 255, 255);
     border-color: #ffffff;
-    margin-left: 15%;
+    margin-left: 12%;
 }
 .already-register{
     margin-top: 15px;
-    background-color: #ffffffc7;
+    background-color: #ffffff00;
 }
 @media all and (max-width: 940px) {
     .Container-father-register{
@@ -76,7 +75,7 @@
             padding-left: 1%;
     }
     .sign-up-register{
-        background-color: #ffffff;
+        background-color: #ffffff00;
         width: 100%;
         margin-left: 0;
     }
@@ -104,14 +103,14 @@
     .container-form{
         width: 85%;
         height: 90%;
-        background-color: #a6e21900;
+        background-color: #9cc24400;
         margin-top: 10px;
         margin-left: 7%;
         margin-top: 0;
         padding-left: 0%;
     }
     .button-container{
-        background-color: #19e2a600;
+        background-color: #15da9f00;
         width: 95%;
         margin-top: 10px;
         padding-top: 10px;
@@ -133,7 +132,7 @@
     }
     .already-register{
         margin-top: 15px;
-        background-color: #f1fa7900;
+        background-color: #fa79fa00;
     }
     
 }
