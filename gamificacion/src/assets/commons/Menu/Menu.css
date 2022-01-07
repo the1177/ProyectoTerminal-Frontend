@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
@@ -9,19 +14,19 @@
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #0523cc;
+  background: #c3cdbf;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: green;
+  background: #f48d79;
 }
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
-  margin-right: 24px;
+  height: 64px;
+  width: 64px;
+  margin-right: 64px;
 }
 
 /* Color/shape of close button cross */
@@ -41,8 +46,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* General sidebar styles */
 .bm-menu {
   background: white;
-  padding: 2.5em 1.5em 0;
-  font-size: 1em;
+  width: 250px;
+  padding: 1em 1em 0;
+  
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -53,13 +59,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
+  padding: 0.1em;
+  margin-top: 0;
 }
 
 /* Individual item */
 .bm-item {
-  display: inline-block;
+  display: flex;
   padding: 0.5em;
+  margin-bottom: 30px;  /*user menu*/
 }
 
 /* Styling of overlay */
@@ -70,24 +78,25 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .wrapper {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
 }
 
 
 .header img {
-  display: inline;
+  display: flex;
   float: left;
-  width: 50%;
-  height: 100px;
-  margin: 0 20px 30px 40px;
+  width: 25%;
+  height: 50px;
+  margin: 0 100px 50px 70px;  /*arriba, der, abajo, izq*/
   align-items: center;
   background: transparent;
 }
 
 .menu-conatinermenu{
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .menu-conatineruser{
@@ -96,18 +105,20 @@ Note: Beware of modifying this element as it can break the animations - you shou
   flex-wrap: wrap;
 }
 
+
 .menu-item {
   display: block;
-  color: #8ca2ff;
+  color: #a6a7a8;
   text-align: left;
   padding: 10px 10px;
   text-decoration: none;
   font-size: 18px;
 }
 
+
 .menu-item-u {
   display: block;
-  color: #8ca2ff;
+  color: #a6a7a8;
   text-align: left;
   padding: 10px 10px;
   text-decoration: none;
@@ -115,13 +126,27 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 .menu-item-u i {
+  height: 100%;
+  color: #a6a7a8;
   float: left;
-  margin-right: 10px
+  margin-right: 10px;
+}
+
+.menu-item-u img {
+  display: flex;
+  float: left;
+  width: 48%;
+  height: 48%;
+  margin: 0 10px 10px 60px;  /*arriba, der, abajo, izq*/
+  align-items: center;
+  background: transparent;
 }
 
 .menu-item i {
+  height: 100%;
+  color: #a6a7a8;
   float: left;
-  margin-right: 10px
+  margin-right: 10px;
 }
 
 

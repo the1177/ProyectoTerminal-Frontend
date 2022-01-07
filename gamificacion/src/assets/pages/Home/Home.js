@@ -1,12 +1,20 @@
 import React from "react";
 import "./Home.css"
-import Title from './components/Title/Title';
 import Menu from '../../commons/Menu/Menu';
 
 const Home = () =>{
     return(
-    <div>
+    <div className="div-container">
         <Menu pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+
+        <div className="page-wrap">
+            <div className="caja c1">
+                1
+            </div>
+            <div className="caja c2">
+                2
+            </div>
+        </div>
     </div>
     )
 };

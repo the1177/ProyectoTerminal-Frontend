@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.Dash {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+  
+#page-wrap {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    align-items: center;
+}

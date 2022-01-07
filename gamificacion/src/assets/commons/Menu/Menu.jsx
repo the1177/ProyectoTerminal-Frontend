@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { slide as Menu } from "react-burger-menu";
 //import Hamburger from 'hamburger-react';
 import './Menu.css';
 import Logo from './components/images/logos.png';
+import User1 from './components/images/aimee.png';
 
 //Usage
-import { GrHomeRounded } from 'react-icons/gr';
+import { FiHome } from 'react-icons/fi';
 import { MdOutlineDashboard } from 'react-icons/md';
 import { RiFlag2Line  } from 'react-icons/ri';
 import { CgSmartphoneChip } from 'react-icons/cg';
-import { IoCalendarClearOutline, IoChatbubbleEllipsesOutline , IoChatbubblesOutline , IoSettingsOutline, IoSearchOutline , IoExitOutline, IoLogoSass } from 'react-icons/io5' 
+import { IoCalendarClearOutline, IoChatbubbleEllipsesOutline , IoChatbubblesOutline , IoSettingsOutline, IoSearchOutline , IoExitOutline } from 'react-icons/io5' 
 
 
 const Menuside = () => {
@@ -27,7 +28,7 @@ const Menuside = () => {
 
             <div className="menu-containermenu">
                 <a id="home" className="menu-item" href="/">
-                    <i class="fas fa-home"><GrHomeRounded /></i>
+                    <i class="fas fa-home"><FiHome /></i>
                     Home
                 </a>
 
@@ -76,8 +77,7 @@ const Menuside = () => {
                 </a>
 
                 <a id="calendario" className="menu-item-u" href="/">
-                    <i className="fa fa-home"><GrHomeRounded /></i>
-                    Usuario
+                    <img className="user" src={User1} alt="" />
                 </a>
 
                 <a id="calendario" className="menu-item-u" href="/">
