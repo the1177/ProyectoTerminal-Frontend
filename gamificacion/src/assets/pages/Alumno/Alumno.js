@@ -1,7 +1,7 @@
 import React from 'react'
 import { Platform, StyleSheet, Text, SafeAreaView, View, Image, TouchableHighlight, TextInput } from 'react-native';
 
-import './Profesor.css';
+import './Alumno.css';
 import imageprof from './components/Images/granados.jpg';
 
 

@@ -17,12 +17,12 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './components/Listitems/listitems';
+import { mainListItems, secondaryListItems } from './components/Listitems/listitemsalumno';
 
 
-import Mision from './components/Mision/Mision';
-import Deposits from './components/Deposits/Deposits';
-import Orders from './components/Orders/Orders';
+import Mision from './components/Mision/MisionAlumno';
+import Deposits from './components/Deposits/DepositsAlumno';
+import Orders from './components/Orders/OrdersAlumno';
 
 const drawerWidth = 240;
 
