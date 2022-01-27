@@ -18,7 +18,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './components/Listitems/listitems';
-import Chart from './components/Chart/Chart';
+
+
+import Mision from './components/Mision/Mision';
 import Deposits from './components/Deposits/Deposits';
 import Orders from './components/Orders/Orders';
 
@@ -70,7 +72,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
+function MisionesContent() {
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
@@ -105,7 +107,7 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Dashboard
+                Misiones
               </Typography>
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
@@ -145,6 +147,7 @@ function DashboardContent() {
             }}
           >
             <Toolbar />
+
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Grid container spacing={3}>
                 {/* Chart */}
@@ -154,11 +157,10 @@ function DashboardContent() {
                       p: 2,
                       display: 'flex',
                       flexDirection: 'column',
-                      borderRadius: 3,
                       height: 240,
                     }}
                   >
-                    <Chart />
+                    <Mision />
                   </Paper>
                 </Grid>
                 {/* Recent Deposits */}
@@ -168,22 +170,23 @@ function DashboardContent() {
                       p: 2,
                       display: 'flex',
                       flexDirection: 'column',
-                      borderRadius: 3,
                       height: 240,
                     }}
                   >
-                    <Deposits />
+                    <Mision />
                   </Paper>
                 </Grid>
                 {/* Recent Orders */}
                 <Grid item xs={12}>
-                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', borderRadius: 3 }}>
-                    <Orders />
+                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                    <Mision />
                   </Paper>
                 </Grid>
               </Grid>
 
             </Container>
+
+
           </Box>
         </Box>
       </ThemeProvider>
@@ -192,6 +195,6 @@ function DashboardContent() {
 
 
 
-export default function Dashboard() {
-    return <DashboardContent />;
+export default function Misiones() {
+    return <MisionesContent />;
 }

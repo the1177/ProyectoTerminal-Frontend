@@ -17,7 +17,6 @@ import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import SettingsIcon from '@mui/icons-material/Settings';
 import User1 from '../../../../../assets/commons/Menu/components/images/aimee.png';
-import User2 from '../../../../../assets/commons/Menu/components/images/granados.jpg';
 
 export const mainListItems = (
   <div>
@@ -92,8 +91,8 @@ export const secondaryListItems = (
 
     <ListItem button>
       <Avatar
-        alt="David Granados"
-        src={User2}
+        alt="Aimeé Gutiérrez"
+        src={User1}
         sx={{ width: 68, height: 68 }}
       />
     </ListItem>
