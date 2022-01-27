@@ -18,10 +18,16 @@ const Profesor = () =>{
     const [textmat, onChangeMat] = React.useState("Materias impartidas");
     const [textflex, onChangeFlex] = React.useState("¿Eres flexible?");
 
+    const [textinst, onChangeInst] = React.useState("Instagram");
+    const [textfb, onChangeFb] = React.useState("Facebook");
+    const [texttw, onChangeTw] = React.useState("Twitter");
+    const [textgh, onChangeGH] = React.useState("GitHub");
+
     return(
 
         <SafeAreaView>
             <View style={styles.container}>
+
                 <View style={styles.box1}>
 
                     <TouchableHighlight style={[styles.profileImgminContainer]}>
@@ -108,6 +114,30 @@ const Profesor = () =>{
                             value={textflex}
                         />
 
+                        <TextInput
+                            style={styles.input1}
+                            onChangeText={onChangeInst}
+                            value={textinst}
+                        />
+
+                        <TextInput
+                            style={styles.input1}
+                            onChangeText={onChangeFb}
+                            value={textfb}
+                        />
+
+                        <TextInput
+                            style={styles.input1}
+                            onChangeText={onChangeTw}
+                            value={texttw}
+                        />
+
+                        <TextInput
+                            style={styles.input1}
+                            onChangeText={onChangeGH}
+                            value={textgh}
+                        />
+
                     </View>
 
 
@@ -131,7 +161,8 @@ const styles = StyleSheet.create ({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        alignContent: 'stretch'
+        alignContent: 'stretch',
+        
     },
 
     box: {
@@ -151,7 +182,8 @@ const styles = StyleSheet.create ({
         backgroundColor: '#FFFFFF',
         borderRadius: 18,
         margin: 10,
-        marginLeft: 50,
+        marginLeft: 50, /*margin de los boxes*/ 
+        marginRight: 50,
         padding: 15,
         alignSelf: 'flex-start'
 
@@ -164,7 +196,7 @@ const styles = StyleSheet.create ({
         backgroundColor: '#FFFFFF',
         borderRadius: 18,
         margin: 10,
-        marginLeft: 50,
+        marginLeft: 50,  /*margin de los boxes*/ 
         marginRight: 50,
         padding: 15,
         alignSelf: 'center'
@@ -217,10 +249,19 @@ const styles = StyleSheet.create ({
         
     },
 
+    baseText: {
+        fontFamily: "Cochin",
+    },
+
+    titleText: {
+        fontSize: 20,
+        fontWeight: "bold"
+    },
+
     input1: {
         width: 311,
         height: 40,
-        margin: 24,
+        margin: 15,
         borderWidth: 1,
         borderRadius: 5,
         borderColor: '#707070',
@@ -232,7 +273,7 @@ const styles = StyleSheet.create ({
     input2: {
         width: 669,
         height: 40,
-        margin: 12,
+        margin: 15,
         borderWidth: 1,
         borderRadius: 5,
         borderColor: '#707070',
@@ -244,7 +285,7 @@ const styles = StyleSheet.create ({
     input3: {
         width: 669,
         height: 151,
-        margin: 12,
+        margin: 15,
         borderWidth: 1,
         borderRadius: 5,
         borderColor: '#707070',

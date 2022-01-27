@@ -8,6 +8,8 @@ import CreateUser from './assets/pages/CreateUser/CreateUsr';
 import Profesor from './assets/pages/Profesor/Profesor';
 import Curso from './assets/pages/Profesor/Curso';
 import Badgets from './assets/pages/Profesor/Badgets';
+import Misiones from './assets/pages/Profesor/Misiones';
+import Dashboard from './assets/pages/Profesor/Dashboard';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/profesor" element={<Profesor />} />
         <Route path="/curso" element={<Curso />} />
         <Route path="/badgets" element={<Badgets />} />
+        <Route path="/misiones" element={<Misiones /> } />
+        <Route path="/dashboard" element={<Dashboard /> } />
 
       </Routes>
     </Router>
