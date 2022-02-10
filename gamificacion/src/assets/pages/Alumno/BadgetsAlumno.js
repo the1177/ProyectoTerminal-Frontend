@@ -6,7 +6,7 @@ import imageprof from './components/Images/granados.jpg';
 
 
 
-const Profesor = () =>{
+const Alumno = () =>{
 
     const [textname, onChangeName] = React.useState("Nombre del badget");
     const [textlast, onChangeLastName] = React.useState("Clasificación");
@@ -225,5 +225,5 @@ const styles = StyleSheet.create ({
 
 })
 
-export default Profesor;
+export default Alumno;
 

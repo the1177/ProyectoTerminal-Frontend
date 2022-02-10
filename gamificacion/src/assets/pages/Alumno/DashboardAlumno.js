@@ -18,8 +18,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './components/Listitems/listitemsalumno';
-import Chart from './components/Chart/ChartAlumno';
+import Chart from './components/Misiones/ChartAlumno';
+import Insignias from './components/Insignias/InsigniasAlumno'
 import Deposits from './components/Deposits/DepositsAlumno';
+import Datos from './components/Chart/chart';
+
 import Orders from './components/Orders/OrdersAlumno';
 
 const drawerWidth = 240;
@@ -161,24 +164,33 @@ function DashboardContent() {
                     <Chart />
                   </Paper>
                 </Grid>
-                {/* Recent Deposits */}
-                <Grid item xs={12} md={4} lg={3}>
+                {/* Insignias */}
+                <Grid item xs={12} md={8} lg={9}>
                   <Paper
                     sx={{
                       p: 2,
                       display: 'flex',
                       flexDirection: 'column',
                       borderRadius: 3,
-                      height: 240,
+                      height: 300,
                     }}
                   >
-                    <Deposits />
+                    <Datos />
                   </Paper>
                 </Grid>
-                {/* Recent Orders */}
-                <Grid item xs={12}>
-                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', borderRadius: 3 }}>
-                    <Orders />
+                {/* Medallero */}
+                <Grid item xs={12} md={8} lg={9}>
+                <Paper
+                    sx={{
+                      p: 2,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      borderRadius: 3,
+                      height: "auto",
+                      width:"auto",
+                    }}
+                  >
+                    <Insignias />
                   </Paper>
                 </Grid>
               </Grid>

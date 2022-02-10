@@ -1,0 +1,32 @@
+.insignia-container {
+    margin: 10px;
+    padding: 5px;
+    height: 100%;
+    width:auto;
+    -webkit-box-shadow: 0px 0px 15px -10px rgb(0, 0, 0);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0);
+  }
+  
+  .title-insignias {
+    margin-bottom: 10px;
+    background-color:rgba(151, 255, 160, 0);
+  }
+.BG{
+    display:flexbox;
+    background-color:rgba(95, 158, 160, 0);
+  }
+.BGU{
+    display:flex;
+    background-color:rgba(0, 0, 0, 0);
+}
+.insignia{
+    background-color:rgba(160, 97, 95, 0);
+    margin:3px
+}
+.image-badget{
+    width:100px;
+    height:100px;
+}
+.resp{
+    background-color:rgba(255, 0, 0, 0);
+}
