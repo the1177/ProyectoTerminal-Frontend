@@ -4,7 +4,7 @@ import Title from "./components/Title/Title";
 import Label from "./components/Label/Label";
 import Input from "./components/Input/Input";
 import loginImage from './components/images/loginImage.jpg'
-
+import GoogleLogin from "react-google-login";
 const Login = () => {
 
     const [user, setUser] = useState('');
@@ -13,6 +13,10 @@ const Login = () => {
     const [isLogin, setIsLogin] = useState(false);
     const [hasError, setHasError] = useState(false);
 
+    const respuestaGoogle=(respuesta)=>{
+        console.log(respuesta);
+        console.log(respuesta.profileObj)
+    }
     //Saber en cual input se esta ingresando la información
     function handleChange(name, value){
         if(name === 'email'){
@@ -59,8 +63,18 @@ const Login = () => {
     };
     
     return (
+        
         <div className='container-father'>
-            
+            <GoogleLogin
+            clientId="1055338382541-nhujigic1cfmeq8lth1f7fnjhtu1tisq.apps.googleusercontent.com"
+            buttonText="Iniciar Sesion"
+            /*render={renderProps => (
+                <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
+            )}*/
+            onSuccess={respuestaGoogle}
+            onFailure={respuestaGoogle}
+            cookiePolicy={'single_host_origin'}
+        />,
                 {isLogin ? 'estas logueado' :            
                 <div className='login-container'>
                     <div className='ti-container'>                

@@ -6,7 +6,7 @@ import imageprof from './components/Images/granados.jpg';
 
 
 
-const Profesor = () =>{
+const Alumno = () =>{
 
     const [textname, onChangeName] = React.useState("Nombres");
     const [textlast, onChangeLastName] = React.useState("Apellidos");
@@ -298,5 +298,5 @@ const styles = StyleSheet.create ({
 
 })
 
-export default Profesor;
+export default Alumno;
 
