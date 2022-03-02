@@ -14,17 +14,16 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
-import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './components/Listitems/listitems';
 
+import MenuIcon from '@mui/icons-material/Menu';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
-import Chart from './components/Chart/Chart';
-import Deposits from './components/Deposits/Deposits';
-import Orders from './components/Orders/Orders';
-import Schedule from './components/Scheduler/Scheduler';
-import Misiones from './components/Chart/ChartMisiones'
+
+import Card from './components/CardCurso/Card';
 
 const drawerWidth = 240;
 
@@ -74,7 +73,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
+function CursosContent() {
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
@@ -97,6 +96,7 @@ function DashboardContent() {
                 onClick={toggleDrawer}
                 sx={{
                   marginRight: '36px',
+                  marginLeft: '36px',
                   ...(open && { display: 'none' }),
                 }}
               >
@@ -109,8 +109,9 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Dashboard
+                Cursos
               </Typography>
+
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
                   <NotificationsIcon />
@@ -118,6 +119,7 @@ function DashboardContent() {
               </IconButton>
             </Toolbar>
           </AppBar>
+
           <Drawer variant="permanent" open={open}>
             <Toolbar
               sx={{
@@ -136,6 +138,7 @@ function DashboardContent() {
             <Divider />
             <List>{secondaryListItems}</List>
           </Drawer>
+
           <Box
             component="main"
             sx={{
@@ -150,80 +153,14 @@ function DashboardContent() {
           >
             <Toolbar />
             <Container maxWidth="lg" sx={{ mt: 5, mb: 5 }}>
+
               <Grid container spacing={6}>
 
-                {/* Chart */}
+                {/* Card */}
                 <Grid item xs={12} md={8} lg={9}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: 240,
-                    }}
-                  >
-                    <Chart />
-                  </Paper>
-                </Grid>
 
-                {/* Recent Deposits */}
-                <Grid item xs={12} md={4} lg={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: 240,
-                    }}
-                  >
-                    <Misiones />
-                  </Paper>
-                </Grid>
+                    <Card />
 
-                <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: 'auto',
-                      width: 'auto'
-                    }}
-                  >
-                    <Schedule />
-                  </Paper>
-                </Grid>
-
-                {/* Recent Deposits */}
-                <Grid item xs={12} md={4} lg={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: 240,
-                    }}
-                  >
-                    <Deposits />
-                  </Paper>
-                </Grid>
-
-                {/* Recent Orders */}
-                <Grid item xs={12}>
-                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', borderRadius: 3 }}>
-                    <Orders />
-                  </Paper>
-                </Grid>
-
-                {/* Recent Orders */}
-                <Grid item xs={12}>
-                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', borderRadius: 3 }}>
-                    <Orders />
-                  </Paper>
                 </Grid>
               </Grid>
               
@@ -237,6 +174,6 @@ function DashboardContent() {
 
 
 
-export default function Dashboard() {
-    return <DashboardContent />;
+export default function Cursos() {
+    return <CursosContent />;
 }

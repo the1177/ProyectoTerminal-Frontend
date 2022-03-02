@@ -8,16 +8,19 @@ import CreateUser from './assets/pages/CreateUser/CreateUsr';
 
 
 import Profesor from './assets/pages/Profesor/Profesor';
-import Curso from './assets/pages/Profesor/Curso';
+import CrearCurso from './assets/pages/Profesor/CrearCurso';
+import Cursos from './assets/pages/Profesor/Cursos'
 import Badgets from './assets/pages/Profesor/Badgets';
 import Misiones from './assets/pages/Profesor/Misiones';
 import Dashboard from './assets/pages/Profesor/Dashboard';
+import CrearActividad from './assets/pages/Profesor/Actvidad';
 
 import Alumno from './assets/pages/Alumno/Alumno';
 import CursoAlumno from './assets/pages/Alumno/CursoAlumno';
 import BadgetsAlumno from './assets/pages/Alumno/BadgetsAlumno';
 import MisionesAlumno from './assets/pages/Alumno/MisionesAlumno';
 import DashboardAlumno from './assets/pages/Alumno/DashboardAlumno';
+
 
 
 function App() {
@@ -29,10 +32,12 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/sign-up" element={<CreateUser />} />
         <Route path="/profesor" element={<Profesor />} />
-        <Route path="/curso" element={<Curso />} />
+        <Route path="/cursos" element={<Cursos />} />
         <Route path="/badgets" element={<Badgets />} />
         <Route path="/misiones" element={<Misiones /> } />
         <Route path="/dashboard" element={<Dashboard /> } />
+        <Route path="/crearcurso" element={<CrearCurso />} />
+        <Route path="/crearactividad" element={<CrearActividad />} />
         <Route path="/alumno" element={<Alumno />} />
         <Route path="/cursoalumno" element={<CursoAlumno />} />
         <Route path="/badgetsalumno" element={<BadgetsAlumno />} />

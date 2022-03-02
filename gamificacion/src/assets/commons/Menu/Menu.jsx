@@ -22,7 +22,7 @@ const Menuside = () => {
 
             <div className="sidebar-header">
                 <a className="header">
-                    <img className="img-logo" src={Logo} alt="" />
+                    <img className="img-logo" src={Logo} alt=""/>
                 </a>
             </div>
 
@@ -59,7 +59,7 @@ const Menuside = () => {
 
                 <a id="calendario" className="menu-item" href="/">
                     <i class="fas fa-home"><IoChatbubblesOutline /></i>
-                    Foro
+                    Foronjj
                 </a>
 
             </div>

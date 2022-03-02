@@ -46,7 +46,7 @@ export const mainListItems = (
       <ListItemIcon>
         <EmojiFlagsRoundedIcon />
       </ListItemIcon>
-      <ListItemText primary="Misiones" />
+      <ListItemText primary="Cursos" />
     </ListItem>
 
     <ListItem button>

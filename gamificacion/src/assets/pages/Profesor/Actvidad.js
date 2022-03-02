@@ -3,6 +3,7 @@ import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
@@ -18,13 +19,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './components/Listitems/listitems';
-
-
-import Chart from './components/Chart/Chart';
-import Deposits from './components/Deposits/Deposits';
-import Orders from './components/Orders/Orders';
-import Schedule from './components/Scheduler/Scheduler';
-import Misiones from './components/Chart/ChartMisiones'
+import { StyledEngineProvider } from '@mui/material/styles';
+import DateRange from './components/Date/DateRange';
 
 const drawerWidth = 240;
 
@@ -72,9 +68,30 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
+const CssTextField = styled(TextField)({
+    '& label.Mui-focused': {
+      color: 'purple',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'purple',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'light-green',
+      },
+      '&:hover fieldset': {
+        borderColor: 'blue',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'purple',
+      },
+    },
+});
+
+
 const mdTheme = createTheme();
 
-function DashboardContent() {
+function ActividadContent() {
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
@@ -109,7 +126,7 @@ function DashboardContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Dashboard
+                Actvidad
               </Typography>
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
@@ -149,86 +166,105 @@ function DashboardContent() {
             }}
           >
             <Toolbar />
+
             <Container maxWidth="lg" sx={{ mt: 5, mb: 5 }}>
-              <Grid container spacing={6}>
 
-                {/* Chart */}
-                <Grid item xs={12} md={8} lg={9}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: 240,
-                    }}
-                  >
-                    <Chart />
-                  </Paper>
+                <Grid container justifyContent="center" rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                    <Grid item xs={'auto'}>
+                        <Paper
+                            sx={{
+                            p: 2,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            borderRadius: 3,
+                            height: 'auto',
+                            
+                            }}
+                        >
+                            <Box
+                            component="form"
+                            sx={{
+                                '& .MuiTextField-root': { m: 1, width: '90ch' },
+                                my: 3,
+                                mx: 7
+                            }}
+                            noValidate
+                            autoComplete="off"
+                            >
+
+                                <Grid item xs>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                    Crear Actividad
+                                    </Typography>
+                                </Grid>
+                                
+
+                                <div>
+                                    <Divider light variant="h7" textAlign="left">Información de la Actvidad</Divider>
+                                    <Box sx={{ m: 2 }}>
+
+                                        <CssTextField
+                                          required 
+                                          id="outlined-required" 
+                                          label="Título de la Actvidad" 
+                                          variant="outlined"
+                                        />
+
+                                    </Box>
+
+                                    <Box sx={{ width: '109vh' , overflow: 'auto', m: 2}}>
+                                        <StyledEngineProvider injectFirst>
+                                            <DateRange />
+                                        </StyledEngineProvider>
+                                    </Box>
+
+                                    <Divider light variant="h7" textAlign="left">Detalles de la Actvidad</Divider>
+                                    <Box sx={{ m: 2 }}>
+
+
+                                        <CssTextField
+                                          id="outlined" 
+                                          label="Sala de reunión" 
+                                          variant="outlined"
+                                        />
+
+                                    </Box>
+
+                                    <Box sx={{ m: 2 }}>
+
+                                        <CssTextField
+                                          required 
+                                          id="outlined-required" 
+                                          label="URL de reunión" 
+                                          variant="outlined"
+                                        />
+
+                                    </Box>
+
+                                    <Box sx={{ m: 2 }}>
+
+                                      <CssTextField
+                                        id="outlined-multiline-static"
+                                        label="Descripción"
+                                        multiline
+                                        rows={4}
+                                        defaultValue=""
+                                      />
+
+                                    </Box>
+
+                                    <Box sx={{ m: 2 }}>
+                                    </Box>
+                    
+                                </div>
+                            </Box>
+                        </Paper>
+                    </Grid>
                 </Grid>
-
-                {/* Recent Deposits */}
-                <Grid item xs={12} md={4} lg={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: 240,
-                    }}
-                  >
-                    <Misiones />
-                  </Paper>
-                </Grid>
-
-                <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: 'auto',
-                      width: 'auto'
-                    }}
-                  >
-                    <Schedule />
-                  </Paper>
-                </Grid>
-
-                {/* Recent Deposits */}
-                <Grid item xs={12} md={4} lg={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: 240,
-                    }}
-                  >
-                    <Deposits />
-                  </Paper>
-                </Grid>
-
-                {/* Recent Orders */}
-                <Grid item xs={12}>
-                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', borderRadius: 3 }}>
-                    <Orders />
-                  </Paper>
-                </Grid>
-
-                {/* Recent Orders */}
-                <Grid item xs={12}>
-                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', borderRadius: 3 }}>
-                    <Orders />
-                  </Paper>
-                </Grid>
-              </Grid>
-              
-
+                
             </Container>
+
+
           </Box>
         </Box>
       </ThemeProvider>
@@ -237,6 +273,6 @@ function DashboardContent() {
 
 
 
-export default function Dashboard() {
-    return <DashboardContent />;
+export default function Actividad() {
+    return <ActividadContent />;
 }
