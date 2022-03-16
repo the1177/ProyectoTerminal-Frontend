@@ -108,7 +108,7 @@ const Login = () => {
                                 }}
                                 handleChange={handleChange}
                                 param={passwordError}
-                            />
+                            />1
                         </div>                
                         {passwordError &&
                                 <laber className='label-error'>
