@@ -66,7 +66,7 @@ const Login = () => {
         
         <div className='container-father'>
             <GoogleLogin
-            clientId="1055338382541-nhujigic1cfmeq8lth1f7fnjhtu1tisq.apps.googleusercontent.com"
+            clientId="1015050705702-mn957t21cmktg6keccg4a82v9mjdps22.apps.googleusercontent.com"
             buttonText="Iniciar Sesion"
             /*render={renderProps => (
                 <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
