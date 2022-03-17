@@ -44,7 +44,6 @@ function App() {
         <Route path="/misionesalumno" element={<MisionesAlumno /> } />
         <Route path="/dashboardalumno" element={<DashboardAlumno /> } />
         <Route path="/Encuesta" element={<Encuesta /> } />
-
       </Routes>
     </Router>
   );
