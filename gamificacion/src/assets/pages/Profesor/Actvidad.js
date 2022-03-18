@@ -156,7 +156,7 @@ function ActividadContent() {
           <Box
             component="main"
             sx={{
-              backgroundColor: (theme) =>
+              backgroundcolor: (theme) =>
                 theme.palette.mode === 'light'
                   ? theme.palette.grey[100]
                   : theme.palette.grey[900],

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+
 import './Login.css'
 import Title from "./components/Title/Title";
-import Label from "./components/Label/Label";
-import Input from "./components/Input/Input";
 import loginImage from './components/images/loginImage.jpg'
 import GoogleLogin from "react-google-login";
 
@@ -53,8 +52,6 @@ const Login = () => {
             <div className='Container-Image'>
                 <img className='image-login' src={loginImage} />
             </div>
-
-
         </div>
     )
 };

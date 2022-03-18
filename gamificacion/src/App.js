@@ -1,7 +1,7 @@
 // Imports de React
 import "./App.css";
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Imports de Componentes
 import Login from "./assets/pages/Login/Login";

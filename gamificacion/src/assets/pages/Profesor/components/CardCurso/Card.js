@@ -62,7 +62,7 @@ export default function RecipeReviewCard() {
                 }
                 title="Diseño de Patrones para datos estructurados"
                 subheader="Primavera 2022"
-                backgroundColor="pink"
+                backgroundcolor="pink"
             />
             <CardMedia
                 component="img"
@@ -115,7 +115,7 @@ export default function RecipeReviewCard() {
                 }
                 title="Algoritmos y estructura de datos "
                 subheader="Primavera 2022"
-                backgroundColor="pink"
+                backgroundcolor="pink"
             />
             <CardMedia
                 component="img"
@@ -168,7 +168,7 @@ export default function RecipeReviewCard() {
                 }
                 title="Técnicas algorítmicas"
                 subheader="Primavera 2022"
-                backgroundColor="pink"
+                backgroundcolor="pink"
             />
             <CardMedia
                 component="img"
@@ -221,7 +221,7 @@ export default function RecipeReviewCard() {
                 }
                 title="Diseño de Juegos"
                 subheader="Primavera 2022"
-                backgroundColor="pink"
+                backgroundcolor="pink"
             />
             <CardMedia
                 component="img"

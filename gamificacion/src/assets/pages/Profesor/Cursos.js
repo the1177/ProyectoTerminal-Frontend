@@ -19,6 +19,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './components/Listitems/listitems';
 
+import Menu from './components/Menu/Menu.js'
+import NavBar from './components/NavBar/NavBar';
+
 import MenuIcon from '@mui/icons-material/Menu';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
@@ -93,74 +96,15 @@ const Cursos = (props) => {
       <ThemeProvider theme={mdTheme}>
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
-          <AppBar position="absolute" open={open}>
-            <Toolbar
-              sx={{
-                pr: '24px', // keep right padding when drawer closed
-              }}
-            >
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-                onClick={toggleDrawer}
-                sx={{
-                  marginRight: '36px',
-                  marginLeft: '36px',
-                  ...(open && { display: 'none' }),
-                }}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography
-                component="h1"
-                variant="h6"
-                color="inherit"
-                noWrap
-                sx={{ flexGrow: 1 }}
-              >
-                Cursos
-              </Typography>
+          
+          <NavBar tituloNavBar="Cursos" open={ open } setOpen={ setOpen }/>
 
-              <IconButton color="inherit">
-                <Badge badgeContent={4} color="secondary">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
-            </Toolbar>
-          </AppBar>
-
-          <Drawer variant="permanent" open={open}>
-            <Toolbar
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-                px: [1],
-              }}
-            >
-              <IconButton onClick={toggleDrawer}>
-                <ChevronLeftIcon />
-              </IconButton>
-            </Toolbar>
-            <Divider />
-            <List>{mainListItems}</List>
-            <Divider />
-            <List>
-              <ListSubheader inset> { givenName } </ListSubheader>
-              {secondaryListItems}
-              <ListItem button>
-                <Avatar
-                  src={ imageUrl }
-                  sx={{ width: 68, height: 68 }}/>
-              </ListItem>
-            </List>
-          </Drawer>
+          <Menu user={ state.user }  open ={open } setOpen={ setOpen }/>
 
           <Box
             component="main"
             sx={{
-              backgroundColor: (theme) =>
+              backgroundcolor: (theme) =>
                 theme.palette.mode === 'light'
                   ? theme.palette.grey[100]
                   : theme.palette.grey[900],
