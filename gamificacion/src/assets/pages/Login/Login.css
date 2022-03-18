@@ -11,6 +11,7 @@
     background-color: #ffffff00;
     padding-right: 0%;
     margin-top: 0%;
+    align-items: center;
 }
 .Container-Image{
     width: 100%;
@@ -24,6 +25,14 @@
     font-weight: 500;
     color: rgb(255, 255, 255);
     width: 50%;
+    margin-left: 20%;
+}
+.googleButton {
+    border-radius: 3.25rem;
+    border-color: #ffffff;
+    font-weight: 500;
+    width: 230px;
+    padding: 12px; 
     margin-left: 20%;
 }
 .forgot-password ,
@@ -69,6 +78,7 @@
     margin-top: 3%;
     padding-left: 17.5%;
     margin-left: 25%;
+    align-items: center;
 }
 .container-form-login{
     width: 56%;
@@ -163,6 +173,9 @@
         margin-top: 0%;
         padding-left: 0%;
         margin-left: 20%;
+    }
+    .googleSignIn{
+        position: relative;
     }
     .container-form-login{
         width: 85%;

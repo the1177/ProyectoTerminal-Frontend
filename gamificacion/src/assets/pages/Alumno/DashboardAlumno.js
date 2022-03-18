@@ -22,7 +22,6 @@ import Chart from './components/Misiones/ChartAlumno';
 import Insignias from './components/Insignias/InsigniasAlumno'
 import Deposits from './components/Deposits/DepositsAlumno';
 import Datos from './components/Chart/chart';
-
 import Orders from './components/Orders/OrdersAlumno';
 
 const drawerWidth = 240;

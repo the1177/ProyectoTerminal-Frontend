@@ -8,10 +8,8 @@ import {
 import { Animation } from '@devexpress/dx-react-chart';
 
 const data = [
-  { curso: 'Diseño de Patrones para datos estructurados', val: 3 },
-  { curso: 'Algoritmos y estructura de datos', val: 4 },
-  { curso: 'Técnicas algorítmicas', val: 10 },
-  { curso: 'Diseño de Juegos', val: 15 },
+  { curso: 'Entregado', val: 5 },
+  { curso: 'No entregado', val: 1 },
 ];
 
 export default class Demo extends React.PureComponent {
@@ -37,7 +35,7 @@ export default class Demo extends React.PureComponent {
             innerRadius={0.7}
           />
           <Title
-            text="Misiones por curso"
+            text="Porcentaje de cumplimiento"
           />
           <Animation />
         </Chart>

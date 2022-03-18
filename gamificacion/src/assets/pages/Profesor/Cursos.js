@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -21,7 +22,11 @@ import { mainListItems, secondaryListItems } from './components/Listitems/listit
 import MenuIcon from '@mui/icons-material/Menu';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import ListSubheader from '@mui/material/ListSubheader';
+import Avatar from '@mui/material/Avatar'
 
 import Card from './components/CardCurso/Card';
 
@@ -73,7 +78,12 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function CursosContent() {
+const Cursos = (props) => {
+    const { state } = useLocation();
+    console.log(state.user);
+    
+    const { name, email, givenName, imageUrl } = state.user;
+
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
@@ -136,7 +146,15 @@ function CursosContent() {
             <Divider />
             <List>{mainListItems}</List>
             <Divider />
-            <List>{secondaryListItems}</List>
+            <List>
+              <ListSubheader inset> { givenName } </ListSubheader>
+              {secondaryListItems}
+              <ListItem button>
+                <Avatar
+                  src={ imageUrl }
+                  sx={{ width: 68, height: 68 }}/>
+              </ListItem>
+            </List>
           </Drawer>
 
           <Box
@@ -172,8 +190,4 @@ function CursosContent() {
     );
 }
 
-
-
-export default function Cursos() {
-    return <CursosContent />;
-}
+export default Cursos;

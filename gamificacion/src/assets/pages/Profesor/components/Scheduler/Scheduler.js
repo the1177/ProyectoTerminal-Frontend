@@ -9,6 +9,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import appointments from '../Scheduler/data/today-appointments';
+import Title from '../Title/Title';
 
 const useStyles = makeStyles(theme => ({
   todayCell: {
@@ -64,6 +65,7 @@ const DayScaleCell = (props) => {
 export default function Schedule() {
     return (
         <Paper>
+          <Title> Calendario del Curso </Title>
             <Scheduler
             data={appointments}
             height={660}

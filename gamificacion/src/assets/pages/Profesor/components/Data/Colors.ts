@@ -1,4 +1,4 @@
-export interface ColourOption {
+/* export interface ColourOption {
   readonly value: string;
   readonly label: string;
   readonly color: string;
@@ -140,3 +140,4 @@ export const groupedOptions: readonly GroupedOption[] = [
     options: flavourOptions,
   },
 ];
+ */
