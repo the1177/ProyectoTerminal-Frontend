@@ -1,31 +1,18 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
 import MuiDrawer from '@mui/material/Drawer';
-import Box from '@mui/material/Box';
-import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 
-import MenuIcon from '@mui/icons-material/Menu';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import Avatar from '@mui/material/Avatar'
-
+import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import CalendarTodayRoundedIcon from '@mui/icons-material/CalendarTodayRounded';
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
@@ -66,6 +53,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const Menu = (props) => {
+    const navigate = useNavigate();
     var menuVisibilityToggle = 'visible';
     const { user, open, setOpen } = props;
     const toggleMenuDrawer = () => {
@@ -96,21 +84,21 @@ const Menu = (props) => {
                     <ListItemText primary="Home" />
                 </ListItem>
 
-                <ListItem button>
-                    <ListItemIcon>
-                        <CalendarTodayRoundedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Calendario" />
-                </ListItem>
-
-                <ListItem button>
+                <ListItem button onClick={ () => navigate('/dashboard') }>
                     <ListItemIcon>
                         <DashboardRoundedIcon />
                     </ListItemIcon>
                     <ListItemText primary="Dashboard" />
                 </ListItem>
 
-                <ListItem button>
+                <ListItem button onClick={ () => navigate('/calendario') }>
+                    <ListItemIcon>
+                        <CalendarTodayRoundedIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Calendario" />
+                </ListItem>
+
+                <ListItem button onClick={ () => navigate('/cursos') }>
                     <ListItemIcon>
                         <EmojiFlagsRoundedIcon />
                     </ListItemIcon>
@@ -119,9 +107,9 @@ const Menu = (props) => {
 
                 <ListItem button>
                     <ListItemIcon>
-                        <GamesRoundedIcon />
+                        <MilitaryTechIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Componentes" />
+                    <ListItemText primary="Badgets" />
                 </ListItem>
 
                 <ListItem button>
