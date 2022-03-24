@@ -34,58 +34,12 @@ import Avatar from '@mui/material/Avatar'
 import Card from './components/CardCurso/Card';
 
 const drawerWidth = 240;
-
-const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-  })(({ theme, open }) => ({
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    ...(open && {
-      marginLeft: drawerWidth,
-      width: `calc(100% - ${drawerWidth}px)`,
-      transition: theme.transitions.create(['width', 'margin'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-    }),
-}));
-
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-    ({ theme, open }) => ({
-      '& .MuiDrawer-paper': {
-        position: 'relative',
-        whiteSpace: 'nowrap',
-        width: drawerWidth,
-        transition: theme.transitions.create('width', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.enteringScreen,
-        }),
-        boxSizing: 'border-box',
-        ...(!open && {
-          overflowX: 'hidden',
-          transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-          }),
-          width: theme.spacing(7),
-          [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(9),
-          },
-        }),
-      },
-    }),
-);
-
 const mdTheme = createTheme();
 
 const Cursos = (props) => {
-    const { state } = useLocation();
-    console.log(state.user);
-    
-    const { name, email, givenName, imageUrl } = state.user;
+    const saved = localStorage.getItem("user");
+    const user = JSON.parse(saved);
+    console.log(user);
 
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
@@ -99,7 +53,7 @@ const Cursos = (props) => {
           
           <NavBar tituloNavBar="Cursos" open={ open } setOpen={ setOpen }/>
 
-          <Menu user={ state.user }  open ={open } setOpen={ setOpen }/>
+          <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
 
           <Box
             component="main"
@@ -117,15 +71,11 @@ const Cursos = (props) => {
             <Container maxWidth="lg" sx={{ mt: 5, mb: 5 }}>
 
               <Grid container spacing={6}>
-
                 {/* Card */}
                 <Grid item xs={12} md={8} lg={9}>
-
                     <Card />
-
                 </Grid>
               </Grid>
-              
 
             </Container>
           </Box>

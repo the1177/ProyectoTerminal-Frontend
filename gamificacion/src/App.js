@@ -1,6 +1,5 @@
 // Imports de React
 import "./App.css";
-import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Imports de Componentes
@@ -22,13 +21,12 @@ import DashboardAlumno from "./assets/pages/Alumno/DashboardAlumno";
 import Encuesta from "./assets/pages/Encuesta/Encuesta";
 
 function App() {
-  const [name, setName] = useState("hola");
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/sign-in" element={<Login />} />
-        <Route path="/home" element={<Home name={name} setName={setName} />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/sign-up" element={<CreateUser />} />
         <Route path="/profesor" element={<Profesor />} />
         <Route path="/cursos" element={<Cursos />} />

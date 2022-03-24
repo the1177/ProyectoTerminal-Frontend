@@ -17,6 +17,7 @@ const Login = () => {
     const onGoogleSuccess = (res) => {
         console.log(res.profileObj);
         setUser(res.profileObj);
+        localStorage.setItem("user", JSON.stringify(res.profileObj));
         navigate('/cursos', { state: { user:res.profileObj }});
     }
 

@@ -137,18 +137,9 @@ const Profesor = () =>{
                         />
 
                     </View>
-
-
-
                 </View>
             </View>
         </SafeAreaView>
-
-        
-
-
-
-
     );
 };
 
