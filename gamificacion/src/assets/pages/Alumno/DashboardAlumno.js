@@ -22,8 +22,13 @@ import Chart from './components/Misiones/ChartAlumno';
 import Insignias from './components/Insignias/InsigniasAlumno'
 import Deposits from './components/Deposits/DepositsAlumno';
 import Datos from './components/Chart/chart';
-
-import Orders from './components/Orders/OrdersAlumno';
+import Dispersion from './components/Dispersion/Dispersion';
+import TablaActividades from './components/TablaActividades/TablaActividades';
+import tablaTest from './components/TablaActividades/tabla';
+import "./Alumno.css";
+import Pastel from './components/Pastel/Pastel';
+import Barras from './components/Barras/Barras';
+var ReactDOM = require('react-dom');
 
 const drawerWidth = 240;
 
@@ -44,6 +49,7 @@ const AppBar = styled(MuiAppBar, {
       }),
     }),
 }));
+
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
@@ -73,13 +79,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
+
+
+const DashboardContent= () => {
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
     };
-  
+
     return (
+      
+
       <ThemeProvider theme={mdTheme}>
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
@@ -148,61 +158,187 @@ function DashboardContent() {
             }}
           >
             <Toolbar />
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Container maxWidth="80" sx={{ mt: 4, mb: 4 }}> 
               <Grid container spacing={3}>
-                {/* Chart */}
-                <Grid item xs={12} md={8} lg={9}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: 240,
-                    }}
-                  >
-                    <Chart />
-                  </Paper>
-                </Grid>
-                {/* Insignias */}
-                <Grid item xs={12} md={8} lg={9}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: 300,
-                    }}
-                  >
-                    <Datos />
-                  </Paper>
-                </Grid>
-                {/* Medallero */}
-                <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: "auto",
-                      width:"auto",
-                    }}
-                  >
-                    <Insignias />
-                  </Paper>
-                </Grid>
-              </Grid>
+                  <div className='total-chart'>
+                    <div className='first-section'>
+                      <div>
+                        {/* Chart */}
+                        <Grid item xs={12} md={8} lg={9}>
+                          <Paper
+                            sx={{
+                              p: 2,
+                              display: 'flex',
+                              flexDirection: 'column',
+                              borderRadius: 3,
+                              height: 320,
+                              width: 800,
+                              //backgroundColor:'red'
+                            }}
+                          >
+                            {/* <Chart /> */}
+                            <Datos />
+                            
+                          </Paper>
+                        </Grid>
+                      </div>
+                      {/* PASTEL DE ACTIVIDADES */}
+                      <div className='Progress-activities'>
+                        <Paper
+                            sx={{
+                              p: 2,
+                              display: 'flex',
+                              flexDirection: 'column',
+                              borderRadius: 3,
+                              height: 320,                          
+                              width:350,
+                              marginleft:10,
+                            //backgroundColor: 'blue',
+                            //  justifyContent: 'centar'
+                            }}
 
+                            > 
+                            
+                            <h4 className='titulo-Actividades'>Progreso de Actividades</h4>
+                            <div className='actividad-Nombre'>
+                                <Pastel/>                          
+                            </div>
+                        </Paper>
+                      </div>
+                    </div>
+
+                    {/* Insignias */}
+                    <div className='second-section'>
+                      <div className='dispersion-container'>
+                      <Grid item xs={12} md={8} lg={9}>
+                        <Paper
+                          sx={{
+                            p: 2,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            borderRadius: 3,
+                            height: 320,                          
+                            width:350,                            
+                            //backgroundColor:'red'
+                          }}
+                          >
+                          {/* <Dispersion /> */}
+                          {/* <Barras /> */}
+                          <TablaActividades /> 
+                        </Paper>
+                      </Grid>
+                      </div>
+                      <div className='insignias-container'> 
+                        <Grid item xs={12} md={8} lg={9}>
+                        <Paper
+                          sx={{
+                            p: 2,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            borderRadius: 3,
+                            height: 320,
+                            width: 800,
+                            //backgroundColor: 'red',
+                          }}
+                        >
+                          {/* <TablaActividades />  */}
+                          <Barras />
+                          {/* <div id="root"></div> */}
+                        </Paper>
+                        </Grid>
+
+                      </div>
+
+
+                    </div>
+
+                    {/* Medallero */}
+                    <Grid item xs={12} md={8} lg={9}>
+                    <Paper
+                        sx={{
+                          p: 2,
+                          display: 'flex',
+                          flexDirection: 'column',
+                          borderRadius: 3,
+                          height: "auto",
+                          width:"auto",
+                        }}
+                      >
+                        <Insignias />
+                      </Paper>
+                    </Grid>
+                  </div>
+
+              </Grid>
+              {/* PROGRESS BAR */}
+              {/*
+              <Grid item xs={12} md={8} lg={9}>
+              <div className="Alumno">
+                <div>
+                  <Paper
+                      sx={{
+                        p: 2,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        borderRadius: 3,
+                        height: 400,
+                        margin :3,
+                        width:380,
+                        //backgroundColor: 'red'
+
+                      }}
+                      > 
+                      <h4 className='titulo-Actividades'>Progreso de Actividades</h4>
+                      <div className='actividad-Nombre'>
+                        Crea un server de minecraft
+                        <Progress done="10" />
+                      </div>
+                      <div className='actividad-Nombre'>
+                        Crea un Equipo
+                        <Progress done="80" />
+                      </div>
+                      <div className='actividad-Nombre'>
+                        Encontrar un diamente en una mina
+                        <Progress done="40" />
+                      </div>
+                      <div className='actividad-Nombre'>
+                        Realización de un diagrama de flujo
+                        <Progress done="60" />
+                      </div>
+                
+                    </Paper>
+                    
+                </div>
+                
+                <div>
+                  <Paper
+                      sx={{
+                        p: 2,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        borderRadius: 3,
+                        height: 400,
+                        margin :3,
+                        width:380,
+                        //backgroundColor: 'red'
+                      }}
+                      > 
+                      <h4 className='titulo-Actividades'>Participación semanal</h4>
+                      
+                       <div>
+                          {/* <Pie Data={data} options={opciones} /> 
+                      </div>
+              
+                    </Paper>                    
+                </div>
+              </div>
+                </Grid>*/}
             </Container>
           </Box>
         </Box>
       </ThemeProvider>
     );
 }
-
-
 
 export default function Dashboard() {
     return <DashboardContent />;

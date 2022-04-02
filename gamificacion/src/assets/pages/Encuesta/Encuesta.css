@@ -27,7 +27,7 @@
   }
   .div-container{
     flex-direction: column;
-    background-color: rgb(34, 25, 66);
+    background-color: rgba(255, 255, 255, 0);
     padding-top: 5%;
     padding-right: 3%;
   }

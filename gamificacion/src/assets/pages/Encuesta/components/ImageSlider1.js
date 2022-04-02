@@ -26,9 +26,9 @@ const ImageSlider1 = ({ slides }) => {
             {index === current && (
               <img src={slide.image} alt='travel image' className='image' />
             )}
-            {/* {index === current && ( */}
-              {/* <p>{slide.name}</p> */}
-            {/* )} */}
+             {/* {index === current && (  */}
+               {/* <p>{slide.name}</p>  */}
+             {/* )}  */}
           </div>
         );
         

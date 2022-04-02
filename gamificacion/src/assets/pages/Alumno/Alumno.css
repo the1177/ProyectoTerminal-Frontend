@@ -1,3 +1,61 @@
 .f{
     background:black;
 }
+.Alumno{
+    /* background-color: aqua; */
+    display: flex;
+}
+.first-section{
+    background:rgb(243, 243, 243);
+    display: flex;
+    width: 1200px;
+    height: 360px;
+    padding: 15px;
+    margin: 20px;
+    border-radius: .5rem;
+    justify-content:  center;
+}
+
+.Progress-activities{
+    background-color: rgba(80, 60, 255, 0);
+    margin-left: 20px;
+    width: 350px;
+    /* height: 500px; */
+    justify-content:  center;
+}
+.Section-1{
+    background-color: aqua;
+}
+
+.titulo-Actividades{
+    background-color: rgba(137, 43, 226, 0);
+}
+.actividad-Nombre{
+    background-color: rgba(55, 52, 255, 0);
+    height: 300px;
+    /* width: 100%; */
+	/* background-repeat: no-repeat; */
+	padding: 2%;
+}
+.total-chart{
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+}
+.second-section{
+    background:rgb(247, 247, 247);
+    display: flex;
+    width: 1200px;
+    height: 360px;
+    padding: 15px;
+    margin: 20px;
+    border-radius: .5rem;
+    justify-content:  center;
+}
+.insignias-container{
+    background-color: rgba(221, 255, 27, 0);
+}
+.dispersion-container{
+    background-color: rgba(25, 0, 255, 0);
+    margin-right: 10px ;
+    
+}

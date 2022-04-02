@@ -3,6 +3,7 @@ import './Encuesta.css'
 import ImageSlider1 from './components/ImageSlider1';
 import ImageSlider2 from './components/ImageSlider2';
 import { SliderData1 , SliderData2 } from './components/SliderData';
+import edrey from './components/Edrey.jpg'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -33,7 +34,7 @@ class Encuesta extends Component {
                         <div className="perfil-ima">
                             <div className ="container-p">
                                 <div className ="perfil-photo">
-                                    <img className="photo-image" src="edrey.jpg" alt="imagen"/>
+                                    <img className="photo-image" src={edrey} alt="imagen"/>
                                 </div>
                                 <div className ="perfil-name">
                                     <div >
@@ -72,7 +73,7 @@ class Encuesta extends Component {
                                     <div className="image-change">
                                         <div className ="change-one">
                                             <div className ="img-chg">
-                                            <ImageSlider2 slides={SliderData2}/>
+                                                <ImageSlider2 slides={SliderData2}/>
                                                 {/* <img className="photo"src={fortnite} alt="imagen"/> */}
                                                 {/* <button type="submit" className="changeButton btn btn-primary btn-block">Cambiar juego</button> */}
                                             </div>
@@ -83,7 +84,7 @@ class Encuesta extends Component {
                             <div className="opinion">
                                 <div className ="container-vote">
                                         <div className ="first-opinion">
-                                            Me identifico más con:{SliderData1[1].name}
+                                            Me identifico más
                                         </div>
                                         <div className ="container-botton">
                                             <div>
@@ -103,7 +104,7 @@ class Encuesta extends Component {
                                             </div>
                                         </div>
                                         <div className ="second-opinion">
-                                            Me identifico más con: "Fortnite"
+                                            Me identifico más
                                         </div>
                                 </div> 
                             </div>                                            
