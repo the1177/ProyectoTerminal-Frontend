@@ -2,10 +2,12 @@
     background-color: rgba(0, 255, 255, 0);
 }
 .mb_1{
-    color: rgb(255, 32, 32);
+    color: rgba(255, 32, 32, 0);
 }
 .table_container{
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(255, 91, 91, 0);
+    height: 250px;
+    overflow: auto;
 }
 .table{
     background-color: rgba(67, 245, 23, 0);
