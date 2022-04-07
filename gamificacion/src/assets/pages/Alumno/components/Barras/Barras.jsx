@@ -4,7 +4,7 @@ import { ScatterChart, Scatter, XAxis,
     Tooltip,
     ResponsiveContainer,
     } from 'recharts';
-
+    import './Barras.css'
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import { IgrLegend, IgrDataChart, IgrNumericXAxis, IgrNumericYAxis, IgrScatterLineSeries } from 'igniteui-react-charts';
 import { Bar } from 'react-chartjs-2';
@@ -30,8 +30,8 @@ export default function Barras(){
         }
 
     return(
-        <div className="Barras-contenedor" style={{width:'550px',height:'100px'}}  >
-            <Bar data={data} optiones={opciones} />
+        <div className="Barras-contenedor"   >
+            <Bar data={data} optiones={opciones} /> 
         </div>
     );
 }

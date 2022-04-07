@@ -16,9 +16,9 @@ export default function TablaActividades(){
     { id: 6, actividad: 'Crear una dinamica', status: 'Realizado' },
     { id: 7, actividad: 'Hacer equipos', status: 'No realizada' },
     { id: 8, actividad: 'Traer una comida', status: 'Realizado' },
-    { id: 9, actividad: 'Traer una presentación', status: 'Por hacer' },
-    { id: 10, actividad: 'Ganar una partida de fortnite', status: 'Por hacer' },
-    { id: 11, actividad: 'Tener una comida en el salon', status: 'Por hacer' }];
+    { id: 9, actividad: 'Traer una presentación', status: 'Por Hacer' },
+    { id: 10, actividad: 'Ganar una partida de fortnite', status: 'Por Hacer' },
+    { id: 11, actividad: 'Tener una comida en el salon', status: 'Por Hacer' }];
     //Select onchage function, getting option selected value and save inside state variable
     function handleChange (e){
         //set state variable with option value
@@ -52,7 +52,7 @@ export default function TablaActividades(){
                     </select>
             </div>
             <div className="table_container">
-            <table id="Actividades" class="table table-hover table-bordered p-5">
+            <table id="Actividades" className="table table-hover table-bordered p-5">
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
