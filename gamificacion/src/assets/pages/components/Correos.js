@@ -4,6 +4,10 @@ import './style.css';
 import  {EMAILS}  from './emails';
 import { WithContext as ReactTags } from 'react-tag-input';
 
+import Chip from '@mui/material/Chip';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+
 const suggestions = EMAILS.map(email => {
   return {
     id: email,
@@ -48,23 +52,37 @@ const Emails = () => {
     console.log('The tag at index ' + index + ' was clicked');
   };
 
+  const fixedOptions = [EMAILS[6]];
+  const [value, setValue] = React.useState([...fixedOptions, EMAILS[13]]);
+
+
   return (
-    <div className="emails">
-      <h1> React Tags Example </h1>
-      <div>
-        <ReactTags
-          tags={tags}
-          suggestions={suggestions}
-          delimiters={delimiters}
-          handleDelete={handleDelete}
-          handleAddition={handleAddition}
-          handleDrag={handleDrag}
-          handleTagClick={handleTagClick}
-          inputFieldPosition="bottom"
-          autocomplete
+    <Autocomplete
+          multiple
+          id="fixed-tags-demo"
+          value={value}
+          onChange={(event, newValue) => {
+            setValue([
+              fixedOptions,
+              newValue.filter((option) => fixedOptions.indexOf(option) === -1),
+            ]);
+          }}
+          options={EMAILS}
+          getOptionLabel={(option) => option.title}
+          renderTags={(tagValue, getTagProps) =>
+            tagValue.map((option, index) => (
+              <Chip
+                label={option.title}
+                {...getTagProps({ index })}
+                disabled={fixedOptions.indexOf(option) !== -1}
+              />
+            ))
+          }
+          style={{ width: 500 }}
+          renderInput={(params) => (
+            <TextField {...params} label="Fixed tag" placeholder="Favorites" />
+          )}
         />
-      </div>
-    </div>
   );
 };
 

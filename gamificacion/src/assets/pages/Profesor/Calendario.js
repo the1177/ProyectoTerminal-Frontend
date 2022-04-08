@@ -4,7 +4,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import TextareaAutosize from '@mui/base/TextareaAutosize';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
@@ -16,20 +15,13 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
-import chroma from 'chroma-js';
-import { ColourOption, colourOptions } from '../Profesor/components/Data/Colors';
-import Select, { StylesConfig } from 'react-select';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './components/Listitems/listitems';
 import { StyledEngineProvider } from '@mui/material/styles';
 
-
-
-import Upload from './components/Buttons/upload';
-import InputAuto from './components/Buttons/inputauto';
-
+import Calendar from './components/Scheduler/Calendar';
 
 const drawerWidth = 240;
 
@@ -78,28 +70,31 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const CssTextField = styled(TextField)({
-  '& label.Mui-focused': {
-    color: 'purple',
-  },
-  '& .MuiInput-underline:after': {
-    borderBottomColor: 'purple',
-  },
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: 'light-green',
+    '& label.Mui-focused': {
+      color: 'purple',
     },
-    '&:hover fieldset': {
-      borderColor: 'blue',
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'purple',
     },
-    '&.Mui-focused fieldset': {
-      borderColor: 'purple',
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'light-green',
+      },
+      '&:hover fieldset': {
+        borderColor: 'blue',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'purple',
+      },
+      width: 'auto',
     },
-  },
 });
+
 
 const mdTheme = createTheme();
 
-function CrearCursoContent() {
+
+function ActividadContent() {
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
@@ -134,7 +129,7 @@ function CrearCursoContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Crear Curso
+                Calendario
               </Typography>
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
@@ -143,8 +138,6 @@ function CrearCursoContent() {
               </IconButton>
             </Toolbar>
           </AppBar>
-
- 
           <Drawer variant="permanent" open={open}>
             <Toolbar
               sx={{
@@ -176,6 +169,7 @@ function CrearCursoContent() {
             }}
           >
             <Toolbar />
+
             <Container maxWidth="lg" sx={{ mt: 5, mb: 5 }}>
 
                 <Grid container justifyContent="center" rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
@@ -203,84 +197,16 @@ function CrearCursoContent() {
 
                                 <Grid item xs>
                                     <Typography gutterBottom variant="h5" component="div">
-                                    Crear Curso
+                                        Todos los Cursos
                                     </Typography>
                                 </Grid>
                                 
 
                                 <div>
-                                    <Divider light variant="h7" textAlign="left">Información del Curso</Divider>
-                                    <Box sx={{ m: 2 }}>
+                                    <Box sx={{ m: 2 , width: '109vh' }}>
 
-                                        <CssTextField
-                                          required 
-                                          id="outlined-required" 
-                                          label="Nombre del Curso" 
-                                          variant="outlined"
-                                        />
+                                        <Calendar />
 
-                                    </Box>
-
-                                    <Divider light variant="h7" textAlign="left">Detalles del Curso</Divider>
-                                    <Box sx={{ m: 2 }}>
-
-
-                                        <CssTextField
-                                          required 
-                                          id="outlined" 
-                                          label="ID del Curso" 
-                                          variant="outlined"
-                                        />
-
-                                    </Box>
-
-                                    <Box sx={{ m: 2 }}>
-
-                                        <CssTextField
-                                          required 
-                                          id="outlined-required" 
-                                          label="Sección del Curso" 
-                                          variant="outlined"
-                                        />
-
-                                    </Box>
-
-                                    <Box sx={{ m: 2 }}>
-
-                                        <CssTextField
-                                          required 
-                                          id="outlined-required" 
-                                          label="Areá del Curso" 
-                                          variant="outlined"
-                                        />
-
-                                    </Box>
-
-                                    <Box sx={{ m: 2 }}>
-
-                                      <CssTextField
-                                        id="outlined-multiline-static"
-                                        label="Descripción"
-                                        multiline
-                                        rows={4}
-                                        defaultValue=""
-                                      />
-
-                                    </Box>
-
-                                    <Divider light variant="h7" textAlign="left">Detalles del Curso</Divider>
-
-                                    <Box sx={{'& button': {m: 1}}}>
-                                      <div>
-                                        <Upload />
-                                      </div>
-                                      <div>
-                                        <InputAuto />
-                                      </div>
-                                    </Box>
-
-
-                                    <Box sx={{ m: 2 }}>
                                     </Box>
                     
                                 </div>
@@ -290,6 +216,8 @@ function CrearCursoContent() {
                 </Grid>
                 
             </Container>
+
+
           </Box>
         </Box>
       </ThemeProvider>
@@ -298,6 +226,6 @@ function CrearCursoContent() {
 
 
 
-export default function CrearCurso() {
-    return <CrearCursoContent />;
+export default function Actividad() {
+    return <ActividadContent />;
 }

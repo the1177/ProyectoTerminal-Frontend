@@ -20,7 +20,20 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './components/Listitems/listitems';
 import { StyledEngineProvider } from '@mui/material/styles';
+
+
 import DateRange from './components/Date/DateRange';
+import EditBox from './components/Box/EditBox';
+import Upload from './components/Buttons/upload';
+import InputR from './components/Buttons/inputrubric';
+
+import Rubrica from './components/Rubricas/Rubrica';
+import Cotejo from './components/Rubricas/Cotejo';
+import Insignias from './components/Insignias/Insignias';
+
+import Dinamic from './components/Rubrica/DinamicRubrica';
+import Prueba from './components/Rubrica/Prueba';
+import FormHook from './components/Rubrica/FormHook';
 
 const drawerWidth = 240;
 
@@ -85,11 +98,13 @@ const CssTextField = styled(TextField)({
       '&.Mui-focused fieldset': {
         borderColor: 'purple',
       },
+      width: 'auto',
     },
 });
 
 
 const mdTheme = createTheme();
+
 
 function ActividadContent() {
     const [open, setOpen] = React.useState(true);
@@ -126,7 +141,7 @@ function ActividadContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Actvidad
+                Actividad
               </Typography>
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
@@ -201,7 +216,7 @@ function ActividadContent() {
 
                                 <div>
                                     <Divider light variant="h7" textAlign="left">Información de la Actvidad</Divider>
-                                    <Box sx={{ m: 2 }}>
+                                    <Box sx={{ m: 2 , width: '109vh' }}>
 
                                         <CssTextField
                                           required 
@@ -218,42 +233,33 @@ function ActividadContent() {
                                         </StyledEngineProvider>
                                     </Box>
 
+                                    <Box sx={{'& button': {m: 2}}}>
+                                      <div>
+                                        <Insignias />
+                                      </div>
+                                    </Box>
+
                                     <Divider light variant="h7" textAlign="left">Detalles de la Actvidad</Divider>
-                                    <Box sx={{ m: 2 }}>
 
-
-                                        <CssTextField
-                                          id="outlined" 
-                                          label="Sala de reunión" 
-                                          variant="outlined"
-                                        />
-
+                                    
+                                    <Box sx={{'& button': {m: 2}}}>
+                                      <div>
+                                        <Upload />
+                                      </div>
                                     </Box>
 
                                     <Box sx={{ m: 2 }}>
-
-                                        <CssTextField
-                                          required 
-                                          id="outlined-required" 
-                                          label="URL de reunión" 
-                                          variant="outlined"
-                                        />
-
+                                      <EditBox />
                                     </Box>
 
+                                    <Divider light variant="h7" textAlign="left">Detalles de Evaluación</Divider>
+
                                     <Box sx={{ m: 2 }}>
-
-                                      <CssTextField
-                                        id="outlined-multiline-static"
-                                        label="Descripción"
-                                        multiline
-                                        rows={4}
-                                        defaultValue=""
-                                      />
-
+                                      <InputR />
                                     </Box>
 
-                                    <Box sx={{ m: 2 }}>
+                                    <Box sx={{ width: '109vh' , overflow: 'auto', m: 2}}>
+                                       <FormHook />
                                     </Box>
                     
                                 </div>

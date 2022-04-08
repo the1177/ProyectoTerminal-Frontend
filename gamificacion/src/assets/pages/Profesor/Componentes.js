@@ -26,9 +26,7 @@ import { mainListItems, secondaryListItems } from './components/Listitems/listit
 import { StyledEngineProvider } from '@mui/material/styles';
 
 
-
-import Upload from './components/Buttons/upload';
-import InputAuto from './components/Buttons/inputauto';
+import Insignias from './components/Insignias/Insignias';
 
 
 const drawerWidth = 240;
@@ -134,7 +132,7 @@ function CrearCursoContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Crear Curso
+                Insignias
               </Typography>
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
@@ -203,79 +201,18 @@ function CrearCursoContent() {
 
                                 <Grid item xs>
                                     <Typography gutterBottom variant="h5" component="div">
-                                    Crear Curso
+                                        Administración de Insignias
                                     </Typography>
                                 </Grid>
                                 
 
                                 <div>
-                                    <Divider light variant="h7" textAlign="left">Información del Curso</Divider>
-                                    <Box sx={{ m: 2 }}>
-
-                                        <CssTextField
-                                          required 
-                                          id="outlined-required" 
-                                          label="Nombre del Curso" 
-                                          variant="outlined"
-                                        />
-
-                                    </Box>
-
-                                    <Divider light variant="h7" textAlign="left">Detalles del Curso</Divider>
-                                    <Box sx={{ m: 2 }}>
-
-
-                                        <CssTextField
-                                          required 
-                                          id="outlined" 
-                                          label="ID del Curso" 
-                                          variant="outlined"
-                                        />
-
-                                    </Box>
-
-                                    <Box sx={{ m: 2 }}>
-
-                                        <CssTextField
-                                          required 
-                                          id="outlined-required" 
-                                          label="Sección del Curso" 
-                                          variant="outlined"
-                                        />
-
-                                    </Box>
-
-                                    <Box sx={{ m: 2 }}>
-
-                                        <CssTextField
-                                          required 
-                                          id="outlined-required" 
-                                          label="Areá del Curso" 
-                                          variant="outlined"
-                                        />
-
-                                    </Box>
-
-                                    <Box sx={{ m: 2 }}>
-
-                                      <CssTextField
-                                        id="outlined-multiline-static"
-                                        label="Descripción"
-                                        multiline
-                                        rows={4}
-                                        defaultValue=""
-                                      />
-
-                                    </Box>
 
                                     <Divider light variant="h7" textAlign="left">Detalles del Curso</Divider>
 
                                     <Box sx={{'& button': {m: 1}}}>
                                       <div>
-                                        <Upload />
-                                      </div>
-                                      <div>
-                                        <InputAuto />
+                                        <Insignias />
                                       </div>
                                     </Box>
 

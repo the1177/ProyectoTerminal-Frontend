@@ -1,30 +1,27 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
-import DateRangePicker from '@mui/lab/DateRangePicker';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import Box from '@mui/material/Box';
+import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
+import Stack from '@mui/material/Stack';
 
-export default function BasicDateRangePicker() {
-  const [value, setValue] = React.useState([null, null]);
+export default function ResponsiveDateTimePickers() {
+  const [value, setValue] = React.useState(new Date('2018-01-01T00:00:00.000Z'));
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <DateRangePicker
-        startText="Fecha de Inicio"
-        endText="Fecha de Entrega"
-        value={value}
-        onChange={(newValue) => {
-          setValue(newValue);
-        }}
-        renderInput={(startProps, endProps) => (
-          <React.Fragment>
-            <TextField {...startProps} />
-            <Box sx={{ mx: 2 }}> a </Box>
-            <TextField {...endProps} />
-          </React.Fragment>
-        )}
-      />
+      <Stack spacing={3}>
+        <MobileDateTimePicker
+          required 
+          value={value}
+          onChange={(newValue) => {
+            setValue(newValue);
+          }}
+          label="Fecha de Entrega"
+          variant="outlined"
+          renderInput={(params) => <TextField {...params} />}
+        />
+      </Stack>
     </LocalizationProvider>
   );
 }
