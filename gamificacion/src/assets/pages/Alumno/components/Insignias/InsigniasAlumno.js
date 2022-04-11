@@ -29,6 +29,16 @@ function createData(time, amount) {
   return { time, amount };
 }
 
+imagenes.sort(function(a, b){
+  return  a.status-b.status;
+});
+
+// function custom_sort(a, b) {
+//   return new Date(a.lastUpdated).getTime() - new Date(b.lastUpdated).getTime();
+// }
+
+// imagenes.sort(custom_sort);
+// console.log(imagenes);
 const Urls_images = [
                   // '../../components/Images/Badgets/P1/E1_8.png',
                   '../../components/Images/Badgets/P1/E1_9.png',
@@ -37,12 +47,26 @@ const Urls_images = [
                   '../../components/Images/Badgets/P1/T1_9.png'
               ];
 const listItems = imagenes.map((a) =>{
+    //Insignias bloqueadas
   if (a.status == 1) {
     return (
-    <img className='image-badget' src={a.img}/>
+    <img className='image-badget' title="Bloqueado" src={a.img} style={{filter: 'grayscale(90%)', }}/>
     );
   }
-  
+    //Insignias desbloqueadas
+    if (a.status == 0) {
+      return (
+      <img className='image-badget' title={a.fecha} src={a.img} style={{filter: 'brightness(100%)'}}/>
+      );
+    }
+
+
+  //Insignias pendientes
+  if (a.status == 2) {
+    return (
+    <img className='image-badget' title="Pendiente" src={a.img} style={{filter: 'grayscale(100%)'}}/>
+    );
+  }
 }
 );
 
@@ -52,7 +76,7 @@ export default function Insignias() {
   return (
 
     <div className="insignia-container">
-      <h3 className="title-insignias">Insignias Desbloqueadas</h3>
+      <h3 className="title-insignias">Insignias</h3>
       <div>
         <ul>{listItems}</ul>        
       </div>

@@ -28,37 +28,37 @@ const Menuside = () => {
 
             <div className="menu-containermenu">
                 <a id="home" className="menu-item" href="/">
-                    <i class="fas fa-home"><FiHome /></i>
+                    <i className="fas fa-home"><FiHome /></i>
                     Home
                 </a>
 
                 <a id="calendario" className="menu-item" href="/">
-                    <i class="fas fa-home"><IoCalendarClearOutline /></i>
+                    <i className="fas fa-home"><IoCalendarClearOutline /></i>
                     Calendario
                 </a>
 
                 <a id="calendario" className="menu-item" href="/">
-                    <i class="fas fa-home"><MdOutlineDashboard /></i>
+                    <i className="fas fa-home"><MdOutlineDashboard /></i>
                     Dashboard
                 </a>
 
                 <a id="calendario" className="menu-item" href="/">
-                    <i class="fas fa-home"><RiFlag2Line /></i>
+                    <i className="fas fa-home"><RiFlag2Line /></i>
                     Goals
                 </a>
 
                 <a id="calendario" className="menu-item" href="/">
-                    <i class="fas fa-home"><CgSmartphoneChip /></i>
+                    <i className="fas fa-home"><CgSmartphoneChip /></i>
                     Componentes
                 </a>
 
                 <a id="calendario" className="menu-item" href="/">
-                    <i class="fas fa-home"><IoChatbubbleEllipsesOutline /></i>
+                    <i className="fas fa-home"><IoChatbubbleEllipsesOutline /></i>
                     Mensajes
                 </a>
 
                 <a id="calendario" className="menu-item" href="/">
-                    <i class="fas fa-home"><IoChatbubblesOutline /></i>
+                    <i className="fas fa-home"><IoChatbubblesOutline /></i>
                     Foronjj
                 </a>
 

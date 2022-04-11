@@ -30,3 +30,13 @@
 .resp{
     background-color:rgba(255, 0, 0, 0);
 }
+/* Invisible texto */
+.figcaption {
+  display:none; 
+  transition: all .5s;
+}
+/* Visible texto */
+.figure:hover > figcaption {
+  display:block;
+  transition: all .5s;
+}

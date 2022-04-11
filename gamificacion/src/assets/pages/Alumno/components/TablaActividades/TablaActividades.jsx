@@ -44,7 +44,7 @@ export default function TablaActividades(){
         <div className="app_container">
             <div className="mb_1">
                 <select id="state"
-                    onChange={handleChange} class="form-select mb-2">
+                    onChange={handleChange} className="form-select mb-2">
                         <option value="select Grade">  Elija estado  </option>
                         <option value="Realizado">Realizado</option>
                         <option value="No realizada">No realizada</option>

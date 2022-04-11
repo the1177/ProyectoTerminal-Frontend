@@ -28,6 +28,7 @@ import tablaTest from './components/TablaActividades/tabla';
 import "./Alumno.css";
 import Pastel from './components/Pastel/Pastel';
 import Barras from './components/Barras/Barras';
+import ZoomableTime from './components/ZoomableTimeSeries/ZoomableTime'
 var ReactDOM = require('react-dom');
 
 const drawerWidth = 240;
@@ -177,7 +178,8 @@ const DashboardContent= () => {
                             }}
                           >
                             {/* <Chart /> */}
-                            <Datos />
+                            {/* <Datos /> */}
+                            <ZoomableTime />
                             
                           </Paper>
                         </Grid>
