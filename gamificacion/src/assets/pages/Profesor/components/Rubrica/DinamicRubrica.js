@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 function Dinamico() {
     const classes = useStyles()
     const [inputFields, setInputFields] = useState([
-      { id: uuidv4(), firstName: '', lastName: '' },
+      { id: uuidv4(), criterio: '', descripcion: '' },
     ]);
 
     const handleSubmit = (e) => {
@@ -64,7 +64,7 @@ function Dinamico() {
     }
 
     const handleAddFields = () => {
-      setInputFields([...inputFields, { id: uuidv4(),  firstName: '', lastName: '' }])
+      setInputFields([...inputFields, { id: uuidv4(),  criterio: '', descripcion: '' }])
     }
 
     const handleRemoveFields = id => {

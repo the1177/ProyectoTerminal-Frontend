@@ -24,7 +24,6 @@ import Deposits from './components/Deposits/DepositsAlumno';
 import Datos from './components/Chart/chart';
 import Dispersion from './components/Dispersion/Dispersion';
 import TablaActividades from './components/TablaActividades/TablaActividades';
-import tablaTest from './components/TablaActividades/tabla';
 import "./Alumno.css";
 import Pastel from './components/Pastel/Pastel';
 import Barras from './components/Barras/Barras';
