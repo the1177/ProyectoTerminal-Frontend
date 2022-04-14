@@ -28,7 +28,6 @@ import Upload from './components/Buttons/upload';
 import InputR from './components/Buttons/inputrubric';
 
 import Rubrica from './components/Rubricas/Rubrica';
-import Cotejo from './components/Rubricas/Cotejo';
 import Insignias from './components/Insignias/Insignias';
 
 import Dinamic from './components/Rubrica/DinamicRubrica';
