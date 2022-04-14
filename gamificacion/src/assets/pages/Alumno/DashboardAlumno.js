@@ -172,7 +172,7 @@ const DashboardContent= () => {
                               display: 'flex',
                               flexDirection: 'column',
                               borderRadius: 3,
-                              height: 320,
+                              height: 360,
                               width: 800,
                               //backgroundColor:'red'
                             }}
@@ -192,7 +192,7 @@ const DashboardContent= () => {
                               display: 'flex',
                               flexDirection: 'column',
                               borderRadius: 3,
-                              height: 320,                          
+                              height: 360,                          
                               width:350,
                               marginleft:10,
                             //backgroundColor: 'blue',
@@ -207,28 +207,26 @@ const DashboardContent= () => {
                             </div>
                         </Paper>
                       </div>
-                    </div>
-
-                    {/* Insignias */}
+                    </div>                    
                     <div className='second-section'>
                       <div className='dispersion-container'>
-                      <Grid item xs={12} md={8} lg={9}>
-                        <Paper
-                          sx={{
-                            p: 2,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            borderRadius: 3,
-                            height: 320,                          
-                            width:350,                            
-                            //backgroundColor:'red'
-                          }}
-                          >
-                          {/* <Dispersion /> */}
-                          {/* <Barras /> */}
-                          <TablaActividades /> 
-                        </Paper>
-                      </Grid>
+                        <Grid item xs={12} md={8} lg={9}>
+                          <Paper
+                            sx={{
+                              p: 2,
+                              display: 'flex',
+                              flexDirection: 'column',
+                              borderRadius: 3,
+                              height: 320,                          
+                              width:350,                            
+                              //backgroundColor:'red'
+                            }}
+                            >
+                            {/* <Dispersion /> */}
+                            {/* <Barras /> */}
+                            <TablaActividades /> 
+                          </Paper>
+                        </Grid>
                       </div>
                       <div className='insignias-container'> 
                         <Grid item xs={12} md={8} lg={9}>
@@ -250,27 +248,28 @@ const DashboardContent= () => {
                         </Grid>
 
                       </div>
-
-
                     </div>
-
-                    {/* Medallero */}
-                    <Grid item xs={12} md={8} lg={9}>
-                    <Paper
-                        sx={{
-                          p: 2,
-                          display: 'flex',
-                          flexDirection: 'column',
-                          borderRadius: 3,
-                          height: "auto",
-                          width:"auto",
-                        }}
-                      >
-                        <Insignias />
-                      </Paper>
-                    </Grid>
+                    <div className='third-section'>
+                      <div className='medallero-container'>
+                        {/* Medallero */}
+                        <Grid item xs={12} md={8} lg={9}>
+                          <Paper
+                            sx={{
+                              p: 2,
+                              display: 'flex',
+                              flexDirection: 'column',
+                              borderRadius: 3,
+                              height: 330,
+                              width: 1170,
+                              overflow: 'auto'
+                              }}
+                            >
+                            <Insignias />
+                          </Paper>
+                        </Grid>
+                      </div>                                        
+                    </div>                    
                   </div>
-
               </Grid>
               {/* PROGRESS BAR */}
               {/*

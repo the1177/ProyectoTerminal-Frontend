@@ -45,7 +45,14 @@ export default function ZoomableTime(){
     }
     return(
         <div>
+          <div>
+            <h3>
+              Actividades
+            </h3>
+          </div>
+          <div className='Zoomable-container'>
             <ReactApexChart options={options} series={series} type="area" height={295} />
+          </div>            
         </div>
     );
 }

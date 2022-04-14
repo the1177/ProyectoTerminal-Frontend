@@ -6,7 +6,7 @@ import './Pastel.css'
 
 export default function Pastel(){
     const data ={
-        labels: ['No realizadas','Por Realizar','Realizadas'],
+        labels: ['Vencidas','Pendientes','Completadas'],
         datasets:[{
             data:[13.40,10.30,75.40],
             backgroundColor: ['#EF280F','#024A86','#02AC66']

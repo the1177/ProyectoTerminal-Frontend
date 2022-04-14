@@ -8,17 +8,17 @@ export default function TablaActividades(){
     const [select, setselect] = useState('');
     //custom data
     var dataa = [
-    { id: 1, actividad: 'Realizar un server en minecraft',  status: 'Realizado' }, 
-    { id: 2, actividad: 'Formar equipos de 4 integrantes',  status: 'Realizado' }, 
-    { id: 3, actividad: 'Descargar roblox',  status: 'Realizado' }, 
-    { id: 4, actividad: 'Utilizar un microfono en clase' , status: 'Realizado' }, 
-    { id: 5, actividad: 'Tener una exposicion de no mas de 5 minutos',  status: 'Realizado' }, 
-    { id: 6, actividad: 'Crear una dinamica', status: 'Realizado' },
-    { id: 7, actividad: 'Hacer equipos', status: 'No realizada' },
-    { id: 8, actividad: 'Traer una comida', status: 'Realizado' },
-    { id: 9, actividad: 'Traer una presentación', status: 'Por Hacer' },
-    { id: 10, actividad: 'Ganar una partida de fortnite', status: 'Por Hacer' },
-    { id: 11, actividad: 'Tener una comida en el salon', status: 'Por Hacer' }];
+    { id: 1, actividad: 'Realizar un server en minecraft',  status: 'Completadas' }, 
+    { id: 2, actividad: 'Formar equipos de 4 integrantes',  status: 'Completadas' }, 
+    { id: 3, actividad: 'Descargar roblox',  status: 'Completadas' }, 
+    { id: 4, actividad: 'Utilizar un microfono en clase' , status: 'Completadas' }, 
+    { id: 5, actividad: 'Tener una exposicion de no mas de 5 minutos',  status: 'Completadas' }, 
+    { id: 6, actividad: 'Crear una dinamica', status: 'Completadas' },
+    { id: 7, actividad: 'Hacer equipos', status: 'Vencidas' },
+    { id: 8, actividad: 'Traer una comida', status: 'Completadas' },
+    { id: 9, actividad: 'Traer una presentación', status: 'Pendientes' },
+    { id: 10, actividad: 'Ganar una partida de fortnite', status: 'Pendientes' },
+    { id: 11, actividad: 'Tener una comida en el salon', status: 'Pendientes' }];
     //Select onchage function, getting option selected value and save inside state variable
     function handleChange (e){
         //set state variable with option value
@@ -46,9 +46,9 @@ export default function TablaActividades(){
                 <select id="state"
                     onChange={handleChange} className="form-select mb-2">
                         <option value="select Grade">  Elija estado  </option>
-                        <option value="Realizado">Realizado</option>
-                        <option value="No realizada">No realizada</option>
-                        <option value="Por Hacer">Por Hacer</option>
+                        <option value="Completadas">Completadas</option>
+                        <option value="Vencidas">Vencidas</option>
+                        <option value="Pendientes">Pendientes</option>
                     </select>
             </div>
             <div className="table_container">

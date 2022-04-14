@@ -6,10 +6,10 @@
     display: flex;
 }
 .first-section{
-    background:rgb(243, 243, 243);
+    background:rgb(221, 221, 221);
     display: flex;
     width: 1200px;
-    height: 360px;
+    height: 390px;
     padding: 15px;
     margin: 20px;
     border-radius: .5rem;
@@ -39,13 +39,13 @@
 }
 .total-chart{
     background-color: rgb(255, 255, 255);
-    width: 90%;
+    width: 100%;
 }
 .second-section{
-    background:rgb(247, 247, 247);
+    background:rgb(221, 221, 221);
     display: flex;
     width: 1200px;
-    height: 360px;
+    height: 355px;
     padding: 15px;
     margin: 20px;
     border-radius: .5rem;
@@ -58,4 +58,19 @@
     background-color: rgba(25, 0, 255, 0);
     margin-right: 10px ;
     
+}
+.third-section{
+    background:rgb(221, 221, 221);
+    display: flex;
+    width: 1200px;
+    height: 355px;
+    padding: 15px;
+    margin: 20px;
+    border-radius: .5rem;
+    justify-content:  center;
+    
+}
+.medallero-container{
+    background-color: rgba(0, 255, 255, 0);    
+    /* overflow: auto; */
 }
