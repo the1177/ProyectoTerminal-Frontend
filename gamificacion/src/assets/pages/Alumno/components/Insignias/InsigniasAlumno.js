@@ -3,6 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import Title from '../Title/TitleAlumno';
 import "./Insignias.css";
+import imagenes from './imagenes'
 
 import B1IMAGE from '../../components/Images/Badgets/P1/E1_8.png'
 import B2IMAGE from '../../components/Images/Badgets/P1/E1_9.png'
@@ -28,48 +29,57 @@ function createData(time, amount) {
   return { time, amount };
 }
 
-const data = [
-  createData('sem1', 0),
-  createData('sem2', 3),
-  createData('sem3', 13),
-  createData('sem4', 5),
-  createData('sem5', 12),
-  createData('sem6', 20),
-  createData('sem7', 25),
-  createData('sem8', 50),
-  createData('sem9', undefined),
-];
+imagenes.sort(function(a, b){
+  return  a.status-b.status;
+});
+
+// function custom_sort(a, b) {
+//   return new Date(a.lastUpdated).getTime() - new Date(b.lastUpdated).getTime();
+// }
+
+// imagenes.sort(custom_sort);
+// console.log(imagenes);
+const Urls_images = [
+                  // '../../components/Images/Badgets/P1/E1_8.png',
+                  '../../components/Images/Badgets/P1/E1_9.png',
+                  '../../components/Images/Badgets/P1/E1_10.png',
+                  '../../components/Images/Badgets/P1/T1_8.png',
+                  '../../components/Images/Badgets/P1/T1_9.png'
+              ];
+const listItems = imagenes.map((a) =>{
+    //Insignias bloqueadas
+  if (a.status == 1) {
+    return (
+    <img className='image-badget' title="Bloqueado" src={a.img} style={{filter: 'grayscale(90%)', }}/>
+    );
+  }
+    //Insignias desbloqueadas
+    if (a.status == 0) {
+      return (
+      <img className='image-badget' title={a.fecha} src={a.img} style={{filter: 'brightness(100%)'}}/>
+      );
+    }
+
+
+  //Insignias pendientes
+  if (a.status == 2) {
+    return (
+    <img className='image-badget' title="Pendiente" src={a.img} style={{filter: 'grayscale(100%)'}}/>
+    );
+  }
+}
+);
 
 export default function Insignias() {
   const theme = useTheme();
 
   return (
-    
-    <div className="insignia-container">
-      <h3 className="title-insignias">Insignias Desbloqueadas</h3>
-      <ResponsiveContainer className="resp" width="auto" height="auto" aspect={4 / 1}>
 
-          <div className="BG">
-            <div className="BGU">
-              <div className="insignia"><img className='image-badget' src={B1IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B2IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B3IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B4IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B5IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B6IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B7IMAGE}/></div>
-            </div>
-            <div className="BGU">
-            <div className="insignia"><img className='image-badget' src={B8IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B9IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B10IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B11IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B12IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B13IMAGE}/></div>
-              <div className="insignia"><img className='image-badget' src={B14IMAGE}/></div>
-            </div>
-          </div>
-      </ResponsiveContainer>
+    <div className="insignia-container">
+      <h3 className="title-insignias">Insignias</h3>
+      <div>
+        <ul>{listItems}</ul>        
+      </div>
     </div>
   );
 }

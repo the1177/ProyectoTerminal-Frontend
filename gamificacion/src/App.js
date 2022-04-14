@@ -6,7 +6,6 @@ import Login from './assets/pages/Login/Login';
 import Home from './assets/pages/Home/Home';
 import CreateUser from './assets/pages/CreateUser/CreateUsr';
 
-
 import Profesor from './assets/pages/Profesor/Profesor';
 import Perfil from './assets/pages/Profesor/Profile';
 import CrearCurso from './assets/pages/Profesor/CrearCurso';
@@ -24,6 +23,7 @@ import BadgetsAlumno from './assets/pages/Alumno/BadgetsAlumno';
 import MisionesAlumno from './assets/pages/Alumno/MisionesAlumno';
 import DashboardAlumno from './assets/pages/Alumno/DashboardAlumno';
 
+import Encuesta from './assets/pages/Encuesta/Encuesta';
 
 
 function App() {
@@ -49,6 +49,7 @@ function App() {
         <Route path="/badgetsalumno" element={<BadgetsAlumno />} />
         <Route path="/misionesalumno" element={<MisionesAlumno /> } />
         <Route path="/dashboardalumno" element={<DashboardAlumno /> } />
+        <Route path="/Encuesta" element={<Encuesta /> } />
 
       </Routes>
     </Router>

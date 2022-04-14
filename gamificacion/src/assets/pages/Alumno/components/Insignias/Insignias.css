@@ -2,6 +2,7 @@
     margin: 10px;
     padding: 5px;
     height: 100%;
+    background-color: rgba(0, 0, 255, 0);
     width:auto;
     -webkit-box-shadow: 0px 0px 15px -10px rgb(0, 0, 0);
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0);
@@ -29,4 +30,14 @@
 }
 .resp{
     background-color:rgba(255, 0, 0, 0);
+}
+/* Invisible texto */
+.figcaption {
+  display:none; 
+  transition: all .5s;
+}
+/* Visible texto */
+.figure:hover > figcaption {
+  display:block;
+  transition: all .5s;
 }

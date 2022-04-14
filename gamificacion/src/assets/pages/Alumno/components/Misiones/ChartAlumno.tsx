@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import Title from '../Title/TitleAlumno';
+import './ChartAlumno.css';
 
 // Generate Sales Data
 function createData(time: string, amount?: number) {
@@ -24,7 +25,8 @@ export default function Chart() {
   const theme = useTheme();
 
   return (
-    <React.Fragment>
+  <div className='Chart-container'>
+      <React.Fragment>
       <Title>Today</Title>
       <ResponsiveContainer>
         <LineChart
@@ -67,5 +69,7 @@ export default function Chart() {
         </LineChart>
       </ResponsiveContainer>
     </React.Fragment>
+  </div>
+
   );
 }
