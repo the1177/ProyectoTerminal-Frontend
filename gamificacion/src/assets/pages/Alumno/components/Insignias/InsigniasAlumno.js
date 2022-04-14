@@ -4,7 +4,7 @@ import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recha
 import Title from '../Title/TitleAlumno';
 import "./Insignias.css";
 import imagenes from './imagenes'
-
+import Bloqueada from '../Images/Bloqueada.jpg'
 import B1IMAGE from '../../components/Images/Badgets/P1/E1_8.png'
 import B2IMAGE from '../../components/Images/Badgets/P1/E1_9.png'
 import B3IMAGE from '../../components/Images/Badgets/P1/E1_10.png'
@@ -50,7 +50,8 @@ const listItems = imagenes.map((a) =>{
     //Insignias bloqueadas
   if (a.status == 1) {
     return (
-    <img className='image-badget' title="Bloqueado" src={a.img} style={{filter: 'grayscale(90%)', }}/>
+    // <img className='image-badget' title="Bloqueado" src={Bloqueada} style={{filter: 'opacity(10%)',filter: 'grayscale(100%)'}}/>
+    <img className='image-badget' title="Vencida" src={Bloqueada} style={{filter: 'grayscale(100%)'}}/>
     );
   }
     //Insignias desbloqueadas
@@ -64,7 +65,7 @@ const listItems = imagenes.map((a) =>{
   //Insignias pendientes
   if (a.status == 2) {
     return (
-    <img className='image-badget' title="Pendiente" src={a.img} style={{filter: 'grayscale(100%)'}}/>
+    <img className='image-badget' title="Por desbloquear" src={Bloqueada} style={{filter: 'brightness(100%)'}}/>
     );
   }
 }
