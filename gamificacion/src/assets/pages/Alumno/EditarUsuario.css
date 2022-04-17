@@ -1,0 +1,139 @@
+.container {
+    flex: 1;
+    background-color: '#F2F2F2';
+    flex-direction: 'row';
+    justify-content: 'space-between';
+    align-items: 'center';
+    align-content: 'stretch';
+    
+}
+
+box {
+    width: 320;
+    height: 373;
+    background-color: '#FFFFFF';
+    border-color: '#999';
+    border-radius: 20;
+    border-width: 5;
+    margin: 10
+
+};
+
+box1 {
+    width: 320;
+    height: 373;
+    background-color: '#FFFFFF';
+    border-radius: 18;
+    margin: 10;
+    margin-left: 50; /*margin de los boxes*/ 
+    margin-right: 50;
+    padding: 15;
+    align-self: 'flex-start'
+
+};
+
+.box2 {
+    flex: 1;
+    width: 800;
+    height: 'auto';
+    background-color: '#FFFFFF';
+    border-radius: 18;
+    margin: 10;
+    margin-left: 50;  /*margin de los boxes*/ 
+    margin-right: 50;
+    padding: 15;
+    align-self: 'center'
+
+};
+
+.profileImgminContainer {
+    height: 70;
+    width: 70;
+    border-radius: 70;
+    align-self: 'left'
+};
+
+.imgminProfile {
+    height: 70;
+    width: 70;
+    border-radius: 70;
+    margin-bottom: 20;
+    margin-left: 25
+};
+
+.profileImgContainer {
+    height: 140;
+    width: 140;
+    border-radius: 70;
+    align-self: 'center'
+};
+
+.imgProfile {
+    height: 140;
+    width: 140;
+    border-radius: 70;
+    margin-bottom: 20;
+};
+
+.textHeadingStyle {
+    margin-top: 20;
+    font-size: 13;
+    color: '#707070';
+    font-weight: '600';
+    margin-left: 25
+};
+
+.containerinput {
+    flex-direction: 'row';
+    flex-wrap: 'wrap';
+    justify-content: 'center';
+    align-items: 'center';
+    align-content: 'stretch';
+    
+};
+
+.baseText {
+    font-Family: "Cochin";
+};
+
+.titleText {
+    font-size: 20;
+    font-weight: "bold"
+};
+
+.input1 {
+    width: 311;
+    height: 40;
+    margin: 15;
+    border-width: 1;
+    border-radius: 5;
+    border-color: '#707070';
+    padding: 10;
+    color: '#707070';
+    opacity: 0.5;
+};
+
+.input2 {
+    width: 669;
+    height: 40;
+    margin: 15;
+    border-width: 1;
+    border-radius: 5;
+    border-color: '#707070';
+    padding: 10;
+    color: '#707070';
+    opacity: 0.5;
+};
+
+.input3 {
+    width: 669;
+    height: 151;
+    margin: 15;
+    border-width: 1;
+    border-radius: 5;
+    border-color: '#707070';
+    padding: 10;
+    color: '#707070';
+    opacity: 0.5;
+
+};

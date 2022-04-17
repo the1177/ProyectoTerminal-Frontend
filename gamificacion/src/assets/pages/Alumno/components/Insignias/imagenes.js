@@ -34,6 +34,9 @@ import B15IMAGE from "../../components/Images/Badgets/P1/T4_10.png"
 
 export default [
     {
+        //0 = OBTENIDA
+        //1= VENCIDA
+        //2= POR OBTENER
         "img": B1IMAGE,
         "status": 0,
         "fecha": "20/03/2022"
@@ -109,85 +112,85 @@ export default [
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    },
-    {
-        "img": B3IMAGE,
-        "status": 0,
-        "fecha": "2022/06/01"
-    }  
+    }
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // },
+    // {
+    //     "img": B3IMAGE,
+    //     "status": 0,
+    //     "fecha": "2022/06/01"
+    // }  
 ]
