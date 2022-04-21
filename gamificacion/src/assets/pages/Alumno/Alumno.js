@@ -157,7 +157,7 @@ const Alumno = () =>{
 const styles = StyleSheet.create ({
     container: {
         flex: 1,
-        backgroundColor: '#F2F2F2',
+        backgroundcolor: '#F2F2F2',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -168,7 +168,7 @@ const styles = StyleSheet.create ({
     box: {
         width: 320,
         height: 373,
-        backgroundColor: '#FFFFFF',
+        backgroundcolor: '#FFFFFF',
         borderColor: '#999',
         borderRadius: 20,
         borderWidth: 5,
@@ -179,7 +179,7 @@ const styles = StyleSheet.create ({
     box1: {
         width: 320,
         height: 373,
-        backgroundColor: '#FFFFFF',
+        backgroundcolor: '#FFFFFF',
         borderRadius: 18,
         margin: 10,
         marginLeft: 50, /*margin de los boxes*/ 
@@ -193,7 +193,7 @@ const styles = StyleSheet.create ({
         flex: 1,
         width: 800,
         height: 'auto',
-        backgroundColor: '#FFFFFF',
+        backgroundcolor: '#FFFFFF',
         borderRadius: 18,
         margin: 10,
         marginLeft: 50,  /*margin de los boxes*/ 

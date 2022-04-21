@@ -29,6 +29,7 @@ import Pastel from './components/Pastel/Pastel';
 import Barras from './components/Barras/Barras';
 import ZoomableTime from './components/ZoomableTimeSeries/ZoomableTime'
 var ReactDOM = require('react-dom');
+import Orders from './components/Orders/OrdersAlumno';
 
 const drawerWidth = 240;
 
@@ -148,7 +149,7 @@ const DashboardContent= () => {
           <Box
             component="main"
             sx={{
-              backgroundColor: (theme) =>
+              backgroundcolor: (theme) =>
                 theme.palette.mode === 'light'
                   ? theme.palette.grey[100]
                   : theme.palette.grey[900],

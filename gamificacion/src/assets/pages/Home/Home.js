@@ -9,10 +9,10 @@ const Home = () =>{
 
         <div className="page-wrap">
             <div className="caja c1">
-                1
+
             </div>
             <div className="caja c2">
-                2
+
             </div>
         </div>
     </div>

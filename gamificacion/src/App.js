@@ -15,7 +15,7 @@ import Misiones from './assets/pages/Profesor/Misiones';
 import Dashboard from './assets/pages/Profesor/Dashboard';
 import CrearActividad from './assets/pages/Profesor/Actvidad';
 import Componentes from './assets/pages/Profesor/Componentes';
-import Calendar from './assets/pages/Profesor/Calendario';
+import Calendario from './assets/pages/Profesor/Calendario';
 
 import Alumno from './assets/pages/Alumno/Alumno';
 import CursoAlumno from './assets/pages/Alumno/CursoAlumno';
@@ -25,7 +25,6 @@ import DashboardAlumno from './assets/pages/Alumno/DashboardAlumno';
 import EditarUsuario from './assets/pages/Alumno/EditarUsuario'
 import Encuesta from './assets/pages/Encuesta/Encuesta';
 import Alumnos from './assets/pages/Alumno/components/EditarUser/alumnoslist'
-
 
 function App() {
   return (
@@ -38,19 +37,19 @@ function App() {
         <Route path="/profesor" element={<Profesor />} />
         <Route path="/cursos" element={<Cursos />} />
         <Route path="/badgets" element={<Badgets />} />
-        <Route path="/misiones" element={<Misiones /> } />
-        <Route path="/dashboard" element={<Dashboard /> } />
+        <Route path="/misiones" element={<Misiones />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/crearcurso" element={<CrearCurso />} />
         <Route path="/crearactividad" element={<CrearActividad />} />
         <Route path="/profile" element={<Perfil />} />
         <Route path="/componentes" element={<Componentes />} />
-        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/calendario" element={<Calendario />} />
         <Route path="/alumno" element={<Alumno />} />
         <Route path="/cursoalumno" element={<CursoAlumno />} />
         <Route path="/badgetsalumno" element={<BadgetsAlumno />} />
         <Route path="/misionesalumno" element={<MisionesAlumno /> } />
         <Route path="/dashboardalumno" element={<DashboardAlumno /> } />
-        <Route path="/Encuesta" element={<Encuesta /> } />
+        <Route path="/encuesta" element={<Encuesta />} />
         <Route path="/editarUsuario" element={<EditarUsuario /> } />
         <Route path="/list" element={<Alumnos /> } />
       </Routes>

@@ -41,8 +41,6 @@ export default function RecipeReviewCard() {
   };
 
   return (
-    
-
     <Container maxWidth="lg" sx={{ mt: 3, mb: 3 }}>
         <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 8, lg:9 }}>
 
@@ -62,7 +60,60 @@ export default function RecipeReviewCard() {
                 }
                 title="Diseño de Patrones para datos estructurados"
                 subheader="Primavera 2022"
-                backgroundColor="pink"
+                backgroundcolor="pink"
+            />
+            <CardMedia
+                component="img"
+                height="194"
+                src={Violeta}
+                alt="Fondo"
+            />
+            <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                28 Alumnos
+                </Typography>
+            </CardContent>
+            <CardActions disableSpacing>
+                <IconButton aria-label="add to favorites">
+                <FavoriteIcon />
+                </IconButton>
+                <IconButton aria-label="share">
+                <ShareIcon />
+                </IconButton>
+                <ExpandMore
+                expand={expanded}
+                onClick={handleExpandClick}
+                aria-expanded={expanded}
+                aria-label="show more"
+                >
+                <ExpandMoreIcon />
+                </ExpandMore>
+            </CardActions>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                <Typography paragraph>Misiones actuales:</Typography>
+                </CardContent>
+            </Collapse>
+            </Card>
+        </Grid>
+        
+        {/* Chart */}
+        <Grid item xs={6}>
+            <Card sx={{ maxWidth: 345, borderRadius: 3 }}>
+            <CardHeader
+                avatar={
+                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                    DF
+                </Avatar>
+                }
+                action={
+                <IconButton aria-label="settings">
+                    <MoreVertIcon />
+                </IconButton>
+                }
+                title="Diseño de Patrones para datos estructurados"
+                subheader="Primavera 2022"
+                backgroundcolor="pink"
             />
             <CardMedia
                 component="img"
@@ -115,7 +166,7 @@ export default function RecipeReviewCard() {
                 }
                 title="Algoritmos y estructura de datos "
                 subheader="Primavera 2022"
-                backgroundColor="pink"
+                backgroundcolor="pink"
             />
             <CardMedia
                 component="img"
@@ -168,7 +219,7 @@ export default function RecipeReviewCard() {
                 }
                 title="Técnicas algorítmicas"
                 subheader="Primavera 2022"
-                backgroundColor="pink"
+                backgroundcolor="pink"
             />
             <CardMedia
                 component="img"
@@ -221,7 +272,7 @@ export default function RecipeReviewCard() {
                 }
                 title="Diseño de Juegos"
                 subheader="Primavera 2022"
-                backgroundColor="pink"
+                backgroundcolor="pink"
             />
             <CardMedia
                 component="img"

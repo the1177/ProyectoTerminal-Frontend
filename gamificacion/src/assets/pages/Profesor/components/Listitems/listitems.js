@@ -74,7 +74,6 @@ export const mainListItems = (
 
 export const secondaryListItems = (
   <div>
-    <ListSubheader inset>Usuario</ListSubheader>
     <ListItem button>
       <ListItemIcon>
         <SearchRoundedIcon />
@@ -88,15 +87,5 @@ export const secondaryListItems = (
       </ListItemIcon>
       <ListItemText primary="Configuración" />
     </ListItem>
-
-
-    <ListItem button>
-      <Avatar
-        alt="David Granados"
-        src={User2}
-        sx={{ width: 68, height: 68 }}
-      />
-    </ListItem>
-
   </div>
 );

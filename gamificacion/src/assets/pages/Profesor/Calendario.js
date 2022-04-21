@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -19,82 +20,24 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './components/Listitems/listitems';
-import { StyledEngineProvider } from '@mui/material/styles';
 
-import Calendar from './components/Scheduler/Calendar';
+import Menu from './components/Menu/Menu.js'
+import NavBar from './components/NavBar/NavBar';
+
+import Chart from './components/Chart/Chart';
+import Deposits from './components/Deposits/Deposits';
+import Orders from './components/Orders/Orders';
+import Schedule from './components/Scheduler/Scheduler';
+import Misiones from './components/Chart/ChartMisiones'
 
 const drawerWidth = 240;
-
-const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-  })(({ theme, open }) => ({
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    ...(open && {
-      marginLeft: drawerWidth,
-      width: `calc(100% - ${drawerWidth}px)`,
-      transition: theme.transitions.create(['width', 'margin'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-    }),
-}));
-
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-    ({ theme, open }) => ({
-      '& .MuiDrawer-paper': {
-        position: 'relative',
-        whiteSpace: 'nowrap',
-        width: drawerWidth,
-        transition: theme.transitions.create('width', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.enteringScreen,
-        }),
-        boxSizing: 'border-box',
-        ...(!open && {
-          overflowX: 'hidden',
-          transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-          }),
-          width: theme.spacing(7),
-          [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(9),
-          },
-        }),
-      },
-    }),
-);
-
-const CssTextField = styled(TextField)({
-    '& label.Mui-focused': {
-      color: 'purple',
-    },
-    '& .MuiInput-underline:after': {
-      borderBottomColor: 'purple',
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'light-green',
-      },
-      '&:hover fieldset': {
-        borderColor: 'blue',
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'purple',
-      },
-      width: 'auto',
-    },
-});
-
-
 const mdTheme = createTheme();
 
+function CalendarioContent() {
+    const saved = localStorage.getItem("user");
+    const user = JSON.parse(saved);
+    console.log(user);
 
-function ActividadContent() {
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
@@ -104,62 +47,15 @@ function ActividadContent() {
       <ThemeProvider theme={mdTheme}>
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
-          <AppBar position="absolute" open={open}>
-            <Toolbar
-              sx={{
-                pr: '24px', // keep right padding when drawer closed
-              }}
-            >
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="open drawer"
-                onClick={toggleDrawer}
-                sx={{
-                  marginRight: '36px',
-                  ...(open && { display: 'none' }),
-                }}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography
-                component="h1"
-                variant="h6"
-                color="inherit"
-                noWrap
-                sx={{ flexGrow: 1 }}
-              >
-                Calendario
-              </Typography>
-              <IconButton color="inherit">
-                <Badge badgeContent={4} color="secondary">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
-            </Toolbar>
-          </AppBar>
-          <Drawer variant="permanent" open={open}>
-            <Toolbar
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-                px: [1],
-              }}
-            >
-              <IconButton onClick={toggleDrawer}>
-                <ChevronLeftIcon />
-              </IconButton>
-            </Toolbar>
-            <Divider />
-            <List>{mainListItems}</List>
-            <Divider />
-            <List>{secondaryListItems}</List>
-          </Drawer>
+          
+          <NavBar tituloNavBar="Calendario" open={ open } setOpen={ setOpen }/>
+
+          <Menu user={ user }  open ={open } setOpen={ setOpen }/>
+          
           <Box
             component="main"
             sx={{
-              backgroundColor: (theme) =>
+              backgroundcolor: (theme) =>
                 theme.palette.mode === 'light'
                   ? theme.palette.grey[100]
                   : theme.palette.grey[900],
@@ -169,55 +65,25 @@ function ActividadContent() {
             }}
           >
             <Toolbar />
-
             <Container maxWidth="lg" sx={{ mt: 5, mb: 5 }}>
+              <Grid container spacing={6}>
 
-                <Grid container justifyContent="center" rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid item xs={'auto'}>
-                        <Paper
-                            sx={{
-                            p: 2,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            borderRadius: 3,
-                            height: 'auto',
-                            
-                            }}
-                        >
-                            <Box
-                            component="form"
-                            sx={{
-                                '& .MuiTextField-root': { m: 1, width: '90ch' },
-                                my: 3,
-                                mx: 7
-                            }}
-                            noValidate
-                            autoComplete="off"
-                            >
-
-                                <Grid item xs>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        Todos los Cursos
-                                    </Typography>
-                                </Grid>
-                                
-
-                                <div>
-                                    <Box sx={{ m: 2 , width: '109vh' }}>
-
-                                        <Calendar />
-
-                                    </Box>
-                    
-                                </div>
-                            </Box>
-                        </Paper>
-                    </Grid>
+                <Grid item xs="auto" md="auto" lg={12}>
+                <Paper
+                    sx={{
+                      p: 2,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      borderRadius: 3,
+                      height: 'auto',
+                      width: 'auto'
+                    }}
+                  >
+                    <Schedule />
+                  </Paper>
                 </Grid>
-                
+              </Grid>
             </Container>
-
-
           </Box>
         </Box>
       </ThemeProvider>
@@ -226,6 +92,6 @@ function ActividadContent() {
 
 
 
-export default function Actividad() {
-    return <ActividadContent />;
+export default function Calendario() {
+    return <CalendarioContent />;
 }
