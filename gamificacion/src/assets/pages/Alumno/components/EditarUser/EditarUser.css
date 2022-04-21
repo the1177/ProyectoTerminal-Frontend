@@ -1,4 +1,35 @@
 .edit_container{
     display: flexbox;
-    background-color: blue;
+    background-color: rgba(247, 21, 21, 0);
+    margin-left: 10%;
+}
+.change-perfil{
+    width: 450px;
+    display: flexbox;
+    background-color: rgba(0, 0, 255, 0);
+    padding-left: 70px;
+}
+.imagen-size{
+    width: 300px;
+    height: auto;
+    background-color: rgba(253, 40, 40, 0);
+    display: flex;
+    padding-left: 37px;
+}
+.image-change-perfil{
+
+    
+    height: auto;
+}
+.x{
+     
+    height: auto;
+    background-color: rgba(0, 0, 255, 0);
+}
+.image-cp{
+    width:300px;
+    height:300px;
+    border-radius:150px;
+    background-color: rgba(0, 0, 0, 0);
+    object-fit: cover;
 }

@@ -1,50 +1,12 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "username": "duncan",
-      "country": "australia",
-      "password": "123"
-    },
-    {
-      "id": 2,
-      "username": "sarah",
-      "country": "england",
-      "password": "123"
-    },
-    {
-      "id": 3,
-      "username": "admin",
-      "country": "usa",
-      "password": "123"
-    },
-    {
-      "username": "test2",
-      "password": "123",
-      "id": 4
-    }
-  ],
   "data": [
     {
-      "name": "Edrey Hernandez",
-      "mobile": "64685282",
-      "email": "edrey@gmail.com",
+      "name": "Aimee5",
+      "email": "9981282443",
       "userId": 1,
+      "mobile": "Me gustaba la comidagggg",
+      "photo": "https://concepto.de/wp-content/uploads/2015/03/paisaje-800x409.jpg",
       "id": 1
-    },
-    {
-      "name": "aimee g",
-      "mobile": "99835",
-      "email": "aimeeG@gmail.com",
-      "userId": 2,
-      "id": 2
-    },
-    {
-      "id": 4,
-      "name": "Jez",
-      "email": "jez@gmail.com",
-      "mobile": "tr78",
-      "userId": 4
     }
   ]
 }
