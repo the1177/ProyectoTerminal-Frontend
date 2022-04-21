@@ -10,6 +10,6 @@ export default function Chart() {
 
   return (
 
-    <p>Hola</p>
+    <p>Componente</p>
   );
 }

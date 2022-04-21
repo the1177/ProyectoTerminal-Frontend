@@ -1,12 +1,11 @@
 import React from 'react'
 import { Platform, StyleSheet, Text, SafeAreaView, View, Image, TouchableHighlight, TextInput } from 'react-native';
 
-import './Profesor.css';
 import imageprof from './components/Images/granados.jpg';
 
 
 
-const Profesor = () =>{
+const Badgets = () =>{
 
     const [textname, onChangeName] = React.useState("Nombre del badget");
     const [textlast, onChangeLastName] = React.useState("Clasificación");
@@ -225,5 +224,5 @@ const styles = StyleSheet.create ({
 
 })
 
-export default Profesor;
+export default Badgets;
 

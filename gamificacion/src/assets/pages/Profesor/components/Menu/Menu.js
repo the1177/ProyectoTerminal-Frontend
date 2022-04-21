@@ -27,6 +27,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import Avatar from '@mui/material/Avatar'
 
+import LogoutIcon from '@mui/icons-material/Logout';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import CalendarTodayRoundedIcon from '@mui/icons-material/CalendarTodayRounded';
@@ -170,6 +171,16 @@ const Menu = (props) => {
                 <ListSubheader sx={{ fontWeight: 'bold', textAlign:'center' }}>
                     {open ? user.email : null} <br></br>
                 </ListSubheader>
+
+                <ListItem button onClick={ () => {
+                    localStorage.clear();
+                    navigate('/');
+                    }}>
+                    <ListItemIcon>
+                        <LogoutIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Cerrar sesión" />
+                </ListItem>
 
             </List>
         </Drawer>

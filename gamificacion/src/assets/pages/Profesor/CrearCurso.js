@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState} from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -54,9 +54,33 @@ const mdTheme = createTheme();
 function CrearCursoContent() {
     const saved = localStorage.getItem("user");
     const user = JSON.parse(saved);
+
+    //const savedCursos = localStorage.getItem("cursos");
+    var cursosString = '{ "cursos":[] }';
+    var objCursos = JSON.parse(cursosString);
+
+    //const [inputs, setInputs] = useState({});
+    const [inputs, setInputs] = useState({});
+    const [open, setOpen] = useState(true);
+
+    const handleChange = (event) => {
+      const name = event.target.name;
+      const value = event.target.value;
+      setInputs(values => ({...values, [name]: value}));
+    }
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log(inputs);
+      const curso = inputs;
+      objCursos['cursos'].push(curso);
+      cursosString = JSON.stringify(objCursos);
+      console.log(objCursos);
+    }
+
     console.log(user);
 
-    const [open, setOpen] = React.useState(true);
+    //const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
     };
@@ -106,6 +130,7 @@ function CrearCursoContent() {
                             }}
                             noValidate
                             autoComplete="off"
+                            onSubmit={handleSubmit}
                             >
 
                                 <Grid item xs>
@@ -124,6 +149,9 @@ function CrearCursoContent() {
                                           id="outlined-required" 
                                           label="Nombre del Curso" 
                                           variant="outlined"
+                                          name="nombreCurso"
+                                          value={inputs.nombreCurso || ""}
+                                          onChange={handleChange} 
                                         />
 
                                     </Box>
@@ -137,6 +165,9 @@ function CrearCursoContent() {
                                           id="outlined" 
                                           label="ID del Curso" 
                                           variant="outlined"
+                                          name="idCurso"
+                                          value={inputs.idCurso || ""}
+                                          onChange={handleChange} 
                                         />
 
                                     </Box>
@@ -148,6 +179,9 @@ function CrearCursoContent() {
                                           id="outlined-required" 
                                           label="Sección del Curso" 
                                           variant="outlined"
+                                          name="seccionCurso"
+                                          value={inputs.seccionCurso || ""}
+                                          onChange={handleChange} 
                                         />
 
                                     </Box>
@@ -159,6 +193,9 @@ function CrearCursoContent() {
                                           id="outlined-required" 
                                           label="Areá del Curso" 
                                           variant="outlined"
+                                          name="areaCurso"
+                                          value={inputs.areaCurso || ""}
+                                          onChange={handleChange} 
                                         />
 
                                     </Box>
@@ -171,17 +208,15 @@ function CrearCursoContent() {
                                         multiline
                                         rows={4}
                                         defaultValue=""
+                                        name="descripcionCurso"
+                                        value={inputs.descripcionCurso || ""}
+                                        onChange={handleChange} 
                                       />
 
                                     </Box>
 
-                                    <Divider light variant="h7" textAlign="left">Detalles del Curso</Divider>
 
-                                      <div id="emails"></div>
-
-                                    <Box sx={{ m: 2 }}>
-                                    </Box>
-                    
+                                    <input type="submit" />
                                 </div>
                             </Box>
                         </Paper>
