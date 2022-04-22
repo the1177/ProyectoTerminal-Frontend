@@ -25,6 +25,16 @@ import Menu from './components/Menu/Menu.js'
 import NavBar from './components/NavBar/NavBar';
 
 import DateRange from './components/Date/DateRange';
+import EditBox from './components/Box/EditBox';
+import Upload from './components/Buttons/upload';
+import InputR from './components/Buttons/inputrubric';
+
+import Rubrica from './components/Rubricas/Rubrica';
+import Insignias from './components/Insignias/Insignias';
+
+import Dinamic from './components/Rubrica/DinamicRubrica';
+import Prueba from './components/Rubrica/exr';
+import FormHook from './components/Rubrica/FormHook';
 
 const drawerWidth = 240;
 
@@ -92,10 +102,11 @@ function ActividadContent() {
                         <Paper
                             sx={{
                             p: 2,
-                            display: 'flex',
+                            display: 'fixed',
                             flexDirection: 'column',
                             borderRadius: 3,
                             height: 'auto',
+                            width: 'auto',
                             
                             }}
                         >
@@ -162,8 +173,9 @@ function ActividadContent() {
                                     </Box>
 
                                     <Box sx={{ width: '109vh' , overflow: 'auto', m: 2}}>
-                                       <FormHook />
+                                       <Prueba />
                                     </Box>
+                                    
                     
                                 </div>
                             </Box>

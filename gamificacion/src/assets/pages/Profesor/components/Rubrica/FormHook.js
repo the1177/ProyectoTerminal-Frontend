@@ -108,47 +108,53 @@ class Rubrica extends React.Component {
                     <CardContent>
                       {niveles.map((nivel, index) => {
                         return (
-                          <Grid key={index} item={true} xs={12} sm={4}>
+                          <Card key={index}>
 
-                            <TextField
-                              fullWidth={true}
-                              requiered
-                              name="puntos"
-                              label="Puntos (obligatorio)"
-                              placeholder={`Puntos del nivel #${index + 1} (obligatorio)`}
-                              variant="filled"
-                              value={nivel.puntos}
-                              onChange={this.handleNivelChange(index)}
-                            />
+                            <CardContent>
+                              <Grid item={true} xs={12} sm={4}>
 
-                            <TextField
-                              fullWidth={true}
-                              requiered
-                              name="tituloNivel"
-                              label="Título del Nivel"
-                              variant="filled"
-                              value={nivel.tituloNivel}
-                              onChange={this.handleNivelChange(index)}
-                            />
+                                <TextField
+                                  fullWidth={true}
+                                  requiered
+                                  name="puntos"
+                                  label="Puntos (obligatorio)"
+                                  placeholder={`Puntos del nivel #${index + 1} (obligatorio)`}
+                                  variant="filled"
+                                  value={nivel.puntos}
+                                  onChange={this.handleNivelChange(index)}
+                                />
 
-                            <TextField
-                              fullWidth={true}
-                              requiered
-                              multiline
-                              name="descripcionNivel"
-                              label="Descripción del Nivel"
-                              variant="filled"
-                              value={nivel.descripcionNivel}
-                              onChange={this.handleNivelChange(index)}
-                            />
-                            <button
-                              type="button"
-                              onClick={this.handleRemoveNivel(index)}
-                              className="small"
-                            >
-                              Eliminar Nivel
-                            </button>
-                          </Grid>
+                                <TextField
+                                  fullWidth={true}
+                                  requiered
+                                  name="tituloNivel"
+                                  label="Título del Nivel"
+                                  variant="filled"
+                                  value={nivel.tituloNivel}
+                                  onChange={this.handleNivelChange(index)}
+                                />
+
+                                <TextField
+                                  fullWidth={true}
+                                  requiered
+                                  multiline
+                                  name="descripcionNivel"
+                                  label="Descripción del Nivel"
+                                  variant="filled"
+                                  value={nivel.descripcionNivel}
+                                  onChange={this.handleNivelChange(index)}
+                                />
+                                <button
+                                  type="button"
+                                  onClick={this.handleRemoveNivel(index)}
+                                  className="small"
+                                >
+                                  Eliminar Nivel
+                                </button>
+                              </Grid>
+                            </CardContent>
+
+                          </Card>
                         );
                       })}
                       <Grid>

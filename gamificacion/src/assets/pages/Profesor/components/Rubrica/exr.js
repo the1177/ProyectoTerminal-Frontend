@@ -1,164 +1,281 @@
-import React, { useState } from 'react';
-import Container from '@material-ui/core/Container';
-import FormControl from '@mui/material/FormControl';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import RemoveIcon from '@material-ui/icons/Remove';
-import AddIcon from '@material-ui/icons/Add';
-import Icon from '@material-ui/core/Icon';
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Formik, Field, Form, ErrorMessage, FieldArray } from 'formik';
+import { Container, Box, Grid, Paper, Typography, TextField, Button } from '@mui/material'
+import { red } from '@mui/material/colors';
+import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
 
-import { makeStyles } from '@material-ui/core/styles';
+import DeleteIcon from '@mui/icons-material/Delete';
+import AddIcon from '@mui/icons-material/Add';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-    },
+const initialValues = {
+  criterios: [{ tituloCriterio: "", descripcionCriterio: "" }],
+  niveles: [{ puntos: "", tituloNivel: "", descripcionNivel: "" }],
+};
+
+const theme = createTheme({
+  spacing: 3,
+});
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: purple[500],
+  '&:hover': {
+    backgroundColor: purple[700],
   },
-  button: {
-    margin: theme.spacing(1),
-  },
+}));
 
-  initcard: {
-    minWidth: 275,
-    border: '2px #F3F3F3',
-    background: 'linear-gradient(45deg, #f3f3f3 30%, #1976D2 90%)',
-    marginTop: 25,
-    textAlign: 'center',
-    alignItems: 'center',
-  },
-  rubricard:{
-    minWidth: 275,
-    border: '2px #F3F3F3',
-    background: 'linear-gradient(45deg, #f3f3f3 30%, #f1faee 90%)',
-    marginTop: 25,
-    textAlign: 'center',
-    alignItems: 'center',
-  },
-}))
+const Rubrica = () => (
 
-function Dinamico() {
-    const classes = useStyles()
-    const [inputFields, setInputFields] = useState([
-      { id: uuidv4(), firstName: '', lastName: '' },
-    ]);
+  <Container fixed>
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log("InputFields", inputFields);
-    };
+    <Grid container justifyContent="center" rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Grid item xs={'fixed'}>
+        <Paper
+            sx={{
+            p: 2,
+            display: 'auto',
+            flexDirection: 'column',
+            bgcolor: '#f3f3f3',
+            borderRadius: 3,
+            height: 'auto',
+            
+            }}
+        >
+          <Grid item xs>
+              <Typography gutterBottom variant="h5" component="div">
+              Crear Rúbrica
+              </Typography>
+          </Grid>
 
-    const handleChangeInput = (id, event) => {
-      const newInputFields = inputFields.map(i => {
-        if(id === i.id) {
-          i[event.target.name] = event.target.value
-        }
-        return i;
-      })
-      
-      setInputFields(newInputFields);
-    }
+          <Formik
+            className="FormR"
+            initialValues={initialValues}
+            onSubmit={async (values) => {
+              await new Promise((r) => setTimeout(r, 500));
+              alert(JSON.stringify(values, null, 2));
+            }}
+          >
+            {({ values }) => (
+              <Form>
+                <FieldArray name="criterios">
+                  {({ insert, remove, push }) => (
+                    
+                    <Grid>
+                      {values.criterios.length > 0 &&
+                        values.criterios.map((friend, index) => (
+                          <Grid className="row" key={index}>
 
-    const handleAddFields = () => {
-      setInputFields([...inputFields, { id: uuidv4(),  firstName: '', lastName: '' }])
-    }
+                            <Grid item xs>
+                              <Typography gutterBottom variant="h4" component="div">
+                                Criterio {index + 1}
+                              </Typography>
+                            </Grid>
 
-    const handleRemoveFields = id => {
-      const values  = [...inputFields];
-      values.splice(values.findIndex(value => value.id === id), 1);
-      setInputFields(values);
-    }
+                            <Grid className="col">
+                              <TextField
+                                requiered
+                                label="Título del Criterio"
+                                variant="filled"
+                                name={`criterios.${index}.tituloCriterio`}
+                                placeholder="Título del Criterio"
+                                type="text"
+                              />
+                              <ErrorMessage
+                                name={`criterios.${index}.tituloCriterio`}
+                                component="div"
+                                className="field-error"
+                              />
+                            </Grid>
 
-    return (
-      <div>
-        <FormControl sx={{ m: 1, minWidth: 280 }}>
-          <Card className={classes.initcard}>
-            <h1>Add New Member</h1>
-            <TextField
-              required
-              name="titulocriterio"
-              label="Título del Criterio"
-              variant="filled"
-            />
+                            <Grid className="col">
+                              <TextField
+                                requiered
+                                multiline
+                                label="Descripción del Criterio"
+                                variant="filled"
+                                name={`criterios.${index}.descripcionCriterio`}
+                                placeholder="Descripción del Criterio"
+                                type="text"
+                              />
+                              <ErrorMessage
+                                name={`criterios.${index}.descripcionCriterio`}
+                                component="div"
+                                className="field-error"
+                              />
+                            </Grid>
 
-            <TextField
-              id="filled-textarea"
-              label="Descripción del Criterio"
-              placeholder="Descripción"
-              multiline
-              variant="filled"
-            />
+                            <Grid className="col">
+                              <Button
+                                type="button"
+                                variant='outline'
+                                startIcon={<DeleteIcon />}
+                                className="secondary"
+                                onClick={() => remove(index)}
+                              >
+                                Eliminar
+                              </Button>
+                            </Grid>
 
-            <Box
-              component="form"
-              sx={{
-                '& .MuiTextField-root': { m: 1, width: '25ch', height: '25ch' },
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <div>
-                <form className={classes.root} onSubmit={handleSubmit}>
-                { inputFields.map(inputField => (
-                  <Card className={classes.rubricard}>
-                    <div key={inputField.id}>
-                      <TextField
-                        required
-                        name="puntos"
-                        label="Puntos (obligatorio)"
-                        variant="filled"
-                        value={inputField.lastName}
-                        onChange={event => handleChangeInput(inputField.id, event)}
-                      />
-                      <TextField
-                        name="titulonivel"
-                        label="Título del nivel"
-                        variant="filled"
-                        value={inputField.firstName}
-                        onChange={event => handleChangeInput(inputField.id, event)}
-                      />
-                      <TextField
-                        name="descripcion"
-                        label="Descripción"
-                        variant="filled"
-                        value={inputField.lastName}
-                        onChange={event => handleChangeInput(inputField.id, event)}
-                      />
-                      <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
-                        <RemoveIcon />
-                      </IconButton>
-                      <IconButton
-                        onClick={handleAddFields}
+                            <Grid>
+                              <Grid item xs>
+                                  <Typography gutterBottom variant="h5" component="div">
+                                  Crear Niveles
+                                  </Typography>
+                              </Grid>
+
+                              <Grid
+                                sx={{ m: 2 , width: '50vh' }}
+                              
+                              >
+
+                                <Formik
+                                  initialValues={initialValues}
+                                  onSubmit={async (values) => {
+                                    await new Promise((r) => setTimeout(r, 500));
+                                    alert(JSON.stringify(values, null, 2));
+                                  }}
+                                >
+                                  {({ values }) => (
+                                    <Form>
+                                      <FieldArray name="niveles">
+                                        {({ insert, remove, push }) => (
+
+                                          <Box component="form"
+                                            bgcolor="white"
+                                            spacing="4"
+                                            sx={{
+                                              '& .MuiTextField-root': { m: 1, width: '25ch' },
+                                            }}
+                                          >
+
+                                            {values.niveles.length > 0 &&
+                                              values.niveles.map((nivel, idx) => (
+
+                                                <div>
+                                                  <h4>Nivel {idx + 1}</h4>
+
+                                                  <Grid className="col">
+                                                    <TextField
+                                                      requiered
+                                                      label="Puntos (obligatorio)"
+                                                      placeholder={`Puntos del nivel #${idx + 1} (obligatorio)`}
+                                                      variant="filled"
+                                                      name={`niveles.${idx}.puntos`}
+                                                      type="text"
+                                                      width="25vh"
+                                                    />
+                                                    <ErrorMessage
+                                                      name={`niveles.${idx}.puntos`}
+                                                      component="div"
+                                                      className="field-error"
+                                                    />
+                                                  </Grid>
+
+                                                  <Grid className="col">
+                                                    <TextField
+                                                      name={`niveles.${idx}.tituloNivel`}
+                                                      placeholder="Título del Nivel"
+                                                      requiered
+                                                      label="Título del Nivel"
+                                                      variant="filled"
+                                                      type="text"
+                                                    />
+                                                    <ErrorMessage
+                                                      name={`niveles.${idx}.tituloNivel`}
+                                                      component="div"
+                                                      className="field-error"
+                                                    />
+                                                  </Grid>
+
+                                                  <Grid className="col">
+                                                    <TextField
+                                                      requiered
+                                                      multiline
+                                                      label="Descripción"
+                                                      variant="filled"
+                                                      name={`niveles.${idx}.descripcionNivel`}
+                                                      placeholder="Descripción"
+                                                      type="text"
+                                                    />
+                                                    <ErrorMessage
+                                                      name={`niveles.${idx}.descripcionNivel`}
+                                                      component="div"
+                                                      className="field-error"
+                                                    />
+                                                  </Grid>
+
+
+                                                  <Grid className="col">
+                                                    <Button
+                                                      type="button"
+                                                      variant='outline'
+                                                      startIcon={<DeleteIcon />}
+                                                      className="secondary"
+                                                      onClick={() => remove(idx)}
+                                                    >
+                                                      Eliminar Nivel
+                                                    </Button>
+                                                  </Grid>
+
+                                                </div>
+                                              ))}
+
+                                            <ColorButton
+                                              type="button"
+                                              variant="contained"
+                                              className="secondary"
+                                              startIcon={<AddIcon />}
+                                              onClick={() => push({ puntos: "", tituloNivel: "", descripcionNivel: "" })}
+                                            >
+                                              Añadir Nivel
+                                            </ColorButton>
+
+                                          </Box>
+
+                                        )}
+                                      </FieldArray>
+                                      <button type="submit">Invite</button>
+                                    </Form>
+                                  )}
+                                </Formik>
+                              </Grid>  
+                            </Grid>
+                          </Grid>
+                        ))}
+
+                      <ColorButton
+                        type="button"
+                        variant="contained"
+                        className="secondary"
+                        startIcon={<AddIcon />}
+                        onClick={() => push({ tituloCriterio: "", descripcionCriterio: "" })}
                       >
-                        <AddIcon />
-                      </IconButton>
-                    </div>                  
-                  </Card>
-                )) }
+                        Añadir Criterio
+                      </ColorButton>
 
-                <Button
-                    className={classes.button}
-                    variant="contained" 
-                    color="primary" 
-                    type="submit" 
-                    endIcon={<Icon>send</Icon>}
-                    onClick={handleSubmit}
-                  >Send
+                    </Grid>
+
+                  )}
+                </FieldArray>
+                <Button 
+                  type="submit"
+                  variant="contained"
+                >
+                  Enviar
                 </Button>
-                </form>
-              </div>
+              </Form>
+            )}
+          </Formik>
+        </Paper>  
+      </Grid>  
+    </Grid>
+  </Container>
 
-            </Box>
+);
 
-          </Card>
 
-        </FormControl>
-      </div>
-    );
-}
+ReactDOM.render(<Rubrica />, document.getElementById('root'));
 
-export default Dinamico;
+export default Rubrica;
