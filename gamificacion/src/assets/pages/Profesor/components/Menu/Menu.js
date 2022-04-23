@@ -159,7 +159,7 @@ const Menu = (props) => {
                 </ListItem>
 
                 <ListSubheader sx={{ fontWeight: 'bold',  textAlign:'center' }}>
-                    {open ?user.name  : null} <br></br>
+                    {open ? user.name  : null} <br></br>
                 </ListSubheader>
 
                 <ListItem button style={{ paddingLeft: 85 }}>

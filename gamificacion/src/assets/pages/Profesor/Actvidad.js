@@ -21,7 +21,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './components/Listitems/listitems';
 import { StyledEngineProvider } from '@mui/material/styles';
 
-import Menu from './components/Menu/Menu.js'
+import Menu from './components/Menu/Menu';
 import NavBar from './components/NavBar/NavBar';
 
 import DateRange from './components/Date/DateRange';

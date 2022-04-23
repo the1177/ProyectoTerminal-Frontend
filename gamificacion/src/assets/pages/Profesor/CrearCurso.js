@@ -29,7 +29,7 @@ import { StyledEngineProvider } from '@mui/material/styles';
 import Upload from './components/Buttons/upload';
 import InputAuto from './components/Buttons/inputauto';
 
-import Menu from './components/Menu/Menu.js'
+import Menu from './components/Menu/Menu';
 import NavBar from './components/NavBar/NavBar';
 
 const drawerWidth = 240;
