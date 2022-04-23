@@ -17,7 +17,6 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import chroma from 'chroma-js';
-import { ColourOption, colourOptions } from '../Profesor/components/Data/Colors';
 import Select, { StylesConfig } from 'react-select';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
