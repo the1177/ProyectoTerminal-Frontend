@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Formik, Field, Form, ErrorMessage, FieldArray } from 'formik';
+import { Formik, FormikConsumer, Field, Form, ErrorMessage, FieldArray } from 'formik';
 import { Container, Box, Grid, Paper, Typography, TextField, Button } from '@mui/material'
 import { red } from '@mui/material/colors';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
@@ -8,6 +8,7 @@ import { purple } from '@mui/material/colors';
 
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
+import * as Yup from 'yup';
 
 const initialValues = {
   criterios: [{ tituloCriterio: "", descripcionCriterio: "" }],
@@ -52,9 +53,36 @@ const Rubrica = () => (
           <Formik
             className="FormR"
             initialValues={initialValues}
-            onSubmit={async (values) => {
-              await new Promise((r) => setTimeout(r, 500));
-              alert(JSON.stringify(values, null, 2));
+            validationSchema={Yup.object({
+              criterios: Yup.array().of(
+                Yup.object({
+                  tituloCriterio: Yup.string()
+                    .max(15, 'Must be 15 characters or less')
+                    .required(),
+                  descripcionCriterio: Yup.string()
+                    .max(15, 'Must be 15 characters or less')
+                    .required(),
+                })
+              ),
+              niveles: Yup.array().of(
+                Yup.object({
+                  puntos: Yup.number()
+                    .required(),
+                  tituloNivel: Yup.string()
+                    .max(15, 'Must be 15 characters or less')
+                    .required(),
+                  descripcionNivel: Yup.string()
+                    .max(15, 'Must be 15 characters or less')
+                    .required(),
+                })
+              ),
+            })}
+            onSubmit={async(values, { setSubmitting }) => {
+              setTimeout(() => {
+                alert(JSON.stringify(values, null, 2));
+                console.log(value);
+                setSubmitting(false);
+              }, 400);
             }}
           >
             {({ values }) => (
@@ -265,6 +293,20 @@ const Rubrica = () => (
                 >
                   Enviar
                 </Button>
+
+                <FormikConsumer>
+                    {({ validationSchema, validate, onSubmit, ...rest }) => (
+                      <pre
+                        style={{
+                          fontSize: '.85rem',
+                          padding: '.25rem .5rem',
+                          overflowX: 'scroll',
+                        }}
+                      >
+                        {JSON.stringify(rest, null, 2)}
+                      </pre>
+                    )}
+                </FormikConsumer>
               </Form>
             )}
           </Formik>

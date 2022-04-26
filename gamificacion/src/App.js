@@ -13,7 +13,7 @@ import Cursos from './assets/pages/Profesor/Cursos'
 import Badgets from './assets/pages/Profesor/Badgets';
 import Misiones from './assets/pages/Profesor/Misiones';
 import Dashboard from './assets/pages/Profesor/Dashboard';
-import CrearActividad from './assets/pages/Profesor/Actvidad';
+import CrearActividad from './assets/pages/Profesor/Actividad';
 import Componentes from './assets/pages/Profesor/Componentes';
 import Calendario from './assets/pages/Profesor/Calendario';
 
