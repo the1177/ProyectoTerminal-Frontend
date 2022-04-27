@@ -516,3 +516,5 @@ const ActividadContent = () => {
 export default function Actividad() {
     return <ActividadContent />;
 }
+
+
