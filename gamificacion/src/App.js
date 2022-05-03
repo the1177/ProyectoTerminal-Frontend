@@ -28,7 +28,7 @@ import Alumnos from './assets/pages/Alumno/components/EditarUser/alumnoslist'
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename={"/"}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/sign-in" element={<Login />} />
