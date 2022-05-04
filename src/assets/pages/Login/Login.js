@@ -44,7 +44,7 @@ const Login = () => {
                             onFailure={onGoogleFailure}
                             isSignedIn={true}
                             cookiePolicy={'single_host_origin'}
-                            redirectUri="postmessage"
+                            redirectUri="https://gamificacion-frontend.herokuapp.com/cursos"
                         />
                     </div>
                 </div>
