@@ -46,6 +46,7 @@ const Login = () => {
                             onSuccess={onGoogleSuccess}
                             onFailure={onGoogleFailure}
                             cookiePolicy={'single_host_origin'}
+                            redirectUri="postmessage"
                         />
                     </div>
                 </div>
