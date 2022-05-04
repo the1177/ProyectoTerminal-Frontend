@@ -1,0 +1,76 @@
+ [
+    { "id": 1, "actividad": "Realizar un server en minecraft",  "status": "Completadas", 
+    "alumnos":[
+        {
+            "label":["Edrey","Aimee","Jacob","Juan","Evadir","Jose","Amir","Jorge","Pan","Alex","Angel"],
+            "dat":[80,90,60,49,100,10,56, 97,90, 90,89]
+        }
+    ]
+    },
+    { "id": 2, "actividad": "Formar equipos de 4 integrantes",  "status": "Completadas",
+        "alumnos":[
+            {
+                "label":["Edrey","Aimee","Jacob","Juan","Evadir","Jose","Amir","Jorge","Pan","Alex","Angel"],
+                "dat":[90,80,90,39,20,50,67, 89,60, 10,45]
+            }
+        ]
+    },
+    { "id": 3, "actividad": "Descargar roblox",  "status": "Completadas",
+        "alumnos":[
+            {
+                "label":["Edrey","Aimee","Jacob","Juan","Evadir","Jose","Amir","Jorge","Pan","Alex","Angel"],
+                "dat":[84,60,60,59,98,13,45, 1,20, 45,65]
+            }
+        ]
+    }, 
+    { "id": 4, "actividad": "Utilizar un microfono en clase", "status": "Completadas",
+        "alumnos":[
+            {
+                "label":["Edrey","Aimee","Jacob","Juan","Evadir","Jose","Amir","Jorge","Pan","Alex","Angel"],
+                "dat":[80,90,60,49,100,10,56, 97,90, 90,89]
+            }
+        ]
+    }, 
+    { "id": 5, "actividad": "Tener una exposicion de no mas de 5 minutos",  "status": "Completadas" ,
+        "alumnos":[
+            {
+                "label":["Edrey","Aimee","Jacob","Juan","Evadir","Jose","Amir","Jorge","Pan","Alex","Angel"],
+                "dat":[80,90,60,49,100,10,56, 97,90, 90,89]
+            }
+        ]}, 
+    { "id": 6, "actividad": "Crear una dinamica", "status": "Completadas" ,
+        "alumnos":[
+            {
+                "label":["Edrey","Aimee","Jacob","Juan","Evadir","Jose","Amir","Jorge","Pan","Alex","Angel"],
+                "dat":[80,90,60,49,100,10,56, 97,90, 90,89]
+            }
+        ]},
+    { "id": 7, "actividad": "Hacer equipos", "status": "Vencidas", 
+        "alumnos":[
+            {
+                "label":["Edrey","Aimee","Jacob","Juan","Evadir","Jose","Amir","Jorge","Pan","Alex","Angel"],
+                "dat":[80,90,60,49,100,10,56, 97,90, 90,89]
+            }
+        ] },
+    { "id": 8, "actividad": "Traer una comida", "status": "Completadas",
+        "alumnos":[
+            {
+                "label":["Edrey","Aimee","Jacob","Juan","Evadir","Jose","Amir","Jorge","Pan","Alex","Angel"],
+                "dat":[80,90,60,49,100,10,56, 97,90, 90,89]
+            }
+        ] },
+    { "id": 9, "actividad": "Traer una presentación", "status": "Pendientes" ,
+        "alumnos":[
+            {
+                "label":["Edrey","Aimee","Jacob","Juan","Evadir","Jose","Amir","Jorge","Pan","Alex","Angel"],
+                "dat":[80,90,60,49,100,10,56, 97,90, 90,89]
+            }
+        ]},
+    { "id": 10, "actividad": "Ganar una partida de fortnite", "status": "Pendientes" ,
+        "alumnos":[
+            {
+                "label":["Edrey","Aimee","Jacob","Juan","Evadir","Jose","Amir","Jorge","Pan","Alex","Angel"],
+                "dat":[80,90,60,49,100,10,56, 97,90, 90,89]
+            }
+        ]}
+    ]

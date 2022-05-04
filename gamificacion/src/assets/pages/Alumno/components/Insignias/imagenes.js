@@ -37,160 +37,192 @@ export default [
         //0 = OBTENIDA
         //1= VENCIDA
         //2= POR OBTENER
+        "id":1,
         "img": B1IMAGE,
         "status": 0,
         "fecha": "20/03/2022"
     },    {
+        "id":2,
         "img": B2IMAGE,
         "status": 1,
         "fecha": "2022/05/02"
     },
     {
+        "id":3,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     },    {
+        "id":4,
         "img": B4IMAGE,
         "status": 2,
         "fecha": "2022/03/03"
     },    {
+        "id":5,
         "img": B5IMAGE,
         "status": 2,
         "fecha":"2022/04/01"
     },
     {
+        "id":6,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     },
     {
+        "id":7,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     },
     {
+        "id":8,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     },
     {
+        "id":9,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     },
     {
+        "id":10,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     },
     {
+        "id":11,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     },
     {
+        "id":12,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     },
     {
+        "id":13,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     },
     {
+        "id":14,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     },
     {
+        "id":15,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     },
     {
+        "id":16,
         "img": B3IMAGE,
         "status": 0,
         "fecha": "2022/06/01"
     }
     // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // },
-    // {
-    //     "img": B3IMAGE,
-    //     "status": 0,
-    //     "fecha": "2022/06/01"
-    // }  
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // },
+    // // {
+    // "id"//,     :
+    // "img": B3IMAGE,
+    // //     "status": 0,
+    // //     "fecha": "2022/06/01"
+    // // }  
 ]

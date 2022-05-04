@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
-import Stack from '@mui/material/Stack';
+
 
 import { 
   Container, 
@@ -155,8 +155,7 @@ const MySelect = ({ label, ...props }) => {
 };
 
 const initialValues = {
-  criterios: [{ tituloCriterio: "", descripcionCriterio: "" }],
-  niveles: [{ puntos: "", tituloNivel: "", descripcionNivel: "" }],
+  criterios: [{ tituloCriterio: "", descripcionCriterio: "" }]
 };
 
 
@@ -263,18 +262,6 @@ const ActividadContent = () => {
                                 .required(),
                             })
                           ),
-                          niveles: Yup.array().of(
-                            Yup.object({
-                              puntos: Yup.number()
-                                .required(),
-                              tituloNivel: Yup.string()
-                                .max(15, 'Must be 15 characters or less')
-                                .required(),
-                              descripcionNivel: Yup.string()
-                                .max(15, 'Must be 15 characters or less')
-                                .required(),
-                            })
-                          ),
                           email: Yup.string()
                             .email('Invalid email address')
                             .required('Required'),
@@ -297,6 +284,7 @@ const ActividadContent = () => {
                         }}
                       >
                         {({ values }) => (
+                          
                           <Form>
                             <Box sx={{ m: 2, bgcolor:'red'}}>
                               <FormikTextField formikKey="tituloActividad" 
@@ -387,12 +375,13 @@ const ActividadContent = () => {
                                                           </Grid>
 
                                                           {values.niveles.length > 0 &&
-                                                            values.niveles.map((_, idx) =>  (
+                                                            values.niveles.map((e, idx) =>  (
+                                                              
                                                               <Grid container item key={idx}>
                                                                 <Grid item>
                                                                   <FormikTextField 
                                                                     formikKey="puntos"
-                                                                    name={`niveles.${idx}.puntos`}
+                                                                    name={`${e.puntos}`}
                                                                     type="number" 
                                                                     label="Puntos (obligatorio)"
                                                                     placeholder="Puntos (obligatorio)"

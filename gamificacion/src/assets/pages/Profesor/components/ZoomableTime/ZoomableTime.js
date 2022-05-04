@@ -3,7 +3,7 @@ import './ZoomableTime.css'
 import ReactApexChart from 'react-apexcharts';
 
 
-export default function ZoomableTime(props){
+export default function ZoomableTimeP(){
     const data =[{        
         name: 'series1',
         data: [20, 15, 18, 5, 2, 18, 1]},
@@ -12,12 +12,8 @@ export default function ZoomableTime(props){
 
     const series = [{
         //ACTIVIDADES MAXIMAS
-        name: 'Numero de actividades',
-        data: [20, 15, 18, 5, 2, 18, 1],
-      }, {
-          //ACTIVIDADES DEL ALUMNO
-        name: 'Actividades',
-        data: [19, 12, 8, 1, 2, 18, 1]
+        name: 'Porcentaje de participación',
+        data: [80, 65, 70, 50, 95, 40, 90],
       }];
 
     const  options= {
@@ -34,7 +30,7 @@ export default function ZoomableTime(props){
         xaxis: {
           type: 'datetime',
         //categories: ["2022-04-01T00:00:00.000Z", "2022-04-02T01:30:00.000Z", "2022-04-03T02:30:00.000Z", "2022-04-04T03:30:00.000Z", "2022-04-05T04:30:00.000Z", "2022-04-06T05:30:00.000Z", "2022-04-07T06:30:00.000Z"]
-          categories: ["2022-01-01", "2022-04-02", "2022-04-03", "2022-04-04", "2022-04-05", "2022-04-06", "2022-04-07"]
+          categories: ["2022-01-01", "2022-02-02", "2022-03-03", "2022-04-04", "2022-04-05", "2022-04-10", "2022-04-23"]
 
         },
         tooltip: {
@@ -47,7 +43,7 @@ export default function ZoomableTime(props){
         <div>
           <div>
             <h3>
-              Actividades
+              Progreso del curso
             </h3>
           </div>
           <div className='Zoomable-container'>

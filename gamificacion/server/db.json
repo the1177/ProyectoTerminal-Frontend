@@ -5,8 +5,51 @@
       "email": "9981282443",
       "userId": 1,
       "mobile": "Me gustaba la comidagggg",
-      "photo": "https://concepto.de/wp-content/uploads/2015/03/paisaje-800x409.jpg",
+      "photo": "https://i.pinimg.com/236x/bc/3e/3d/bc3e3de9ca839288c7779965afb5c17c.jpg",
       "id": 1
     }
-  ]
+  ],
+  "Curso":{
+    "actividades":[
+      {
+        "name":"",
+        "status":"",
+        "fecha":""
+        
+      },
+      {
+        "name":"",
+        "status":"",
+        "fecha":""
+
+      },
+      {
+        "name":"",
+        "status":"",
+        "fecha":""
+
+      },
+      {
+        "name":"",
+        "status":"",
+        "fecha":""
+
+      },
+      {
+        "name":"",
+        "status":"",
+        "fecha":""
+
+      },
+      {
+        "name":"",
+        "status":"",
+        "fecha":""
+
+      }
+    ],
+    "insignias":[
+      
+    ]
+  }
 }

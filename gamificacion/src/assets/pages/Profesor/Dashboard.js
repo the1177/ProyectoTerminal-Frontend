@@ -28,7 +28,16 @@ import Deposits from './components/Deposits/Deposits';
 import Orders from './components/Orders/Orders';
 import Schedule from './components/Scheduler/Scheduler';
 import Misiones from './components/Chart/ChartMisiones'
-
+import BoxPlotC from './components/BoxPlot/BoxPlot';
+import ZoomableTimeP from './components/ZoomableTime/ZoomableTime';
+import ScatterChart from './components/ScatterChart/ScatterChart';
+import LineNColumn from './components/LineNColumn/LineNColumn';
+import DisColumn from './components/DisColumn/DisColumn';
+import Barras from './components/Barras/Barras';
+import BarChart from './components/BarChart/BarChart';
+import DispersionSelect from './components/DispersionSelect/DispersionSelect';
+import CustomDatalabels from './components/Custom-DataLabels/CustomDatalabels';
+import BarrasSelect from './components/BarrasSelect/BarrasSelect'
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -111,34 +120,79 @@ function DashboardContent() {
             <Toolbar />
             <Container maxWidth="lg" sx={{ mt: 5, mb: 5 }}>
               <Grid container spacing={6}>
-
-                {/* Chart */}
                 <Grid item xs={12} md={8} lg={9}>
-                  <Paper
+                <Paper
                     sx={{
                       p: 2,
                       display: 'flex',
                       flexDirection: 'column',
                       borderRadius: 3,
-                      height: 300,
+                      height: 'auto',
+                      width: 'auto'
                     }}
                   >
-                    <Chart />
+                    
+                      <Barras />
                   </Paper>
                 </Grid>
 
-                {/* Recent Deposits */}
-                <Grid item xs={12} md={4} lg={3}>
-                  <Paper
+                <Grid item xs={12} md={8} lg={9}>
+                <Paper
                     sx={{
                       p: 2,
                       display: 'flex',
                       flexDirection: 'column',
                       borderRadius: 3,
-                      height: 600,
+                      height: 'auto',
+                      width: 'auto'
                     }}
                   >
-                    <Misiones />
+                    <BoxPlotC />
+                  </Paper>
+                </Grid>
+
+                <Grid item xs={12} md={8} lg={9}>
+                <Paper
+                    sx={{
+                      p: 2,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      borderRadius: 3,
+                      height: 'auto',
+                      width: 'auto'
+                    }}
+                  >
+                    <BarChart />
+                  </Paper>
+                </Grid>
+
+                <Grid item xs={12} md={8} lg={9}>
+                <Paper
+                    sx={{
+                      p: 2,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      borderRadius: 3,
+                      height: 'auto',
+                      width: 'auto'
+                    }}
+                  >
+                    <BarrasSelect />
+                  </Paper>
+                </Grid>
+
+                <Grid item xs={12} md={8} lg={9}>
+                <Paper
+                    sx={{
+                      p: 2,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      borderRadius: 3,
+                      height: 'auto',
+                      width: 'auto'
+                    }}
+                  >
+                    <CustomDatalabels />
                   </Paper>
                 </Grid>
 
@@ -154,34 +208,6 @@ function DashboardContent() {
                     }}
                   >
                     <Schedule />
-                  </Paper>
-                </Grid>
-
-                <Grid item xs={12} md={4} lg={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      borderRadius: 3,
-                      height: 600,
-                    }}
-                  >
-                    <Misiones />
-                  </Paper>
-                </Grid>
-
-                {/* Recent Orders */}
-                <Grid item xs={12}>
-                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', borderRadius: 3 }}>
-                    <Orders />
-                  </Paper>
-                </Grid>
-
-                {/* Recent Orders */}
-                <Grid item xs={12}>
-                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', borderRadius: 3 }}>
-                    <Orders />
                   </Paper>
                 </Grid>
               </Grid>

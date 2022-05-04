@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
-import "./TablaActividades.css"
+import "./DispersionSelect.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Dispersion from "./Components/Dispersion/Dispersion";
 
 export default function TablaActividades(){
     //usestate hook
@@ -41,41 +42,22 @@ export default function TablaActividades(){
     //output  
 
     return (
-        <div className="app_container">
-            <div className="mb_1">
-                <select id="state"
-                    onChange={handleChange} className="form-select mb-2">
-                        <option value="select Grade">  Elija estado de actividad </option>
-                        <option value="Completadas">Completadas</option>
-                        <option value="Vencidas">Vencidas</option>
-                        <option value="Pendientes">Pendientes</option>
-                    </select>
+        <div>
+            <h4>Alumnos </h4>
+            <div className="Dis-container">
+                <div className="mb_1">
+                    <select id="state"
+                        onChange={handleChange} className="form-select mb-2">
+                            <option value="select Grade">  Eligir actividad  </option>
+                            <option value="Completadas">Actividad 1</option>
+                            <option value="Vencidas">Actividad 2</option>
+                            <option value="Pendientes">Actividad 3</option>
+                        </select>
+                </div>
+                <div>
+                    <Dispersion />
+                </div>
             </div>
-            <div className="table_container">
-            <table id="Actividades" className="table table-hover table-bordered p-5">
-                <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Actividad</th>                
-                    <th scope="col">Estado</th>
-                </tr>
-                </thead>
-                <tbody>
-                { // calling state variable data to filter data inside table
-                data.map(function({id, actividad, status}){
-                
-                    return (
-                        <tr key ={id}>
-                        <td>{id}</td>
-                        <td>{actividad}</td>                    
-                        <td>{status}</td>
-                    </tr>
-                        );
-                    })}
-                    
-                    </tbody>
-            </table>
-            </div> 
         </div>
     );
 }
