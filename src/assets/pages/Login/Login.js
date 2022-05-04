@@ -38,7 +38,7 @@ const Login = () => {
                         <br></br>
                         <GoogleLogin
                             className="googleButton"
-                            clientId="1015050705702-mn957t21cmktg6keccg4a82v9mjdps22.apps.googleusercontent.com"
+                            clientId="1055338382541-nhujigic1cfmeq8lth1f7fnjhtu1tisq.apps.googleusercontent.com"
                             buttonText="Iniciar sesión con Google"
                             onSuccess={onGoogleSuccess}
                             onFailure={onGoogleFailure}
