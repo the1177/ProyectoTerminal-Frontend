@@ -23,7 +23,7 @@ import Encuesta from "./assets/pages/Encuesta/Encuesta";
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}> 
+    <Router> 
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/sign-in" element={<Login />} />
