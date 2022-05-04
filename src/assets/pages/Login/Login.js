@@ -40,11 +40,9 @@ const Login = () => {
                             className="googleButton"
                             clientId="1015050705702-mn957t21cmktg6keccg4a82v9mjdps22.apps.googleusercontent.com"
                             buttonText="Iniciar sesión con Google"
-                            /*render={renderProps => (
-                                <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
-                            )}*/
                             onSuccess={onGoogleSuccess}
                             onFailure={onGoogleFailure}
+                            isSignedIn={true}
                             cookiePolicy={'single_host_origin'}
                             redirectUri="postmessage"
                         />
