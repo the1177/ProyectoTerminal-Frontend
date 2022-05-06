@@ -6,15 +6,31 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
 import Stack from '@mui/material/Stack';
 
+import DateFnsUtils from "@date-io/date-fns";
+
 import { 
   Container, 
   Box, 
   Grid, 
-  Paper, 
+  Paper,
+  Card,
+  CardActions,
+  CardContent, 
   Typography, 
   TextField,
-  TextFieldProps, 
-  Button } from '@mui/material';
+  TextFieldProps,
+  Select,
+  MenuItem, 
+  Button 
+} from '@mui/material';
+
+import moment from 'moment';
+
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker
+} from "@material-ui/pickers";
 import Divider from '@mui/material/Divider';
 import Menu from './components/Menu/Menu';
 import NavBar from './components/NavBar/NavBar';
@@ -31,6 +47,7 @@ import {
   FieldArray,
   FastField, 
 } from 'formik';
+import { width } from '@mui/system';
 
 const drawerWidth = 240;
 
@@ -61,86 +78,26 @@ type FormikTextFieldProps = {
 
 export const FormikTextField = ({ formikKey, ...props }: FormikTextFieldProps) => {
   const [field, meta, helpers] = useField(formikKey);
-  return <CssTextField
-      id={field.name}
-      name={field.name}
-      helperText={meta.touched ? meta.error : ""}
-      error={meta.touched && Boolean(meta.error)}
-      value={field.value}
-      onChange={field.onChange}
-      {...props}
-  />
-}
-
-const MyMobileDateTimePicker = ({ label, ...props }) => {
-
-  const [field, meta, helpers] = useField({ ...props, type: 'datetime' });
-
   return (
-    <div>
-      <label className="datetime-input">
-        {label}
-        <MobileDateTimePicker 
+    <>
+      <CssTextField
           id={field.name}
           name={field.name}
           helperText={meta.touched ? meta.error : ""}
           error={meta.touched && Boolean(meta.error)}
           value={field.value}
           onChange={field.onChange}
+          {...field}
           {...props}
-        />
-      </label>
-    </div>
-  );
-
-};
-
-
-const MyCheckbox = ({ children, ...props }) => {
-  // React treats radios and checkbox inputs differently other input types, select, and textarea.
-  // Formik does this too! When you specify `type` to useField(), it will
-  // return the correct bag of props for you -- a `checked` prop will be included
-  // in `field` alongside `name`, `value`, `onChange`, and `onBlur`
-  const [field, meta] = useField({ ...props, type: 'checkbox' });
-
-  return (
-    <div>
-
-      <label className="checkbox-input">
-        <input type="checkbox" {...field} {...props} />
-        {children}
-      </label>
-      {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
-      ) : null}
-
-    </div>
-  );
-
-};
-
-const MyTextField: React.FC<FieldAttributes<{}>> = ({
-  placeholder,
-  ...props
-}) => {
-  const [field, meta] = useField<{}>(props);
-  const errorText = meta.error && meta.touched ? meta.error : "";
-  return (
-    <TextField
-      placeholder={placeholder}
-      {...field}
-      helperText={errorText}
-      error={!!errorText}
-    />
-  );
-};
+      />
+    </>
+  )
+}
 
 const MySelect = ({ label, ...props }) => {
-
   const [field, meta] = useField(props);
 
   return (
-
     <div>
 
       <label htmlFor={props.id || props.name}>{label}</label>
@@ -148,8 +105,8 @@ const MySelect = ({ label, ...props }) => {
       {meta.touched && meta.error ? (
         <div className="error">{meta.error}</div>
       ) : null}
-
     </div>
+
   );
 
 };
@@ -159,12 +116,16 @@ const initialValues = {
   niveles: [{ puntos: "", tituloNivel: "", descripcionNivel: "" }],
 };
 
+const options = [
+  { value: 'cotejo', label: 'Lista de Cotejo' },
+  { value: 'rubrica', label: 'Rúbrica' },
+]
+
+
+
 
 const mdTheme = createTheme();
 
-function getWeeksAfter(date, amount) {
-  return date ? addWeeks(date, amount) : undefined;
-}
 
 const ActividadContent = () => {
     const saved = localStorage.getItem("user");
@@ -175,8 +136,6 @@ const ActividadContent = () => {
     const toggleDrawer = () => {
       setOpen(!open);
     };
-
-    const [value, setValue] = React.useState(new Date());
   
     return (
       <React.Fragment>
@@ -190,28 +149,30 @@ const ActividadContent = () => {
             
             {/* Paper es la sección completa del Form cuadro blanco*/}
             <Paper
+              fixed
               sx={{
                 p: 2,
-                display: 'flex',
                 margin: 'auto',
                 flexDirection: 'column',
                 borderRadius: 3,
                 height: 'auto',
                 width: '50%',
                 alignItems: 'center',
+                alignContent: 'center',
+                //textAlign:'center',
                 marginTop: 15,
               }}
             >
               {/* Box es todo el contenido del form */}
               <Box
+                fixed
                 component="form"
                 sx={{
                   marginTop: 8,
-
                   '& .MuiTextField-root': { m: 1, width: '100%'},
                   my: 3,
-                  mx: 7,
-                  bgcolor: 'pink',
+                  mx: 1,
+                  //bgcolor: 'pink',
                   height: 'auto',
                   minWidth: '100%',
                 }}
@@ -219,16 +180,14 @@ const ActividadContent = () => {
               >
                 <Grid item xs>
                   <Typography gutterBottom variant="h5" component="div">
-                  Crear Actividad
+                    Crear Curso
                   </Typography>
                 </Grid>
 
                 <Grid item xs>
-                  <Divider light variant="h7" textAlign="left">Información de la Actvidad</Divider>
-                    <Box 
+                    <Box
                       component="form"
                       sx={{
-                        display: 'auto',
                         '& .MuiTextField-root': { m: 1, width: '100%'},
                         margin: 'auto',
                         padding: 1,
@@ -240,241 +199,72 @@ const ActividadContent = () => {
                       <Formik
                         initialValues={{
                           tituloActividad: '',
-                          datetimeActividad: '',
-                          email: '',
-                          acceptedTerms: false, // added for our checkbox
-                          jobType: '', // added for our select
-                          criterios: [{ tituloCriterio: "", descripcionCriterio: "" }],
-                          niveles: [{ puntos: "", tituloNivel: "", descripcionNivel: "" }],
+                          descripcionActividad: '',
+                          selectEvaluacion: '',
                         }}
                         validationSchema={Yup.object({
                           tituloActividad: Yup.string()
-                            .max(15, 'Must be 15 characters or less')
-                            .required('Required'),
-                          datetimeActividad: Yup.date().nullable()
-                            .required('Required'),
-                          criterios: Yup.array().of(
-                            Yup.object({
-                              tituloCriterio: Yup.string()
-                                .max(15, 'Must be 15 characters or less')
-                                .required(),
-                              descripcionCriterio: Yup.string()
-                                .max(15, 'Must be 15 characters or less')
-                                .required(),
-                            })
-                          ),
-                          niveles: Yup.array().of(
-                            Yup.object({
-                              puntos: Yup.number()
-                                .required(),
-                              tituloNivel: Yup.string()
-                                .max(15, 'Must be 15 characters or less')
-                                .required(),
-                              descripcionNivel: Yup.string()
-                                .max(15, 'Must be 15 characters or less')
-                                .required(),
-                            })
-                          ),
-                          email: Yup.string()
-                            .email('Invalid email address')
-                            .required('Required'),
-                          acceptedTerms: Yup.boolean()
-                            .required('Required')
-                            .oneOf([true], 'You must accept the terms and conditions.'),
-                          jobType: Yup.string()
+                            .max(5, 'Debe tener 5 caracteres o menos')
+                            .required('Obligatorio'),
+                          descripcionActividad: Yup.string()
+                            .max(300, 'Debe tener 300 caracteres o menos')
+                            .required('Obligatorio'),
+                          selectEvaluacion: Yup.string()
                             .oneOf(
-                              ['designer', 'development', 'product', 'other'],
+                              ['designer', 'development', 'product', 'other'],             
                               'Invalid Job Type'
                             )
-                            .required('Required'),
+                            .required('Por favor, seleccione un tipo de evaluación'),
                         })}
-                        onSubmit={async(values, { setSubmitting }) => {
+                        onSubmit={(values, { setSubmitting }) => {
                           setTimeout(() => {
                             alert(JSON.stringify(values, null, 2));
-                            console.log(value);
                             setSubmitting(false);
                           }, 400);
                         }}
                       >
                         {({ values }) => (
                           <Form>
-                            <Box sx={{ m: 2, bgcolor:'red'}}>
+                            <Divider light variant="h7" textAlign="left">Información de la Actividad</Divider>
+                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
                               <FormikTextField formikKey="tituloActividad" 
                                 label="Título de la Actividad"
                                 variant="outlined"
+                                id="tituloActividad"
                                 name="tituloActividad"
+                                multiline
                                 placeholder="Título de la Actividad"
                                 type="text"
                               />
-                            </Box>  
-
-                            <Box  sx={{ m: 2, bgcolor:'yellow' }}>
-                              <FieldArray name="criterios">
-                                {({push, remove, }) =>(
-                                  <React.Fragment>
-                                    <Grid item>
-                                        <Typography variant="body">
-                                          Criterios
-                                        </Typography>
-                                    </Grid>
-                                    {values.criterios.map(( _,index ) => (
-                                      <Grid container item>
-                                        <Grid item>
-                                          <FormikTextField 
-                                            formikKey="tituloCriterio"
-                                            name={`criterios.${index}.tituloCriterio`}
-                                            type="text" 
-                                            label="Titulo del Criterio"
-                                            placeholder="Titulo del Criterio"
-                                          /> 
-                                        </Grid>
-
-                                        <Grid item>
-                                          <FormikTextField 
-                                            formikKey="descripcionCriterio"
-                                            name={`criterios.${index}.descripcionCriterio`}
-                                            type="text" 
-                                            label="Descripción del Criterio"
-                                            placeholder="Descripción del Criterio"
-                                          /> 
-                                        </Grid>
-
-                                        <Grid item>
-                                          <Button onClick={() => remove(index) }>Eliminar criterio</Button>
-                                        </Grid>
-
-                                        <Grid item>
-                                            <Grid item xs>
-                                              <Typography variant="body">
-                                                Crear Niveles
-                                              </Typography>
-
-                                              <Formik
-                                                initialValues={{
-                                                  niveles: [{ puntos: "", tituloNivel: "", descripcionNivel: "" }],
-                                                }}
-                                                validationSchema={Yup.object({
-                                                  niveles: Yup.array().of(
-                                                    Yup.object({
-                                                      puntos: Yup.number()
-                                                        .required(),
-                                                      tituloNivel: Yup.string()
-                                                        .max(15, 'Must be 15 characters or less')
-                                                        .required(),
-                                                      descripcionNivel: Yup.string()
-                                                        .max(15, 'Must be 15 characters or less')
-                                                        .required(),
-                                                    })
-                                                  ),
-                                                })}
-                                                onSubmit={async(values, { setSubmitting }) => {
-                                                  setTimeout(() => {
-                                                    alert(JSON.stringify(values, null, 2));
-                                                    console.log(value);
-                                                    setSubmitting(false);
-                                                  }, 400);
-                                                }}
-                                              >
-                                                {({ values }) => (
-                                                  <Form>
-                                                    <FieldArray name="niveles">
-                                                      {({push, remove, }) =>(
-                                                        <React.Fragment>
-                                                          <Grid item>
-                                                              <Typography variant="body">
-                                                                Niveles
-                                                              </Typography>
-                                                          </Grid>
-
-                                                          {values.niveles.length > 0 &&
-                                                            values.niveles.map((_, idx) =>  (
-                                                              <Grid container item key={idx}>
-                                                                <Grid item>
-                                                                  <FormikTextField 
-                                                                    formikKey="puntos"
-                                                                    name={`niveles.${idx}.puntos`}
-                                                                    type="number" 
-                                                                    label="Puntos (obligatorio)"
-                                                                    placeholder="Puntos (obligatorio)"
-                                                                  /> 
-                                                                </Grid>
-
-                                                                <Grid item>
-                                                                  <FormikTextField 
-                                                                    formikKey="tituloNivel"
-                                                                    name={`niveles.${idx}.tituloNivel`}
-                                                                    type="text" 
-                                                                    label="Titulo del Nivel"
-                                                                    placeholder="Titulo del Nivel"
-                                                                  /> 
-                                                                </Grid>
-
-                                                                <Grid item>
-                                                                  <FormikTextField 
-                                                                    formikKey="descripcionNivel"
-                                                                    name={`niveles.${idx}.descripcionNivel`}
-                                                                    type="text" 
-                                                                    label="Descripción del Nivel"
-                                                                    placeholder="Descripción del Nivel"
-                                                                  /> 
-                                                                </Grid>
-
-                                                                <Grid item>
-                                                                  <Button onClick={() => remove(index) }>Eliminar nivel</Button>
-                                                                </Grid>
-                                                              </Grid>
-
-                                                          ))}
-
-                                                          <Grid item>
-                                                              <Button onClick={() => push({ puntos: "", tituloNivel: "", descripcionNivel: "" })}>Añadir nivel</Button>
-                                                          </Grid>
-                                                        </React.Fragment>
-
-                                                      )}
-
-                                                    </FieldArray>
-
-                                                  </Form>
-
-                                                )}
-                                                
-                                              </Formik>
-                                          </Grid>
-
-                                        </Grid>
-
-                                      </Grid>
-                                    ))}
-
-                                    <Grid item>
-                                        <Button onClick={() => push({ tituloCriterio: "", descripcionCriterio: "" })}>Añadir Criterio</Button>
-                                    </Grid>
-                                  </React.Fragment>
-                                )}
-                              </FieldArray>
                             </Box>
 
-                            <FormikTextField formikKey="email" 
-                              label="Email Address"
-                              name="email"
-                              type="email"
-                              placeholder="jane@formik.com"
-                            />
+                            <Divider light variant="h7" textAlign="left">Detalles de la Actividad</Divider>
+                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                              <FormikTextField formikKey="descripcionActividad" 
+                                label="Descripción"
+                                variant="outlined"
+                                multiline
+                                rows={4}
+                                id="tituloActividad"
+                                name="descripcionActividad"
+                                placeholder="Escribe una descripción de la Actividad"
+                                type="text"
+                              />
+                            </Box>
 
-                            <MySelect label="Job Type" name="jobType">
-                              <option value="">Select a job type</option>
-                              <option value="designer">Designer</option>
-                              <option value="development">Developer</option>
-                              <option value="product">Product Manager</option>
-                              <option value="other">Other</option>
-                            </MySelect>
+                            <Box sx={{m:2 }}>
+                              <MySelect label="Tipo de Evaluación" name="selectEvaluacion">
+                                <option value="">Select a job type</option>
+                                <option value="designer">Designer</option>
+                                <option value="development">Developer</option>
+                                <option value="product">Product Manager</option>
+                                <option value="other">Other</option>
+                              </MySelect>
+                            </Box>  
 
-                            <MyCheckbox name="acceptedTerms">
-                              I accept the terms and conditions
-                            </MyCheckbox>
-
-                            <button type="submit">Submit</button>
+                            <Box item sx={{m: 2, textAlign:'center'}}>
+                              <Button type="submit" variant="contained">Crear Actividad</Button>
+                            </Box>
 
                             <FormikConsumer>
                               {({ validationSchema, validate, onSubmit, ...rest }) => (
@@ -488,7 +278,7 @@ const ActividadContent = () => {
                                   {JSON.stringify(rest, null, 2)}
                                 </pre>
                               )}
-                          </FormikConsumer>
+                            </FormikConsumer>
 
                           </Form>
 
@@ -516,5 +306,3 @@ const ActividadContent = () => {
 export default function Actividad() {
     return <ActividadContent />;
 }
-
-

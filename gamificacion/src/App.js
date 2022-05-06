@@ -9,6 +9,7 @@ import CreateUser from './assets/pages/CreateUser/CreateUsr';
 import Profesor from './assets/pages/Profesor/Profesor';
 import Perfil from './assets/pages/Profesor/Profile';
 import CrearCurso from './assets/pages/Profesor/CrearCurso';
+import Table from './assets/pages/Profesor/Table';
 import Cursos from './assets/pages/Profesor/Cursos'
 import Badgets from './assets/pages/Profesor/Badgets';
 import Misiones from './assets/pages/Profesor/Misiones';
@@ -41,6 +42,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/crearcurso" element={<CrearCurso />} />
         <Route path="/crearactividad" element={<CrearActividad />} />
+        <Route path="/table" element={<Table />} />
         <Route path="/profile" element={<Perfil />} />
         <Route path="/componentes" element={<Componentes />} />
         <Route path="/calendario" element={<Calendario />} />
