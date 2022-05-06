@@ -25,7 +25,8 @@ import MisionesAlumno from './assets/pages/Alumno/MisionesAlumno';
 import DashboardAlumno from './assets/pages/Alumno/DashboardAlumno';
 import EditarUsuario from './assets/pages/Alumno/EditarUsuario'
 import Encuesta from './assets/pages/Encuesta/Encuesta';
-import Alumnos from './assets/pages/Alumno/components/EditarUser/alumnoslist'
+import Alumnos from './assets/pages/Alumno/components/EditarUser/alumnoslist';
+import ActividadDetalles from './assets/pages/Alumno/EntregaActividad'
 
 
 {/*Sección del Profesor*/}

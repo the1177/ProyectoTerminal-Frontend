@@ -1,0 +1,22 @@
+{
+    "Actividades":[
+        {
+            "id":1,
+            "name": "Crear un server",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            }
+        }
+    ]
+}
