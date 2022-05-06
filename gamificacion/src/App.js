@@ -6,9 +6,9 @@ import Login from './assets/pages/Login/Login';
 import Home from './assets/pages/Home/Home';
 import CreateUser from './assets/pages/CreateUser/CreateUsr';
 
-import Profesor from './assets/pages/Profesor/Profesor';
+import ProfesorGen from './assets/pages/Profesor/ViewPages/EditProfile/ProfesorGeneral';
 import Perfil from './assets/pages/Profesor/Profile';
-import CrearCurso from './assets/pages/Profesor/CrearCurso';
+import CrearCurso from './assets/pages/Profesor/ViewPages/Formik/CrearCurso';
 import Table from './assets/pages/Profesor/Table';
 import Cursos from './assets/pages/Profesor/Cursos'
 import Badgets from './assets/pages/Profesor/Badgets';
@@ -27,6 +27,10 @@ import EditarUsuario from './assets/pages/Alumno/EditarUsuario'
 import Encuesta from './assets/pages/Encuesta/Encuesta';
 import Alumnos from './assets/pages/Alumno/components/EditarUser/alumnoslist'
 
+
+{/*Sección del Profesor*/}
+import ProfesorConf from './assets/pages/Profesor/ViewPages/EditProfile/Configuracion';
+
 function App() {
   return (
     <Router basename={"/"}>
@@ -35,7 +39,6 @@ function App() {
         <Route path="/sign-in" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/sign-up" element={<CreateUser />} />
-        <Route path="/profesor" element={<Profesor />} />
         <Route path="/cursos" element={<Cursos />} />
         <Route path="/badgets" element={<Badgets />} />
         <Route path="/misiones" element={<Misiones />} />
@@ -54,6 +57,9 @@ function App() {
         <Route path="/encuesta" element={<Encuesta />} />
         <Route path="/editarUsuario" element={<EditarUsuario /> } />
         <Route path="/list" element={<Alumnos /> } />
+
+        <Route path="profesor-configuracion" element={<ProfesorConf />} />
+        <Route path="/profesor-general" element={<ProfesorGen />} />
       </Routes>
     </Router>
   );

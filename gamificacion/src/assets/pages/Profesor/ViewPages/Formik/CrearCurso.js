@@ -13,8 +13,8 @@ import {
   TextFieldProps, 
   Button } from '@mui/material';
 import Divider from '@mui/material/Divider';
-import Menu from './components/Menu/Menu';
-import NavBar from './components/NavBar/NavBar';
+import Menu from '../../components/Menu/Menu';
+import NavBar from '../../components/NavBar/NavBar';
 import * as Yup from 'yup';
 
 import { 
@@ -68,6 +68,24 @@ export const FormikTextField = ({ formikKey, ...props }: FormikTextFieldProps) =
       {...props}
   />
 }
+
+const MySelect = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
+
+  return (
+    <div>
+
+      <label htmlFor={props.id || props.name}>{label}</label>
+      <select {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+      ) : null}
+    </div>
+
+  );
+
+};
+
 
 const mdTheme = createTheme();
 
@@ -147,23 +165,50 @@ const CursoContent = () => {
                       <Formik
                         initialValues={{
                           nombreCurso: '',
-                          idCurso: '',
+                          periodoEscolar: '',
+                          añoEscolar: '',
+                          claveCurso: '',
                           seccionCurso: '',
                           areaCurso: '',
+                          tipoCurso: '',
+                          academiaCurso: '',
                           descripcionCurso: '',
                         }}
                         validationSchema={Yup.object({
                           nombreCurso: Yup.string()
                             .max(50, 'Must be 50 characters or less')
                             .required('Required'),
-                          idCurso: Yup.string()
+                          periodoEscolar: Yup.string()
+                            .oneOf(
+                              ['primavera', 'verano', 'otoño', 'invierno'],             
+                              'Periodo escolar invalido'
+                            )
+                            .required('Por favor, seleccione un tipo de curso'),
+                          añoEscolar: Yup.number()
+                            .required('Required'),
+                          tipoCurso: Yup.string()
+                            .oneOf(
+                              ['basica', 'libre', 'preespecialidad'],             
+                              'Tipo de curso invalido'
+                            )
+                            .required('Por favor, seleccione un tipo de curso'),
+                          claveCurso: Yup.string()
                             .max(15, 'Must be 15 characters or less')
                             .required('Required'),
                           seccionCurso: Yup.number()
                             .required('Required'),
                           areaCurso: Yup.string()
-                            .max(50, 'Must be 50 characters or less')
-                            .required('Required'),
+                            .oneOf(
+                              ['materia', 'seminario', 'taller', 'laboratorio'],             
+                              'Área del curso invalida'
+                            )
+                            .required('Por favor, seleccione el área del curso'),
+                          academiaCurso: Yup.string()
+                            .oneOf(
+                              ['desarrollohumano', 'cienciasbasicas', 'matematicas', 'hysbase', 'tratamientoinformacion','ingenieriasoft', 'ingles', 'practicasprof', 'redesytel'],             
+                              'Academía del curso invalida'
+                            )
+                            .required('Por favor, seleccione el área del curso'),
                           descripcionCurso: Yup.string()
                             .max(300, 'Must be 300 characters or less')
                             .required('Required'),
@@ -189,37 +234,89 @@ const CursoContent = () => {
                               />
                             </Box>
 
+                            <Box sx={{ m:2 , marginTop: 3}}>
+                              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                  <Grid item xs={6}>
+                                    <FormikTextField formikKey="claveCurso" 
+                                      label="Clave"
+                                      variant="outlined"
+                                      name="claveCurso"
+                                      placeholder="Clave"
+                                      type="text"
+                                    />
+                                  </Grid>
+                                  <Grid item xs={6}>  
+                                    <FormikTextField formikKey="seccionCurso" 
+                                      label="Sección del Curso"
+                                      variant="outlined"
+                                      name="seccionCurso"
+                                      placeholder="Sección del Curso"
+                                      type="number"
+                                    />
+                                  </Grid>
+                              </Grid>
+                            </Box>
+
+                            <Box sx={{ m:2 , marginTop: 3}}>
+                              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                  <Grid item xs={6}>
+                                    <MySelect label="Periodo Escolar" name="periodoEscolar">
+                                      <option value="">Selecciona el periodo escolar</option>
+                                      <option value="primavera">Primavera</option>
+                                      <option value="verano">Verano</option>
+                                      <option value="otoño">Otoño</option>
+                                      <option value="invierno">Invierno</option>
+                                    </MySelect> 
+                                  </Grid>
+                                  <Grid item xs={6}>  
+                                    <FormikTextField formikKey="añoEscolar" 
+                                      label="Año"
+                                      variant="outlined"
+                                      name="añoEscolar"
+                                      placeholder="añoEscolar"
+                                      type="number"
+                                    />
+                                  </Grid>
+                              </Grid>
+                            </Box>
+
                             <Divider light variant="h7" textAlign="left">Detalles del Curso</Divider>
-                            <Box sx={{ m: 2, /*bgcolor:'red'*/}}>
-                              <FormikTextField formikKey="idCurso" 
-                                label="ID del Curso"
-                                variant="outlined"
-                                name="idCurso"
-                                placeholder="ID del Curso"
-                                type="text"
-                              />
+                            <Box sx={{ m:2 , marginTop: 3}}>
+                              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                  <Grid item xs={12}>
+                                    <MySelect label="Área" name="areaCurso">
+                                      <option value="">Selecciona el Área</option>
+                                      <option value="materia">Materia</option>
+                                      <option value="seminario">Seminario</option>
+                                      <option value="taller">Taller</option>
+                                      <option value="laboratorio">Laboratorio</option>
+                                    </MySelect>
+                                  </Grid>
+                                  <Grid item xs={12}>  
+                                    <MySelect label="Tipo" name="tipoCurso">
+                                      <option value="">Selecciona el tipo de curso</option>
+                                      <option value="basica">Básica</option>
+                                      <option value="libre">Elección Libre</option>
+                                      <option value="preespecialidad">Preespecialidad</option>
+                                    </MySelect> 
+                                  </Grid>
+                                  <Grid item xs={12}>  
+                                    <MySelect label="Academía" name="academiaCurso">
+                                      <option value="">Selecciona la academía</option>
+                                      <option value="desarrollohumano">Desarrollo Humano</option>
+                                      <option value="cienciasbasicas">Ciencias Básicas</option>
+                                      <option value="matematicas">Matemáticas</option>
+                                      <option value="hysbase">Hardware y software de base</option>
+                                      <option value="tratamientoinformacion">Tratamiento de información</option>
+                                      <option value="ingenieriasoft">Ingeniería de Software</option>
+                                      <option value="ingles">Inglés</option>
+                                      <option value="practicasprof">Prácticas profesionales</option>
+                                      <option value="redesytel">Redes y telecomunicaciones</option>
+                                    </MySelect>
+                                  </Grid>
+                              </Grid>
                             </Box>
-
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
-                              <FormikTextField formikKey="seccionCurso" 
-                                label="Sección del Curso"
-                                variant="outlined"
-                                name="seccionCurso"
-                                placeholder="Sección del Curso"
-                                type="number"
-                              />
-                            </Box>
-
-                            <Box sx={{ m: 2, /*bgcolor:'red'*/}}>
-                              <FormikTextField formikKey="areaCurso" 
-                                label="Areá del Curso"
-                                variant="outlined"
-                                name="areaCurso"
-                                placeholder="Areá del Curso"
-                                type="text"
-                              />
-                            </Box>
-
+                            
                             <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
                               <FormikTextField formikKey="descripcionCurso" 
                                 label="Descripción del Curso"
@@ -231,7 +328,6 @@ const CursoContent = () => {
                                 type="text"
                               />
                             </Box>
-                                 
 
                             <Box item sx={{m: 2, textAlign:'center'}}>
                               <Button type="submit" variant="contained" endIcon={<ClassIcon />}>Crear Curso</Button>

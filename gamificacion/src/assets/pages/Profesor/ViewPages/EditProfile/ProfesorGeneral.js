@@ -1,10 +1,19 @@
 import React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
 
+import ListItemText from '@mui/material/ListItemText';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ContentCut from '@mui/icons-material/ContentCut';
+import ContentCopy from '@mui/icons-material/ContentCopy';
+import ContentPaste from '@mui/icons-material/ContentPaste';
+import Cloud from '@mui/icons-material/Cloud';
+
+{/*Iconos Menú editar perfil*/}
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import DiamondOutlinedIcon from '@mui/icons-material/DiamondOutlined';
+import AutoFixHighOutlinedIcon from '@mui/icons-material/AutoFixHighOutlined';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 import DateFnsUtils from "@date-io/date-fns";
 
@@ -21,7 +30,8 @@ import {
   TextFieldProps,
   Select,
   MenuItem, 
-  Button 
+  Button, 
+  MenuList
 } from '@mui/material';
 
 import moment from 'moment';
@@ -32,8 +42,8 @@ import {
   KeyboardDatePicker
 } from "@material-ui/pickers";
 import Divider from '@mui/material/Divider';
-import Menu from './components/Menu/Menu';
-import NavBar from './components/NavBar/NavBar';
+import Menu from '../../components/Menu/Menu';
+import NavBar from '../../components/NavBar/NavBar';
 import * as Yup from 'yup';
 
 import { 
@@ -135,6 +145,52 @@ const ProfesorContent = () => {
             <NavBar tituloNavBar="Editar Perfil" open={ open } setOpen={ setOpen }/>
 
             <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
+
+            {/*Paper del menú izquierdo de editar perfil*/}
+            <Paper
+              fixed
+              sx={{
+                p: 2,
+                margin: 'auto',
+                flexDirection: 'column',
+                borderRadius: 3,
+                height: 'auto',
+                width: '30%',
+                height: '50%',
+                alignItems: 'center',
+                alignContent: 'center',
+                //textAlign:'center',
+                marginTop: 15,
+              }}
+            > 
+              <MenuList>
+                <MenuItem>
+                 <ListItemIcon>
+                    <PermIdentityIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText>General</ListItemText>
+                </MenuItem>
+                <MenuItem>
+                  <ListItemIcon>
+                    <DiamondOutlinedIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText>Experiencia</ListItemText>
+                </MenuItem>
+                <MenuItem>
+                  <ListItemIcon>
+                    <AutoFixHighOutlinedIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText>Skills</ListItemText>
+                </MenuItem>
+                <Divider />
+                <MenuItem>
+                  <ListItemIcon>
+                    <SettingsIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText>Configuración</ListItemText>
+                </MenuItem>
+              </MenuList>
+            </Paper>
             
             {/* Paper es la sección completa del Form cuadro blanco*/}
             <Paper
@@ -156,7 +212,6 @@ const ProfesorContent = () => {
               <Box
                 fixed
                 sx={{
-                  marginTop: 8,
                   '& .MuiTextField-root': {width: '100%'},
                   my: 1,
                   mx: 1,
@@ -168,7 +223,10 @@ const ProfesorContent = () => {
               >
                 <Grid item xs>
                   <Typography gutterBottom variant="h5" component="div">
-                    Información del perfil
+                    Información General
+                  </Typography>
+                  <Typography variant="caption" display="block" gutterBottom component="div" mt={0}>
+                    Edite la información general de su cuenta
                   </Typography>
                 </Grid>
 
@@ -245,9 +303,22 @@ const ProfesorContent = () => {
                         {({ values }) => (
                           
                           <Form>
-                            <Divider light variant="h7" textAlign="left">Información Personal</Divider>
-                            <Box sx={{ m:2 }}>
-                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
+                            <Grid item xs>
+                              <Divider light variant="h6" textAlign="left">Foto de Perfil</Divider>
+                              <Typography variant="caption" display="block" gutterBottom component="div" mt={0}>
+                                Así te reconocerán los demás
+                              </Typography>
+                            </Grid>
+
+                            <Grid item xs>
+                              <Divider light variant="h6" textAlign="left">Información Personal</Divider>
+                              <Typography variant="caption" display="block" gutterBottom component="div" mt={0}>
+                                Otros merecen conocerte más
+                              </Typography>
+                            </Grid>
+                            
+                            <Box sx={{ m:2 , marginTop: 3}}>
+                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
                                     <Grid item xs={6}>
                                         <FormikTextField formikKey="nombreProf" 
                                             label="Nombres"
@@ -273,7 +344,7 @@ const ProfesorContent = () => {
                               </Grid>
                             </Box>
 
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                            <Box sx={{ m: 2, marginTop: 3 /*bgcolor:'red'*/}}>
                               <FormikTextField formikKey="tituloprofesional" 
                                 label="Título Profesional"
                                 variant="outlined"
@@ -285,7 +356,7 @@ const ProfesorContent = () => {
                               />
                             </Box>
 
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                            <Box sx={{ m: 2, marginTop: 3 /*bgcolor:'red'*/}}>
                               <FormikTextField formikKey="correoInst" 
                                 label="Correo Institucional"
                                 variant="outlined"
@@ -297,7 +368,7 @@ const ProfesorContent = () => {
                               />
                             </Box>
 
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                            <Box sx={{ m: 2, marginTop: 3 /*bgcolor:'red'*/}}>
                               <FormikTextField formikKey="localizacionProf" 
                                 label="Localización"
                                 variant="outlined"
@@ -309,7 +380,7 @@ const ProfesorContent = () => {
                               />
                             </Box>
 
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                            <Box sx={{ m: 2, marginTop: 3 /*bgcolor:'red'*/}}>
                               <FormikTextField formikKey="biografiaProf" 
                                 label="Biografía"
                                 variant="outlined"
@@ -322,8 +393,14 @@ const ProfesorContent = () => {
                               />
                             </Box>
 
-                            <Divider light variant="h7" textAlign="left">Información Extra</Divider>
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                            <Grid item xs>
+                              <Divider light variant="h6" textAlign="left">Información Profesional</Divider>
+                              <Typography variant="caption" display="block" gutterBottom component="div" mt={0}>
+                                Esto puede ayudar con la perspectiva de los demás.
+                              </Typography>
+                            </Grid>
+
+                            <Box sx={{ m: 2, marginTop: 3 /*bgcolor:'red'*/}}>
                               <FormikTextField formikKey="experiencia" 
                                 label="Experiencia"
                                 variant="outlined"
@@ -336,7 +413,7 @@ const ProfesorContent = () => {
                               />
                             </Box>
 
-                            <Box sx={{m:2 }}>
+                            <Box sx={{m:2, marginTop: 3}}>
                               <MySelect label="Materias Impartidas" name="materiasImpartidas">
                                 <option value="">Selecciona las materias</option>
                                 <option value="algoritmos">Algoritmos</option>
@@ -346,53 +423,61 @@ const ProfesorContent = () => {
                               </MySelect>
                             </Box>
 
-                            <Box  sx={{ m:2, /*bgcolor:'red'*/}}>
-                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
+
+                            <Grid item xs>
+                              <Divider light variant="h6" textAlign="left">Perfiles Sociales</Divider>
+                              <Typography variant="caption" display="block" gutterBottom component="div" mt={0}>
+                                Esto puede ayudar a otros a encontrarte en las redes sociales.
+                              </Typography>
+                            </Grid>
+
+                            <Box  sx={{ m:2, marginTop: 3/*bgcolor:'red'*/}}>
+                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
                                     <Grid item xs={6}>
                                         <FormikTextField formikKey="instagram" 
-                                        label="Instagram"
+                                        label="Instagram URL"
                                         variant="outlined"
                                         id="instagram"
                                         name="instagram"
-                                        placeholder="Instagram"
+                                        placeholder="Instagram URL"
                                         type="text"
                                         />
                                     </Grid>
                                     <Grid item xs={6}>  
                                         <FormikTextField formikKey="twitter" 
-                                        label="Twitter"
+                                        label="Twitter URL"
                                         variant="outlined"
                                         id="twitter"
                                         name="twitter"
-                                        placeholder="Twitter"
+                                        placeholder="Twitter URL"
                                         type="text"
                                         />
                                     </Grid>
                                     <Grid item xs={6}>    
                                         <FormikTextField formikKey="facebook" 
-                                        label="Facebook"
+                                        label="Facebook URL"
                                         variant="outlined"
                                         id="facebook"
                                         name="facebook"
-                                        placeholder="Facebook"
+                                        placeholder="Facebook URL"
                                         type="text"
                                         />
                                     </Grid>
                                     <Grid item xs={6}>  
                                         <FormikTextField formikKey="github" 
-                                        label="Github"
+                                        label="Github URL"
                                         variant="outlined"
                                         id="github"
                                         name="github"
-                                        placeholder="Github"
+                                        placeholder="Github URL"
                                         type="text"
                                         />
                                     </Grid>
                                 </Grid>
                             </Box>
 
-                            <Box item sx={{m: 2, textAlign:'center'}}>
-                              <Button type="submit" variant="contained">Actualizar perfil</Button>
+                            <Box item sx={{m: 2, marginTop: 3, textAlign:'center'}}>
+                              <Button type="submit" variant="contained">Guardar Cambios</Button>
                             </Box>
 
                             <FormikConsumer>
