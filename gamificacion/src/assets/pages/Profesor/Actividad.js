@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
-import Stack from '@mui/material/Stack';
+
 
 import DateFnsUtils from "@date-io/date-fns";
 
@@ -112,8 +112,7 @@ const MySelect = ({ label, ...props }) => {
 };
 
 const initialValues = {
-  criterios: [{ tituloCriterio: "", descripcionCriterio: "" }],
-  niveles: [{ puntos: "", tituloNivel: "", descripcionNivel: "" }],
+  criterios: [{ tituloCriterio: "", descripcionCriterio: "" }]
 };
 
 const options = [
@@ -224,6 +223,7 @@ const ActividadContent = () => {
                         }}
                       >
                         {({ values }) => (
+                          
                           <Form>
                             <Divider light variant="h7" textAlign="left">Información de la Actividad</Divider>
                             <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
