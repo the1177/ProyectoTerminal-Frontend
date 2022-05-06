@@ -120,9 +120,6 @@ const options = [
   { value: 'rubrica', label: 'Rúbrica' },
 ]
 
-
-
-
 const mdTheme = createTheme();
 
 
@@ -165,7 +162,6 @@ const ActividadContent = () => {
               {/* Box es todo el contenido del form */}
               <Box
                 fixed
-                component="form"
                 sx={{
                   marginTop: 8,
                   '& .MuiTextField-root': { m: 1, width: '100%'},
@@ -179,13 +175,12 @@ const ActividadContent = () => {
               >
                 <Grid item xs>
                   <Typography gutterBottom variant="h5" component="div">
-                    Crear Curso
+                    Crear Actividad
                   </Typography>
                 </Grid>
 
                 <Grid item xs>
                     <Box
-                      component="form"
                       sx={{
                         '& .MuiTextField-root': { m: 1, width: '100%'},
                         margin: 'auto',
@@ -275,7 +270,12 @@ const ActividadContent = () => {
                                     overflowX: 'scroll',
                                   }}
                                 >
-                                  {JSON.stringify(rest, null, 2)}
+                                  <Box onChange={rest.handleChange} item sx={{m: 2, textAlign:'center'}}> 
+                                    <div> Titulo de la actividad: {rest.values.tituloActividad} </div>
+                                    <div> Descripción de la actividad: {rest.values.descripcionActividad} </div>
+                                    <div> Tipo de evaluacion: {rest.values.selectEvaluacion} </div>
+                                  </Box>
+                                  {/** {JSON.stringify(rest, null, 2)}*/} 
                                 </pre>
                               )}
                             </FormikConsumer>
