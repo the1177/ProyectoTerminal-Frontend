@@ -116,7 +116,6 @@ const CursoContent = () => {
               {/* Box es todo el contenido del form */}
               <Box
                 fixed
-                component="form"
                 sx={{
                   marginTop: 8,
                   '& .MuiTextField-root': { m: 1, width: '100%'},
@@ -136,7 +135,6 @@ const CursoContent = () => {
 
                 <Grid item xs>
                     <Box
-                      component="form"
                       sx={{
                         '& .MuiTextField-root': { m: 1, width: '100%'},
                         margin: 'auto',
@@ -232,7 +230,8 @@ const CursoContent = () => {
                                 placeholder="Descripción del Curso"
                                 type="text"
                               />
-                            </Box>     
+                            </Box>
+                                 
 
                             <Box item sx={{m: 2, textAlign:'center'}}>
                               <Button type="submit" variant="contained" endIcon={<ClassIcon />}>Crear Curso</Button>

@@ -1,228 +1,376 @@
-import React from 'react'
-import { Platform, StyleSheet, Text, SafeAreaView, View, Image, TouchableHighlight, TextInput } from 'react-native';
-
-import imageprof from './components/Images/granados.jpg';
-
-
-
-const Badgets = () =>{
-
-    const [textname, onChangeName] = React.useState("Nombre del badget");
-    const [textlast, onChangeLastName] = React.useState("Clasificación");
-    const [textitprof, onChangeTitProf] = React.useState("Nivel");
-    const [textloc, onChangeLoc] = React.useState("Puntos");
-    const [textbio, onChangeBio] = React.useState("Descripción");
-
-    return(
-
-        <SafeAreaView>
-            <View style={styles.container}>
-                <View style={styles.box1}>
-
-                    <TouchableHighlight style={[styles.profileImgminContainer]}>
-                        <Image source={imageprof} style={styles.imgminProfile}/>
-                    </TouchableHighlight>
-
-                    <Text style={styles.textHeadingStyle}>
-                        General
-                    </Text>
-
-                    <Text style={styles.textHeadingStyle}>
-                        Cursos
-                    </Text>
-
-                    <Text style={styles.textHeadingStyle}>
-                        Administrar Badgets
-                    </Text>
-
-                    <Text style={styles.textHeadingStyle}>
-                        Configuración
-                    </Text>
-
-                </View>
-                
-                <View style={styles.box2}>
-
-                    <View style={styles.containerinput}>
-
-                        <TextInput
-                            style={styles.input2}
-                            onChangeText={onChangeName}
-                            value={textname}
-                        />
-
-                        <TextInput
-                            style={styles.input2}
-                            onChangeText={onChangeLastName}
-                            value={textlast}
-                        />
-
-                        <TextInput
-                            style={styles.input2}
-                            onChangeText={onChangeTitProf}
-                            value={textitprof}
-                        />
-
-                        <TextInput
-                            style={styles.input2}
-                            onChangeText={onChangeLoc}
-                            value={textloc}
-                        />
-
-                        <TextInput
-                            style={styles.input3}
-                            onChangeText={onChangeBio}
-                            value={textbio}
-                        />
-
-                    </View>
+import React from 'react';
+import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
 
 
+import DateFnsUtils from "@date-io/date-fns";
 
-                </View>
-            </View>
-        </SafeAreaView>
+import { 
+  Container, 
+  Box, 
+  Grid, 
+  Paper,
+  Card,
+  CardActions,
+  CardContent, 
+  Typography, 
+  TextField,
+  TextFieldProps,
+  Select,
+  MenuItem, 
+  Button 
+} from '@mui/material';
 
-        
+import moment from 'moment';
 
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker
+} from "@material-ui/pickers";
+import Divider from '@mui/material/Divider';
+import Menu from './components/Menu/Menu';
+import NavBar from './components/NavBar/NavBar';
+import * as Yup from 'yup';
 
+import { 
+  Formik,
+  FormikConsumer,
+  Form,
+  useField,
+  Field,
+  FormikProps,
+  ErrorMessage,
+  FieldArray,
+  FastField, 
+} from 'formik';
+import { width } from '@mui/system';
 
+const drawerWidth = 240;
 
-    );
+const CssTextField = styled(TextField)({
+    '& label.Mui-focused': {
+      color: 'purple',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'purple',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'light-green',
+      },
+      '&:hover fieldset': {
+        borderColor: 'blue',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'purple',
+      }
+    },
+});
+
+{/* UseField TextField*/}
+type FormikTextFieldProps = {
+  formikKey: string,
+} & TextFieldProps
+
+export const FormikTextField = ({ formikKey, ...props }: FormikTextFieldProps) => {
+  const [field, meta, helpers] = useField(formikKey);
+  return (
+    <>
+      <CssTextField
+          id={field.name}
+          name={field.name}
+          helperText={meta.touched ? meta.error : ""}
+          error={meta.touched && Boolean(meta.error)}
+          value={field.value}
+          onChange={field.onChange}
+          {...field}
+          {...props}
+      />
+    </>
+  )
+}
+
+const MySelect = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
+
+  return (
+    <div>
+
+      <label htmlFor={props.id || props.name}>{label}</label>
+      <select {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+      ) : null}
+    </div>
+
+  );
+
 };
 
-const styles = StyleSheet.create ({
-    container: {
-        flex: 1,
-        backgroundcolor: '#F2F2F2',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        alignContent: 'stretch'
-    },
 
-    box: {
-        width: 320,
-        height: 373,
-        backgroundcolor: '#FFFFFF',
-        borderColor: '#999',
-        borderRadius: 20,
-        borderWidth: 5,
-        margin: 10
-
-    },
-
-    box1: {
-        width: 320,
-        height: 373,
-        backgroundcolor: '#FFFFFF',
-        borderRadius: 18,
-        margin: 10,
-        marginLeft: 50,
-        padding: 15,
-        alignSelf: 'flex-start'
-
-    },
-
-    box2: {
-        flex: 1,
-        width: 800,
-        height: 'auto',
-        backgroundcolor: '#FFFFFF',
-        borderRadius: 18,
-        margin: 10,
-        marginLeft: 50,
-        marginRight: 50,
-        padding: 15,
-        alignSelf: 'center'
-
-    },
-
-    profileImgminContainer: {
-        height: 70,
-        width: 70,
-        borderRadius: 70,
-        alignSelf: 'left'
-    },
-
-    imgminProfile: {
-        height: 70,
-        width: 70,
-        borderRadius: 70,
-        marginBottom: 20,
-        marginLeft: 25
-    },
-
-    profileImgContainer: {
-        height: 140,
-        width: 140,
-        borderRadius: 70,
-        alignSelf: 'center'
-    },
-
-    imgProfile: {
-        height: 140,
-        width: 140,
-        borderRadius: 70,
-        marginBottom: 20,
-    },
-
-    textHeadingStyle: {
-        marginTop: 20,
-        fontSize: 13,
-        color: '#707070',
-        fontWeight: '600',
-        marginLeft: 25
-    },
-
-    containerinput: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignContent: 'stretch',
-        
-    },
-
-    input1: {
-        width: 311,
-        height: 40,
-        margin: 24,
-        borderWidth: 1,
-        borderRadius: 5,
-        borderColor: '#707070',
-        padding: 10,
-        color: '#707070',
-        opacity: 0.5,
-    },
-
-    input2: {
-        width: 669,
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
-        borderRadius: 5,
-        borderColor: '#707070',
-        padding: 10,
-        color: '#707070',
-        opacity: 0.5,
-    },
-
-    input3: {
-        width: 669,
-        height: 151,
-        margin: 12,
-        borderWidth: 1,
-        borderRadius: 5,
-        borderColor: '#707070',
-        padding: 10,
-        color: '#707070',
-        opacity: 0.5,
-
-    },
+const mdTheme = createTheme();
 
 
-})
+const BadgetsContent = () => {
 
-export default Badgets;
+    const saved = localStorage.getItem("user");
+    const user = JSON.parse(saved);
+    console.log(user);
 
+    const [open, setOpen] = React.useState(true);
+    const toggleDrawer = () => {
+      setOpen(!open);
+    };
+  
+    return (
+      <React.Fragment>
+        <ThemeProvider theme={mdTheme} >
+          <Box sx={{ display: 'flex' }}>
+            <CssBaseline />
+            
+            <NavBar tituloNavBar="Editar Perfil" open={ open } setOpen={ setOpen }/>
+
+            <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
+            
+            {/* Paper es la sección completa del Form cuadro blanco*/}
+            <Paper
+              fixed
+              sx={{
+                p: 2,
+                margin: 'auto',
+                flexDirection: 'column',
+                borderRadius: 3,
+                height: 'auto',
+                width: '50%',
+                alignItems: 'center',
+                alignContent: 'center',
+                //textAlign:'center',
+                marginTop: 15,
+              }}
+            >
+              {/* Box es todo el contenido del form */}
+              <Box
+                fixed
+                sx={{
+                  marginTop: 8,
+                  '& .MuiTextField-root': {width: '100%'},
+                  my: 1,
+                  mx: 1,
+                  //bgcolor: 'pink',
+                  height: 'auto',
+                  minWidth: '100%',
+                }}
+
+              >
+                <Grid item xs>
+                  <Typography gutterBottom variant="h5" component="div">
+                    Crear Badget
+                  </Typography>
+                </Grid>
+
+                <Grid item xs>
+                    <Box
+                      sx={{
+                        '& .MuiTextField-root': {width: '100%'},
+                        margin: 'auto',
+                        padding: 1,
+                        minWidth: '100%',
+                      }}
+
+                    >
+
+                      <Formik
+                        initialValues={{
+                            nombreBadget: '',
+                            typeBadget: '',
+                            clasificacion: '',
+                            categoria: '',
+                            nivel: '',
+                            puntosExp: '',
+                            descripcionBadget: '',
+                            expires: '',
+                        }}
+                        validationSchema={Yup.object({
+                            nombreBadget: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos')
+                                .required('Obligatorio'),
+                            typeBadget: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos')
+                                .required('Obligatorio'),
+                            clasificacion: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos'),
+                            categoria: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos'),
+                            nivel: Yup.number()
+                                .required('Obligatorio'),
+                            puntosExp: Yup.number()
+                                .required('Obligatorio'),
+                            descripcionBadget: Yup.string()
+                                .max(300, 'Debe tener 300 caracteres o menos')
+                                .required('Obligatorio'),
+                            expires: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos'),
+                        })}
+                        onSubmit={(values, { setSubmitting }) => {
+                            setTimeout(() => {
+                                alert(JSON.stringify(values, null, 2));
+                                setSubmitting(false);
+                            }, 400);
+                        }}
+                      >
+                        {({ values }) => (
+                          
+                          <Form>
+                            <Divider light variant="h7" textAlign="left">Información del Badget</Divider>
+                            <Box sx={{ m:2 }}>
+                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                    <Grid item xs={6}>
+                                        <FormikTextField formikKey="nombreBadget" 
+                                            label="Nombre del Badget"
+                                            variant="outlined"
+                                            id="nombreBadget"
+                                            name="nombreBadget"
+                                            placeholder="Nombre del Badget"
+                                            type="text"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={6}>  
+                                        <FormikTextField formikKey="typeBadget" 
+                                            label="Tipo"
+                                            variant="outlined"
+                                            id="typeBadget"
+                                            name="typeBadget"
+                                            multiline
+                                            placeholder="Tipo"
+                                            type="text"
+                                        />
+                                    </Grid>
+                              </Grid>
+                            </Box>
+
+                            <Box sx={{ m:2 }}>
+                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                    <Grid item xs={6}>
+                                        <FormikTextField formikKey="clasificacion" 
+                                            label="Clasificacion"
+                                            variant="outlined"
+                                            id="clasificacion"
+                                            name="clasificacion"
+                                            multiline
+                                            placeholder="Clasificacion"
+                                            type="text"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={6}>  
+                                        <FormikTextField formikKey="categoria" 
+                                            label="Categoria"
+                                            variant="outlined"
+                                            id="categoria"
+                                            name="categoria"
+                                            multiline
+                                            placeholder="Categoria"
+                                            type="text"
+                                        />
+                                    </Grid>
+                              </Grid>
+                            </Box>
+
+                            <Box sx={{ m:2 }}>
+                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                    <Grid item xs={6}>
+                                        <FormikTextField formikKey="nivel" 
+                                            label="Nivel"
+                                            variant="outlined"
+                                            id="nivel"
+                                            name="nivel"
+                                            multiline
+                                            placeholder="Nivel"
+                                            type="text"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={6}>  
+                                        <FormikTextField formikKey="puntosExp" 
+                                            label="EXP"
+                                            variant="outlined"
+                                            id="puntosExp"
+                                            name="puntosExp"
+                                            multiline
+                                            placeholder="EXP"
+                                            type="text"
+                                        />
+                                    </Grid>
+                              </Grid>
+                            </Box>
+
+                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                              <FormikTextField formikKey="descripcionBadget" 
+                                label="Descripción"
+                                variant="outlined"
+                                multiline
+                                rows={4}
+                                id="descripcionBadget"
+                                name="descripcionBadget"
+                                placeholder="Descripción"
+                                type="text"
+                              />
+                            </Box>
+
+                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                              <FormikTextField formikKey="expires" 
+                                label="Fecha de Expiración"
+                                variant="outlined"
+                                id="expires"
+                                name="expires"
+                                placeholder="Fecha de Expiración"
+                                type="text"
+                              />
+                            </Box>
+
+                            <Box item sx={{m: 2, textAlign:'center'}}>
+                              <Button type="submit" variant="contained">Crear Badget</Button>
+                            </Box>
+
+                            <FormikConsumer>
+                              {({ validationSchema, validate, onSubmit, ...rest }) => (
+                                <pre
+                                  style={{
+                                    fontSize: '.85rem',
+                                    padding: '.25rem .5rem',
+                                    overflowX: 'scroll',
+                                  }}
+                                >
+
+                                    {JSON.stringify(rest, null, 2)}
+                                </pre>
+                              )}
+                            </FormikConsumer>
+
+                          </Form>
+
+                        )}
+                      </Formik>
+                      
+
+                      
+                    </Box>
+                </Grid>
+
+              </Box>
+
+            </Paper>
+
+          </Box>
+        </ThemeProvider>
+
+      </React.Fragment>
+    );
+}
+
+
+export default function Badgets() {
+    return <BadgetsContent />;
+}

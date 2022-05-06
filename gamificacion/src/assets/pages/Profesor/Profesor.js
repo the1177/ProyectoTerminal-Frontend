@@ -1,291 +1,437 @@
-import React from 'react'
-import { Platform, StyleSheet, Text, SafeAreaView, View, Image, TouchableHighlight, TextInput } from 'react-native';
+import React from 'react';
+import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
 
-import './Profesor.css';
-import imageprof from './components/Images/granados.jpg';
 
-const Profesor = () =>{
+import DateFnsUtils from "@date-io/date-fns";
 
-    const [textname, onChangeName] = React.useState("Nombres");
-    const [textlast, onChangeLastName] = React.useState("Apellidos");
-    const [textitprof, onChangeTitProf] = React.useState("Título Profesional");
-    const [textloc, onChangeLoc] = React.useState("Localización");
-    const [textbio, onChangeBio] = React.useState("Acerca de / Biografía");
-    const [textexp, onChangeExp] = React.useState("Experiencia");
-    const [texttr, onChangeTr] = React.useState("¿Trabajas de forma remota?");
-    const [textmat, onChangeMat] = React.useState("Materias impartidas");
-    const [textflex, onChangeFlex] = React.useState("¿Eres flexible?");
+import { 
+  Container, 
+  Box, 
+  Grid, 
+  Paper,
+  Card,
+  CardActions,
+  CardContent, 
+  Typography, 
+  TextField,
+  TextFieldProps,
+  Select,
+  MenuItem, 
+  Button 
+} from '@mui/material';
 
-    const [textinst, onChangeInst] = React.useState("Instagram");
-    const [textfb, onChangeFb] = React.useState("Facebook");
-    const [texttw, onChangeTw] = React.useState("Twitter");
-    const [textgh, onChangeGH] = React.useState("GitHub");
+import moment from 'moment';
 
-    return(
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker
+} from "@material-ui/pickers";
+import Divider from '@mui/material/Divider';
+import Menu from './components/Menu/Menu';
+import NavBar from './components/NavBar/NavBar';
+import * as Yup from 'yup';
 
-        <SafeAreaView>
-            <View style={styles.container}>
+import { 
+  Formik,
+  FormikConsumer,
+  Form,
+  useField,
+  Field,
+  FormikProps,
+  ErrorMessage,
+  FieldArray,
+  FastField, 
+} from 'formik';
+import { width } from '@mui/system';
 
-                <View style={styles.box1}>
+const drawerWidth = 240;
 
-                    <TouchableHighlight style={[styles.profileImgminContainer]}>
-                        <Image source={imageprof} style={styles.imgminProfile}/>
-                    </TouchableHighlight>
+const CssTextField = styled(TextField)({
+    '& label.Mui-focused': {
+      color: 'purple',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'purple',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'light-green',
+      },
+      '&:hover fieldset': {
+        borderColor: 'blue',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'purple',
+      }
+    },
+});
 
-                    <Text style={styles.textHeadingStyle}>
-                        General
-                    </Text>
+{/* UseField TextField*/}
+type FormikTextFieldProps = {
+  formikKey: string,
+} & TextFieldProps
 
-                    <Text style={styles.textHeadingStyle}>
-                        Cursos
-                    </Text>
+export const FormikTextField = ({ formikKey, ...props }: FormikTextFieldProps) => {
+  const [field, meta, helpers] = useField(formikKey);
+  return (
+    <>
+      <CssTextField
+          id={field.name}
+          name={field.name}
+          helperText={meta.touched ? meta.error : ""}
+          error={meta.touched && Boolean(meta.error)}
+          value={field.value}
+          onChange={field.onChange}
+          {...field}
+          {...props}
+      />
+    </>
+  )
+}
 
-                    <Text style={styles.textHeadingStyle}>
-                        Administrar Badgets
-                    </Text>
+const MySelect = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
 
-                    <Text style={styles.textHeadingStyle}>
-                        Configuración
-                    </Text>
+  return (
+    <div>
 
-                </View>
-                
-                <View style={styles.box2}>
+      <label htmlFor={props.id || props.name}>{label}</label>
+      <select {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+      ) : null}
+    </div>
 
-                    <TouchableHighlight style={[styles.profileImgContainer]}>
-                        <Image source={imageprof} style={styles.imgProfile}/>
-                    </TouchableHighlight>
+  );
 
-                    <View style={styles.containerinput}>
-
-                        <TextInput
-                            style={styles.input1}
-                            onChangeText={onChangeName}
-                            value={textname}
-                        />
-
-                        <TextInput
-                            style={styles.input1}
-                            onChangeText={onChangeLastName}
-                            value={textlast}
-                        />
-
-                        <TextInput
-                            style={styles.input2}
-                            onChangeText={onChangeTitProf}
-                            value={textitprof}
-                        />
-
-                        <TextInput
-                            style={styles.input2}
-                            onChangeText={onChangeLoc}
-                            value={textloc}
-                        />
-
-                        <TextInput
-                            style={styles.input3}
-                            onChangeText={onChangeBio}
-                            value={textbio}
-                        />
-
-                        <TextInput
-                            style={styles.input1}
-                            onChangeText={onChangeExp}
-                            value={textexp}
-                        />
-
-                        <TextInput
-                            style={styles.input1}
-                            onChangeText={onChangeTr}
-                            value={texttr}
-                        />
-
-                        <TextInput
-                            style={styles.input1}
-                            onChangeText={onChangeMat}
-                            value={textmat}
-                        />
-
-                        <TextInput
-                            style={styles.input1}
-                            onChangeText={onChangeFlex}
-                            value={textflex}
-                        />
-
-                        <TextInput
-                            style={styles.input1}
-                            onChangeText={onChangeInst}
-                            value={textinst}
-                        />
-
-                        <TextInput
-                            style={styles.input1}
-                            onChangeText={onChangeFb}
-                            value={textfb}
-                        />
-
-                        <TextInput
-                            style={styles.input1}
-                            onChangeText={onChangeTw}
-                            value={texttw}
-                        />
-
-                        <TextInput
-                            style={styles.input1}
-                            onChangeText={onChangeGH}
-                            value={textgh}
-                        />
-
-                    </View>
-                </View>
-            </View>
-        </SafeAreaView>
-    );
 };
 
-const styles = StyleSheet.create ({
-    container: {
-        flex: 1,
-        backgroundcolor: '#F2F2F2',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        alignContent: 'stretch',
-        
-    },
 
-    box: {
-        width: 320,
-        height: 373,
-        backgroundcolor: '#FFFFFF',
-        borderColor: '#999',
-        borderRadius: 20,
-        borderWidth: 5,
-        margin: 10
-
-    },
-
-    box1: {
-        width: 320,
-        height: 373,
-        backgroundcolor: '#FFFFFF',
-        borderRadius: 18,
-        margin: 10,
-        marginLeft: 50, /*margin de los boxes*/ 
-        marginRight: 50,
-        padding: 15,
-        alignSelf: 'flex-start'
-
-    },
-
-    box2: {
-        flex: 1,
-        width: 800,
-        height: 'auto',
-        backgroundcolor: '#FFFFFF',
-        borderRadius: 18,
-        margin: 10,
-        marginLeft: 50,  /*margin de los boxes*/ 
-        marginRight: 50,
-        padding: 15,
-        alignSelf: 'center'
-
-    },
-
-    profileImgminContainer: {
-        height: 70,
-        width: 70,
-        borderRadius: 70,
-        alignSelf: 'left'
-    },
-
-    imgminProfile: {
-        height: 70,
-        width: 70,
-        borderRadius: 70,
-        marginBottom: 20,
-        marginLeft: 25
-    },
-
-    profileImgContainer: {
-        height: 140,
-        width: 140,
-        borderRadius: 70,
-        alignSelf: 'center'
-    },
-
-    imgProfile: {
-        height: 140,
-        width: 140,
-        borderRadius: 70,
-        marginBottom: 20,
-    },
-
-    textHeadingStyle: {
-        marginTop: 20,
-        fontSize: 13,
-        color: '#707070',
-        fontWeight: '600',
-        marginLeft: 25
-    },
-
-    containerinput: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignContent: 'stretch',
-        
-    },
-
-    baseText: {
-        fontFamily: "Cochin",
-    },
-
-    titleText: {
-        fontSize: 20,
-        fontWeight: "bold"
-    },
-
-    input1: {
-        width: 311,
-        height: 40,
-        margin: 15,
-        borderWidth: 1,
-        borderRadius: 5,
-        borderColor: '#707070',
-        padding: 10,
-        color: '#707070',
-        opacity: 0.5,
-    },
-
-    input2: {
-        width: 669,
-        height: 40,
-        margin: 15,
-        borderWidth: 1,
-        borderRadius: 5,
-        borderColor: '#707070',
-        padding: 10,
-        color: '#707070',
-        opacity: 0.5,
-    },
-
-    input3: {
-        width: 669,
-        height: 151,
-        margin: 15,
-        borderWidth: 1,
-        borderRadius: 5,
-        borderColor: '#707070',
-        padding: 10,
-        color: '#707070',
-        opacity: 0.5,
-
-    },
+const mdTheme = createTheme();
 
 
-})
+const ProfesorContent = () => {
 
-export default Profesor;
+    const saved = localStorage.getItem("user");
+    const user = JSON.parse(saved);
+    console.log(user);
 
+    const [open, setOpen] = React.useState(true);
+    const toggleDrawer = () => {
+      setOpen(!open);
+    };
+  
+    return (
+      <React.Fragment>
+        <ThemeProvider theme={mdTheme} >
+          <Box sx={{ display: 'flex' }}>
+            <CssBaseline />
+            
+            <NavBar tituloNavBar="Editar Perfil" open={ open } setOpen={ setOpen }/>
+
+            <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
+            
+            {/* Paper es la sección completa del Form cuadro blanco*/}
+            <Paper
+              fixed
+              sx={{
+                p: 2,
+                margin: 'auto',
+                flexDirection: 'column',
+                borderRadius: 3,
+                height: 'auto',
+                width: '50%',
+                alignItems: 'center',
+                alignContent: 'center',
+                //textAlign:'center',
+                marginTop: 15,
+              }}
+            >
+              {/* Box es todo el contenido del form */}
+              <Box
+                fixed
+                sx={{
+                  marginTop: 8,
+                  '& .MuiTextField-root': {width: '100%'},
+                  my: 1,
+                  mx: 1,
+                  //bgcolor: 'pink',
+                  height: 'auto',
+                  minWidth: '100%',
+                }}
+
+              >
+                <Grid item xs>
+                  <Typography gutterBottom variant="h5" component="div">
+                    Información del perfil
+                  </Typography>
+                </Grid>
+
+                <Grid item xs>
+                    <Box
+                      sx={{
+                        '& .MuiTextField-root': {width: '100%'},
+                        margin: 'auto',
+                        padding: 1,
+                        minWidth: '100%',
+                      }}
+
+                    >
+
+                      <Formik
+                        initialValues={{
+                            nombreProf: '',
+                            apellidosProf: '',
+                            tituloprofesional: '',
+                            correoInst: '',
+                            localizacionProf: '',
+                            biografiaProf: '',
+                            experiencia: '',
+                            materiasImpartidas: '',
+                            instagram: '',
+                            twitter: '',
+                            facebook: '',
+                            github: '',
+                        }}
+                        validationSchema={Yup.object({
+                            nombreProf: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos')
+                                .required('Obligatorio'),
+                            apellidosProf: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos')
+                                .required('Obligatorio'),
+                            tituloprofesional: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos')
+                                .required('Obligatorio'),
+                            correoInst: Yup.string()
+                                .email('Email invalido')
+                                .required('Obligatorio'),
+                            localizacionProf: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos')
+                                .required('Obligatorio'),
+                            biografiaProf: Yup.string()
+                                .max(300, 'Debe tener 300 caracteres o menos')
+                                .required('Obligatorio'),
+                            localizacionProf: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos')
+                                .required('Obligatorio'),
+                            materiasImpartidas: Yup.string()
+                                .oneOf(
+                                ['algoritmos', 'patrones', 'minera', 'calculoI'],             
+                                'Materia invalidad'
+                                )
+                                .required('Por favor, seleccione un tipo de evaluación'),
+                            instagram: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos'),
+                            twitter: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos'),
+                            facebook: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos'),
+                            github: Yup.string()
+                                .max(25, 'Debe tener 25 caracteres o menos'),
+                        })}
+                        onSubmit={(values, { setSubmitting }) => {
+                            setTimeout(() => {
+                                alert(JSON.stringify(values, null, 2));
+                                setSubmitting(false);
+                            }, 400);
+                        }}
+                      >
+                        {({ values }) => (
+                          
+                          <Form>
+                            <Divider light variant="h7" textAlign="left">Información Personal</Divider>
+                            <Box sx={{ m:2 }}>
+                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
+                                    <Grid item xs={6}>
+                                        <FormikTextField formikKey="nombreProf" 
+                                            label="Nombres"
+                                            variant="outlined"
+                                            id="nombreProf"
+                                            name="nombreProf"
+                                            multiline
+                                            placeholder="Nombres"
+                                            type="text"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={6}>  
+                                        <FormikTextField formikKey="apellidosProf" 
+                                            label="Apellidos"
+                                            variant="outlined"
+                                            id="apellidosProf"
+                                            name="apellidosProf"
+                                            multiline
+                                            placeholder="Apellidos"
+                                            type="text"
+                                        />
+                                    </Grid>
+                              </Grid>
+                            </Box>
+
+                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                              <FormikTextField formikKey="tituloprofesional" 
+                                label="Título Profesional"
+                                variant="outlined"
+                                id="tituloprofesional"
+                                name="tituloprofesional"
+                                multiline
+                                placeholder="Título Profesional"
+                                type="text"
+                              />
+                            </Box>
+
+                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                              <FormikTextField formikKey="correoInst" 
+                                label="Correo Institucional"
+                                variant="outlined"
+                                id="correoInst"
+                                name="correoInst"
+                                multiline
+                                placeholder="Correo Institucional"
+                                type="text"
+                              />
+                            </Box>
+
+                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                              <FormikTextField formikKey="localizacionProf" 
+                                label="Localización"
+                                variant="outlined"
+                                id="localizacionProf"
+                                name="localizacionProf"
+                                multiline
+                                placeholder="Localización"
+                                type="text"
+                              />
+                            </Box>
+
+                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                              <FormikTextField formikKey="biografiaProf" 
+                                label="Biografía"
+                                variant="outlined"
+                                multiline
+                                rows={4}
+                                id="biografiaProf"
+                                name="biografiaProf"
+                                placeholder="Biografía"
+                                type="text"
+                              />
+                            </Box>
+
+                            <Divider light variant="h7" textAlign="left">Información Extra</Divider>
+                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                              <FormikTextField formikKey="experiencia" 
+                                label="Experiencia"
+                                variant="outlined"
+                                multiline
+                                rows={4}
+                                id="experiencia"
+                                name="experiencia"
+                                placeholder="Experiencia"
+                                type="text"
+                              />
+                            </Box>
+
+                            <Box sx={{m:2 }}>
+                              <MySelect label="Materias Impartidas" name="materiasImpartidas">
+                                <option value="">Selecciona las materias</option>
+                                <option value="algoritmos">Algoritmos</option>
+                                <option value="patrones">Diseño de Patrones</option>
+                                <option value="mineria">Minería de Datos</option>
+                                <option value="calculoI">Cálculo Integral</option>
+                              </MySelect>
+                            </Box>
+
+                            <Box  sx={{ m:2, /*bgcolor:'red'*/}}>
+                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
+                                    <Grid item xs={6}>
+                                        <FormikTextField formikKey="instagram" 
+                                        label="Instagram"
+                                        variant="outlined"
+                                        id="instagram"
+                                        name="instagram"
+                                        placeholder="Instagram"
+                                        type="text"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={6}>  
+                                        <FormikTextField formikKey="twitter" 
+                                        label="Twitter"
+                                        variant="outlined"
+                                        id="twitter"
+                                        name="twitter"
+                                        placeholder="Twitter"
+                                        type="text"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={6}>    
+                                        <FormikTextField formikKey="facebook" 
+                                        label="Facebook"
+                                        variant="outlined"
+                                        id="facebook"
+                                        name="facebook"
+                                        placeholder="Facebook"
+                                        type="text"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={6}>  
+                                        <FormikTextField formikKey="github" 
+                                        label="Github"
+                                        variant="outlined"
+                                        id="github"
+                                        name="github"
+                                        placeholder="Github"
+                                        type="text"
+                                        />
+                                    </Grid>
+                                </Grid>
+                            </Box>
+
+                            <Box item sx={{m: 2, textAlign:'center'}}>
+                              <Button type="submit" variant="contained">Actualizar perfil</Button>
+                            </Box>
+
+                            <FormikConsumer>
+                              {({ validationSchema, validate, onSubmit, ...rest }) => (
+                                <pre
+                                  style={{
+                                    fontSize: '.85rem',
+                                    padding: '.25rem .5rem',
+                                    overflowX: 'scroll',
+                                  }}
+                                >
+
+                                    {JSON.stringify(rest, null, 2)}
+                                </pre>
+                              )}
+                            </FormikConsumer>
+
+                          </Form>
+
+                        )}
+                      </Formik>
+                      
+
+                      
+                    </Box>
+                </Grid>
+
+              </Box>
+
+            </Paper>
+
+          </Box>
+        </ThemeProvider>
+
+      </React.Fragment>
+    );
+}
+
+
+export default function Profesor() {
+    return <ProfesorContent />;
+}
