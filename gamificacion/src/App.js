@@ -24,7 +24,8 @@ import MisionesAlumno from './assets/pages/Alumno/MisionesAlumno';
 import DashboardAlumno from './assets/pages/Alumno/DashboardAlumno';
 import EditarUsuario from './assets/pages/Alumno/EditarUsuario'
 import Encuesta from './assets/pages/Encuesta/Encuesta';
-import Alumnos from './assets/pages/Alumno/components/EditarUser/alumnoslist'
+import Alumnos from './assets/pages/Alumno/components/EditarUser/alumnoslist';
+import ActividadDetalles from './assets/pages/Alumno/EntregaActividad'
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         <Route path="/encuesta" element={<Encuesta />} />
         <Route path="/editarUsuario" element={<EditarUsuario /> } />
         <Route path="/list" element={<Alumnos /> } />
+        <Route path="/detalle" element={<ActividadDetalles /> } />
       </Routes>
     </Router>
   );
