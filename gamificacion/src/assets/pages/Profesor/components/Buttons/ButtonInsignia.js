@@ -19,7 +19,6 @@ const ColorButton = styled(Button) (( { theme }) => ({
     },
     width: '200px',
     marginTop: '20px',
-    marginLeft: '25px',
 }));
 
 
@@ -27,12 +26,12 @@ export default function UploadButtons() {
 
     const [file, setFile] = useState(); 
   return (
-    <Stack direction="row" alignItems="center" spacing={5}>
+    <Stack direction="row" alignItems="center">
 
       <label htmlFor="contained-button-file">
-        <Input id="contained-button-file" multiple type="file" accept={".csv"}/>
+        <Input id="contained-button-file" multiple type="file" accept={".png", ".jpg", ".jpeg"}/>
         <ColorButton variant="contained" disableElevation component="span" size="medium" startIcon={<AttachFileIcon />}>
-            Subir Archivo
+            Subir Imagen
         </ColorButton>
       </label>
 

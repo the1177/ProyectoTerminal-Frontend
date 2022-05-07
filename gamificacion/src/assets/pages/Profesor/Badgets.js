@@ -1,12 +1,28 @@
 import React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
 
+{/*Iconos Menú editar perfil*/}
+import ListItemText from '@mui/material/ListItemText';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
+import MilitaryTechOutlinedIcon from '@mui/icons-material/MilitaryTechOutlined';
+import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
+import PersonRemoveOutlinedIcon from '@mui/icons-material/PersonRemoveOutlined';
 
 import DateFnsUtils from "@date-io/date-fns";
+
+{/* DATE TIME PICKER*/}
+import {DateTimePicker} from 'formik-mui-lab';
+import {LocalizationProvider} from '@mui/lab';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+
+{/* SELECTS */}
+import { Select, TextField } from 'formik-mui';
+import MuiTextField from '@mui/material/TextField';
+
+{/*IMAGE*/}
+import ButtonInsignia from './components/Buttons/ButtonInsignia';
 
 import { 
   Container, 
@@ -17,11 +33,10 @@ import {
   CardActions,
   CardContent, 
   Typography, 
-  TextField,
   TextFieldProps,
-  Select,
   MenuItem, 
-  Button 
+  Button,
+  MenuList 
 } from '@mui/material';
 
 import moment from 'moment';
@@ -51,7 +66,7 @@ import { width } from '@mui/system';
 
 const drawerWidth = 240;
 
-const CssTextField = styled(TextField)({
+const CssTextField = styled(MuiTextField)({
     '& label.Mui-focused': {
       color: 'purple',
     },
@@ -135,6 +150,52 @@ const BadgetsContent = () => {
             <NavBar tituloNavBar="Editar Perfil" open={ open } setOpen={ setOpen }/>
 
             <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
+
+            {/*Paper del menú izquierdo de editar perfil*/}
+            <Paper
+              fixed
+              sx={{
+                p: 2,
+                margin: 'auto',
+                flexDirection: 'column',
+                borderRadius: 3,
+                height: 'auto',
+                width: '30%',
+                height: '50%',
+                alignItems: 'center',
+                alignContent: 'center',
+                //textAlign:'center',
+                marginTop: 15,
+              }}
+            > 
+              <MenuList>
+                <MenuItem>
+                 <ListItemIcon>
+                    <MilitaryTechOutlinedIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText>Crear Badget</ListItemText>
+                </MenuItem>
+                <MenuItem>
+                  <ListItemIcon>
+                    <AdminPanelSettingsOutlinedIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText>Administrar Badgets</ListItemText>
+                </MenuItem>
+                <MenuItem>
+                  <ListItemIcon>
+                    <GroupsOutlinedIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText>Jugadores</ListItemText>
+                </MenuItem>
+                <Divider />
+                <MenuItem>
+                  <ListItemIcon>
+                    <PersonRemoveOutlinedIcon fontSize="small" />
+                  </ListItemIcon>
+                  <ListItemText>Revocar Badget</ListItemText>
+                </MenuItem>
+              </MenuList>
+            </Paper>
             
             {/* Paper es la sección completa del Form cuadro blanco*/}
             <Paper
@@ -193,13 +254,18 @@ const BadgetsContent = () => {
                             puntosExp: '',
                             descripcionBadget: '',
                             expires: '',
+                            datexpd: new Date(),
+                            datexp: new Date(),
                         }}
                         validationSchema={Yup.object({
                             nombreBadget: Yup.string()
                                 .max(25, 'Debe tener 25 caracteres o menos')
                                 .required('Obligatorio'),
                             typeBadget: Yup.string()
-                                .max(25, 'Debe tener 25 caracteres o menos')
+                                .oneOf(
+                                  ['giveaway', 'reachamount', 'high', 'king', 'level'],
+                                  'Tipo de badget invalido'
+                                )
                                 .required('Obligatorio'),
                             clasificacion: Yup.string()
                                 .max(25, 'Debe tener 25 caracteres o menos'),
@@ -223,134 +289,159 @@ const BadgetsContent = () => {
                         }}
                       >
                         {({ values }) => (
-                          
-                          <Form>
-                            <Divider light variant="h7" textAlign="left">Información del Badget</Divider>
-                            <Box sx={{ m:2 }}>
+                          <LocalizationProvider dateAdapter={AdapterDateFns}>
+                            <Form>
+                              <Divider light variant="h7" textAlign="left">Información del Badget</Divider>
+                              <Box sx={{m:2}}>
                                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
-                                    <Grid item xs={6}>
-                                        <FormikTextField formikKey="nombreBadget" 
-                                            label="Nombre del Badget"
-                                            variant="outlined"
-                                            id="nombreBadget"
-                                            name="nombreBadget"
-                                            placeholder="Nombre del Badget"
-                                            type="text"
-                                        />
-                                    </Grid>
-                                    <Grid item xs={6}>  
-                                        <FormikTextField formikKey="typeBadget" 
-                                            label="Tipo"
-                                            variant="outlined"
-                                            id="typeBadget"
-                                            name="typeBadget"
-                                            multiline
-                                            placeholder="Tipo"
-                                            type="text"
-                                        />
-                                    </Grid>
-                              </Grid>
-                            </Box>
+                                  <Grid item xs={12}>
+                                    <ButtonInsignia />
+                                  </Grid>
+                                </Grid>
+                              </Box>
 
-                            <Box sx={{ m:2 }}>
+                              <Box sx={{ m:2 }}>
+                                  <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                      <Grid item xs={6}>
+                                          <FormikTextField formikKey="nombreBadget"
+                                              required 
+                                              label="Nombre del Badget"
+                                              variant="outlined"
+                                              id="nombreBadget"
+                                              name="nombreBadget"
+                                              placeholder="Nombre del Badget"
+                                              type="text"
+                                          />
+                                      </Grid>
+                                      <Grid item xs={6}>
+                                        <Field
+                                          required
+                                          component={TextField}
+                                          type="text"
+                                          name="typeBadget"
+                                          label="Tipo" 
+                                          select
+                                          helperText="Por favor, seleccione el tipo de badget"
+                                        >
+                                          <MenuItem value="giveaway">The Give away</MenuItem>
+                                          <MenuItem value="reachamount">Reach an amount</MenuItem>
+                                          <MenuItem value="high">High score</MenuItem>
+                                          <MenuItem value="king">King of the hill</MenuItem>
+                                          <MenuItem value="level">Level badge</MenuItem>
+                                        </Field>  
+                                      </Grid>
+                                </Grid>
+                              </Box>
+
+                              <Box sx={{ m:2 }}>
+                                  <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                      <Grid item xs={6}>
+                                          <FormikTextField formikKey="clasificacion" 
+                                              label="Clasificacion"
+                                              variant="outlined"
+                                              id="clasificacion"
+                                              name="clasificacion"
+                                              multiline
+                                              placeholder="Clasificacion"
+                                              type="text"
+                                          />
+                                      </Grid>
+                                      <Grid item xs={6}>  
+                                          <FormikTextField formikKey="categoria" 
+                                              label="Categoria"
+                                              variant="outlined"
+                                              id="categoria"
+                                              name="categoria"
+                                              multiline
+                                              placeholder="Categoria"
+                                              type="text"
+                                          />
+                                      </Grid>
+                                </Grid>
+                              </Box>
+
+                              <Box sx={{ m:2 }}>
+                                  <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                      <Grid item xs={6}>
+                                          <FormikTextField formikKey="nivel" 
+                                              label="Nivel"
+                                              variant="outlined"
+                                              id="nivel"
+                                              name="nivel"
+                                              multiline
+                                              placeholder="Nivel"
+                                              type="text"
+                                          />
+                                      </Grid>
+                                      <Grid item xs={6}>  
+                                          <FormikTextField formikKey="puntosExp" 
+                                              label="EXP"
+                                              variant="outlined"
+                                              id="puntosExp"
+                                              name="puntosExp"
+                                              multiline
+                                              placeholder="EXP"
+                                              type="text"
+                                          />
+                                      </Grid>
+                                </Grid>
+                              </Box>
+
+                              <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                                <FormikTextField formikKey="descripcionBadget"
+                                  required 
+                                  label="Descripción"
+                                  variant="outlined"
+                                  multiline
+                                  rows={4}
+                                  id="descripcionBadget"
+                                  name="descripcionBadget"
+                                  placeholder="Descripción"
+                                  type="text"
+                                />
+                              </Box>
+
+                              <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
                                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
-                                    <Grid item xs={6}>
-                                        <FormikTextField formikKey="clasificacion" 
-                                            label="Clasificacion"
-                                            variant="outlined"
-                                            id="clasificacion"
-                                            name="clasificacion"
-                                            multiline
-                                            placeholder="Clasificacion"
-                                            type="text"
-                                        />
-                                    </Grid>
-                                    <Grid item xs={6}>  
-                                        <FormikTextField formikKey="categoria" 
-                                            label="Categoria"
-                                            variant="outlined"
-                                            id="categoria"
-                                            name="categoria"
-                                            multiline
-                                            placeholder="Categoria"
-                                            type="text"
-                                        />
-                                    </Grid>
-                              </Grid>
-                            </Box>
+                                  <Grid item xs={6}>
+                                    <Field
+                                      required
+                                      component={DateTimePicker}
+                                      name="datexpd"
+                                      label="Fecha de expedición"
+                                    />
+                                  </Grid>
+                                  <Grid item xs={6}>
+                                    <Field
+                                      component={DateTimePicker}
+                                      name="datexp"
+                                      label="Fecha de expiración"
+                                    />
+                                  </Grid>    
+                                </Grid>
+                              </Box>
 
-                            <Box sx={{ m:2 }}>
-                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
-                                    <Grid item xs={6}>
-                                        <FormikTextField formikKey="nivel" 
-                                            label="Nivel"
-                                            variant="outlined"
-                                            id="nivel"
-                                            name="nivel"
-                                            multiline
-                                            placeholder="Nivel"
-                                            type="text"
-                                        />
-                                    </Grid>
-                                    <Grid item xs={6}>  
-                                        <FormikTextField formikKey="puntosExp" 
-                                            label="EXP"
-                                            variant="outlined"
-                                            id="puntosExp"
-                                            name="puntosExp"
-                                            multiline
-                                            placeholder="EXP"
-                                            type="text"
-                                        />
-                                    </Grid>
-                              </Grid>
-                            </Box>
+                              <Box item sx={{m: 2, textAlign:'center'}}>
+                                <Button type="submit" variant="contained">Crear Badget</Button>
+                              </Box>
 
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
-                              <FormikTextField formikKey="descripcionBadget" 
-                                label="Descripción"
-                                variant="outlined"
-                                multiline
-                                rows={4}
-                                id="descripcionBadget"
-                                name="descripcionBadget"
-                                placeholder="Descripción"
-                                type="text"
-                              />
-                            </Box>
+                              <FormikConsumer>
+                                {({ validationSchema, validate, onSubmit, ...rest }) => (
+                                  <pre
+                                    style={{
+                                      fontSize: '.85rem',
+                                      padding: '.25rem .5rem',
+                                      overflowX: 'scroll',
+                                    }}
+                                  >
 
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
-                              <FormikTextField formikKey="expires" 
-                                label="Fecha de Expiración"
-                                variant="outlined"
-                                id="expires"
-                                name="expires"
-                                placeholder="Fecha de Expiración"
-                                type="text"
-                              />
-                            </Box>
+                                      {JSON.stringify(rest, null, 2)}
+                                  </pre>
+                                )}
+                              </FormikConsumer>
 
-                            <Box item sx={{m: 2, textAlign:'center'}}>
-                              <Button type="submit" variant="contained">Crear Badget</Button>
-                            </Box>
-
-                            <FormikConsumer>
-                              {({ validationSchema, validate, onSubmit, ...rest }) => (
-                                <pre
-                                  style={{
-                                    fontSize: '.85rem',
-                                    padding: '.25rem .5rem',
-                                    overflowX: 'scroll',
-                                  }}
-                                >
-
-                                    {JSON.stringify(rest, null, 2)}
-                                </pre>
-                              )}
-                            </FormikConsumer>
-
-                          </Form>
-
+                            </Form>
+                          </LocalizationProvider>
                         )}
                       </Formik>
                       
