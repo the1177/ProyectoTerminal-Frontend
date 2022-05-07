@@ -1,0 +1,40 @@
+.Actividad_Scroll{
+    width: auto;
+    height: auto;
+}
+.actividades_sc{
+    margin: 10px;
+    background-color: rgba(179, 179, 179, 0);
+    padding:15px;
+    border: 3px solid rgb(235, 235, 235);
+    border-radius: 1em;
+    /* border-top-right-radius: 10% 30%; */
+}
+.titulo-act{
+    border-radius: 0.5rem;
+    background-color: rgba(247, 247, 247, 0.767);
+}
+
+.Desc-date{
+    background-color: rgba(0, 255, 255, 0);
+    display: flex;
+}
+
+.descp{
+    width: 400px;
+    background-color: rgba(0, 0, 255, 0);
+    text-align: justify;
+}
+
+.fechaEntrega{
+
+}
+.Fecha-Profesor{
+    margin-left: 150px;
+}
+.Prof{
+    /* margin-left: 24px; */
+    width: 200px;
+    background-color: rgba(255, 0, 0, 0);
+    text-align: justify;
+}

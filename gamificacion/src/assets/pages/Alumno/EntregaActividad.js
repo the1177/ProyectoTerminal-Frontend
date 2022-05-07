@@ -83,7 +83,6 @@ const mdTheme = createTheme();
 const EntregarActividad= () => {
     const [data, setData] = useState(Actividades);
 
-console.log();
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
@@ -234,6 +233,7 @@ console.log();
     );
 }
 
-export default function ActividadDetalles() {
+export default function ActividadDetalles({props}) {
+    console.log("ACTIVIDADES",props)
     return <EntregarActividad />;
 }

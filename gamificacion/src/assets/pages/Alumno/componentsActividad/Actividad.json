@@ -3,6 +3,178 @@
         {
             "id":1,
             "name": "Crear un server",
+            "profesorName":"David Flores Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarloCrea un server en minecraft con tus amigos y sube una imagen para poder charcarloCrea un server en minecraft con tus amigos y sube una imagen para poder charcarloCrea un server en minecraft con tus amigos y sube una imagen para poder charcarloCrea un server en minecraft con tus amigos y sube una imagen para poder charcarloCrea un server en minecraft con tus amigos y sube una imagen para poder charcarloCrea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            }
+        },        
+        {
+            "id":2,
+            "name": "Realizar un postre",
+            "profesorName":"David Flores Granados",
+            "status": "pendientes",
+            "description":"Haz un equipo de 3, y realiza un postre",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            }
+        },        
+        {
+            "id":3,
+            "name": "Hacer una carrera de programación de un algoritmo",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            }
+        },        
+        {
+            "id":4,
+            "name": "Dar una vuelta en la universidad",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            }
+        },        
+        {
+            "id":5 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            }
+        },
+        {
+            "id":6 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            }
+        },
+        {
+            "id":7 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            }
+        },
+        {
+            "id":8 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            }
+        },
+        {
+            "id":9 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            }
+        },
+        {
+            "id":10 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
             "status": "pendientes",
             "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
             "fechaEntrega":"16/06/2022",

@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useEffect, useState} from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -23,7 +23,9 @@ import { mainListItems, secondaryListItems } from './components/Listitems/listit
 import Mision from './components/Mision/MisionAlumno';
 import Deposits from './components/Deposits/DepositsAlumno';
 import Orders from './components/Orders/OrdersAlumno';
+import ActividadesScroll from './componentsActividad/ActividadesScroll/ActividadesScroll';
 
+import Actividades from './componentsActividad/Actividad.json';
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -73,6 +75,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const mdTheme = createTheme();
 
 function MisionesContent() {
+  const [data, setData] = useState(Actividades);
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
@@ -107,7 +110,7 @@ function MisionesContent() {
                 noWrap
                 sx={{ flexGrow: 1 }}
               >
-                Misiones
+                Actividades
               </Typography>
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="secondary">
@@ -157,31 +160,13 @@ function MisionesContent() {
                       p: 2,
                       display: 'flex',
                       flexDirection: 'column',
-                      height: 240,
+                      height: 'auto',
                     }}
                   >
-                    <Mision />
+                    <ActividadesScroll data= {data.Actividades} />
                   </Paper>
                 </Grid>
-                {/* Recent Deposits */}
-                <Grid item xs={12} md={4} lg={3}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      height: 240,
-                    }}
-                  >
-                    <Mision />
-                  </Paper>
-                </Grid>
-                {/* Recent Orders */}
-                <Grid item xs={12}>
-                  <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                    <Mision />
-                  </Paper>
-                </Grid>
+
               </Grid>
 
             </Container>

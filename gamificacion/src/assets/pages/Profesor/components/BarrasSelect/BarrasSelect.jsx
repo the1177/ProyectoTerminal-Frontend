@@ -20,7 +20,6 @@
         function handleChange (e){
             
             //set state variable with option value
-            console.log("handelChange", e.target.value)
             setSelect(e.target.value);
         
         }
@@ -30,7 +29,6 @@
                 setData(dataa.filter(item => item.actividad === select))
             }// //Doing filteration on according to select state option
             // data = dataa.filter(dataa => dataa.actividad == select);
-           
             // //set state variable data after filteration
             // setData(data);
             }, [select])
@@ -51,7 +49,6 @@
     
                     </div>
                     <div>
-                                  {console.log(data)}
                         <BarrasS label={data[0].alumnos[0].label} dat ={data[0].alumnos[0].dat}/>
                     </div>
                 </div>
