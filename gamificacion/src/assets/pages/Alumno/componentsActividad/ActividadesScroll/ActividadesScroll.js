@@ -3,7 +3,7 @@ import './ActividadesScroll.css'
 import ActividadDetalles from "../../EntregaActividad";
 import { useNavigate } from 'react-router-dom';
 
-function ActividadesScroll({ navigation: { navigate } }) {
+function ActividadesScroll({ navigation: {...props  } }) {
     
     const [id, setId] = useState('')
 
