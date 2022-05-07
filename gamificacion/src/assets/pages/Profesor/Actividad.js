@@ -1,12 +1,16 @@
 import React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+
+
+{/* DATE TIME PICKER*/}
+import {DateTimePicker} from 'formik-mui-lab';
+import {LocalizationProvider} from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
 
-
-import DateFnsUtils from "@date-io/date-fns";
+{/* SELECTS */}
+import { Select, TextField } from 'formik-mui';
+import MuiTextField from '@mui/material/TextField';
 
 import { 
   Container, 
@@ -16,10 +20,10 @@ import {
   Card,
   CardActions,
   CardContent, 
-  Typography, 
-  TextField,
+  Typography,
+  InputLabel,
+  FormControl, 
   TextFieldProps,
-  Select,
   MenuItem, 
   Button 
 } from '@mui/material';
@@ -51,7 +55,7 @@ import { width } from '@mui/system';
 
 const drawerWidth = 240;
 
-const CssTextField = styled(TextField)({
+const CssTextField = styled(MuiTextField)({
     '& label.Mui-focused': {
       color: 'purple',
     },
@@ -110,6 +114,7 @@ const MySelect = ({ label, ...props }) => {
   );
 
 };
+
 
 const initialValues = {
   criterios: [{ tituloCriterio: "", descripcionCriterio: "" }]
@@ -195,6 +200,7 @@ const ActividadContent = () => {
                           tituloActividad: '',
                           descripcionActividad: '',
                           selectEvaluacion: '',
+                          dateTime: new Date(),
                         }}
                         validationSchema={Yup.object({
                           tituloActividad: Yup.string()
@@ -205,10 +211,10 @@ const ActividadContent = () => {
                             .required('Obligatorio'),
                           selectEvaluacion: Yup.string()
                             .oneOf(
-                              ['designer', 'development', 'product', 'other'],             
-                              'Invalid Job Type'
+                              ['rubrica', 'cotejo', 'ninguna'],             
+                              'Tipo de evaluación invalida'
                             )
-                            .required('Por favor, seleccione un tipo de evaluación'),
+                            .required('Por favor, selecciona'),
                         })}
                         onSubmit={(values, { setSubmitting }) => {
                           setTimeout(() => {
@@ -218,70 +224,84 @@ const ActividadContent = () => {
                         }}
                       >
                         {({ values }) => (
-                          
-                          <Form>
-                            <Divider light variant="h7" textAlign="left">Información de la Actividad</Divider>
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
-                              <FormikTextField formikKey="tituloActividad" 
-                                label="Título de la Actividad"
-                                variant="outlined"
-                                id="tituloActividad"
-                                name="tituloActividad"
-                                multiline
-                                placeholder="Título de la Actividad"
-                                type="text"
-                              />
-                            </Box>
+                          <LocalizationProvider dateAdapter={AdapterDateFns}>
+                            <Form>
+                              <Divider light variant="h7" textAlign="left">Información de la Actividad</Divider>
+                              <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                                <FormikTextField formikKey="tituloActividad" 
+                                  label="Título de la Actividad"
+                                  variant="outlined"
+                                  id="tituloActividad"
+                                  name="tituloActividad"
+                                  multiline
+                                  placeholder="Título de la Actividad"
+                                  type="text"
+                                />
+                              </Box>
 
-                            <Divider light variant="h7" textAlign="left">Detalles de la Actividad</Divider>
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
-                              <FormikTextField formikKey="descripcionActividad" 
-                                label="Descripción"
-                                variant="outlined"
-                                multiline
-                                rows={4}
-                                id="tituloActividad"
-                                name="descripcionActividad"
-                                placeholder="Escribe una descripción de la Actividad"
-                                type="text"
-                              />
-                            </Box>
+                              <Divider light variant="h7" textAlign="left">Detalles de la Actividad</Divider>
+                              <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                                <FormikTextField formikKey="descripcionActividad" 
+                                  label="Descripción"
+                                  variant="outlined"
+                                  multiline
+                                  rows={4}
+                                  id="tituloActividad"
+                                  name="descripcionActividad"
+                                  placeholder="Escribe una descripción de la Actividad"
+                                  type="text"
+                                />
+                              </Box>
 
-                            <Box sx={{m:2 }}>
-                              <MySelect label="Tipo de Evaluación" name="selectEvaluacion">
-                                <option value="">Select a job type</option>
-                                <option value="designer">Designer</option>
-                                <option value="development">Developer</option>
-                                <option value="product">Product Manager</option>
-                                <option value="other">Other</option>
-                              </MySelect>
-                            </Box>  
+                              <Box sx={{m:2 }}>
+                                <Field
+                                  component={DateTimePicker}
+                                  name="dateTime"
+                                  label="Date Time"
+                                />
+                              </Box>
 
-                            <Box item sx={{m: 2, textAlign:'center'}}>
-                              <Button type="submit" variant="contained">Crear Actividad</Button>
-                            </Box>
-
-                            <FormikConsumer>
-                              {({ validationSchema, validate, onSubmit, ...rest }) => (
-                                <pre
-                                  style={{
-                                    fontSize: '.85rem',
-                                    padding: '.25rem .5rem',
-                                    overflowX: 'scroll',
-                                  }}
+                              <Box sx={{m:2}}>
+                                <Field
+                                   component={TextField}
+                                   type="text"
+                                   name="selectEvaluacion"
+                                   label="Tipo de Evaluación"
+                                   select
+                                   helperText="Por favor, seleccione un tipo de evaluación"
+                                   margin="normal"
                                 >
-                                  <Box onChange={rest.handleChange} item sx={{m: 2, textAlign:'center'}}> 
-                                    <div> Titulo de la actividad: {rest.values.tituloActividad} </div>
-                                    <div> Descripción de la actividad: {rest.values.descripcionActividad} </div>
-                                    <div> Tipo de evaluacion: {rest.values.selectEvaluacion} </div>
-                                  </Box>
-                                  {/** {JSON.stringify(rest, null, 2)}*/} 
-                                </pre>
-                              )}
-                            </FormikConsumer>
+                                  <MenuItem value="rubrica">Rúbrica</MenuItem>
+                                  <MenuItem value="cotejo">Lista de Cotejo</MenuItem>
+                                  <MenuItem value="ninguna">Ninguna</MenuItem>
+                                </Field>
+                              </Box>  
 
-                          </Form>
+                              <Box item sx={{m: 2, textAlign:'center'}}>
+                                <Button type="submit" variant="contained">Crear Actividad</Button>
+                              </Box>
 
+                              <FormikConsumer>
+                                {({ validationSchema, validate, onSubmit, ...rest }) => (
+                                  <pre
+                                    style={{
+                                      fontSize: '.85rem',
+                                      padding: '.25rem .5rem',
+                                      overflowX: 'scroll',
+                                    }}
+                                  >
+                                    <Box onChange={rest.handleChange} item sx={{m: 2, textAlign:'center'}}> 
+                                      <div> Titulo de la actividad: {rest.values.tituloActividad} </div>
+                                      <div> Descripción de la actividad: {rest.values.descripcionActividad} </div>
+                                      <div> Tipo de evaluacion: {rest.values.selectEvaluacion} </div>
+                                    </Box>
+                                    {JSON.stringify(rest, null, 2)}
+                                  </pre>
+                                )}
+                              </FormikConsumer>
+
+                            </Form>
+                          </LocalizationProvider>
                         )}
                       </Formik>
                       
@@ -301,8 +321,9 @@ const ActividadContent = () => {
     );
 }
 
-
-
 export default function Actividad() {
     return <ActividadContent />;
 }
+
+
+{/* RÚBRICA */}

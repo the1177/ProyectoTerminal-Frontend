@@ -58,7 +58,6 @@ function App() {
         <Route path="/encuesta" element={<Encuesta />} />
         <Route path="/editarUsuario" element={<EditarUsuario /> } />
         <Route path="/list" element={<Alumnos /> } />
-
         <Route path="profesor-configuracion" element={<ProfesorConf />} />
         <Route path="/profesor-general" element={<ProfesorGen />} />
       </Routes>

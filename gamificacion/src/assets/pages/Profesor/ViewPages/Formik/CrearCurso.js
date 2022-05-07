@@ -3,15 +3,30 @@ import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import ClassIcon from '@mui/icons-material/Class';
 
+{/* DATE TIME PICKER*/}
+import {DateTimePicker} from 'formik-mui-lab';
+import {LocalizationProvider} from '@mui/lab';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+
+{/* SELECTS */}
+import { Select, TextField } from 'formik-mui';
+import MuiTextField from '@mui/material/TextField';
+
 import { 
   Container, 
   Box, 
   Grid, 
-  Paper, 
-  Typography, 
-  TextField,
-  TextFieldProps, 
-  Button } from '@mui/material';
+  Paper,
+  Card,
+  CardActions,
+  CardContent, 
+  Typography,
+  InputLabel,
+  FormControl, 
+  TextFieldProps,
+  MenuItem, 
+  Button 
+} from '@mui/material';
 import Divider from '@mui/material/Divider';
 import Menu from '../../components/Menu/Menu';
 import NavBar from '../../components/NavBar/NavBar';
@@ -31,7 +46,7 @@ import {
 
 const drawerWidth = 240;
 
-const CssTextField = styled(TextField)({
+const CssTextField = styled(MuiTextField)({
     '& label.Mui-focused': {
       color: 'purple',
     },
@@ -176,8 +191,8 @@ const CursoContent = () => {
                         }}
                         validationSchema={Yup.object({
                           nombreCurso: Yup.string()
-                            .max(50, 'Must be 50 characters or less')
-                            .required('Required'),
+                            .max(50, 'Deben ser 50 caracteres or menos')
+                            .required('Obligatorio'),
                           periodoEscolar: Yup.string()
                             .oneOf(
                               ['primavera', 'verano', 'otoño', 'invierno'],             
@@ -185,7 +200,7 @@ const CursoContent = () => {
                             )
                             .required('Por favor, seleccione un tipo de curso'),
                           añoEscolar: Yup.number()
-                            .required('Required'),
+                            .required('Obligatorio'),
                           tipoCurso: Yup.string()
                             .oneOf(
                               ['basica', 'libre', 'preespecialidad'],             
@@ -193,10 +208,10 @@ const CursoContent = () => {
                             )
                             .required('Por favor, seleccione un tipo de curso'),
                           claveCurso: Yup.string()
-                            .max(15, 'Must be 15 characters or less')
-                            .required('Required'),
+                            .max(10, 'Deben ser 50 caracteres or menos')
+                            .required('Obligatorio'),
                           seccionCurso: Yup.number()
-                            .required('Required'),
+                            .required('Obligatorio'),
                           areaCurso: Yup.string()
                             .oneOf(
                               ['materia', 'seminario', 'taller', 'laboratorio'],             
@@ -210,8 +225,8 @@ const CursoContent = () => {
                             )
                             .required('Por favor, seleccione el área del curso'),
                           descripcionCurso: Yup.string()
-                            .max(300, 'Must be 300 characters or less')
-                            .required('Required'),
+                            .max(300, 'Deben ser 300 caracteres or menos')
+                            .required('Obligatorio'),
                         })}
                         onSubmit={async(values, { setSubmitting }) => {
                           setTimeout(() => {
@@ -222,133 +237,167 @@ const CursoContent = () => {
                         }}
                       >
                         {({ values }) => (
-                          <Form>
-                            <Divider light variant="h7" textAlign="left">Información del Curso</Divider>
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
-                              <FormikTextField formikKey="nombreCurso" 
-                                label="Nombre del Curso"
-                                variant="outlined"
-                                name="nombreCurso"
-                                placeholder="Nombre del Curso"
-                                type="text"
-                              />
-                            </Box>
+                          <LocalizationProvider dateAdapter={AdapterDateFns}>
+                            <Form>
+                              <Divider light variant="h7" textAlign="left">Información del Curso</Divider>
+                              <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                                <FormikTextField formikKey="nombreCurso"
+                                  required 
+                                  label="Nombre del Curso"
+                                  variant="outlined"
+                                  name="nombreCurso"
+                                  placeholder="Nombre del Curso"
+                                  type="text"
+                                />
+                              </Box>
 
-                            <Box sx={{ m:2 , marginTop: 3}}>
-                              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
-                                  <Grid item xs={6}>
-                                    <FormikTextField formikKey="claveCurso" 
-                                      label="Clave"
-                                      variant="outlined"
-                                      name="claveCurso"
-                                      placeholder="Clave"
-                                      type="text"
-                                    />
-                                  </Grid>
-                                  <Grid item xs={6}>  
-                                    <FormikTextField formikKey="seccionCurso" 
-                                      label="Sección del Curso"
-                                      variant="outlined"
-                                      name="seccionCurso"
-                                      placeholder="Sección del Curso"
-                                      type="number"
-                                    />
-                                  </Grid>
-                              </Grid>
-                            </Box>
+                              <Box sx={{ m:2 , marginTop: 3}}>
+                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                    <Grid item xs={6}>
+                                      <FormikTextField formikKey="claveCurso"
+                                        required 
+                                        label="Clave"
+                                        variant="outlined"
+                                        name="claveCurso"
+                                        placeholder="Clave"
+                                        type="text"
+                                      />
+                                    </Grid>
+                                    <Grid item xs={6}>  
+                                      <FormikTextField formikKey="seccionCurso"
+                                        required 
+                                        label="Sección del Curso"
+                                        variant="outlined"
+                                        name="seccionCurso"
+                                        placeholder="Sección del Curso"
+                                        type="number"
+                                      />
+                                    </Grid>
+                                </Grid>
+                              </Box>
 
-                            <Box sx={{ m:2 , marginTop: 3}}>
-                              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
-                                  <Grid item xs={6}>
-                                    <MySelect label="Periodo Escolar" name="periodoEscolar">
-                                      <option value="">Selecciona el periodo escolar</option>
-                                      <option value="primavera">Primavera</option>
-                                      <option value="verano">Verano</option>
-                                      <option value="otoño">Otoño</option>
-                                      <option value="invierno">Invierno</option>
-                                    </MySelect> 
-                                  </Grid>
-                                  <Grid item xs={6}>  
-                                    <FormikTextField formikKey="añoEscolar" 
-                                      label="Año"
-                                      variant="outlined"
-                                      name="añoEscolar"
-                                      placeholder="añoEscolar"
-                                      type="number"
-                                    />
-                                  </Grid>
-                              </Grid>
-                            </Box>
+                              <Box sx={{ m:2 , marginTop: 3}}>
+                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                    <Grid item xs={6}>
+                                      <Field
+                                        component={TextField}
+                                        type="text"
+                                        name="periodoEscolar"
+                                        label="Periodo Escolar" 
+                                        select
+                                        helperText="Por favor, seleccione el periodo escolar"
+                                        margin="normal"
+                                      >
+                                        <MenuItem value="primavera">Primavera</MenuItem>
+                                        <MenuItem value="verano">Verano</MenuItem>
+                                        <MenuItem value="otoño">Otoño</MenuItem>
+                                        <MenuItem value="invierno">Invierno</MenuItem>
+                                      </Field>
+                                    </Grid>
+                                    <Grid item xs={6}>  
+                                      <FormikTextField formikKey="añoEscolar"
+                                        required 
+                                        label="Año"
+                                        variant="outlined"
+                                        name="añoEscolar"
+                                        placeholder="añoEscolar"
+                                        type="number"
+                                      />
+                                    </Grid>
+                                </Grid>
+                              </Box>
 
-                            <Divider light variant="h7" textAlign="left">Detalles del Curso</Divider>
-                            <Box sx={{ m:2 , marginTop: 3}}>
-                              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
-                                  <Grid item xs={12}>
-                                    <MySelect label="Área" name="areaCurso">
-                                      <option value="">Selecciona el Área</option>
-                                      <option value="materia">Materia</option>
-                                      <option value="seminario">Seminario</option>
-                                      <option value="taller">Taller</option>
-                                      <option value="laboratorio">Laboratorio</option>
-                                    </MySelect>
-                                  </Grid>
-                                  <Grid item xs={12}>  
-                                    <MySelect label="Tipo" name="tipoCurso">
-                                      <option value="">Selecciona el tipo de curso</option>
-                                      <option value="basica">Básica</option>
-                                      <option value="libre">Elección Libre</option>
-                                      <option value="preespecialidad">Preespecialidad</option>
-                                    </MySelect> 
-                                  </Grid>
-                                  <Grid item xs={12}>  
-                                    <MySelect label="Academía" name="academiaCurso">
-                                      <option value="">Selecciona la academía</option>
-                                      <option value="desarrollohumano">Desarrollo Humano</option>
-                                      <option value="cienciasbasicas">Ciencias Básicas</option>
-                                      <option value="matematicas">Matemáticas</option>
-                                      <option value="hysbase">Hardware y software de base</option>
-                                      <option value="tratamientoinformacion">Tratamiento de información</option>
-                                      <option value="ingenieriasoft">Ingeniería de Software</option>
-                                      <option value="ingles">Inglés</option>
-                                      <option value="practicasprof">Prácticas profesionales</option>
-                                      <option value="redesytel">Redes y telecomunicaciones</option>
-                                    </MySelect>
-                                  </Grid>
-                              </Grid>
-                            </Box>
-                            
-                            <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
-                              <FormikTextField formikKey="descripcionCurso" 
-                                label="Descripción del Curso"
-                                variant="outlined"
-                                multiline
-                                rows={4}
-                                name="descripcionCurso"
-                                placeholder="Descripción del Curso"
-                                type="text"
-                              />
-                            </Box>
+                              <Divider light variant="h7" textAlign="left">Detalles del Curso</Divider>
+                              <Box sx={{ m:2 , marginTop: 3}}>
+                                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 3 }}>
+                                    <Grid item xs={6}>
+                                      <Field
+                                        component={TextField}
+                                        type="text"
+                                        name="areaCurso"
+                                        label="Área" 
+                                        select
+                                        helperText="Por favor, seleccione el área del curso"
+                                        margin="normal"
+                                      >
+                                        <MenuItem value="materia">Materia</MenuItem>
+                                        <MenuItem value="seminario">Seminario</MenuItem>
+                                        <MenuItem value="taller">Taller</MenuItem>
+                                        <MenuItem value="laboratorio">Laboratorio</MenuItem>
+                                      </Field>
+                                    </Grid>
+                                    <Grid item xs={6}>
+                                      <Field
+                                        component={TextField}
+                                        type="text"
+                                        name="tipoCurso"
+                                        label="Tipo" 
+                                        select
+                                        helperText="Por favor, seleccione el tipo del curso"
+                                        margin="normal"
+                                      >
+                                        <MenuItem value="basica">Básica</MenuItem>
+                                        <MenuItem value="libre">Elección Libre</MenuItem>
+                                        <MenuItem value="preespecialidad">Preespecialidad</MenuItem>
+                                      </Field>  
+                                    </Grid>
+                                    <Grid item xs={6}>
+                                      <Field
+                                        component={TextField}
+                                        type="text"
+                                        name="academiaCurso"
+                                        label="Academía" 
+                                        select
+                                        helperText="Por favor, seleccione la academía del curso"
+                                        margin="normal"
+                                      >
+                                        <MenuItem value="desarrollohumano">Desarrollo Humano</MenuItem>
+                                        <MenuItem value="cienciasbasicas">Ciencias Básicas</MenuItem>
+                                        <MenuItem value="matematicas">Matemáticas</MenuItem>
+                                        <MenuItem value="hysbase">Hardware y software base</MenuItem>
+                                        <MenuItem value="tratamientoinformacion">Tratamiento de información</MenuItem>
+                                        <MenuItem value="ingenieriasoft">Ingeniería de Software</MenuItem>
+                                        <MenuItem value="ingles">Inglés</MenuItem>
+                                        <MenuItem value="practicasprof">Prácticas profesionales</MenuItem>
+                                        <MenuItem value="redesytel">Redes y telecomunicaciones</MenuItem>
+                                      </Field>  
+                                    </Grid>
+                                </Grid>
+                              </Box>
+                              
+                              <Box sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                                <FormikTextField formikKey="descripcionCurso"
+                                  required 
+                                  label="Descripción del Curso"
+                                  variant="outlined"
+                                  multiline
+                                  rows={4}
+                                  name="descripcionCurso"
+                                  placeholder="Descripción del Curso"
+                                  type="text"
+                                />
+                              </Box>
 
-                            <Box item sx={{m: 2, textAlign:'center'}}>
-                              <Button type="submit" variant="contained" endIcon={<ClassIcon />}>Crear Curso</Button>
-                            </Box>
+                              <Box item sx={{m: 2, textAlign:'center'}}>
+                                <Button type="submit" variant="contained" endIcon={<ClassIcon />}>Crear Curso</Button>
+                              </Box>
 
-                            <FormikConsumer>
-                              {({ validationSchema, validate, onSubmit, ...rest }) => (
-                                <pre
-                                  style={{
-                                    fontSize: '.85rem',
-                                    padding: '.25rem .5rem',
-                                    overflowX: 'scroll',
-                                  }}
-                                >
-                                  {JSON.stringify(rest, null, 2)}
-                                </pre>
-                              )}
-                            </FormikConsumer>
+                              <FormikConsumer>
+                                {({ validationSchema, validate, onSubmit, ...rest }) => (
+                                  <pre
+                                    style={{
+                                      fontSize: '.85rem',
+                                      padding: '.25rem .5rem',
+                                      overflowX: 'scroll',
+                                    }}
+                                  >
+                                    {JSON.stringify(rest, null, 2)}
+                                  </pre>
+                                )}
+                              </FormikConsumer>
 
-                          </Form>
-
+                            </Form>
+                          </LocalizationProvider>
                         )}
                       </Formik>
                       
