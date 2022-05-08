@@ -58,52 +58,72 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 const drawerWidth = 260;
 
-const MenuProfesor = (props) => {
+const MenuProfesor = () => {
+    
+    const saved = localStorage.getItem("user");
+    const user = JSON.parse(saved);
+    console.log(user);
 
     const navigate = useNavigate();
-    const { user } = props;
+
     return (
     
         //Paper del menú izquierdo de editar perfil
         <Paper
             fixed
             sx={{
-            p: 2,
-            margin: 'auto',
-            flexDirection: 'column',
-            borderRadius: 3,
-            height: 'auto',
-            width: '30%',
-            height: '50%',
-            alignItems: 'center',
-            alignContent: 'center',
-            //textAlign:'center',
-            marginTop: 15,
+                p: 1,
+                margin: 'auto',
+                flexDirection: 'column',
+                borderRadius: 3,
+                height: 'auto',
+                width: '30%',
+                height: '50%',
+                alignItems: 'center',
+                alignContent: 'center',
+                //textAlign:'center',
+                boxShadow: '5px 5px 5px 5px #F3F3F3',
+                bgcolor: 'red',
+                backgroundImage: 'linear-gradient(45deg, #2A93D5, #37CAEC, #D1EBFF)',
+                marginTop: 15,
             }}
         >   
-            <Grid container>
-            <Avatar>HI</Avatar>
-            </Grid>
+            <Box sx={{ m:1 , marginTop: 3}}>
+                <Grid container>
+                    <Grid item xs={6}>
+                        <Avatar sx={{ width: 100, height: 100 }} src={ user.imageUrl }></Avatar>
+                    </Grid>
 
+                    <Grid item xs={6} sx={{ marginTop: 3 }}>
+                    <Typography gutterBottom variant="h8" component="div">
+                        { user.name }
+                    </Typography>
+                    </Grid>
+                </Grid>
+            </Box>
 
+            <Box sx={{ m:1 , marginTop: 2}}>
                 <ListItem button onClick={ () => navigate('/profesor-general')}>
                     <ListItemIcon>
                         <PermIdentityIcon fontSize="small" />
                     </ListItemIcon>
                     <ListItemText>General</ListItemText>
                 </ListItem>
-                <MenuItem>
+
+                <ListItem>
                     <ListItemIcon>
                     <DiamondOutlinedIcon fontSize="small" />
                     </ListItemIcon>
                     <ListItemText>Experiencia</ListItemText>
-                </MenuItem>
-                <MenuItem>
+                </ListItem>
+
+                <ListItem>
                     <ListItemIcon>
                     <AutoFixHighOutlinedIcon fontSize="small" />
                     </ListItemIcon>
                     <ListItemText>Skills</ListItemText>
-                </MenuItem>
+                </ListItem>
+                
                 <Divider />
                 <ListItem button onClick={ () => navigate('/profesor-configuracion')}>
                     <ListItemIcon>
@@ -111,6 +131,7 @@ const MenuProfesor = (props) => {
                     </ListItemIcon>
                     <ListItemText>Configuración</ListItemText>
                 </ListItem>
+            </Box>    
         </Paper>
     );
 }
