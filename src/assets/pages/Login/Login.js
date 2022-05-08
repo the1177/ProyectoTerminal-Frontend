@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
+// Dependencias
 import './Login.css'
 import Title from "./components/Title/Title";
 import loginImage from './components/images/loginImage.jpg'
@@ -14,13 +15,22 @@ const Login = () => {
     const [isLogin, setIsLogin] = useState(false);
     const [hasError, setHasError] = useState(false);
 
+    // Autenticacion con Google exitosa
     const onGoogleSuccess = (res) => {
+        console.log("Inicio de sesion exitoso.");
         console.log(res.profileObj);
+
+        // TODO: Realizar peticion para obtener usuario de BD
+
+        // Guardar datos de usuario en memoria local
         setUser(res.profileObj);
         localStorage.setItem("user", JSON.stringify(res.profileObj));
-        navigate('/cursos', { state: { user:res.profileObj }});
+
+        // Redirigir a /cursos al loggearse exitosamente
+        navigate('/cursos', { state: { user: res.profileObj } });
     }
 
+    // Autenticacion con Google fallo
     const onGoogleFailure = (res) => {
         //alert("No se pudo iniciar sesión. Intente de nuevo.");
     }
