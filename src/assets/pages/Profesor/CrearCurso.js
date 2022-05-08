@@ -6,7 +6,7 @@ import axios from 'axios';
 
 // Ruta Backend
 //const BackendURL = "http://localhost:8080";  // Localhost
-const BackendURL = "http://whispering-retreat-36377.herokuapp.com";  // Server
+const BackendURL = "https://whispering-retreat-36377.herokuapp.com";  // Server
 
 // DateTime Picker
 import { DateTimePicker } from 'formik-mui-lab';
