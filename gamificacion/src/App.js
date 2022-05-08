@@ -6,9 +6,9 @@ import Login from './assets/pages/Login/Login';
 import Home from './assets/pages/Home/Home';
 import CreateUser from './assets/pages/CreateUser/CreateUsr';
 
-import ProfesorGen from './assets/pages/Profesor/ViewPages/EditProfile/ProfesorGeneral';
+import ProfesorGen from './assets/pages/Profesor/ProfesorGeneral';
 import Perfil from './assets/pages/Profesor/Profile';
-import CrearCurso from './assets/pages/Profesor/ViewPages/Formik/CrearCurso';
+import CrearCurso from './assets/pages/Profesor/CrearCurso';
 import Table from './assets/pages/Profesor/Table';
 import Cursos from './assets/pages/Profesor/Cursos'
 import Badgets from './assets/pages/Profesor/Badgets';
@@ -30,7 +30,7 @@ import ActividadDetalles from './assets/pages/Alumno/EntregaActividad'
 
 
 {/*Sección del Profesor*/}
-import ProfesorConf from './assets/pages/Profesor/ViewPages/EditProfile/Configuracion';
+import ProfesorConf from './assets/pages/Profesor/Configuracion';
 
 function App() {
   return (
@@ -59,7 +59,7 @@ function App() {
         <Route path="/editarUsuario" element={<EditarUsuario /> } />
         <Route path="/list" element={<Alumnos /> } />
         <Route path="/detalle" element={<ActividadDetalles /> } />
-        <Route path="profesor-configuracion" element={<ProfesorConf />} />
+        <Route path="/profesor-configuracion" element={<ProfesorConf />} />
         <Route path="/profesor-general" element={<ProfesorGen />} />
       </Routes>
     </Router>

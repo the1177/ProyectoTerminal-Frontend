@@ -151,7 +151,7 @@ const Menu = (props) => {
             </List>
             <Divider />
             <List>
-                <ListItem button>
+                <ListItem button onClick={ () => navigate('/profesor-general')}>
                     <ListItemIcon>
                         <SettingsIcon />
                     </ListItemIcon>

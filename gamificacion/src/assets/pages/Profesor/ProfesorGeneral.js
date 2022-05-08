@@ -3,6 +3,7 @@ import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 {/*Iconos Menú editar perfil*/}
+import MenuProfesor from './components/Menu/MenuProfesor';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
@@ -37,8 +38,8 @@ import {
   KeyboardDatePicker
 } from "@material-ui/pickers";
 import Divider from '@mui/material/Divider';
-import Menu from '../../components/Menu/Menu';
-import NavBar from '../../components/NavBar/NavBar';
+import Menu from './components/Menu/Menu';
+import NavBar from './components/NavBar/NavBar';
 import * as Yup from 'yup';
 
 import { 
@@ -141,52 +142,8 @@ const ProfesorContent = () => {
 
             <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
 
-            {/*Paper del menú izquierdo de editar perfil*/}
-            <Paper
-              fixed
-              sx={{
-                p: 2,
-                margin: 'auto',
-                flexDirection: 'column',
-                borderRadius: 3,
-                height: 'auto',
-                width: '30%',
-                height: '50%',
-                alignItems: 'center',
-                alignContent: 'center',
-                //textAlign:'center',
-                marginTop: 15,
-              }}
-            > 
-              <MenuList>
-                <MenuItem>
-                 <ListItemIcon>
-                    <PermIdentityIcon fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText>General</ListItemText>
-                </MenuItem>
-                <MenuItem>
-                  <ListItemIcon>
-                    <DiamondOutlinedIcon fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText>Experiencia</ListItemText>
-                </MenuItem>
-                <MenuItem>
-                  <ListItemIcon>
-                    <AutoFixHighOutlinedIcon fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText>Skills</ListItemText>
-                </MenuItem>
-                <Divider />
-                <MenuItem>
-                  <ListItemIcon>
-                    <SettingsIcon fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText>Configuración</ListItemText>
-                </MenuItem>
-              </MenuList>
-            </Paper>
-            
+            <MenuProfesor user={ user }/>
+
             {/* Paper es la sección completa del Form cuadro blanco*/}
             <Paper
               fixed
