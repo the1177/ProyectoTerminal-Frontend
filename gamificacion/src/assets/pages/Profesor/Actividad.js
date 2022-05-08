@@ -12,6 +12,9 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { Select, TextField } from 'formik-mui';
 import MuiTextField from '@mui/material/TextField';
 
+{/* RUBRICA */}
+
+
 import { 
   Container, 
   Box, 
@@ -186,13 +189,16 @@ const ActividadContent = () => {
 
                 <Grid item xs>
                     <Box
+                      fixed
                       sx={{
+                        marginTop: 8,
                         '& .MuiTextField-root': { m: 1, width: '100%'},
-                        margin: 'auto',
-                        padding: 1,
+                        my: 3,
+                        mx: 1,
+                        //bgcolor: 'pink',
+                        height: 'auto',
                         minWidth: '100%',
                       }}
-
                     >
 
                       <Formik
@@ -275,7 +281,12 @@ const ActividadContent = () => {
                                   <MenuItem value="cotejo">Lista de Cotejo</MenuItem>
                                   <MenuItem value="ninguna">Ninguna</MenuItem>
                                 </Field>
-                              </Box>  
+                              </Box>
+
+                              {/*RUBRICA*/}
+                              <Box sx={{ m: 2, /*bgcolor:'red'*/}}>
+                                <Field as={RubricaComponent}/>
+                              </Box>   
 
                               <Box item sx={{m: 2, textAlign:'center'}}>
                                 <Button type="submit" variant="contained">Crear Actividad</Button>
@@ -304,9 +315,7 @@ const ActividadContent = () => {
                           </LocalizationProvider>
                         )}
                       </Formik>
-                      
 
-                      
                     </Box>
                 </Grid>
 
@@ -326,4 +335,256 @@ export default function Actividad() {
 }
 
 
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
+
 {/* RÚBRICA */}
+const RubricaComponent = ({...props}) => (
+
+  <Formik
+    initialValues={{
+      criterios: [{ tituloCriterio: "", descripcionCriterio: "" }],
+    }}
+    validationSchema={Yup.object({
+      niveles: Yup.array().of(
+        Yup.object({
+          puntos: Yup.number()
+            .required(),
+          tituloNivel: Yup.string()
+            .max(15, 'Must be 15 characters or less')
+            .required(),
+          descripcionNivel: Yup.string()
+            .max(15, 'Must be 15 characters or less')
+            .required(),
+        })
+      ),
+    })}
+    onSubmit={async(values, { setSubmitting }) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+        console.log(value);
+        setSubmitting(false);
+      }, 400);
+    }}
+  
+  >
+    {({ values }) => (
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <Form>
+
+          <FieldArray name="criterios">
+            {({push, remove, }) =>(
+                <React.Fragment>
+                  <Grid item xs>
+                      <Typography variant="body">
+                        Criterios
+                      </Typography>
+                  </Grid>
+
+                  {values.criterios.map(( _,idx ) => (
+                    <Grid container item >
+                      <label>Criterios {idx + 1}</label>
+                      <Box  sx={{ m: 2,  /*bgcolor:'red'*/}}>
+                        <FormikTextField
+                          required 
+                          formikKey="tituloCriterio"
+                          name={`criterios.${idx}.tituloCriterio`}
+                          type="text" 
+                          label="Titulo del Criterio"
+                          placeholder="Titulo del Criterio"
+                        /> 
+                      </Box>
+
+                      <Box  sx={{ m: 2, /*bgcolor:'red'*/}}>
+                        <FormikTextField 
+                          required
+                          formikKey="descripcionCriterio"
+                          name={`criterios.${idx}.descripcionCriterio`}
+                          type="text"
+                          multiline
+                          rows={4}
+                          label="Descripción del Criterio"
+                          placeholder="Descripción del Criterio"
+                        /> 
+                      </Box>
+
+                      <Box item sx={{m: 1, textAlign:'center'}}>
+                        <Button onClick={() => remove(idx) }>Eliminar Criterio</Button>
+                      </Box>
+
+                      {/*SECCIÓN DE LOS NIVELES */}
+                      <Grid item>
+                        <Grid item xs>
+                          <Typography variant="body">
+                            Crear Niveles
+                          </Typography>
+
+                          {/*NIVELES*/}
+                          <Box sx={{ m: 2, /*bgcolor:'red'*/}}>
+                            <Field as={NivelesComponent}/>
+                          </Box> 
+                          
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  ))}
+                  <Box item sx={{m: 1, textAlign:'center'}}>
+                    <Button onClick={() => push({ tituloCriterio: "", descripcionCriterio: "" })}>Añadir Criterio</Button>
+                  </Box>
+                </React.Fragment>    
+            )}  
+          </FieldArray>
+          
+          
+          <FormikConsumer>
+            {({ validationSchema, validate, onSubmit, ...rest }) => (
+              <pre
+                style={{
+                  fontSize: '.85rem',
+                  padding: '.25rem .5rem',
+                  overflowX: 'scroll',
+                }}
+              >
+                {/*{JSON.stringify(rest, null, 2)}*/}
+              </pre>
+            )}
+          </FormikConsumer>
+          
+        </Form>
+      </LocalizationProvider>
+    )}
+
+  </Formik>
+
+);
+
+const NivelesComponent = ({...props}) => (
+
+  <Formik
+    initialValues={{
+      niveles: [{ puntos: "", tituloNivel: "", descripcionNivel: "" }],
+    }}
+    validationSchema={Yup.object({
+      niveles: Yup.array().of(
+        Yup.object({
+          puntos: Yup.number()
+            .required(),
+          tituloNivel: Yup.string()
+            .max(15, 'Must be 15 characters or less')
+            .required(),
+          descripcionNivel: Yup.string()
+            .max(15, 'Must be 15 characters or less')
+            .required(),
+        })
+      ),
+    })}
+    onSubmit={async(values, { setSubmitting }) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+        console.log(value);
+        setSubmitting(false);
+      }, 400);
+    }}
+  
+  >
+    {({ values }) => (
+      <Form>
+
+        <FieldArray name="niveles">
+          {({push, remove, }) =>(
+              <React.Fragment>
+                <Grid item>
+                    <Typography variant="body">
+                      Niveles
+                    </Typography>
+                </Grid>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    alignContent: 'flex-start',
+                  }}
+                >
+                  {values.niveles.map(( _,idx ) => (
+                    <Card 
+                      textAlign="center"
+                      sx={{ maxWidth: 800, borderRadius: 3, padding: 3 }} 
+                    >
+                      <CardContent>
+                        <Grid container item >
+                          <label>Nivel {idx + 1}</label>
+                          <Box  sx={{ m: 1, /*bgcolor:'yellow'*/ }}>
+                            <FormikTextField
+                              requiered 
+                              formikKey="puntos"
+                              name={`niveles.${idx}.puntos`}
+                              type="number" 
+                              label="Puntos (obligatorio)"
+                              placeholder="Puntos (obligatorio)"
+                            /> 
+                          </Box>
+
+                          <Box  sx={{ m: 1, /*bgcolor:'yellow'*/ }}>
+                            <FormikTextField
+                              required 
+                              formikKey="tituloNivel"
+                              name={`niveles.${idx}.tituloNivel`}
+                              type="text" 
+                              label="Titulo del Nivel"
+                              placeholder="Titulo del Nivel"
+                            /> 
+                          </Box>
+
+                          <Box  sx={{ m: 1, /*bgcolor:'yellow'*/ }}>
+                            <FormikTextField
+                              required 
+                              formikKey="descripcionNivel"
+                              name={`niveles.${idx}.descripcionNivel`}
+                              type="text" 
+                              label="Descripción del Nivel"
+                              placeholder="Descripción del Nivel"
+                            /> 
+                          </Box>
+
+                          <Box item sx={{m: 1, textAlign:'center'}}>
+                            <Button onClick={() => remove(idx) }>Eliminar Nivel</Button>
+                          </Box>
+                        </Grid>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </Box>
+                <Box item sx={{m: 1, textAlign:'center'}}>
+                  <Button onClick={() => push({ puntos: "", tituloNivel: "", descripcionNivel: "" })}>Añadir Nivel</Button>
+                </Box>
+              </React.Fragment>    
+          )}  
+        </FieldArray>
+        
+        
+        <FormikConsumer>
+          {({ validationSchema, validate, onSubmit, ...rest }) => (
+            <pre
+              style={{
+                fontSize: '.85rem',
+                padding: '.25rem .5rem',
+                overflowX: 'scroll',
+              }}
+            >
+              {/*{JSON.stringify(rest, null, 2)}*/}
+            </pre>
+          )}
+        </FormikConsumer>
+        
+      </Form>
+
+    )}
+
+  </Formik>
+);

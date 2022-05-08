@@ -121,7 +121,7 @@ const Menu = (props) => {
                     <ListItemText primary="Cursos" />
                 </ListItem>
 
-                <ListItem button>
+                <ListItem button onClick={ () => navigate('/badgets')}>
                     <ListItemIcon>
                         <MilitaryTechIcon />
                     </ListItemIcon>

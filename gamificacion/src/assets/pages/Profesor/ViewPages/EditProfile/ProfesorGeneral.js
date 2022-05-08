@@ -2,14 +2,9 @@ import React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
+{/*Iconos Menú editar perfil*/}
 import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ContentCut from '@mui/icons-material/ContentCut';
-import ContentCopy from '@mui/icons-material/ContentCopy';
-import ContentPaste from '@mui/icons-material/ContentPaste';
-import Cloud from '@mui/icons-material/Cloud';
-
-{/*Iconos Menú editar perfil*/}
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import DiamondOutlinedIcon from '@mui/icons-material/DiamondOutlined';
 import AutoFixHighOutlinedIcon from '@mui/icons-material/AutoFixHighOutlined';
