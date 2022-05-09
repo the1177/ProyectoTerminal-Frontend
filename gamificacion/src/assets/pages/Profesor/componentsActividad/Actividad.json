@@ -1,0 +1,564 @@
+{
+    "Actividades":[
+        {
+            "id":1,
+            "name": "Crear un server",
+            "profesorName":"David Flores Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder calificar tu actividad y progreso al integrarte con tus nuevos compañeros",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            },
+             "alumnos": [
+        {
+            "id":1,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":2,
+            "name":"Aimee Gutierrez May",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":3,
+            "name":"Jacob Elias Torres",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":4,
+            "name":"Alex Cabrera",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":5,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        }
+    ]
+        },        
+        {
+            "id":2,
+            "name": "Realizar un postre",
+            "profesorName":"David Flores Granados",
+            "status": "pendientes",
+            "description":"Haz un equipo de 3, y realiza un postre",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            },
+             "alumnos": [
+        {
+            "id":1,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":2,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":3,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":4,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":5,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        }
+    ]
+        },        
+        {
+            "id":3,
+            "name": "Hacer una carrera de programación de un algoritmo",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            },
+             "alumnos": [
+        {
+            "id":1,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":2,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":3,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":4,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":5,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        }
+    ]
+        },        
+        {
+            "id":4,
+            "name": "Dar una vuelta en la universidad",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            },
+             "alumnos": [
+        {
+            "id":1,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":2,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":3,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":4,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":5,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        }
+    ]
+        },        
+        {
+            "id":5 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            },
+             "alumnos": [
+        {
+            "id":1,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":2,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":3,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":4,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":5,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        }
+    ]
+        },
+        {
+            "id":6 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            },
+             "alumnos": [
+        {
+            "id":1,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":2,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":3,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":4,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":5,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        }
+    ]
+        },
+        {
+            "id":7 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            },
+             "alumnos": [
+        {
+            "id":1,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":2,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":3,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":4,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":5,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        }
+    ]
+        },
+        {
+            "id":8 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            },
+             "alumnos": [
+        {
+            "id":1,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":2,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":3,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":4,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":5,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        }
+    ]
+        },
+        {
+            "id":9 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            },
+             "alumnos": [
+        {
+            "id":1,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":2,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":3,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":4,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":5,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        }
+    ]
+        },
+        {
+            "id":10 ,
+            "name": "Comer antes de las 10",
+            "profesorName":"David Granados",
+            "status": "pendientes",
+            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "fechaEntrega":"16/06/2022",
+            "rubrica":{
+                "criterios":[
+                    {
+                    "nombre":"",
+                    "niveles":[
+                        {},
+                        {}
+                        ]
+                    }
+                ]   
+            },
+             "alumnos": [
+        {
+            "id":1,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":2,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":3,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":4,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        },
+        {
+            "id":5,
+            "name":"Edrey Hernandez Dzib",
+            "actividad":"doc",
+            "fechaEntregada": "08/05/2022",
+            "statusEntrega":"Entregado"
+        }
+    ]
+        }
+    ]
+}

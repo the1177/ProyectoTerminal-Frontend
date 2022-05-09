@@ -1,20 +1,20 @@
 import React, {useEffect, useState} from "react";
-import './ActividadesScroll.css'
-import ActividadDetalles from "../../EntregaActividad";
+import './ListaActividadesAlumno.css';
+import ActividadDetalles from "./componentsActividad/EntegaActividad/EntregaActividad";
 import { useNavigate } from 'react-router-dom';
 
-function ActividadesScroll({ navigation: {...props  } }) {
+function ListaActividadesAlumno(props) {
     
     const [id, setId] = useState('')
 
     const [data, setData] = useState(props.data);
-    const [filterData, setFilterData ] = useState('')
-    const navigate = useNavigate();
+    const [filterData, setFilterData ] = useState([])
+
 
     function IrDetalles (id, e) {
-        console.log(filterData)
+        
         setFilterData(data.filter(item => item.id === id))
-        navigate('/detalle', { data:  'filterData'  });
+        // navigate('/detalle', { data:  'filterData'  });
      }
 
      //usar data y no props
@@ -46,4 +46,4 @@ function ActividadesScroll({ navigation: {...props  } }) {
   );
 }
 
-export default ActividadesScroll;
+export default ListaActividadesAlumno;

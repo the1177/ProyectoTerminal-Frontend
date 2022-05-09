@@ -1,0 +1,35 @@
+.Cal-alumno{
+    margin: 10px;
+    background-color: rgba(255, 0, 0, 0);
+    padding:15px;
+    border: 3px solid rgb(235, 235, 235);
+    border-radius: 1em;
+    display: flex;
+    /* border-top-right-radius: 10% 30%; */
+}
+.section1-alumno{
+    background-color:rgba(0, 255, 255, 0) ;
+    width: auto;
+}
+
+.name-alumno{
+    background-color: red;
+}
+
+
+
+.calificacion-box{
+    margin-left: 10px;
+    border: 3px solid rgb(235, 235, 235);
+    align-items: center;
+    display: flex;
+    padding: 5px;
+    background-color: rgba(255, 0, 0, 0);
+}
+.Calificar_Actividad{
+    background-color: rgba(0, 255, 255, 0.575);
+}
+.buton-actividad{
+    background-color: rgb(255, 119, 119);
+
+}

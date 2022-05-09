@@ -23,7 +23,7 @@ import { mainListItems, secondaryListItems } from './components/Listitems/listit
 import Mision from './components/Mision/MisionAlumno';
 import Deposits from './components/Deposits/DepositsAlumno';
 import Orders from './components/Orders/OrdersAlumno';
-import ActividadesScroll from './componentsActividad/ActividadesScroll/ActividadesScroll';
+import ListaActividadesAlumno from './ListaActividadesAlumno';
 
 import Actividades from './componentsActividad/Actividad.json';
 const drawerWidth = 240;
@@ -163,7 +163,7 @@ function MisionesContent() {
                       height: 'auto',
                     }}
                   >
-                    <ActividadesScroll data= {data.Actividades} />
+                    <ListaActividadesAlumno data= {data.Actividades} />
                   </Paper>
                 </Grid>
 
