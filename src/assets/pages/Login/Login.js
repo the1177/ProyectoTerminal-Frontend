@@ -8,6 +8,10 @@ import loginImage from './components/images/loginImage.jpg'
 import GoogleLogin from "react-google-login";
 import axios from "axios";
 
+// Ruta Backend
+//const BackendURL = "http://localhost:8080";  // Localhost
+const BackendURL = "https://whispering-retreat-36377.herokuapp.com";  // Server
+
 const Login = () => {
     const navigate = useNavigate();
     const [user, setUser] = useState("");
@@ -25,7 +29,7 @@ const Login = () => {
         }
 
         // TODO: Realizar peticion para obtener usuario de BD
-        const response  =  await axios.post("http://localhost:8080/api/login",data);
+        const response  =  await axios.post(BackendURL + "/api/login",data);
         console.log(response);
 
         // Guardar datos de usuario en memoria local
