@@ -27,8 +27,8 @@ import DashboardAlumno from './assets/pages/Alumno/DashboardAlumno';
 import EditarUsuario from './assets/pages/Alumno/EditarUsuario'
 import Encuesta from './assets/pages/Encuesta/Encuesta';
 import Alumnos from './assets/pages/Alumno/components/EditarUser/alumnoslist';
-import ActividadDetalles from './assets/pages/Alumno/EntregaActividad'
-
+import ActividadDetalles from './assets/pages/Alumno/componentsActividad/EntegaActividad/EntregaActividad'
+import CalificarActividad from './assets/pages/Profesor/CalificarActividad';
 
 {/*Sección del Profesor*/}
 import ProfesorConf from './assets/pages/Profesor/Configuracion';
@@ -63,6 +63,7 @@ function App() {
         <Route path="/detalle" element={<ActividadDetalles /> } />
         <Route path="/profesor-configuracion" element={<ProfesorConf />} />
         <Route path="/profesor-general" element={<ProfesorGen />} />
+        <Route path="/Calificar-Actividad" element={<CalificarActividad />} />
       </Routes>
     </Router>
   );

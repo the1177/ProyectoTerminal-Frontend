@@ -26,29 +26,29 @@ import Mision from './components/Mision/Mision';
 import Deposits from './components/Deposits/Deposits';
 import Orders from './components/Orders/Orders';
 
-import ListaActividadesProfesor from './ListaActividadesProfesor';
-import Actividades from './componentsActividad/Actividad.json';
+import CalificarAlumno from './componentsActividad/CalificarActividad/CalificarAlumno';
+import Actividad from './componentsActividad/Actividad.json';
 const drawerWidth = 240;
 
 const mdTheme = createTheme();
 
-function MisionesContent() {
+function CalificarActividadContent() {
     const saved = localStorage.getItem("user");
     const user = JSON.parse(saved);
     console.log(user);
 
-    const [data, setData] = useState(Actividades);
+    const [data, setData] = useState(Actividad);
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
     };
-  
+    // console.log(data.Actividades[0])
     return (
       <ThemeProvider theme={mdTheme}>
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
           
-          <NavBar tituloNavBar="Misiones" open={ open } setOpen={ setOpen }/>
+          <NavBar tituloNavBar="Calificar Actividad" open={ open } setOpen={ setOpen }/>
 
           <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
 
@@ -78,7 +78,7 @@ function MisionesContent() {
                       height: 'auto',
                     }}
                   >
-                    <ListaActividadesProfesor  data = {data.Actividades}/>
+                    <CalificarAlumno  data = {data.Actividades[0]}/>
                   </Paper>
                 </Grid>            
               </Grid>
@@ -94,6 +94,6 @@ function MisionesContent() {
 
 
 
-export default function Misiones() {
-    return <MisionesContent />;
+export default function CalificarActividad() {
+    return <CalificarActividadContent />;
 }

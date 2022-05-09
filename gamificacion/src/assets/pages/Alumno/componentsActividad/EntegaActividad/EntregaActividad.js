@@ -17,17 +17,17 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './components/Listitems/listitemsalumno';
+import { mainListItems, secondaryListItems } from '../../components/Listitems/listitemsalumno';
 
-import "./Alumno.css";
-import Actividades from './componentsActividad/Actividad.json'; 
-import TituloActividad from './componentsActividad/TituloActividad/Titulo';
-import DescripcionActividad from './componentsActividad/DescripcionActividad/DescripcionActividad';
-import MostrarRubricaActividad from './componentsActividad/MostrarRubricaActividad/MostrarRubricaActividad';
-import InputActividad from './componentsActividad/InputActividad/InputActividad';
+import "../../Alumno.css";
+import Actividades from '../Actividad.json'; 
+import TituloActividad from '../TituloActividad/Titulo';
+import DescripcionActividad from '../DescripcionActividad/DescripcionActividad';
+import MostrarRubricaActividad from '../MostrarRubricaActividad/MostrarRubricaActividad';
+import InputActividad from '../InputActividad/InputActividad';
 
 var ReactDOM = require('react-dom');
-import Orders from './components/Orders/OrdersAlumno';
+import Orders from '../../components/Orders/OrdersAlumno';
 
 const drawerWidth = 240;
 
@@ -234,6 +234,5 @@ const EntregarActividad= () => {
 }
 
 export default function ActividadDetalles({props}) {
-    console.log("ACTIVIDADES",props)
     return <EntregarActividad />;
 }
