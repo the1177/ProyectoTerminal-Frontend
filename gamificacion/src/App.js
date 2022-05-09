@@ -15,6 +15,7 @@ import Badgets from './assets/pages/Profesor/Badgets';
 import Misiones from './assets/pages/Profesor/Misiones';
 import Dashboard from './assets/pages/Profesor/Dashboard';
 import CrearActividad from './assets/pages/Profesor/Actividad';
+import RubricaComponent from './assets/pages/Profesor/components/Rubrica/Rubrica';
 import Componentes from './assets/pages/Profesor/Componentes';
 import Calendario from './assets/pages/Profesor/Calendario';
 
@@ -46,6 +47,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/crearcurso" element={<CrearCurso />} />
         <Route path="/crearactividad" element={<CrearActividad />} />
+        <Route path="/rubrica" element={<RubricaComponent />} />
         <Route path="/table" element={<Table />} />
         <Route path="/profile" element={<Perfil />} />
         <Route path="/componentes" element={<Componentes />} />
