@@ -63,7 +63,7 @@ function App() {
         <Route path="/detalle" element={<ActividadDetalles /> } />
         <Route path="/profesor-configuracion" element={<ProfesorConf />} />
         <Route path="/profesor-general" element={<ProfesorGen />} />
-        <Route path="/Calificar-Actividad" element={<CalificarActividad />} />
+        <Route path="/calificar-actividad" element={<CalificarActividad />} />
       </Routes>
     </Router>
   );

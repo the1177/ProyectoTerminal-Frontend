@@ -44,51 +44,68 @@ function CalificarActividadContent() {
     };
     // console.log(data.Actividades[0])
     return (
-      <ThemeProvider theme={mdTheme}>
-        <Box sx={{ display: 'flex' }}>
-          <CssBaseline />
-          
-          <NavBar tituloNavBar="Calificar Actividad" open={ open } setOpen={ setOpen }/>
+      <React.Fragment>
+        <ThemeProvider theme={mdTheme} >
+          <Box sx={{ display: 'flex' }}>
+            <CssBaseline />
+            
+            <NavBar tituloNavBar="Calificar Actividad" open={ open } setOpen={ setOpen }/>
 
-          <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
+            <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
+            
+            {/* Paper es la sección completa del Form cuadro blanco*/}
+            <Paper
+              fixed
+              sx={{
+                p: 2,
+                margin: 'auto',
+                flexDirection: 'column',
+                borderRadius: 3,
+                height: 'auto',
+                width: '50%',
+                alignItems: 'center',
+                alignContent: 'center',
+                //textAlign:'center',
+                marginTop: 15,
+              }}
+            >
+              {/* Box es todo el contenido del form */}
+              <Box
+                fixed
+                sx={{
+                  marginTop: 3,
+                  '& .MuiTextField-root': { m: 1, width: '100%'},
+                  my: 1,
+                  mx: 1,
+                  //bgcolor: 'pink',
+                  height: 'auto',
+                  minWidth: '100%',
+                }}
 
-          <Box
-            component="main"
-            sx={{
-              backgroundcolor: (theme) =>
-                theme.palette.mode === 'light'
-                  ? theme.palette.grey[100]
-                  : theme.palette.grey[900],
-              flexGrow: 1,
-              height: '100vh',
-              overflow: 'auto',
-            }}
-          >
-            <Toolbar />
+              >
 
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-              <Grid container spacing={3}>
-                {/* Chart */}
-                <Grid item xs={12} md={8} lg={9}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      height: 'auto',
-                    }}
-                  >
-                    <CalificarAlumno  data = {data.Actividades[0]}/>
-                  </Paper>
-                </Grid>            
-              </Grid>
+                <Grid item xs>
+                    <Box
+                      sx={{
+                        '& .MuiTextField-root': { m: 1, width: '100%'},
+                        margin: 'auto',
+                        padding: 1,
+                        minWidth: '100%',
+                      }}
 
-            </Container>
+                    >
+                      <CalificarAlumno  data = {data.Actividades[0]}/> 
+                    </Box>
+                </Grid>
 
+              </Box>
+
+            </Paper>
 
           </Box>
-        </Box>
-      </ThemeProvider>
+        </ThemeProvider>
+
+      </React.Fragment>
     );
 }
 

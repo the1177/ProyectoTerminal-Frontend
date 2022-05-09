@@ -401,7 +401,6 @@ const CursoContent = () => {
                         )}
                       </Formik>
                       
-
                       
                     </Box>
                 </Grid>
