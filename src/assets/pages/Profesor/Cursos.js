@@ -1,5 +1,5 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React,{useEffect,useState} from 'react';
+import { useLocation,useNavigate } from 'react-router-dom';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -32,12 +32,15 @@ import ListSubheader from '@mui/material/ListSubheader';
 import Avatar from '@mui/material/Avatar'
 
 import Card from './components/CardCurso/Card';
+import axios from 'axios';
 
 const drawerWidth = 240;
 const mdTheme = createTheme();
 
 const Cursos = (props) => {
     const saved = localStorage.getItem("user");
+    const navigate = useNavigate();
+    const [cursos,setCursos]= useState([]);
     const user = JSON.parse(saved);
     console.log(user);
 
@@ -45,7 +48,23 @@ const Cursos = (props) => {
     const toggleDrawer = () => {
       setOpen(!open);
     };
-  
+    const eventHandleSumit =(e) =>{
+      navigate('/crearcurso',{ state: { user }},);
+    }
+    //const {type_user} = props;
+    let button;
+    if(user.dbdata.tipoUsuario === "estudiante")
+      button = <h1></h1>
+    else
+      button = <button type="submit" className="vote5-botton btn btn-block" onClick={eventHandleSumit}>Crear Curso</button>
+    
+    useEffect(async()=>{
+      const res = await axios.get("http://localhost:8080/api/cursos");
+      setCursos(res.data);
+      console.log(res.data);
+    },[]);
+    
+
     return (
       <ThemeProvider theme={mdTheme}>
         <Box sx={{ display: 'flex' }}>
@@ -72,8 +91,11 @@ const Cursos = (props) => {
 
               <Grid container spacing={6}>
                 {/* Card */}
+                {button}
                 <Grid item xs={12} md={8} lg={9}>
-                    <Card />
+                  {cursos.map(curso=>{
+                    <Card curso={curso}/>
+                  })}
                 </Grid>
               </Grid>
 

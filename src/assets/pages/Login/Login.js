@@ -6,6 +6,7 @@ import './Login.css'
 import Title from "./components/Title/Title";
 import loginImage from './components/images/loginImage.jpg'
 import GoogleLogin from "react-google-login";
+import axios from "axios";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -16,18 +17,25 @@ const Login = () => {
     const [hasError, setHasError] = useState(false);
 
     // Autenticacion con Google exitosa
-    const onGoogleSuccess = (res) => {
+    const onGoogleSuccess = async(res) => {
         console.log("Inicio de sesion exitoso.");
         console.log(res.profileObj);
+        const data = {
+            user:res.profileObj,
+        }
 
         // TODO: Realizar peticion para obtener usuario de BD
+        const response  =  await axios.post("http://localhost:8080/api/login",data);
+        console.log(response);
 
         // Guardar datos de usuario en memoria local
-        setUser(res.profileObj);
+        setUser(response.data);
+        res.profileObj.dbdata = response.data;
         localStorage.setItem("user", JSON.stringify(res.profileObj));
 
+        //
         // Redirigir a /cursos al loggearse exitosamente
-        navigate('/cursos', { state: { user: res.profileObj } });
+        navigate('/cursos',{ state: { user: res.profileObj }},);
     }
 
     // Autenticacion con Google fallo

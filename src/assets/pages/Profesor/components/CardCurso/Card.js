@@ -33,9 +33,10 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard(props) {
   const [expanded, setExpanded] = React.useState(false);
-
+  const {curso} = props;
+  console.log(curso);
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -43,10 +44,9 @@ export default function RecipeReviewCard() {
   return (
     <Container maxWidth="lg" sx={{ mt: 3, mb: 3 }}>
         <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 8, lg:9 }}>
-
         {/* Chart */}
         <Grid item xs={6}>
-            <Card sx={{ maxWidth: 345, borderRadius: 3 }}>
+            <Card sx={{ maxWidth: 345, borderRadius: 3 }} id={curso.cursoId}>
             <CardHeader
                 avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -58,7 +58,7 @@ export default function RecipeReviewCard() {
                     <MoreVertIcon />
                 </IconButton>
                 }
-                title="Diseño de Patrones para datos estructurados"
+                title={curso.nombre}
                 subheader="Primavera 2022"
                 backgroundcolor="pink"
             />
@@ -98,216 +98,6 @@ export default function RecipeReviewCard() {
         </Grid>
         
         {/* Chart */}
-        <Grid item xs={6}>
-            <Card sx={{ maxWidth: 345, borderRadius: 3 }}>
-            <CardHeader
-                avatar={
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                    DF
-                </Avatar>
-                }
-                action={
-                <IconButton aria-label="settings">
-                    <MoreVertIcon />
-                </IconButton>
-                }
-                title="Diseño de Patrones para datos estructurados"
-                subheader="Primavera 2022"
-                backgroundcolor="pink"
-            />
-            <CardMedia
-                component="img"
-                height="194"
-                src={Violeta}
-                alt="Fondo"
-            />
-            <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                28 Alumnos
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                <ShareIcon />
-                </IconButton>
-                <ExpandMore
-                expand={expanded}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-                >
-                <ExpandMoreIcon />
-                </ExpandMore>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                <Typography paragraph>Misiones actuales:</Typography>
-                </CardContent>
-            </Collapse>
-            </Card>
-        </Grid>
-
-        {/* Chart */}
-        <Grid item xs={6}>
-            <Card sx={{ maxWidth: 345, borderRadius: 3 }}>
-            <CardHeader
-                avatar={
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                    DF
-                </Avatar>
-                }
-                action={
-                <IconButton aria-label="settings">
-                    <MoreVertIcon />
-                </IconButton>
-                }
-                title="Algoritmos y estructura de datos "
-                subheader="Primavera 2022"
-                backgroundcolor="pink"
-            />
-            <CardMedia
-                component="img"
-                height="194"
-                src={Green}
-                alt="Fondo"
-            />
-            <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                32 Alumnos
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                <ShareIcon />
-                </IconButton>
-                <ExpandMore
-                expand={expanded}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-                >
-                <ExpandMoreIcon />
-                </ExpandMore>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                <Typography paragraph>Misiones actuales:</Typography>
-                </CardContent>
-            </Collapse>
-            </Card>
-        </Grid>
-
-        {/* Chart */}
-        <Grid item xs={6}>
-            <Card sx={{ maxWidth: 345, borderRadius: 3 }}>
-            <CardHeader
-                avatar={
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                    DF
-                </Avatar>
-                }
-                action={
-                <IconButton aria-label="settings">
-                    <MoreVertIcon />
-                </IconButton>
-                }
-                title="Técnicas algorítmicas"
-                subheader="Primavera 2022"
-                backgroundcolor="pink"
-            />
-            <CardMedia
-                component="img"
-                height="194"
-                src={Rose}
-                alt="Fondo"
-            />
-            <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                34 Alumnos
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                <ShareIcon />
-                </IconButton>
-                <ExpandMore
-                expand={expanded}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-                >
-                <ExpandMoreIcon />
-                </ExpandMore>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                <Typography paragraph>Misiones actuales:</Typography>
-                </CardContent>
-            </Collapse>
-            </Card>
-        </Grid>
-
-        {/* Chart */}
-        <Grid item xs={6}>
-            <Card sx={{ maxWidth: 345, borderRadius: 3 }}>
-            <CardHeader
-                avatar={
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                    DF
-                </Avatar>
-                }
-                action={
-                <IconButton aria-label="settings">
-                    <MoreVertIcon />
-                </IconButton>
-                }
-                title="Diseño de Juegos"
-                subheader="Primavera 2022"
-                backgroundcolor="pink"
-            />
-            <CardMedia
-                component="img"
-                height="194"
-                src={Matcha}
-                alt="Fondo"
-            />
-            <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                26 Alumnos
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                <ShareIcon />
-                </IconButton>
-                <ExpandMore
-                expand={expanded}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-                >
-                <ExpandMoreIcon />
-                </ExpandMore>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                <Typography paragraph>Misiones actuales:</Typography>
-                </CardContent>
-            </Collapse>
-            </Card>
-        </Grid>
 
         </Grid>
 
