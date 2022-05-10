@@ -555,8 +555,6 @@ const ActividadContent = () => {
                         )}
                       </Formik>
                       
-
-                      
                     </Box>
                 </Grid>
 
