@@ -1,27 +1,39 @@
 import React, {useEffect, useState} from "react";
 import './ListaActividadesProfesor.css';
 import { useNavigate } from 'react-router-dom';
+import { set } from "date-fns";
+import { RiContactsBookLine, RiContactsBookUploadLine } from "react-icons/ri";
 import Button from 'react-bootstrap/Button';
 
 function ListaActividadesProfesor(props) {
-    
+    const navigate = useNavigate();
     const [id, setId] = useState('')
 
     const [data, setData] = useState(props.data);
     const [filterData, setFilterData ] = useState([])
+    const [localStorageInfo, setLocalStorageInfo] = useState(window.localStorage.getItem('localStorageInfo'));
 
+    const setLocalStorage = (value,e) =>{
+        try{
+            // console.log(e);
+            setLocalStorageInfo(e)
+            // window.localStorage.setItem("localStorageInfo",value)
+        }catch (error){
+            console.log(error)
+        }
+    }
 
     function IrDetalles (id, e) {
-        
-        setFilterData(data.filter(item => item.id === id))
-        // navigate('/detalle', { data:  'filterData'  });
+        // console.log(data[id-1])
+        // setFilterData(data.filter(item => item.id === id))
+        window.localStorage.setItem("localStorageActividad",JSON.stringify(data[id-1]))
+        navigate('/calificar-actividad');
      }
 
      //usar data y no props
  
     return (
     <div className="Actividad_Scroll">
-        {console.log("xd",{filterData})}
            {data.map(function({id,name,fechaEntrega,status,description, profesorName}){
                return(
                    

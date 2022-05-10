@@ -34,8 +34,9 @@ const mdTheme = createTheme();
 
 function CalificarActividadContent() {
     const saved = localStorage.getItem("user");
+    const [localStorageActividad, setLocalStorageActividad] = useState(JSON.parse(window.localStorage.getItem('localStorageActividad')));
     const user = JSON.parse(saved);
-    console.log(user);
+    // console.log("calificarActividad",localStorageActividad);
 
     const [data, setData] = useState(Actividad);
     const [open, setOpen] = React.useState(true);
@@ -94,7 +95,7 @@ function CalificarActividadContent() {
                       }}
 
                     >
-                      <CalificarAlumno  data = {data.Actividades[0]}/> 
+                      <CalificarAlumno  data = {localStorageActividad}/> 
                     </Box>
                 </Grid>
 

@@ -80,14 +80,14 @@ const mdTheme = createTheme();
 
 
 
-const EntregarActividad= () => {
-    const [data, setData] = useState(Actividades);
-
+const EntregarActividad= (props) => {
+  const [localStorageInfo, setLocalStorageInfo] = useState(JSON.parse(window.localStorage.getItem('localStorageInfo')));
+    const [data, setData] =  useState(Actividades);
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
     };
-
+    console.log("actividades",(localStorageInfo))
     return (
       
 
@@ -177,9 +177,9 @@ const EntregarActividad= () => {
                               //backgroundColor:'red'
                             }}
                           >
-                            <TituloActividad name={data.Actividades[0].name}  />
+                            <TituloActividad name={localStorageInfo.name}  />
                             <hr/>
-                            <DescripcionActividad descripcion={data.Actividades[0].description} />
+                            <DescripcionActividad descripcion={localStorageInfo.description} />
                             <hr/>
                             <MostrarRubricaActividad />
                           </Paper>
@@ -233,6 +233,8 @@ const EntregarActividad= () => {
     );
 }
 
-export default function ActividadDetalles({props}) {
-    return <EntregarActividad />;
+export default function ActividadDetalles() {
+
+    return <EntregarActividad  />;
+    
 }

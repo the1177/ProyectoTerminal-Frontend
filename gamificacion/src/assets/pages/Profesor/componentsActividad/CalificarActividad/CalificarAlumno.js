@@ -48,7 +48,7 @@ const CalificarAlumno = (props) => {
     //usar data y no props
     console.log("Calificar alumnos pestaña:",data);
     return (
-    <Grid conatiner className="Alumno-Tarjeta-Container">
+    <Grid conatiner="true" className="Alumno-Tarjeta-Container">
 
         <Box sx={{ m:1 , marginTop: 3}}>
 
@@ -67,10 +67,10 @@ const CalificarAlumno = (props) => {
 
             {data.alumnos.map(function({id,name,actividad,fechaEntregada,statusEntrega}){
                 return(
-                   <React.Fragment>
+                   <React.Fragment key={id}>
                        {/* Paper es la sección completa del Form cuadro blanco*/}
                         <Paper
-                            fixed
+                            
                             sx={{
                                 p: 1,
                                 margin: 'auto',
@@ -103,7 +103,7 @@ const CalificarAlumno = (props) => {
 
                                     <Grid item xs={6}>
                                         <Box item sx={{textAlign:'center'}}>
-                                            <Button  variant="contained" onClick={console.log("actividad mostrada")}>Mostrar Actividad</Button>
+                                            <Button  variant="contained" >Puntuar</Button>                                            
                                         </Box>    
                                     </Grid>
 
@@ -113,14 +113,13 @@ const CalificarAlumno = (props) => {
 
                                     <Grid className="Calificar_Actividad">
                                         <Box item sx={{m: 2, textAlign:'center'}}>
-                                            <Button  variant="contained" >Puntuar</Button>
+                                            <Button  variant="contained" >Mostrar Actividad</Button>
                                         </Box>                        
                                     </Grid>                 
                                 </Grid>
                             </Box>
                         </Paper>
-                   </React.Fragment> 
-                    
+                   </React.Fragment>                     
                 )
             })}
         </Box>

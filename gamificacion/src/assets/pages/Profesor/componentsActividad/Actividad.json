@@ -54,7 +54,7 @@
             "fechaEntregada": "08/05/2022",
             "statusEntrega":"Entregado"
         }
-    ]
+        ]
         },        
         {
             "id":2,
@@ -74,50 +74,50 @@
                     }
                 ]   
             },
-             "alumnos": [
-        {
-            "id":1,
-            "name":"Edrey Hernandez Dzib",
-            "actividad":"doc",
-            "fechaEntregada": "08/05/2022",
-            "statusEntrega":"Entregado"
-        },
-        {
-            "id":2,
-            "name":"Edrey Hernandez Dzib",
-            "actividad":"doc",
-            "fechaEntregada": "08/05/2022",
-            "statusEntrega":"Entregado"
-        },
-        {
-            "id":3,
-            "name":"Edrey Hernandez Dzib",
-            "actividad":"doc",
-            "fechaEntregada": "08/05/2022",
-            "statusEntrega":"Entregado"
-        },
-        {
-            "id":4,
-            "name":"Edrey Hernandez Dzib",
-            "actividad":"doc",
-            "fechaEntregada": "08/05/2022",
-            "statusEntrega":"Entregado"
-        },
-        {
-            "id":5,
-            "name":"Edrey Hernandez Dzib",
-            "actividad":"doc",
-            "fechaEntregada": "08/05/2022",
-            "statusEntrega":"Entregado"
-        }
-    ]
+            "alumnos": [
+                {
+                    "id":1,
+                    "name":"Edrey Hernandez Dzib",
+                    "actividad":"doc",
+                    "fechaEntregada": "08/05/2022",
+                    "statusEntrega":"Entregado"
+                },
+                {
+                    "id":2,
+                    "name":"Aimee Gutierrez May",
+                    "actividad":"doc",
+                    "fechaEntregada": "08/05/2022",
+                    "statusEntrega":"Entregado"
+                },
+                {
+                    "id":3,
+                    "name":"Jacob Elias Torres",
+                    "actividad":"doc",
+                    "fechaEntregada": "08/05/2022",
+                    "statusEntrega":"Entregado"
+                },
+                {
+                    "id":4,
+                    "name":"Alex Cabrera",
+                    "actividad":"doc",
+                    "fechaEntregada": "08/05/2022",
+                    "statusEntrega":"Entregado"
+                },
+                {
+                    "id":5,
+                    "name":"Edrey Hernandez Dzib",
+                    "actividad":"doc",
+                    "fechaEntregada": "08/05/2022",
+                    "statusEntrega":"Entregado"
+                }
+                    ]
         },        
         {
             "id":3,
             "name": "Hacer una carrera de programación de un algoritmo",
             "profesorName":"David Granados",
             "status": "pendientes",
-            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "description":"Programar un algoritmo complejo",
             "fechaEntrega":"16/06/2022",
             "rubrica":{
                 "criterios":[
@@ -130,50 +130,50 @@
                     }
                 ]   
             },
-             "alumnos": [
-        {
-            "id":1,
-            "name":"Edrey Hernandez Dzib",
-            "actividad":"doc",
-            "fechaEntregada": "08/05/2022",
-            "statusEntrega":"Entregado"
-        },
-        {
-            "id":2,
-            "name":"Edrey Hernandez Dzib",
-            "actividad":"doc",
-            "fechaEntregada": "08/05/2022",
-            "statusEntrega":"Entregado"
-        },
-        {
-            "id":3,
-            "name":"Edrey Hernandez Dzib",
-            "actividad":"doc",
-            "fechaEntregada": "08/05/2022",
-            "statusEntrega":"Entregado"
-        },
-        {
-            "id":4,
-            "name":"Edrey Hernandez Dzib",
-            "actividad":"doc",
-            "fechaEntregada": "08/05/2022",
-            "statusEntrega":"Entregado"
-        },
-        {
-            "id":5,
-            "name":"Edrey Hernandez Dzib",
-            "actividad":"doc",
-            "fechaEntregada": "08/05/2022",
-            "statusEntrega":"Entregado"
-        }
-    ]
+            "alumnos": [
+                {
+                    "id":1,
+                    "name":"Edrey Hernandez Dzib",
+                    "actividad":"doc",
+                    "fechaEntregada": "08/05/2022",
+                    "statusEntrega":"Entregado"
+                },
+                {
+                    "id":2,
+                    "name":"Aimee Gutierrez May",
+                    "actividad":"doc",
+                    "fechaEntregada": "08/05/2022",
+                    "statusEntrega":"Entregado"
+                },
+                {
+                    "id":3,
+                    "name":"Jacob Elias Torres",
+                    "actividad":"doc",
+                    "fechaEntregada": "08/05/2022",
+                    "statusEntrega":"Entregado"
+                },
+                {
+                    "id":4,
+                    "name":"Alex Cabrera",
+                    "actividad":"doc",
+                    "fechaEntregada": "08/05/2022",
+                    "statusEntrega":"Entregado"
+                },
+                {
+                    "id":5,
+                    "name":"Edrey Hernandez Dzib",
+                    "actividad":"doc",
+                    "fechaEntregada": "08/05/2022",
+                    "statusEntrega":"Entregado"
+                }
+                    ]
         },        
         {
             "id":4,
             "name": "Dar una vuelta en la universidad",
             "profesorName":"David Granados",
             "status": "pendientes",
-            "description":"Crea un server en minecraft con tus amigos y sube una imagen para poder charcarlo",
+            "description":"Correr en toda la universidad una vez",
             "fechaEntrega":"16/06/2022",
             "rubrica":{
                 "criterios":[
