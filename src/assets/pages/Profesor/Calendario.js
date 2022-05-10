@@ -4,7 +4,6 @@ import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
@@ -52,19 +51,7 @@ function CalendarioContent() {
 
           <Menu user={ user }  open ={open } setOpen={ setOpen }/>
           
-          <Box
-            component="main"
-            sx={{
-              backgroundcolor: (theme) =>
-                theme.palette.mode === 'light'
-                  ? theme.palette.grey[100]
-                  : theme.palette.grey[900],
-              flexGrow: 1,
-              height: '100vh',
-              overflow: 'auto',
-            }}
-          >
-            <Toolbar />
+
             <Container maxWidth="lg" sx={{ mt: 5, mb: 5 }}>
               <Grid container spacing={6}>
 
@@ -85,7 +72,7 @@ function CalendarioContent() {
               </Grid>
             </Container>
           </Box>
-        </Box>
+
       </ThemeProvider>
     );
 }

@@ -100,12 +100,19 @@ const Menu = (props) => {
                     <ListItemText primary="Home" />
                 </ListItem>
 
-                <ListItem button onClick={ () => navigate('/dashboard') }>
+                <ListItem button onClick={ () => navigate('/cursos') }>
+                    <ListItemIcon>
+                        <EmojiFlagsRoundedIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Cursos" />
+                </ListItem>
+
+               {/*  <ListItem button onClick={ () => navigate('/dashboard') }>
                     <ListItemIcon>
                         <DashboardRoundedIcon />
                     </ListItemIcon>
                     <ListItemText primary="Dashboard" />
-                </ListItem>
+                </ListItem> */}
 
                 <ListItem button onClick={ () => navigate('/calendario') }>
                     <ListItemIcon>
@@ -114,13 +121,7 @@ const Menu = (props) => {
                     <ListItemText primary="Calendario" />
                 </ListItem>
 
-                <ListItem button onClick={ () => navigate('/cursos') }>
-                    <ListItemIcon>
-                        <EmojiFlagsRoundedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Cursos" />
-                </ListItem>
-
+                
                 <ListItem button onClick={ () => navigate('/badgets')}>
                     <ListItemIcon>
                         <MilitaryTechIcon />

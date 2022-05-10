@@ -14,7 +14,7 @@ import Cursos from './assets/pages/Profesor/Cursos'
 import Badgets from './assets/pages/Profesor/Badgets';
 import Misiones from './assets/pages/Profesor/Misiones';
 import Dashboard from './assets/pages/Profesor/Dashboard';
-import CrearActividad from './assets/pages/Profesor/Actividad';
+import CrearActividad from './assets/pages/Profesor/CrearActividad';
 import RubricaComponent from './assets/pages/Profesor/components/Rubrica/Rubrica';
 import Componentes from './assets/pages/Profesor/Componentes';
 import Calendario from './assets/pages/Profesor/Calendario';
@@ -35,7 +35,7 @@ import ProfesorConf from './assets/pages/Profesor/Configuracion';
 
 function App() {
   return (
-    <Router basename={"/"}>
+    <Router>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/sign-in" element={<Login />} />
