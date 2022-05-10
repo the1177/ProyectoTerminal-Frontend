@@ -39,8 +39,8 @@ import {
   KeyboardDatePicker
 } from "@material-ui/pickers";
 import Divider from '@mui/material/Divider';
-import Menu from './components/Menu/Menu';
-import NavBar from './components/NavBar/NavBar';
+import Menu from '../../components/Menu/Menu';
+import NavBar from '../../components/NavBar/NavBar';
 import * as Yup from 'yup';
 
 import { 
