@@ -37,7 +37,9 @@
     "prettier": "^1.9.1",
     "prettier-eslint": "^13.0.0",
     "react": "^17.0.2",
+    "react-apexcharts": "^1.4.0",
     "react-burger-menu": "^3.0.6",
+    "react-chartjs-2": "^4.1.0",
     "react-dom": "^17.0.2",
     "react-google-login": "^5.2.2",
     "react-icons": "^4.3.1",
@@ -50,7 +52,7 @@
     "react-tag-input": "^6.8.0",
     "react-viewerjs": "^0.1.9",
     "reactstrap": "^9.0.1",
-    "recharts": "^2.1.8",
+    "recharts": "^2.1.9",
     "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2",
     "yup": "^0.32.11"

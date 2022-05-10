@@ -15,7 +15,7 @@ import Badgets from "./assets/pages/Profesor/Badgets";
 import Misiones from "./assets/pages/Profesor/Misiones";
 import Dashboard from "./assets/pages/Profesor/Dashboard";
 import Calendario from "./assets/pages/Profesor/Calendario";
-import CrearActividad from "./assets/pages/Profesor/Actvidad";
+import CrearActividad from "./assets/pages/Profesor/CrearActividad";
 
 // Vistas Alumno
 import Alumno from "./assets/pages/Alumno/Alumno";

@@ -426,18 +426,18 @@ const CrearCursoContent = () => {
 
 
                           {/* <FormikConsumer>
-                            {({ validationSchema, validate, onSubmit, ...rest }) => (
-                              <pre
-                                style={{
-                                  fontSize: '.85rem',
-                                  padding: '.25rem .5rem',
-                                  overflowX: 'scroll',
-                                }}
-                              >
-                                {JSON.stringify(rest, null, 2)}
-                              </pre>
-                            )}
-                          </FormikConsumer> */}
+                  {({ validationSchema, validate, onSubmit, ...rest }) => (
+                    <pre
+                    style={{
+                      fontSize: '.85rem',
+                      padding: '.25rem .5rem',
+                      overflowX: 'scroll',
+                    }}
+                    >
+                    {JSON.stringify(rest, null, 2)}
+                    </pre>
+                    )}
+                  </FormikConsumer> */}
 
                         </Form>
                       </LocalizationProvider>

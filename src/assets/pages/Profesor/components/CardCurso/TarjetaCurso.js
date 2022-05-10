@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -27,11 +27,16 @@ import Matcha from '../CardCurso/images/matcha.png';
 
 export default function TarjetaCurso(curso){
   const cursoActual = curso.curso;
-  console.log(cursoActual);
+  // console.log(cursoActual);
+
+  const [infoCurso, setInfoCurso] = useState();
 
   const navigate = useNavigate();
-  const redirigirCurso = (e) =>{
-    //navigate('/cursos', { infoCurso: {cursoActual}});
+  const redirigirCurso = (e) => {
+    // console.log("este es el curso", e);
+    setInfoCurso(e);
+    localStorage.setItem("cursoActual", JSON.stringify(e.cursoActual));
+    navigate('/dashboard', { infoCurso: { curso: e }});
   }
 
   return (
@@ -39,7 +44,7 @@ export default function TarjetaCurso(curso){
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            DF
+            
           </Avatar>
         }
         action={
@@ -63,7 +68,7 @@ export default function TarjetaCurso(curso){
         </Typography>
       </CardContent>
       <CardContent>
-        <Button variant="contained" onClick={redirigirCurso}>Ir a Curso</Button>
+        <Button variant="contained" onClick={({e}) =>   redirigirCurso({cursoActual})}>Ir a Curso</Button>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
