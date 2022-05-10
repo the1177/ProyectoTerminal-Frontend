@@ -61,21 +61,28 @@ function DashboardContent() {
   //console.log("Holaaa", objCurso);
   const titulo = "Dashboard de " + objCurso.nombre;
   const [open, setOpen] = useState(true);
-  const toggleDrawer = () => {
-    setOpen(!open);
-  };
 
   // Boton Crear Actividad
   const navigate = useNavigate();
   const redirigirCrearActividad = (e) => {
     navigate('/crearActividad', { state: { user } },);
   }
-  let botonCrearActividad;
+  const redirigirCalificarActividad = (e) => {
+    navigate('/actividades', { state: { user, cursoActual } },);
+  }
+
+  let botonesProfesor;
   // Cambiar a !== estudiante
   if (user.dbdata.tipoUsuario === "estudiante") {
-    botonCrearActividad =
-      <Box item sx={{ m: 2 }}> <Button type="submit" variant="contained"
-        onClick={redirigirCrearActividad} >Crear Actividad</Button></Box>
+    botonesProfesor =
+      <Toolbar>
+        {/*    <Box item sx={{ m: -2 }}> <Button type="submit" variant="contained"
+        onClick={redirigirCrearActividad} >Crear Actividad</Button></Box> */}
+
+        <Box item sx={{ m: -2 }}> <Button type="submit" variant="contained"
+          onClick={redirigirCalificarActividad} >Ver Actividades</Button></Box>
+      </Toolbar>
+      ;
   } else {
     // No mostrar boton
   }
@@ -93,106 +100,104 @@ function DashboardContent() {
 
         <Menu user={user} open={open} setOpen={setOpen} />
 
-          <Container maxWidth="lg" sx={{ mt: 10, mb: 3 }}>
+        <Container maxWidth="lg" sx={{ mt: 10, mb: 3 }}>
 
-          {botonCrearActividad}
+          {botonesProfesor}
 
 
-            <Grid container spacing={6}>
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    borderRadius: 3,
-                    height: 'auto',
-                    width: 'auto'
-                  }}
-                >
+          <Grid container spacing={2}>
+            <Grid item xs={6} md={8} lg={9}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  borderRadius: 3,
+                  height: 'auto',
+                  width: 'auto'
+                }}
+              >
 
-                  <Barras />
-                </Paper>
-              </Grid>
-
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    borderRadius: 3,
-                    height: 'auto',
-                    width: 'auto'
-                  }}
-                >
-                  <BoxPlotC />
-                </Paper>
-              </Grid>
-
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    borderRadius: 3,
-                    height: 'auto',
-                    width: 'auto'
-                  }}
-                >
-                  <BarChart />
-                </Paper>
-              </Grid>
-
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    borderRadius: 3,
-                    height: 'auto',
-                    width: 'auto'
-                  }}
-                >
-                  <BarrasSelect />
-                </Paper>
-              </Grid>
-
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    borderRadius: 3,
-                    height: 'auto',
-                    width: 'auto'
-                  }}
-                >
-                  <CustomDatalabels />
-                </Paper>
-              </Grid>
-
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    borderRadius: 3,
-                    height: 'auto',
-                    width: 'auto'
-                  }}
-                >
-                  <Schedule />
-                </Paper>
-              </Grid>
+                <Barras />
+              </Paper>
             </Grid>
 
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper
+                sx={{
+                  flexDirection: 'column',
+                  borderRadius: 3,
+                  height: 'auto',
+                  width: 'auto'
+                }}
+              >
+                <BoxPlotC />
+              </Paper>
+            </Grid>
 
-          </Container>
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  borderRadius: 3,
+                  height: 'auto',
+                  width: 'auto'
+                }}
+              >
+                <BarChart />
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  borderRadius: 3,
+                  height: 'auto',
+                  width: 'auto'
+                }}
+              >
+                <BarrasSelect />
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  borderRadius: 3,
+                  height: 'auto',
+                  width: 'auto'
+                }}
+              >
+                <CustomDatalabels />
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  borderRadius: 3,
+                  height: 'auto',
+                  width: 'auto'
+                }}
+              >
+                <Schedule />
+              </Paper>
+            </Grid>
+          </Grid>
+
+
+        </Container>
       </Box>
     </ThemeProvider>
   );

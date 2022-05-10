@@ -24,6 +24,7 @@ import Rose from '../CardCurso/images/rose.png';
 import Green from '../CardCurso/images/green.png';
 import Matcha from '../CardCurso/images/matcha.png';
 
+const colors = [Violeta, Rose, Green, Matcha];
 
 export default function TarjetaCurso(curso){
   const cursoActual = curso.curso;
@@ -59,7 +60,7 @@ export default function TarjetaCurso(curso){
       <CardMedia
         component="img"
         height="194"
-        src={Violeta}
+        src={ Green }
         alt="Fondo"
       />
       <CardContent>
@@ -70,14 +71,6 @@ export default function TarjetaCurso(curso){
       <CardContent>
         <Button variant="contained" onClick={({e}) =>   redirigirCurso({cursoActual})}>Ir a Curso</Button>
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-      </CardActions>
     </Card>
   );
 }

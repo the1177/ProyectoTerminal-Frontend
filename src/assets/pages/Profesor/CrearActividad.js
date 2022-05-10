@@ -306,7 +306,6 @@ const ActividadContent = () => {
             
             {/* Paper es la sección completa del Form cuadro blanco*/}
             <Paper
-              fixed
               sx={{
                 p: 5,
                 margin: 'auto',
@@ -322,7 +321,6 @@ const ActividadContent = () => {
             >
               {/* Box es todo el contenido del form */}
               <Box
-                fixed
                 sx={{
                   marginTop: 3,
                   '& .MuiTextField-root': { m: 1, width: '100%'},
@@ -451,7 +449,7 @@ const ActividadContent = () => {
                                 <Button type="submit" variant="contained">Crear Actividad</Button>
                               </Box>
 
-                              <FormikConsumer>
+                              {/* <FormikConsumer>
                                 {({ validationSchema, validate, onSubmit, ...rest }) => (
                                   <pre
                                     style={{
@@ -468,7 +466,7 @@ const ActividadContent = () => {
                                     {JSON.stringify(rest, null, 2)}
                                   </pre>
                                 )}
-                              </FormikConsumer>
+                              </FormikConsumer> */}
 
                             </Form>
                           </LocalizationProvider>

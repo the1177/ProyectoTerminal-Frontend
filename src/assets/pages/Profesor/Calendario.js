@@ -52,7 +52,7 @@ function CalendarioContent() {
           <Menu user={ user }  open ={open } setOpen={ setOpen }/>
           
 
-            <Container maxWidth="lg" sx={{ mt: 5, mb: 5 }}>
+            <Container maxWidth="lg" sx={{ mt: 10, mb: 3 }}>
               <Grid container spacing={6}>
 
                 <Grid item xs="auto" md="auto" lg={12}>

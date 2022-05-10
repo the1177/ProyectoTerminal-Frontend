@@ -113,7 +113,7 @@ const CalificarAlumno = (props) => {
 
                                     <Grid className="Calificar_Actividad">
                                         <Box item sx={{m: 2, textAlign:'center'}}>
-                                            <Button  variant="contained" >Mostrar Actividad</Button>
+                                            <Button  variant="contained" >Ver entrega</Button>
                                         </Box>                        
                                     </Grid>                 
                                 </Grid>

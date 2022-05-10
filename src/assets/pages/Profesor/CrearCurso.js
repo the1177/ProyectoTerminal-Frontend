@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import ClassIcon from '@mui/icons-material/Class';
@@ -109,6 +110,7 @@ const mdTheme = createTheme();
 const CrearCursoContent = () => {
   const saved = localStorage.getItem("user");
   const user = JSON.parse(saved);
+  const dbUser = user.dbdata;
   console.log(user);
 
   // Para Menu responsivo
@@ -116,6 +118,12 @@ const CrearCursoContent = () => {
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
+  // Boton Crear curso
+  const navigate = useNavigate();
+  const redirigirCrearCurso = () => {
+    navigate('/cursos');
+  }
 
   // Obtener fecha actual
   const [fechaActual, setFechaActual] = React.useState(new Date());
@@ -130,6 +138,7 @@ const CrearCursoContent = () => {
     datos.append("urlCurso", "url");
     datos.append("fechaInicio", values.fechaInicio ? values.fechaInicio : fechaActual);
     datos.append("fechaFin", values.fechaFin ? values.fechaFin : fechaActual);
+    datos.append("idProfesor", dbUser.usuarioId ? dbUser.usuarioId : 0);
     //data.append("aaa", aaa);
 
     // Agregar campos a JSON
@@ -150,6 +159,7 @@ const CrearCursoContent = () => {
         if (response.data === "Curso agregado exitosamente.") {
           console.log(response);
           alert("Curso guardado exitosamente");
+          redirigirCrearCurso();
         }
         // Curso no guardado
         else {
