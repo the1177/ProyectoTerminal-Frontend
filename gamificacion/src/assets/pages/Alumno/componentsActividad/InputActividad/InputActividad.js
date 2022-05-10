@@ -23,9 +23,6 @@ function InputActividad(props) {
       
        await axios.post(`https://whispering-retreat-36377.herokuapp.com/upload-file`, f, { headers: {'Content-Type': 'multipart/form-data; boundary=${form._boundary}'}})
        .then(response=> {console.log(response)}).catch(error=>{console.log(error)})
-      
-
-
      }
 
   return (

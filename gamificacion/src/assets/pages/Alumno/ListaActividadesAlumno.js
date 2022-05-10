@@ -23,7 +23,7 @@ function ListaActividadesAlumno(props) {
         }
     }
     function IrDetalles (id, e) {
-        console.log(data[id-1])
+        // console.log(data[id-1])
         // setFilterData(data.filter(item => item.id === id))
         window.localStorage.setItem("localStorageInfo",JSON.stringify(data[id-1]))
         navigate('/detalle');

@@ -8,6 +8,9 @@ import Menu from '../../../Profesor/components/Menu/Menu'
 import NavBar from '../../../Profesor/components/NavBar/NavBar';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import {Switch} from 'antd';
+import 'antd/dist/antd.css';
 //COMPONENTES
 import "../../Alumno.css";
 import Actividades from '../Actividad.json'; 
@@ -15,10 +18,13 @@ import TituloActividad from '../TituloActividad/Titulo';
 import DescripcionActividad from '../DescripcionActividad/DescripcionActividad';
 import MostrarRubricaActividad from '../MostrarRubricaActividad/MostrarRubricaActividad';
 import InputActividad from '../InputActividad/InputActividad';
-
+import MostrarRubrica from "./MostrarRubrica";
+import MostrarListaCotejo from "./MostrarListaCotejo";
+import { set } from "date-fns";
 const drawerWidth = 240;
 
 const mdTheme = createTheme();
+
 
 const EntregarActividad= () => {
 
@@ -31,32 +37,46 @@ const EntregarActividad= () => {
     const toggleDrawer = () => {
       setOpen(!open);
     };
-   
+    
+    const [rubrica, setRubrica] = useState(false)
+    const [cotejo, setCotejo] = useState(false)
+
+    const toggle = () =>{
+      rubrica ? setRubrica(false) : setRubrica(true);
+      cotejo ? setCotejo(true) : setCotejo (false)
+    }
+
+    const CotejoLista = () =>{
+      cotejo ?  setCotejo(false) : setCotejo(true)
+      rubrica ? setRubrica(true) : setRubrica(false);
+    }
+
     return (
-      
+
       <React.Fragment>
       <ThemeProvider theme={mdTheme} >
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
           
-          <NavBar tituloNavBar="Calificar Actividad" open={ open } setOpen={ setOpen }/>
+          <NavBar tituloNavBar="Entregar Actividad" open={ open } setOpen={ setOpen }/>
 
           <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
 
           {/* Paper es la sección completa del Form cuadro blanco*/}
           <Paper
-            fixed
+
             sx={{
               p: 2,
               margin: 'auto',
               flexDirection: 'column',
               borderRadius: 3,
-              height: 'auto',
-              width: '65%',
+              height: '4000',
+              width: '70%',
               alignItems: 'center',
               alignContent: 'center',
               //textAlign:'center',
-              marginTop: 15,
+              marginTop: 3,
+              // backgroundColor:'red'
             }}
           >
             {/* Box es todo el contenido del form */}
@@ -68,7 +88,7 @@ const EntregarActividad= () => {
                     ? theme.palette.grey[100]
                     : theme.palette.grey[900],
                 flexGrow: 1,
-                height: '100vh',
+                // height: '100vh',
               }}
               >
               <Toolbar />
@@ -76,7 +96,7 @@ const EntregarActividad= () => {
                 <Grid container spacing={3}>
                     <div className='total-chart'>
                       <div className='first-section'>
-                        <div>
+                        
                           {/* Chart */}
                           <Grid item xs={12} md={8} lg={9}>
                             <Paper
@@ -86,18 +106,27 @@ const EntregarActividad= () => {
                                 flexDirection: 'column',
                                 borderRadius: 3,
                                 height: 'auto',
-                                width: 800,
-                                //backgroundColor:'red'
+                                width: '100%',
+                                // backgroundColor:'red'
                               }}
                             >
                               <TituloActividad name={localStorageInfo.name}  />
                               <hr/>
                               <DescripcionActividad descripcion={localStorageInfo.description} />
                               <hr/>
-                              <MostrarRubricaActividad />
+                              <div className="MostrarRubrica">
+                                <h4>Mostrar tipo de evaluación</h4>                            
+                                <div>
+                                    <h6>Mostrar Rubrica</h6><Switch  onClick={toggle}/>
+                                </div>
+                                <div>
+                                    <h6>Mostrar Lista de Cotejo</h6><Switch  onClick={CotejoLista}/>
+                                </div>
+
+                              </div>   
                             </Paper>
                           </Grid>
-                        </div>
+                        
                         {/* PASTEL DE ACTIVIDADES */}
                         <div className='Actividad-Entrega'>
                           <Paper
@@ -107,9 +136,8 @@ const EntregarActividad= () => {
                                 flexDirection: 'column',
                                 borderRadius: 3,
                                 height: '100%',                          
-                                width:"95%",
-                                marginleft:10,
-                              //backgroundColor: 'blue',
+                                width:"95%",                                
+                                // backgroundColor: 'blue',
                               //  justifyContent: 'centar'
                               }}
 
@@ -118,25 +146,10 @@ const EntregarActividad= () => {
                               <InputActividad />
                           </Paper>
                         </div>
-                      </div>                    
-                      <div className='second-section'>
-                        <div className='dispersion-container'>
-                          <Grid item xs={12} md={8} lg={9}>
-                            <Paper
-                              sx={{
-                                p: 2,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                borderRadius: 3,
-                                height: 320,                          
-                                width:350,                            
-                                //backgroundColor:'red'
-                              }}
-                              >
-                              </Paper>
-                          </Grid>
-                        </div>
-                      </div>                   
+                      </div>
+                      {rubrica  ? <MostrarRubrica data = {localStorageInfo.rubrica.criterios}/> : null}
+                      {cotejo  ? <MostrarListaCotejo data = {localStorageInfo.listaDeCotejo.cotejo} /> : null}
+                      
                     </div>
                 </Grid>              
               </Container>
