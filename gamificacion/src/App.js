@@ -43,7 +43,7 @@ function App() {
         <Route path="/sign-up" element={<CreateUser />} />
         <Route path="/cursos" element={<Cursos />} />
         <Route path="/badgets" element={<Badgets />} />
-        <Route path="/misiones" element={<Misiones />} />
+        <Route path="/actividades" element={<Misiones />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/crearcurso" element={<CrearCurso />} />
         <Route path="/crearactividad" element={<CrearActividad />} />
@@ -55,7 +55,7 @@ function App() {
         <Route path="/alumno" element={<Alumno />} />
         <Route path="/cursoalumno" element={<CursoAlumno />} />
         <Route path="/badgetsalumno" element={<BadgetsAlumno />} />
-        <Route path="/misionesalumno" element={<MisionesAlumno /> } />
+        <Route path="/actividadesalumno" element={<MisionesAlumno /> } />
         <Route path="/dashboardalumno" element={<DashboardAlumno /> } />
         <Route path="/encuesta" element={<Encuesta />} />
         <Route path="/editarUsuario" element={<EditarUsuario /> } />
