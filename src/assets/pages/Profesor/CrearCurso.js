@@ -119,7 +119,7 @@ const CrearCursoContent = () => {
     setOpen(!open);
   };
 
-  // Boton Crear curso
+  // Redirigir a cirsps
   const navigate = useNavigate();
   const redirigirCrearCurso = () => {
     navigate('/cursos');

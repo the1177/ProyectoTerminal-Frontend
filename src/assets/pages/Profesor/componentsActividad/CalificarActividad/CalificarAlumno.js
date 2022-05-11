@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import { useNavigate } from 'react-router-dom';
 
+import Actividad from '../Actividad.json';
+
 {/* MUI MATERIAL */}
 import MuiTextField from '@mui/material/TextField';
 import { 
@@ -38,15 +40,13 @@ import {
 
 
 const CalificarAlumno = (props) => {
-    
-    const [id, setId] = useState('')
-
-    const [data, setData] = useState(props.data);
+    const localStorageActividad = localStorage.getItem('localStorageActividad');
+    const [id, setId] = useState();
+    const [dataa, setData] = useState();
     const [filterData, setFilterData ] = useState([]);
 
-
     //usar data y no props
-    console.log("Calificar alumnos pestaña:",data);
+    console.log("Calificar alumnos pestaña:", data);
     return (
     <Grid conatiner="true" className="Alumno-Tarjeta-Container">
 

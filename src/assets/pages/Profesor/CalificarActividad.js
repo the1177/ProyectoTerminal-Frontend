@@ -10,16 +10,16 @@ import CalificarAlumno from './componentsActividad/CalificarActividad/CalificarA
 import Actividad from './componentsActividad/Actividad.json';
 
 const drawerWidth = 240;
-
 const mdTheme = createTheme();
 
 function CalificarActividadContent() {
     const saved = localStorage.getItem("user");
-    const [localStorageActividad, setLocalStorageActividad] = useState(JSON.parse(window.localStorage.getItem('localStorageActividad')));
+    //const [localStorageActividad, setLocalStorageActividad] = useState(JSON.parse(window.localStorage.getItem('localStorageActividad')));
+    const localStorageActividad = localStorage.getItem('localStorageActividad');
     const user = JSON.parse(saved);
     // console.log("calificarActividad",localStorageActividad);
 
-    const [data, setData] = useState(Actividad);
+    const [data, setData] = useState(localStorageActividad);
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
@@ -75,7 +75,7 @@ function CalificarActividadContent() {
                       }}
 
                     >
-                      <CalificarAlumno  data = {localStorageActividad}/> 
+                      <CalificarAlumno/> 
                     </Box>
                 </Grid>
 
