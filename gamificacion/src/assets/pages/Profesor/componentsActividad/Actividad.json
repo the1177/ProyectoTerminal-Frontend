@@ -10,11 +10,107 @@
             "rubrica":{
                 "criterios":[
                     {
-                    "nombre":"",
+                    "nombre":"Criterio 1",
                     "niveles":[
-                        {},
-                        {}
+                        {   
+                            "Nombre":"Exelente",
+                            "descripcion":"Profundiza en los conceptos....",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Bien",
+                            "descripcion":"No suficiente",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Regular",
+                            "descripcion":"Mala organización",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Deficiente",
+                            "descripcion":"Necesitas mejorar",
+                            "puntos": 2.5
+                        }                        
                         ]
+                    },                    
+                    {
+                        "nombre":"Criterio 2",
+                        "niveles":[
+                            {   
+                                "Nombre":"Exelente",
+                                "descripcion":"Vas bien",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Bien",
+                                "descripcion":"Masomenos",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Regular",
+                                "descripcion":"regular",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Deficiente",
+                                "descripcion":"Mal",
+                                "puntos": 2.5
+                            }
+                            
+                            ]
+                    },
+                    {
+                            "nombre":"Criterio 3",
+                            "niveles":[
+                                {   
+                                    "Nombre":"Exelente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Bien",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Regular",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Deficiente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                }
+                                
+                                ]
+                    },
+                    {
+                                "nombre":"Criterio 4",
+                                "niveles":[
+                                    {   
+                                        "Nombre":"Exelente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Bien",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Regular",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Deficiente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    }
+                                    
+                                    ]
                     }
                 ]   
             },
@@ -49,12 +145,65 @@
         },
         {
             "id":5,
-            "name":"Edrey Hernandez Dzib",
+            "name":"Eb",
             "actividad":"doc",
             "fechaEntregada": "08/05/2022",
             "statusEntrega":"Entregado"
         }
-        ]
+            ],   
+            "listaDeCotejo":{
+            "cotejo": [
+                {
+                    "titulo": "TITULO 1", 
+                    "descripcion": "DESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TEST", 
+                    "puntos": "6"
+                },
+                {
+                    "titulo": "TITULO2", 
+                    "descripcion": "DESCRIPCION TEST", 
+                    "puntos": "7"
+                },
+                {
+                    "titulo": "TITULO3", 
+                    "descripcion": "DESCRIPCION TEST", 
+                    "puntos": "2"
+                },
+                {
+                    "titulo": "TITULO4", 
+                    "descripcion": "DESCRIPCION TEST", 
+                    "puntos": "3"
+                },
+                {
+                    "titulo": "TITULO5", 
+                    "descripcion": "DESCRIPCION TEST", 
+                    "puntos": "4"
+                },
+                {
+                    "titulo": "TITULO5", 
+                    "descripcion": "DESCRIPCION TEST", 
+                    "puntos": "4"
+                },
+                {
+                    "titulo": "TITULO5", 
+                    "descripcion": "DESCRIPCION TEST", 
+                    "puntos": "4"
+                },
+                {
+                    "titulo": "TITULO5", 
+                    "descripcion": "DESCRIPCION TEST", 
+                    "puntos": "4"
+                },
+                {
+                    "titulo": "TITULO5", 
+                    "descripcion": "DESCRIPCION TEST", 
+                    "puntos": "4"
+                },                   {
+                    "titulo": "TITULO5", 
+                    "descripcion": "DESCRIPCION TEST", 
+                    "puntos": "4"
+                }
+            ]
+            }
         },        
         {
             "id":2,
@@ -66,11 +215,107 @@
             "rubrica":{
                 "criterios":[
                     {
-                    "nombre":"",
+                    "nombre":"Criterio 1",
                     "niveles":[
-                        {},
-                        {}
+                        {   
+                            "Nombre":"Exelente",
+                            "descripcion":"Profundiza en los conceptos....",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Bien",
+                            "descripcion":"No suficiente",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Regular",
+                            "descripcion":"Mala organización",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Deficiente",
+                            "descripcion":"Necesitas mejorar",
+                            "puntos": 2.5
+                        }                        
                         ]
+                    },                    
+                    {
+                        "nombre":"Criterio 2",
+                        "niveles":[
+                            {   
+                                "Nombre":"Exelente",
+                                "descripcion":"Vas bien",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Bien",
+                                "descripcion":"Masomenos",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Regular",
+                                "descripcion":"regular",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Deficiente",
+                                "descripcion":"Mal",
+                                "puntos": 2.5
+                            }
+                            
+                            ]
+                    },
+                    {
+                            "nombre":"Criterio 3",
+                            "niveles":[
+                                {   
+                                    "Nombre":"Exelente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Bien",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Regular",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Deficiente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                }
+                                
+                                ]
+                    },
+                    {
+                                "nombre":"Criterio 4",
+                                "niveles":[
+                                    {   
+                                        "Nombre":"Exelente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Bien",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Regular",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Deficiente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    }
+                                    
+                                    ]
                     }
                 ]   
             },
@@ -110,7 +355,60 @@
                     "fechaEntregada": "08/05/2022",
                     "statusEntrega":"Entregado"
                 }
-                    ]
+            ],
+            "listaDeCotejo":{
+                        "cotejo": [
+                            {
+                                "titulo": "TITULO 1", 
+                                "descripcion": "DESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TEST", 
+                                "puntos": "6"
+                            },
+                            {
+                                "titulo": "TITULO2", 
+                                "descripcion": "DESCRIPCION TEST", 
+                                "puntos": "7"
+                            },
+                            {
+                                "titulo": "TITULO3", 
+                                "descripcion": "DESCRIPCION TEST", 
+                                "puntos": "2"
+                            },
+                            {
+                                "titulo": "TITULO4", 
+                                "descripcion": "DESCRIPCION TEST", 
+                                "puntos": "3"
+                            },
+                            {
+                                "titulo": "TITULO5", 
+                                "descripcion": "DESCRIPCION TEST", 
+                                "puntos": "4"
+                            },
+                            {
+                                "titulo": "TITULO5", 
+                                "descripcion": "DESCRIPCION TEST", 
+                                "puntos": "4"
+                            },
+                            {
+                                "titulo": "TITULO5", 
+                                "descripcion": "DESCRIPCION TEST", 
+                                "puntos": "4"
+                            },
+                            {
+                                "titulo": "TITULO5", 
+                                "descripcion": "DESCRIPCION TEST", 
+                                "puntos": "4"
+                            },
+                            {
+                                "titulo": "TITULO5", 
+                                "descripcion": "DESCRIPCION TEST", 
+                                "puntos": "4"
+                            },                   {
+                                "titulo": "TITULO5", 
+                                "descripcion": "DESCRIPCION TEST", 
+                                "puntos": "4"
+                            }
+                        ]
+            }
         },        
         {
             "id":3,
@@ -122,11 +420,107 @@
             "rubrica":{
                 "criterios":[
                     {
-                    "nombre":"",
+                    "nombre":"Criterio 1",
                     "niveles":[
-                        {},
-                        {}
+                        {   
+                            "Nombre":"Exelente",
+                            "descripcion":"Profundiza en los conceptos....",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Bien",
+                            "descripcion":"No suficiente",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Regular",
+                            "descripcion":"Mala organización",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Deficiente",
+                            "descripcion":"Necesitas mejorar",
+                            "puntos": 2.5
+                        }                        
                         ]
+                    },                    
+                    {
+                        "nombre":"Criterio 2",
+                        "niveles":[
+                            {   
+                                "Nombre":"Exelente",
+                                "descripcion":"Vas bien",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Bien",
+                                "descripcion":"Masomenos",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Regular",
+                                "descripcion":"regular",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Deficiente",
+                                "descripcion":"Mal",
+                                "puntos": 2.5
+                            }
+                            
+                            ]
+                    },
+                    {
+                            "nombre":"Criterio 3",
+                            "niveles":[
+                                {   
+                                    "Nombre":"Exelente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Bien",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Regular",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Deficiente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                }
+                                
+                                ]
+                    },
+                    {
+                                "nombre":"Criterio 4",
+                                "niveles":[
+                                    {   
+                                        "Nombre":"Exelente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Bien",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Regular",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Deficiente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    }
+                                    
+                                    ]
                     }
                 ]   
             },
@@ -166,7 +560,60 @@
                     "fechaEntregada": "08/05/2022",
                     "statusEntrega":"Entregado"
                 }
-                    ]
+            ],
+            "listaDeCotejo":{
+                "cotejo": [
+                    {
+                        "titulo": "TITULO 1", 
+                        "descripcion": "DESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TEST", 
+                        "puntos": "6"
+                    },
+                    {
+                        "titulo": "TITULO2", 
+                        "descripcion": "DESCRIPCION TEST", 
+                        "puntos": "7"
+                    },
+                    {
+                        "titulo": "TITULO3", 
+                        "descripcion": "DESCRIPCION TEST", 
+                        "puntos": "2"
+                    },
+                    {
+                        "titulo": "TITULO4", 
+                        "descripcion": "DESCRIPCION TEST", 
+                        "puntos": "3"
+                    },
+                    {
+                        "titulo": "TITULO5", 
+                        "descripcion": "DESCRIPCION TEST", 
+                        "puntos": "4"
+                    },
+                    {
+                        "titulo": "TITULO5", 
+                        "descripcion": "DESCRIPCION TEST", 
+                        "puntos": "4"
+                    },
+                    {
+                        "titulo": "TITULO5", 
+                        "descripcion": "DESCRIPCION TEST", 
+                        "puntos": "4"
+                    },
+                    {
+                        "titulo": "TITULO5", 
+                        "descripcion": "DESCRIPCION TEST", 
+                        "puntos": "4"
+                    },
+                    {
+                        "titulo": "TITULO5", 
+                        "descripcion": "DESCRIPCION TEST", 
+                        "puntos": "4"
+                    },                   {
+                        "titulo": "TITULO5", 
+                        "descripcion": "DESCRIPCION TEST", 
+                        "puntos": "4"
+                    }
+                ]
+    }
         },        
         {
             "id":4,
@@ -178,11 +625,107 @@
             "rubrica":{
                 "criterios":[
                     {
-                    "nombre":"",
+                    "nombre":"Criterio 1",
                     "niveles":[
-                        {},
-                        {}
+                        {   
+                            "Nombre":"Exelente",
+                            "descripcion":"Profundiza en los conceptos....",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Bien",
+                            "descripcion":"No suficiente",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Regular",
+                            "descripcion":"Mala organización",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Deficiente",
+                            "descripcion":"Necesitas mejorar",
+                            "puntos": 2.5
+                        }                        
                         ]
+                    },                    
+                    {
+                        "nombre":"Criterio 2",
+                        "niveles":[
+                            {   
+                                "Nombre":"Exelente",
+                                "descripcion":"Vas bien",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Bien",
+                                "descripcion":"Masomenos",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Regular",
+                                "descripcion":"regular",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Deficiente",
+                                "descripcion":"Mal",
+                                "puntos": 2.5
+                            }
+                            
+                            ]
+                    },
+                    {
+                            "nombre":"Criterio 3",
+                            "niveles":[
+                                {   
+                                    "Nombre":"Exelente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Bien",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Regular",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Deficiente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                }
+                                
+                                ]
+                    },
+                    {
+                                "nombre":"Criterio 4",
+                                "niveles":[
+                                    {   
+                                        "Nombre":"Exelente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Bien",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Regular",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Deficiente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    }
+                                    
+                                    ]
                     }
                 ]   
             },
@@ -222,7 +765,60 @@
             "fechaEntregada": "08/05/2022",
             "statusEntrega":"Entregado"
         }
-    ]
+    ],
+    "listaDeCotejo":{
+        "cotejo": [
+            {
+                "titulo": "TITULO 1", 
+                "descripcion": "DESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TEST", 
+                "puntos": "6"
+            },
+            {
+                "titulo": "TITULO2", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "7"
+            },
+            {
+                "titulo": "TITULO3", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "2"
+            },
+            {
+                "titulo": "TITULO4", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "3"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },                   {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            }
+        ]
+}
         },        
         {
             "id":5 ,
@@ -234,11 +830,107 @@
             "rubrica":{
                 "criterios":[
                     {
-                    "nombre":"",
+                    "nombre":"Criterio 1",
                     "niveles":[
-                        {},
-                        {}
+                        {   
+                            "Nombre":"Exelente",
+                            "descripcion":"Profundiza en los conceptos....",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Bien",
+                            "descripcion":"No suficiente",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Regular",
+                            "descripcion":"Mala organización",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Deficiente",
+                            "descripcion":"Necesitas mejorar",
+                            "puntos": 2.5
+                        }                        
                         ]
+                    },                    
+                    {
+                        "nombre":"Criterio 2",
+                        "niveles":[
+                            {   
+                                "Nombre":"Exelente",
+                                "descripcion":"Vas bien",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Bien",
+                                "descripcion":"Masomenos",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Regular",
+                                "descripcion":"regular",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Deficiente",
+                                "descripcion":"Mal",
+                                "puntos": 2.5
+                            }
+                            
+                            ]
+                    },
+                    {
+                            "nombre":"Criterio 3",
+                            "niveles":[
+                                {   
+                                    "Nombre":"Exelente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Bien",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Regular",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Deficiente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                }
+                                
+                                ]
+                    },
+                    {
+                                "nombre":"Criterio 4",
+                                "niveles":[
+                                    {   
+                                        "Nombre":"Exelente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Bien",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Regular",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Deficiente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    }
+                                    
+                                    ]
                     }
                 ]   
             },
@@ -278,7 +970,60 @@
             "fechaEntregada": "08/05/2022",
             "statusEntrega":"Entregado"
         }
-    ]
+    ],
+    "listaDeCotejo":{
+        "cotejo": [
+            {
+                "titulo": "TITULO 1", 
+                "descripcion": "DESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TEST", 
+                "puntos": "6"
+            },
+            {
+                "titulo": "TITULO2", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "7"
+            },
+            {
+                "titulo": "TITULO3", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "2"
+            },
+            {
+                "titulo": "TITULO4", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "3"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },                   {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            }
+        ]
+}
         },
         {
             "id":6 ,
@@ -290,11 +1035,107 @@
             "rubrica":{
                 "criterios":[
                     {
-                    "nombre":"",
+                    "nombre":"Criterio 1",
                     "niveles":[
-                        {},
-                        {}
+                        {   
+                            "Nombre":"Exelente",
+                            "descripcion":"Profundiza en los conceptos....",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Bien",
+                            "descripcion":"No suficiente",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Regular",
+                            "descripcion":"Mala organización",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Deficiente",
+                            "descripcion":"Necesitas mejorar",
+                            "puntos": 2.5
+                        }                        
                         ]
+                    },                    
+                    {
+                        "nombre":"Criterio 2",
+                        "niveles":[
+                            {   
+                                "Nombre":"Exelente",
+                                "descripcion":"Vas bien",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Bien",
+                                "descripcion":"Masomenos",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Regular",
+                                "descripcion":"regular",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Deficiente",
+                                "descripcion":"Mal",
+                                "puntos": 2.5
+                            }
+                            
+                            ]
+                    },
+                    {
+                            "nombre":"Criterio 3",
+                            "niveles":[
+                                {   
+                                    "Nombre":"Exelente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Bien",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Regular",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Deficiente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                }
+                                
+                                ]
+                    },
+                    {
+                                "nombre":"Criterio 4",
+                                "niveles":[
+                                    {   
+                                        "Nombre":"Exelente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Bien",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Regular",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Deficiente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    }
+                                    
+                                    ]
                     }
                 ]   
             },
@@ -334,7 +1175,59 @@
             "fechaEntregada": "08/05/2022",
             "statusEntrega":"Entregado"
         }
-    ]
+    ],            "listaDeCotejo":{
+        "cotejo": [
+            {
+                "titulo": "TITULO 1", 
+                "descripcion": "DESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TEST", 
+                "puntos": "6"
+            },
+            {
+                "titulo": "TITULO2", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "7"
+            },
+            {
+                "titulo": "TITULO3", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "2"
+            },
+            {
+                "titulo": "TITULO4", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "3"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },                   {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            }
+        ]
+}
         },
         {
             "id":7 ,
@@ -346,11 +1239,107 @@
             "rubrica":{
                 "criterios":[
                     {
-                    "nombre":"",
+                    "nombre":"Criterio 1",
                     "niveles":[
-                        {},
-                        {}
+                        {   
+                            "Nombre":"Exelente",
+                            "descripcion":"Profundiza en los conceptos....",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Bien",
+                            "descripcion":"No suficiente",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Regular",
+                            "descripcion":"Mala organización",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Deficiente",
+                            "descripcion":"Necesitas mejorar",
+                            "puntos": 2.5
+                        }                        
                         ]
+                    },                    
+                    {
+                        "nombre":"Criterio 2",
+                        "niveles":[
+                            {   
+                                "Nombre":"Exelente",
+                                "descripcion":"Vas bien",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Bien",
+                                "descripcion":"Masomenos",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Regular",
+                                "descripcion":"regular",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Deficiente",
+                                "descripcion":"Mal",
+                                "puntos": 2.5
+                            }
+                            
+                            ]
+                    },
+                    {
+                            "nombre":"Criterio 3",
+                            "niveles":[
+                                {   
+                                    "Nombre":"Exelente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Bien",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Regular",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Deficiente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                }
+                                
+                                ]
+                    },
+                    {
+                                "nombre":"Criterio 4",
+                                "niveles":[
+                                    {   
+                                        "Nombre":"Exelente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Bien",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Regular",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Deficiente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    }
+                                    
+                                    ]
                     }
                 ]   
             },
@@ -390,7 +1379,60 @@
             "fechaEntregada": "08/05/2022",
             "statusEntrega":"Entregado"
         }
-    ]
+    ],
+    "listaDeCotejo":{
+        "cotejo": [
+            {
+                "titulo": "TITULO 1", 
+                "descripcion": "DESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TEST", 
+                "puntos": "6"
+            },
+            {
+                "titulo": "TITULO2", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "7"
+            },
+            {
+                "titulo": "TITULO3", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "2"
+            },
+            {
+                "titulo": "TITULO4", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "3"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },                   {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            }
+        ]
+}
         },
         {
             "id":8 ,
@@ -402,11 +1444,107 @@
             "rubrica":{
                 "criterios":[
                     {
-                    "nombre":"",
+                    "nombre":"Criterio 1",
                     "niveles":[
-                        {},
-                        {}
+                        {   
+                            "Nombre":"Exelente",
+                            "descripcion":"Profundiza en los conceptos....",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Bien",
+                            "descripcion":"No suficiente",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Regular",
+                            "descripcion":"Mala organización",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Deficiente",
+                            "descripcion":"Necesitas mejorar",
+                            "puntos": 2.5
+                        }                        
                         ]
+                    },                    
+                    {
+                        "nombre":"Criterio 2",
+                        "niveles":[
+                            {   
+                                "Nombre":"Exelente",
+                                "descripcion":"Vas bien",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Bien",
+                                "descripcion":"Masomenos",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Regular",
+                                "descripcion":"regular",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Deficiente",
+                                "descripcion":"Mal",
+                                "puntos": 2.5
+                            }
+                            
+                            ]
+                    },
+                    {
+                            "nombre":"Criterio 3",
+                            "niveles":[
+                                {   
+                                    "Nombre":"Exelente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Bien",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Regular",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Deficiente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                }
+                                
+                                ]
+                    },
+                    {
+                                "nombre":"Criterio 4",
+                                "niveles":[
+                                    {   
+                                        "Nombre":"Exelente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Bien",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Regular",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Deficiente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    }
+                                    
+                                    ]
                     }
                 ]   
             },
@@ -446,7 +1584,60 @@
             "fechaEntregada": "08/05/2022",
             "statusEntrega":"Entregado"
         }
-    ]
+    ],
+    "listaDeCotejo":{
+        "cotejo": [
+            {
+                "titulo": "TITULO 1", 
+                "descripcion": "DESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TEST", 
+                "puntos": "6"
+            },
+            {
+                "titulo": "TITULO2", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "7"
+            },
+            {
+                "titulo": "TITULO3", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "2"
+            },
+            {
+                "titulo": "TITULO4", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "3"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },                   {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            }
+        ]
+}
         },
         {
             "id":9 ,
@@ -458,11 +1649,107 @@
             "rubrica":{
                 "criterios":[
                     {
-                    "nombre":"",
+                    "nombre":"Criterio 1",
                     "niveles":[
-                        {},
-                        {}
+                        {   
+                            "Nombre":"Exelente",
+                            "descripcion":"Profundiza en los conceptos....",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Bien",
+                            "descripcion":"No suficiente",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Regular",
+                            "descripcion":"Mala organización",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Deficiente",
+                            "descripcion":"Necesitas mejorar",
+                            "puntos": 2.5
+                        }                        
                         ]
+                    },                    
+                    {
+                        "nombre":"Criterio 2",
+                        "niveles":[
+                            {   
+                                "Nombre":"Exelente",
+                                "descripcion":"Vas bien",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Bien",
+                                "descripcion":"Masomenos",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Regular",
+                                "descripcion":"regular",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Deficiente",
+                                "descripcion":"Mal",
+                                "puntos": 2.5
+                            }
+                            
+                            ]
+                    },
+                    {
+                            "nombre":"Criterio 3",
+                            "niveles":[
+                                {   
+                                    "Nombre":"Exelente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Bien",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Regular",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Deficiente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                }
+                                
+                                ]
+                    },
+                    {
+                                "nombre":"Criterio 4",
+                                "niveles":[
+                                    {   
+                                        "Nombre":"Exelente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Bien",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Regular",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Deficiente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    }
+                                    
+                                    ]
                     }
                 ]   
             },
@@ -502,7 +1789,60 @@
             "fechaEntregada": "08/05/2022",
             "statusEntrega":"Entregado"
         }
-    ]
+    ],
+    "listaDeCotejo":{
+        "cotejo": [
+            {
+                "titulo": "TITULO 1", 
+                "descripcion": "DESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TEST", 
+                "puntos": "6"
+            },
+            {
+                "titulo": "TITULO2", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "7"
+            },
+            {
+                "titulo": "TITULO3", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "2"
+            },
+            {
+                "titulo": "TITULO4", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "3"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },                   {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            }
+        ]
+}
         },
         {
             "id":10 ,
@@ -514,11 +1854,107 @@
             "rubrica":{
                 "criterios":[
                     {
-                    "nombre":"",
+                    "nombre":"Criterio 1",
                     "niveles":[
-                        {},
-                        {}
+                        {   
+                            "Nombre":"Exelente",
+                            "descripcion":"Profundiza en los conceptos....",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Bien",
+                            "descripcion":"No suficiente",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Regular",
+                            "descripcion":"Mala organización",
+                            "puntos": 2.5
+                        },
+                        {   
+                            "Nombre":"Deficiente",
+                            "descripcion":"Necesitas mejorar",
+                            "puntos": 2.5
+                        }                        
                         ]
+                    },                    
+                    {
+                        "nombre":"Criterio 2",
+                        "niveles":[
+                            {   
+                                "Nombre":"Exelente",
+                                "descripcion":"Vas bien",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Bien",
+                                "descripcion":"Masomenos",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Regular",
+                                "descripcion":"regular",
+                                "puntos": 2.5
+                            },
+                            {   
+                                "Nombre":"Deficiente",
+                                "descripcion":"Mal",
+                                "puntos": 2.5
+                            }
+                            
+                            ]
+                    },
+                    {
+                            "nombre":"Criterio 3",
+                            "niveles":[
+                                {   
+                                    "Nombre":"Exelente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Bien",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Regular",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                },
+                                {   
+                                    "Nombre":"Deficiente",
+                                    "descripcion":"Profundiza en los conceptos....",
+                                    "puntos": 2.5
+                                }
+                                
+                                ]
+                    },
+                    {
+                                "nombre":"Criterio 4",
+                                "niveles":[
+                                    {   
+                                        "Nombre":"Exelente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Bien",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Regular",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    },
+                                    {   
+                                        "Nombre":"Deficiente",
+                                        "descripcion":"Profundiza en los conceptos....",
+                                        "puntos": 2.5
+                                    }
+                                    
+                                    ]
                     }
                 ]   
             },
@@ -558,7 +1994,60 @@
             "fechaEntregada": "08/05/2022",
             "statusEntrega":"Entregado"
         }
-    ]
+    ],
+    "listaDeCotejo":{
+        "cotejo": [
+            {
+                "titulo": "TITULO 1", 
+                "descripcion": "DESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TESTDESCRIPCION TEST", 
+                "puntos": "6"
+            },
+            {
+                "titulo": "TITULO2", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "7"
+            },
+            {
+                "titulo": "TITULO3", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "2"
+            },
+            {
+                "titulo": "TITULO4", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "3"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },
+            {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            },                   {
+                "titulo": "TITULO5", 
+                "descripcion": "DESCRIPCION TEST", 
+                "puntos": "4"
+            }
+        ]
+}
         }
     ]
 }

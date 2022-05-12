@@ -1,41 +1,42 @@
 import React, {useEffect, useState} from "react";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {  createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Menu from './components/Menu/Menu.js'
-import NavBar from './components/NavBar/NavBar';
-import CalificarAlumno from './componentsActividad/CalificarActividad/CalificarAlumno';
-import Actividad from './componentsActividad/Actividad.json';
+import Menu from '../../components/Menu/Menu.js'
+import NavBar from '../../components/NavBar/NavBar';
+
+import ActividadAlumno from "./Actividad";
+import '../../Profesor.css'
 
 const drawerWidth = 240;
 
 const mdTheme = createTheme();
 
-function CalificarActividadContent() {
+
+
+function MostrarActividadContent() {
     const saved = localStorage.getItem("user");
-    const [localStorageActividad, setLocalStorageActividad] = useState(JSON.parse(window.localStorage.getItem('localStorageActividad')));
+    const [localStorageActividadAlumno, setLocalStorageActividadAlumno] = useState(JSON.parse(window.localStorage.getItem('localStorageActividadAlumno')));
     const user = JSON.parse(saved);
-    // console.log("calificarActividad",localStorageActividad);
-
-
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
       setOpen(!open);
     };
-    return (
+    return(
       <React.Fragment>
         <ThemeProvider theme={mdTheme} >
-          <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            
-            <NavBar tituloNavBar="Calificar Actividad" open={ open } setOpen={ setOpen }/>
+        <Box sx={{ display: 'flex' }}>
+          <CssBaseline />
+          <NavBar tituloNavBar="Calificar Actividad" open={ open } setOpen={ setOpen }/>
+          <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
 
-            <Menu user={ user }  open ={ open } setOpen={ setOpen }/>
-            
-            {/* Paper es la sección completa del Form cuadro blanco*/}
-            <Paper
+
+          {/* Paper es la sección completa del Form cuadro blanco*/}
+          <Paper
               
               sx={{
                 p: 2,
@@ -75,7 +76,7 @@ function CalificarActividadContent() {
                       }}
 
                     >
-                      <CalificarAlumno  data = {localStorageActividad}/> 
+                       <ActividadAlumno data= {localStorageActividadAlumno}/> 
                     </Box>
                 </Grid>
 
@@ -83,15 +84,14 @@ function CalificarActividadContent() {
 
             </Paper>
 
-          </Box>
+        </Box>
         </ThemeProvider>
-
       </React.Fragment>
-    );
+    )
 }
 
 
 
-export default function CalificarActividad() {
-    return <CalificarActividadContent />;
+export default function MostrarActividad() {
+  return <MostrarActividadContent />;
 }

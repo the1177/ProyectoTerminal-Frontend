@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from "react";
 import { useNavigate } from 'react-router-dom';
+import {Switch} from 'antd';
+import 'antd/dist/antd.css';
+
 
 {/* MUI MATERIAL */}
 import MuiTextField from '@mui/material/TextField';
@@ -14,12 +17,12 @@ import {
     Typography, 
     TextFieldProps,
     Select,
-    MenuItem, 
-    Button, 
+    MenuItem,  
     MenuList,
     Divider
 } from '@mui/material';
 
+import Button from 'react-bootstrap/Button';
 {/* FORMIK */}
 import * as Yup from 'yup';
 
@@ -35,18 +38,30 @@ import {
   FastField, 
 } from 'formik';
 
+import MostrarActividad from './MostarActividad'
+
 
 
 const CalificarAlumno = (props) => {
-    
+    const navigate = useNavigate();
     const [id, setId] = useState('')
 
     const [data, setData] = useState(props.data);
     const [filterData, setFilterData ] = useState([]);
 
+    const [Act, setAct] = useState(false)
+    const MostrarAct = (e) =>{
+        Act ? setAct(false) : setAct(true);
+    }
+
+    function IrDetalles (id, e) {
+        window.localStorage.setItem("localStorageAlumno",JSON.stringify(data.alumnos[id-1]))
+        window.localStorage.setItem("localStorageActividadAlumno",JSON.stringify(data))
+        navigate("/calificar");
+     }
 
     //usar data y no props
-    console.log("Calificar alumnos pestaña:",data);
+
     return (
     <Grid conatiner="true" className="Alumno-Tarjeta-Container">
 
@@ -103,7 +118,7 @@ const CalificarAlumno = (props) => {
 
                                     <Grid item xs={6}>
                                         <Box item sx={{textAlign:'center'}}>
-                                            <Button  variant="contained" >Puntuar</Button>                                            
+                                            <Button variant="primary" onClick={e =>IrDetalles(id,e)} >Puntuar</Button>                                            
                                         </Box>    
                                     </Grid>
 
@@ -111,14 +126,11 @@ const CalificarAlumno = (props) => {
                                         
                                     </Grid>
 
-                                    <Grid className="Calificar_Actividad">
-                                        <Box item sx={{m: 2, textAlign:'center'}}>
-                                            <Button  variant="contained" >Mostrar Actividad</Button>
-                                        </Box>                        
-                                    </Grid>                 
                                 </Grid>
                             </Box>
                         </Paper>
+
+                        
                    </React.Fragment>                     
                 )
             })}

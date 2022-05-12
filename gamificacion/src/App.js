@@ -29,7 +29,7 @@ import Encuesta from './assets/pages/Encuesta/Encuesta';
 import Alumnos from './assets/pages/Alumno/components/EditarUser/alumnoslist';
 import ActividadDetalles from './assets/pages/Alumno/componentsActividad/EntegaActividad/EntregaActividad'
 import CalificarActividad from './assets/pages/Profesor/CalificarActividad';
-
+import MostrarActividad from './assets/pages/Profesor/componentsActividad/CalificarActividad/MostarActividad'
 {/*Sección del Profesor*/}
 import ProfesorConf from './assets/pages/Profesor/Configuracion';
 
@@ -64,6 +64,7 @@ function App() {
         <Route path="/profesor-configuracion" element={<ProfesorConf />} />
         <Route path="/profesor-general" element={<ProfesorGen />} />
         <Route path="/calificar-actividad" element={<CalificarActividad />} />
+        <Route path="/calificar" element={<MostrarActividad />} />
       </Routes>
     </Router>
   );
