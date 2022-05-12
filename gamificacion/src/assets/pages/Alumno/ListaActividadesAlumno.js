@@ -15,16 +15,12 @@ function ListaActividadesAlumno(props) {
 
     const setLocalStorage = (value,e) =>{
         try{
-            console.log(e);
             setLocalStorageInfo(e)
-            // window.localStorage.setItem("localStorageInfo",value)
         }catch (error){
             console.log(error)
         }
     }
     function IrDetalles (id, e) {
-        // console.log(data[id-1])
-        // setFilterData(data.filter(item => item.id === id))
         window.localStorage.setItem("localStorageInfo",JSON.stringify(data[id-1]))
         navigate('/detalle');
      }

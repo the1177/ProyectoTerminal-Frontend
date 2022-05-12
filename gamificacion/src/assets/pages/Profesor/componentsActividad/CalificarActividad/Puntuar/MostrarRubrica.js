@@ -5,7 +5,7 @@ import Rubrica from "../Puntuar/Rubrica";
 // import '../../Alumno.css'
 
 function MostrarRubrica(props) {
-console.log("Mostrar",props)
+
   const [data, setData] = useState(props.data)
   return (
     <div className='section-cotejo'>

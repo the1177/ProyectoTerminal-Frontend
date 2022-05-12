@@ -18,7 +18,6 @@ const mdTheme = createTheme();
 function MisionesContent() {
   const saved = localStorage.getItem("user");
   const user = JSON.parse(saved);
-  console.log(user);
 
   const [data, setData] = useState(Actividades);
     const [open, setOpen] = React.useState(true);

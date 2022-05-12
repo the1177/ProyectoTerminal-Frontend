@@ -10,7 +10,6 @@ function ActividadAlumno() {
 
   const [localStorageActividadAlumno, setLocalStorageActividadAlumno] = useState(JSON.parse(window.localStorage.getItem('localStorageActividadAlumno')));
   const [localStorageAlumno, setLocalStoragelocalStorageAlumno] = useState(JSON.parse(window.localStorage.getItem('localStorageAlumno')));
-  console.log("Rubrica o Lista",localStorageActividadAlumno)
 
   const [rubrica, setRubrica] = useState(false)
   const [cotejo, setCotejo] = useState(false)

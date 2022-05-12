@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-
+import Button from 'react-bootstrap/Button';
 
 
 function ListaCotejo(props) {
@@ -21,15 +21,17 @@ function ListaCotejo(props) {
                   
                 {data.map((e,index)=>(
                   <tr key={index}>
-                    <td>{e.titulo}</td>
-                    <td>{e.descripcion}</td>
-                    <td>{e.puntos}</td>
-                    <input />
+                    <td >{e.titulo}</td>
+                    <td >{e.descripcion}</td>
+                    <td >{e.puntos}</td>
+                    <td ><input  /></td>
+                    
                   </tr>
                 ))}
                     
                     </tbody>
             </table>
+            <Button variant="primary" >Enviar puntaje</Button> 
     </div>    
 
   );
